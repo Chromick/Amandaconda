@@ -1,0 +1,52 @@
+# Texto de abertura.
+# Linha comecando com ">" sai destacada. Comecando com "=" sai como titulo.
+# Linha vazia e espaco. Este cabecalho com "#" nao aparece no jogo.
+
+Era pra ser rápido.
+
+Um chamado bobo no laboratório dois.
+Sem rede, de novo.
+
+Você desceu porque o Marlon jurou
+que resolvia em cinco minutos.
+
+O Marlon nunca resolveu nada
+em cinco minutos.
+
+
+Quando você subiu, a catraca não abriu.
+
+As luzes do bloco A estavam apagadas,
+e o relógio da recepção marcava
+um horário que não existe.
+
+
+Seus amigos ainda estão no prédio.
+
+Você escuta as vozes deles.
+Você reconhece as vozes deles.
+
+Você reconhece quase tudo.
+
+
+Entre você e a rua existem quatro portas,
+e atrás de cada uma
+alguém que você chama pelo nome.
+
+
+Na última, encostada na saída,
+tem uma pessoa tomando café.
+
+Ela trabalha aqui há mais tempo
+que qualquer professor deste prédio.
+Ela abre e fecha tudo isso todo dia.
+
+Ela sabe o seu nome,
+a sua matrícula
+e a sua senha.
+
+
+> Boa sorte.
+
+
+= AMANDACONDA

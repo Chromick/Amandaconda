@@ -1,0 +1,128 @@
+{
+  "_regras": {
+    "formato": "PNG com fundo transparente, sem anti-aliasing",
+    "paleta": "docs/arte/paleta.gpl, nenhuma cor fora dela",
+    "folha": "quadros lado a lado numa linha horizontal, cada um do tamanho de 'canvas'",
+    "ancora": "base do canvas = chao. O corpo fica centrado na largura",
+    "direcao": "desenhar sempre virado para a DIREITA, o codigo espelha",
+    "caminho": "assets/sprites/<entidade>/<animacao>.png",
+    "duracao": "segundos por quadro"
+  },
+
+  "player": {
+    "canvas": [64, 48],
+    "hitbox": [18, 40],
+    "nota": "Sobra 23 px de cada lado do corpo. E o espaco do golpe.",
+    "animacoes": {
+      "parado": { "quadros": 2, "duracao": 0.5 },
+      "andando": { "quadros": 4, "duracao": 0.12 },
+      "no_ar": { "quadros": 2, "duracao": 0.1, "nota": "1 subindo, 1 caindo" },
+      "rolando": { "quadros": 4, "duracao": 0.08 },
+      "ataque_leve": { "quadros": 3, "duracao": 0.08 },
+      "ataque_pesado": { "quadros": 4, "duracao": 0.1 },
+      "dano": { "quadros": 1, "duracao": 0.2 },
+      "curando": { "quadros": 2, "duracao": 0.3 },
+      "morte": { "quadros": 2, "duracao": 0.4 }
+    }
+  },
+
+  "chatana": {
+    "canvas": [32, 32],
+    "hitbox": [16, 16],
+    "animacoes": {
+      "parado": { "quadros": 2, "duracao": 0.25 },
+      "ataque": { "quadros": 2, "duracao": 0.12 },
+      "dano": { "quadros": 1, "duracao": 0.2 }
+    }
+  },
+
+  "portara": {
+    "canvas": [48, 56],
+    "hitbox": [28, 48],
+    "animacoes": {
+      "parado": { "quadros": 2, "duracao": 0.6 },
+      "andando": { "quadros": 4, "duracao": 0.2 },
+      "ataque": { "quadros": 3, "duracao": 0.14 },
+      "dano": { "quadros": 1, "duracao": 0.2 }
+    }
+  },
+
+  "net": {
+    "canvas": [32, 48],
+    "hitbox": [14, 36],
+    "animacoes": {
+      "parado": { "quadros": 2, "duracao": 0.4 },
+      "ataque": { "quadros": 3, "duracao": 0.12 },
+      "dano": { "quadros": 1, "duracao": 0.2 }
+    }
+  },
+
+  "luanevil": {
+    "canvas": [96, 64],
+    "hitbox": [34, 46],
+    "nota": "Corpo largo. O headphone no pescoco aparece em todos os quadros.",
+    "animacoes": {
+      "parado": { "quadros": 2, "duracao": 0.5 },
+      "andando": { "quadros": 4, "duracao": 0.16 },
+      "investida": { "quadros": 4, "duracao": 0.1 },
+      "pisada": { "quadros": 4, "duracao": 0.12, "nota": "espalha o caramelo" },
+      "cambaleando": { "quadros": 2, "duracao": 0.25 },
+      "dano": { "quadros": 1, "duracao": 0.2 },
+      "morte": { "quadros": 2, "duracao": 0.5 }
+    }
+  },
+
+  "renanligno": {
+    "canvas": [80, 64],
+    "hitbox": [20, 48],
+    "nota": "Magro e alto. O fantasma atrasado e o mesmo quadro com transparencia, feito no codigo.",
+    "animacoes": {
+      "parado": { "quadros": 2, "duracao": 0.5 },
+      "andando": { "quadros": 4, "duracao": 0.14 },
+      "golpe_atrasado": { "quadros": 4, "duracao": 0.1 },
+      "estocada": { "quadros": 4, "duracao": 0.1 },
+      "cambaleando": { "quadros": 2, "duracao": 0.25 },
+      "dano": { "quadros": 1, "duracao": 0.2 },
+      "morte": { "quadros": 2, "duracao": 0.5 }
+    }
+  },
+
+  "balarrals": {
+    "canvas": [64, 48],
+    "hitbox": [18, 40],
+    "espelha": "player",
+    "nota": "Usa o seu moveset. Redesenhar do zero seria desperdicio: copie a folha do jogador, troque a rampa de cor pela do Balarrals e inverta a arma de mao. E o chefe mais barato do jogo, de proposito."
+  },
+
+  "marlombolico": {
+    "canvas": [80, 56],
+    "hitbox": [20, 42],
+    "nota": "Magro, de chinelo, uma mao no bolso o tempo todo.",
+    "animacoes": {
+      "parado": { "quadros": 2, "duracao": 0.5 },
+      "andando": { "quadros": 4, "duracao": 0.14 },
+      "comando": { "quadros": 4, "duracao": 0.1 },
+      "glitch": { "quadros": 4, "duracao": 0.06 },
+      "cambaleando": { "quadros": 2, "duracao": 0.25 },
+      "dano": { "quadros": 1, "duracao": 0.2 },
+      "morte": { "quadros": 2, "duracao": 0.5 }
+    }
+  },
+
+  "amandaconda": {
+    "canvas": [160, 96],
+    "hitbox": [30, 64],
+    "nota": "A unica com tratamento completo. Canvas largo por causa da cauda. Oculos redondos, batom vermelho, cracha e tatuagem em todos os quadros.",
+    "animacoes": {
+      "parado": { "quadros": 2, "duracao": 0.5 },
+      "andando": { "quadros": 4, "duracao": 0.14 },
+      "chicotada": { "quadros": 4, "duracao": 0.1 },
+      "bote": { "quadros": 4, "duracao": 0.09 },
+      "enrosco": { "quadros": 4, "duracao": 0.12 },
+      "mudanca_de_fase": { "quadros": 3, "duracao": 0.4 },
+      "cambaleando": { "quadros": 2, "duracao": 0.25 },
+      "dano": { "quadros": 1, "duracao": 0.2 },
+      "morte": { "quadros": 3, "duracao": 0.5 }
+    }
+  }
+}

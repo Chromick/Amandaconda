@@ -1,0 +1,49 @@
+{
+  "_unidades": {
+    "distancia": "pixels na resolucao interna de 480x270",
+    "velocidade": "pixels por segundo",
+    "aceleracao": "pixels por segundo ao quadrado",
+    "tempo": "segundos"
+  },
+
+  "player": {
+    "width": 18,
+    "height": 40,
+
+    "max_health": 100,
+    "max_stamina": 100,
+    "stamina_regen": 40,
+    "stamina_regen_delay": 0.7,
+
+    "walk_speed": 118,
+    "run_speed": 195,
+    "ground_accel": 1750,
+    "ground_friction": 2200,
+    "air_accel": 1000,
+    "air_friction": 500,
+
+    "gravity": 1500,
+    "max_fall_speed": 640,
+    "jump_velocity": 420,
+    "jump_cut_multiplier": 0.45,
+    "coyote_time": 0.1,
+    "jump_buffer": 0.12
+  },
+
+  "camera": {
+    "follow_speed": 8.0,
+    "look_ahead": 24,
+    "vertical_offset": -12
+  },
+
+  "intro": {
+    "scroll_speed": 20,
+    "fast_forward_multiplier": 6,
+    "line_height": 13,
+    "emphasis_line_height": 20,
+    "title_line_height": 40,
+    "blank_line_height": 9,
+    "hold_at_end": 2.2,
+    "hint_delay": 2.5
+  }
+}

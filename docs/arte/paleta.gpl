@@ -1,0 +1,43 @@
+GIMP Palette
+Name: AMANDACONDA
+Columns: 8
+# Paleta oficial do jogo. Carregar no Aseprite em Palette > Load Palette.
+# Nenhum pixel do jogo pode ter cor fora daqui. tools/sprites.py confere.
+#
+# Bloco 1  neutros: contorno, roupa, pedra, sombra
+# Bloco 2  pele: dois tons, claro e escuro
+# Bloco 3  uma rampa por chefe, na cor de assinatura dele
+# Bloco 4  sangue e dano
+#
+  8   7  10	contorno
+ 28  25  38	neutro 1
+ 46  43  56	neutro 2
+ 68  63  82	neutro 3
+110 106 118	neutro 4
+154 148 164	neutro 5
+200 194 184	neutro 6
+226 221 210	neutro 7
+122  80  64	pele clara sombra
+184 127  99	pele clara base
+224 174 140	pele clara luz
+ 74  46  38	pele escura sombra
+122  76  58	pele escura base
+168 112  85	pele escura luz
+107  61  18	luanevil sombra
+184 117  42	luanevil base
+240 180  80	luanevil luz
+ 22  48  79	renanligno sombra
+ 47 103 150	renanligno base
+111 168 216	renanligno luz
+ 58  63  74	balarrals sombra
+124 132 148	balarrals base
+198 205 218	balarrals luz
+ 14  58  28	marlombolico sombra
+ 35 163  74	marlombolico base
+107 240 140	marlombolico luz
+ 14  50  48	amandaconda sombra
+ 38  96  94	amandaconda base
+ 78 155 149	amandaconda luz
+216 158  74	ambar da interface
+140  42  42	sangue escuro
+199  74  62	sangue
