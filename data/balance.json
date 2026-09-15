@@ -93,13 +93,13 @@
           "preparacao": 0.09,
           "acerto": 0.055,
           "recuperacao": 0.18,
-          "dano": 16,
+          "dano": 17,
           "vigor": 6,
           "avanco": 0,
-          "velocidade": 16.5,
-          "tempo_de_vida": 1.65,
-          "raio": 0.36,
-          "quique": 0.62
+          "velocidade": 17.0,
+          "tempo_de_vida": 1.7,
+          "raio": 0.38,
+          "quique": 0.65
         },
         "ataque_pesado": {
           "preparacao": 0.28,
@@ -209,9 +209,9 @@
 
   "cura": {
     "latas": 10,
-    "cura": 88,
-    "tempo_uso": 0.38,
-    "safezone_regen": 82.0,
+    "cura": 90,
+    "tempo_uso": 0.36,
+    "safezone_regen": 86.0,
     "safezone_latas": true
   },
 
@@ -431,11 +431,11 @@
       "alcance": 1.85
     },
     "marlombolico": {
-      "vida": 350,
+      "vida": 360,
       "nome": "MARLOMBÓLICO",
       "local": "Servidores",
-      "bytes": [220, 320],
-      "velocidade": 4.2,
+      "bytes": [230, 330],
+      "velocidade": 4.3,
       "dano": 18,
       "intervalo": 1.3,
       "preparacao": 0.36,
