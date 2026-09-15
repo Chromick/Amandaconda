@@ -222,6 +222,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	_update_land_fx()
+	_update_invuln_blink()
 	_update_mesh_facing(delta)
 	_update_roll_visual()
 	_update_lock_marker(delta)
@@ -239,6 +240,16 @@ func _update_land_fx() -> void:
 		if typeof(HitFeel) != TYPE_NIL and absf(velocity.y) < 0.1:
 			HitFeel.shake(0.06)
 	_was_on_floor = on_floor
+
+
+func _update_invuln_blink() -> void:
+	if state == State.DEAD or state == State.ROLL or state == State.HIT:
+		return
+	if invuln_timer > 0.0 and state == State.MOVE:
+		var on := fmod(Time.get_ticks_msec() * 0.02, 1.0) > 0.45
+		_set_mesh_color(_default_color if on else Color(0.55, 0.7, 1.0))
+	elif state == State.MOVE and _mark_timer <= 0.0:
+		_set_mesh_color(_default_color)
 
 
 func _spawn_land_dust() -> void:
