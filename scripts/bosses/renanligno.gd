@@ -223,7 +223,7 @@ func _chase(delta: float) -> void:
 	var spd := float(_cfg.get("velocidade", 4.2)) * move_scale()
 	if dist > 0.05:
 		var dir := to.normalized()
-		look_at(global_position + dir, Vector3.UP)
+		_face_flat(dir)
 		if dist > float(_cfg.get("alcance", 1.8)):
 			velocity.x = dir.x * spd
 			velocity.z = dir.z * spd

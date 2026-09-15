@@ -261,7 +261,7 @@ func _ai(delta: float) -> void:
 		var dir := to.normalized()
 		# Espelho: arma na mão trocada — gira um pouco “errado”.
 		var skewed := dir.rotated(Vector3.UP, 0.35)
-		look_at(global_position + skewed, Vector3.UP)
+		_face_flat(skewed)
 		if dist > float(_cfg.get("alcance", 1.7)) + 0.2:
 			velocity.x = dir.x * spd
 			velocity.z = dir.z * spd

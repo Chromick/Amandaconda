@@ -136,7 +136,7 @@ func _ai_chase(delta: float) -> void:
 	var spd := float(_cfg.get("velocidade", 2.0)) * move_scale()
 	if dist > 0.05:
 		var dir := to.normalized()
-		look_at(global_position + dir, Vector3.UP)
+		_face_flat(dir)
 		if dist > alcance * 0.85:
 			velocity.x = dir.x * spd
 			velocity.z = dir.z * spd

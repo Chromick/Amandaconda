@@ -160,7 +160,7 @@ func _ai_idle(delta: float) -> void:
 	var spd := float(_cfg.get("velocidade", 3.2)) * move_scale()
 	if dist > 0.01:
 		var dir := to.normalized()
-		look_at(global_position + dir, Vector3.UP)
+		_face_flat(dir)
 		if dist > prefer + 0.6:
 			velocity.x = dir.x * spd
 			velocity.z = dir.z * spd
