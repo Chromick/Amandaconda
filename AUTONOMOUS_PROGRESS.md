@@ -9,7 +9,7 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 ## 2026-09-15 ~continuação loop
 
 ### Alteração
-- v0.5.3: 3-hit combo + damage scale; elite/boss enrage bite; cyan lock marker; stars/dust/gates/safezone; ability-ready toast; heal-drink sparks; Luanevil/Amandaconda phase2 snappier.
+- v0.5.5: 3-hit combo; elite/boss enrage bite+snap; campus props/lamps; combat feel weight; stamina/coyote; patch shop colors; Net/Chatana telegraphs.
 
 ### Testes
 - Hub headless EXIT 0 (cada ciclo)

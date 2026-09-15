@@ -1213,7 +1213,7 @@ func _spawn_eco_telegraph() -> void:
 		host = self
 	_eco_telegraph = AttackTelegraphScript.make_sphere(
 		host,
-		2.1,
+		2.2,
 		Vector3.ZERO,
 		Color(0.45, 0.85, 1.0, 0.32)
 	)
@@ -1241,7 +1241,7 @@ func _resolve_eco() -> void:
 			continue
 		if not node.has_method("take_damage"):
 			continue
-		if node.global_position.distance_to(_eco_pos) <= 2.0:
+		if node.global_position.distance_to(_eco_pos) <= 2.2:
 			var away: Vector3 = node.global_position - _eco_pos
 			away.y = 0.0
 			if away.length_squared() < 0.01:
@@ -1253,7 +1253,11 @@ func _resolve_eco() -> void:
 		if not node.has_method("take_damage"):
 			continue
 		if node.global_position.distance_to(_eco_pos) <= 2.2:
-			node.take_damage(dmg, facing * 4.0, self)
+			var away_b: Vector3 = node.global_position - _eco_pos
+			away_b.y = 0.0
+			if away_b.length_squared() < 0.01:
+				away_b = facing
+			node.take_damage(dmg, away_b.normalized() * 4.0, self)
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(_eco_pos + Vector3.UP * 0.6, Color(0.5, 0.9, 1.0), 1.35)
 		HitFeel.punch()
