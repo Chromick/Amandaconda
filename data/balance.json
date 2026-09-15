@@ -68,9 +68,9 @@
           "preparacao": 0.08,
           "acerto": 0.06,
           "recuperacao": 0.16,
-          "dano": 13,
-          "vigor": 14,
-          "alcance": 1.4,
+          "dano": 14,
+          "vigor": 13,
+          "alcance": 1.45,
           "altura": 1.1,
           "avanco": 2.7,
           "golpes_no_combo": 3
@@ -210,7 +210,7 @@
     "latas": 4,
     "cura": 55,
     "tempo_uso": 0.7,
-    "safezone_regen": 28.0,
+    "safezone_regen": 32.0,
     "safezone_latas": true
   },
 
