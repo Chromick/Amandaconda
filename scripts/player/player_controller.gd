@@ -390,6 +390,12 @@ func _tick_timers(delta: float) -> void:
 			_refresh_speed_mult()
 			if state == State.MOVE:
 				_set_mesh_color(_default_color)
+			GameState.show_toast("Marca sumiu")
+			if typeof(HitFeel) != TYPE_NIL:
+				HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(0.7, 0.55, 1.0), 0.55)
+			_refresh_speed_mult()
+			if state == State.MOVE:
+				_set_mesh_color(_default_color)
 			GameState.show_toast("Marca dissipada")
 			if typeof(HitFeel) != TYPE_NIL:
 				HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.85, 0.55, 1.0), 0.6)
@@ -1019,6 +1025,7 @@ func apply_mark(duration: float, mult: float) -> void:
 	if was_clear:
 		GameState.show_toast("MARCADO · velocidade reduzida")
 		HitFeel.shake(0.15)
+		HitFeel.kick_fov(3.5, 0.12)
 		HitFeel.spark_at(global_position + Vector3.UP * 1.3, Color(0.85, 0.35, 1.0), 0.95)
 		var hud := get_tree().get_first_node_in_group("hud")
 		if hud and hud.has_method("flash_mark"):
