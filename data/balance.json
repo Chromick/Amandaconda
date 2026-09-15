@@ -18,9 +18,9 @@
     "capsule_height": 1.8,
 
     "max_health": 200,
-    "max_stamina": 200,
-    "stamina_regen": 110,
-    "stamina_regen_delay": 0.14,
+    "max_stamina": 205,
+    "stamina_regen": 115,
+    "stamina_regen_delay": 0.12,
 
     "walk_speed": 7.6,
     "run_speed": 12.5,
@@ -431,11 +431,11 @@
       "alcance": 1.95
     },
     "marlombolico": {
-      "vida": 380,
+      "vida": 390,
       "nome": "MARLOMBÓLICO",
       "local": "Servidores",
-      "bytes": [250, 350],
-      "velocidade": 4.5,
+      "bytes": [260, 360],
+      "velocidade": 4.55,
       "dano": 18,
       "intervalo": 1.25,
       "preparacao": 0.36,
