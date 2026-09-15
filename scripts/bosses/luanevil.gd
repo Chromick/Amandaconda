@@ -132,6 +132,7 @@ func _update_label() -> void:
 	if label:
 		var nome := str(_cfg.get("nome", "LUANEVIL"))
 		label.text = "%s %d/%d" % [nome, int(health), int(max_health)]
+		_tint_label_by_hp()
 
 
 func _die() -> void:

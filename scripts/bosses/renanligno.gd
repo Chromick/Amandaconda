@@ -140,6 +140,7 @@ func _visual_action() -> String:
 func _update_label() -> void:
 	if label:
 		label.text = "%s %d/%d" % [str(_cfg.get("nome", "RENANLIGNO")), int(health), int(max_health)]
+		_tint_label_by_hp()
 
 
 func _die() -> void:

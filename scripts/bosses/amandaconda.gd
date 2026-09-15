@@ -117,10 +117,13 @@ func _update_label() -> void:
 		return
 	if not _awakened:
 		label.text = "AMANDACONDA · fumando"
+		label.modulate = Color.WHITE
 	elif _phase2:
 		label.text = "AMANDACONDA FASE 2 %d/%d" % [int(health), int(max_health)]
+		_tint_label_by_hp()
 	else:
 		label.text = "AMANDACONDA %d/%d" % [int(health), int(max_health)]
+		_tint_label_by_hp()
 
 
 func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node = null) -> void:

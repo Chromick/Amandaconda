@@ -286,6 +286,12 @@ func _update_label() -> void:
 	if label == null:
 		return
 	label.text = "%s %d/%d" % [balance_key.capitalize(), int(health), int(max_health)]
+	_tint_label_by_hp()
+
+
+func _tint_label_by_hp() -> void:
+	if label == null:
+		return
 	if max_health > 0.0 and health > 0.0 and health / max_health < 0.35:
 		label.modulate = Color(1.0, 0.45, 0.4)
 	else:
