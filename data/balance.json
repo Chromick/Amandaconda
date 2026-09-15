@@ -122,11 +122,11 @@
   "camera": {
     "distance": 3.8,
     "height": 1.95,
-    "fov": 80.0,
-    "min_pitch": -47.0,
-    "max_pitch": 65.0,
-    "sensitivity": 0.195,
-    "follow_speed": 26.0,
+    "fov": 81.0,
+    "min_pitch": -48.0,
+    "max_pitch": 66.0,
+    "sensitivity": 0.2,
+    "follow_speed": 28.0,
     "lock_on_distance": 34.0,
     "lock_on_height_bias": 1.4,
     "idle_yaw_delay": 0.85,
@@ -134,12 +134,12 @@
   },
 
   "impacto": {
-    "pausa_no_acerto": 0.14,
-    "pausa_ao_matar": 0.45,
-    "empurrao_no_alvo": 6.8,
-    "shake_on_hit": 0.7,
-    "shake_amp": 0.58,
-    "shake_decay": 2.5
+    "pausa_no_acerto": 0.15,
+    "pausa_ao_matar": 0.48,
+    "empurrao_no_alvo": 7.0,
+    "shake_on_hit": 0.74,
+    "shake_amp": 0.62,
+    "shake_decay": 2.6
   },
 
   "boneco": {
@@ -362,9 +362,9 @@
       {
         "id": "turn_snap",
         "nome": "turn_snap",
-        "custo": 88,
-        "texto": "+4 giro",
-        "turn_bonus": 4.0
+        "custo": 82,
+        "texto": "+5 giro",
+        "turn_bonus": 5.0
       },
       {
         "id": "heal_burst",
