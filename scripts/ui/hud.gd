@@ -358,7 +358,7 @@ func _show_toast(message: String) -> void:
 	toast_label.modulate = Color.WHITE
 	if message.find("KB") >= 0 or message.find("carteira") >= 0:
 		toast_label.modulate = Color(1.0, 0.92, 0.55)
-	elif message.find("MARCADO") >= 0 or message.find("invert") >= 0 or message.find("HUD_FAKE") >= 0:
+	elif message.find("Marca") >= 0 or message.find("MARCADO") >= 0 or message.find("invert") >= 0 or message.find("HUD_FAKE") >= 0:
 		toast_label.modulate = Color(0.85, 0.55, 1.0)
 	elif message.find("liberado") >= 0 or message.find("3/3") >= 0 or message.find("SESSION") >= 0:
 		toast_label.modulate = Color(0.55, 1.0, 0.7)

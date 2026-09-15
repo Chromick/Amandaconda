@@ -373,6 +373,10 @@ func _tick_timers(delta: float) -> void:
 			GameState.show_toast("Marca dissipada")
 			if typeof(HitFeel) != TYPE_NIL:
 				HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.85, 0.55, 1.0), 0.6)
+			for cam in get_tree().get_nodes_in_group("player_camera"):
+				if cam and cam.has_method("punch_fov"):
+					cam.punch_fov(-2.0)
+					break
 	if stamina_regen_timer > 0.0:
 		stamina_regen_timer -= delta
 	elif state == State.MOVE:
