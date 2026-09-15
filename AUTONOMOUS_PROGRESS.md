@@ -1,4 +1,4 @@
-﻿# AUTONOMOUS_PROGRESS
+# AUTONOMOUS_PROGRESS
 
 Registro de desenvolvimento autÃ´nomo do runtime **Godot 4.7**  
 Repo: [Chromick/Amandaconda](https://github.com/Chromick/Amandaconda) Â· branch `godot-4`  
