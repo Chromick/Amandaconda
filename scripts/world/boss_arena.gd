@@ -190,10 +190,6 @@ func _on_boss_died() -> void:
 		HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.55, 1.0, 0.65), 1.2)
 		HitFeel.shake(0.2)
 		HitFeel.kick_fov(5.0, 0.18)
-	for cam in get_tree().get_nodes_in_group("player_camera"):
-		if cam and cam.has_method("punch_fov"):
-			cam.punch_fov(5.0)
-			break
 	var hud := get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("pulse_heal"):
 		hud.pulse_heal()
