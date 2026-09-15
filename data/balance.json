@@ -120,13 +120,13 @@
   },
 
   "camera": {
-    "distance": 3.7,
-    "height": 2.0,
+    "distance": 3.6,
+    "height": 2.05,
     "fov": 82.0,
     "min_pitch": -48.0,
     "max_pitch": 66.0,
-    "sensitivity": 0.2,
-    "follow_speed": 28.0,
+    "sensitivity": 0.205,
+    "follow_speed": 30.0,
     "lock_on_distance": 34.0,
     "lock_on_height_bias": 1.4,
     "idle_yaw_delay": 0.85,
@@ -208,8 +208,8 @@
   },
 
   "cura": {
-    "latas": 9,
-    "cura": 85,
+    "latas": 10,
+    "cura": 88,
     "tempo_uso": 0.38,
     "safezone_regen": 82.0,
     "safezone_latas": true
