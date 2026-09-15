@@ -141,13 +141,10 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 			_coil.scale = Vector3.ONE * 1.35
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.95, 0.25, 0.45), 1.5)
+			HitFeel.kick_fov(6.0, 0.2)
 		var hud := get_tree().get_first_node_in_group("hud")
 		if hud and hud.has_method("flash_danger"):
 			hud.flash_danger()
-		for cam in get_tree().get_nodes_in_group("player_camera"):
-			if cam and cam.has_method("punch_fov"):
-				cam.punch_fov(6.0)
-				break
 
 
 func _awaken() -> void:
