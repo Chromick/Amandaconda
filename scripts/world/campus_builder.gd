@@ -344,6 +344,10 @@ func _spawn_gameplay() -> void:
 	pen_f2.kind = "fisico"
 	spawns_root.add_child(pen_f2)
 	pen_f2.global_position = Vector3(-18, 0.5, -6)
+	var pen_e2 := PENDRIVE.instantiate()
+	pen_e2.kind = "especial"
+	spawns_root.add_child(pen_e2)
+	pen_e2.global_position = Vector3(18, 0.5, -10)
 	_spawn(TERMINAL, Vector3(0, 0, 20))
 
 	var g_serv := GATE.instantiate()
