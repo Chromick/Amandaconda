@@ -141,9 +141,14 @@ func _update_pulse_telegraph(active: bool, flash: bool) -> void:
 	sm.radius = r
 	sm.height = r * 2.0
 	if _pulse_mat:
-		_pulse_mat.albedo_color = Color(1.0, 0.95, 0.55, 0.55) if flash else Color(1.0, 0.82, 0.3, 0.22 + 0.22 * t)
-		_pulse_mat.emission = Color(1.0, 0.95, 0.6) if flash else Color(1.0, 0.75, 0.25)
-		_pulse_mat.emission_energy_multiplier = 2.8 if flash else 1.5 + t
+		if _enraged:
+			_pulse_mat.albedo_color = Color(1.0, 0.55, 0.2, 0.6) if flash else Color(1.0, 0.5, 0.15, 0.28 + 0.22 * t)
+			_pulse_mat.emission = Color(1.0, 0.6, 0.2) if flash else Color(1.0, 0.45, 0.1)
+			_pulse_mat.emission_energy_multiplier = 3.2 if flash else 1.8 + t
+		else:
+			_pulse_mat.albedo_color = Color(1.0, 0.95, 0.55, 0.55) if flash else Color(1.0, 0.82, 0.3, 0.22 + 0.22 * t)
+			_pulse_mat.emission = Color(1.0, 0.95, 0.6) if flash else Color(1.0, 0.75, 0.25)
+			_pulse_mat.emission_energy_multiplier = 2.8 if flash else 1.5 + t
 	# Anel de onda um pouco à frente do raio
 	if _wave_ring and _wave_ring.mesh is SphereMesh:
 		var wr := r * (1.08 if flash else 0.55 + 0.5 * t)
