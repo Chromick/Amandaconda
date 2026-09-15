@@ -161,7 +161,11 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 		_spawn_puddle()
 		_spawn_puddle()
 		HitFeel.shake(0.35)
+		HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(1.0, 0.55, 0.15), 1.3)
 		GameState.show_toast("LUANEVIL · caramelo derrete")
+		var hud := get_tree().get_first_node_in_group("hud")
+		if hud and hud.has_method("flash_danger"):
+			hud.flash_danger()
 
 
 func _physics_process(delta: float) -> void:
