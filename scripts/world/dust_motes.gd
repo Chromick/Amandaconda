@@ -5,7 +5,7 @@ var _pts: Array = []
 
 
 func _ready() -> void:
-	for i in 28:
+	for i in 36:
 		var m := MeshInstance3D.new()
 		var s := SphereMesh.new()
 		s.radius = 0.03
