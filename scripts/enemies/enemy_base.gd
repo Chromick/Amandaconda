@@ -204,6 +204,7 @@ func _die() -> void:
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * 1.0, Color(1.0, 0.45, 0.3), 0.95)
 		HitFeel.shake(0.2)
+		HitFeel.kick_fov(2.8, 0.1)
 	var delay := float(_cfg.get("renascer_em", 0.0))
 	if delay > 0.0:
 		_revive_timer = delay

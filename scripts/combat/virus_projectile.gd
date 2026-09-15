@@ -103,6 +103,9 @@ func _on_body_entered(body: Node3D) -> void:
 		body.take_damage(damage, knock, source)
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.spark_at(global_position, Color(0.45, 1.0, 0.55), 0.85)
+			HitFeel.punch(0.04)
+		if _light:
+			_light.light_energy = 5.5
 		queue_free()
 		return
 	_try_bounce(body)
