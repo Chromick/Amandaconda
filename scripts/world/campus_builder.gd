@@ -535,6 +535,14 @@ func _spawn_gameplay() -> void:
 	pen_e5.kind = "especial"
 	spawns_root.add_child(pen_e5)
 	pen_e5.global_position = Vector3(0, 0.5, -28)
+	var pen_f6 := PENDRIVE.instantiate()
+	pen_f6.kind = "fisico"
+	spawns_root.add_child(pen_f6)
+	pen_f6.global_position = Vector3(-8, 0.5, 18)
+	var pen_e6 := PENDRIVE.instantiate()
+	pen_e6.kind = "especial"
+	spawns_root.add_child(pen_e6)
+	pen_e6.global_position = Vector3(8, 0.5, 18)
 	_spawn(TERMINAL, Vector3(0, 0, 20))
 
 	var g_serv := GATE.instantiate()
