@@ -221,6 +221,10 @@ func flash_hack() -> void:
 	_pulse_screen(Color(0.25, 0.95, 0.45, 0.32), 0.4)
 
 
+func flash_mark() -> void:
+	_pulse_screen(Color(0.7, 0.25, 0.95, 0.3), 0.35)
+
+
 func _pulse_screen(color: Color, duration: float) -> void:
 	if _flash == null:
 		return

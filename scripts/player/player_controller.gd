@@ -944,6 +944,9 @@ func apply_mark(duration: float, mult: float) -> void:
 		GameState.show_toast("MARCADO · velocidade reduzida")
 		HitFeel.shake(0.15)
 		HitFeel.spark_at(global_position + Vector3.UP * 1.3, Color(0.85, 0.35, 1.0), 0.95)
+		var hud := get_tree().get_first_node_in_group("hud")
+		if hud and hud.has_method("flash_mark"):
+			hud.flash_mark()
 
 
 func is_marked() -> bool:
