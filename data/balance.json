@@ -17,8 +17,8 @@
     "capsule_radius": 0.35,
     "capsule_height": 1.8,
 
-    "max_health": 200,
-    "max_stamina": 205,
+    "max_health": 210,
+    "max_stamina": 210,
     "stamina_regen": 115,
     "stamina_regen_delay": 0.12,
 
@@ -208,8 +208,8 @@
   },
 
   "cura": {
-    "latas": 12,
-    "cura": 100,
+    "latas": 13,
+    "cura": 105,
     "tempo_uso": 0.32,
     "safezone_regen": 100.0,
     "safezone_latas": true
@@ -231,7 +231,7 @@
   },
 
   "patches": {
-    "slots": 16,
+    "slots": 18,
     "catalogo": [
       {
         "id": "hotfix_vigor",
