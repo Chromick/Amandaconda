@@ -267,8 +267,12 @@ func _update_invuln_blink() -> void:
 	if invuln_timer > 0.0 and state == State.MOVE:
 		var on := fmod(Time.get_ticks_msec() * 0.02, 1.0) > 0.45
 		_set_mesh_color(_default_color if on else Color(0.55, 0.7, 1.0))
+		if mesh:
+			mesh.transparency = 0.0 if on else 0.35
 	elif state == State.MOVE and _mark_timer <= 0.0:
 		_set_mesh_color(_default_color)
+		if mesh:
+			mesh.transparency = 0.0
 
 
 func _spawn_land_dust() -> void:
@@ -287,6 +291,9 @@ func _spawn_land_dust() -> void:
 		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 		mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 		mat.albedo_color = Color(0.75, 0.72, 0.65, 0.55)
+		mat.emission_enabled = true
+		mat.emission = Color(0.65, 0.6, 0.5)
+		mat.emission_energy_multiplier = 0.55 * impact
 		p.material_override = mat
 		host.add_child(p)
 		var ang := TAU * float(i) / float(count) + randf() * 0.35
