@@ -108,3 +108,25 @@ Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil,
 
 ### Próxima tarefa
 - UI menu/version ou polish de lock-on distance feedback
+
+## 2026-09-15 01:56 BRT
+
+### Alteração
+- Loop contínuo: vírus look_at seguro + spark no hit; feedback de lock-on; menu noturno + versão; toast na safezone; HitFeel cancel ao iniciar run; lock limpa alvo morto.
+
+### Arquivos modificados
+- scripts/combat/virus_projectile.gd
+- scripts/player/player_controller.gd
+- scripts/autoload/game_state.gd
+- scripts/ui/main_menu.gd
+- scripts/world/safezone.gd
+- AUTONOMOUS_PROGRESS.md
+
+### Testes
+- Hub + main_menu headless EXIT 0
+
+### Problemas encontrados
+- (nenhum novo)
+
+### Próxima tarefa
+- Continuar polish: damage popup no player ao tomar dano, ou telegraph do vírus

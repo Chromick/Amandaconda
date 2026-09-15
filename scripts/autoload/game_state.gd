@@ -260,11 +260,15 @@ func show_toast(message: String) -> void:
 func start_run(s: WeaponSchool) -> void:
 	reset_run()
 	set_school(s)
+	if typeof(HitFeel) != TYPE_NIL and HitFeel.has_method("cancel"):
+		HitFeel.cancel()
 	go_to_hub()
 
 
 func go_to_hub() -> void:
 	paused = false
+	if typeof(HitFeel) != TYPE_NIL and HitFeel.has_method("cancel"):
+		HitFeel.cancel()
 	get_tree().change_scene_to_file("res://scenes/hub_arena.tscn")
 
 

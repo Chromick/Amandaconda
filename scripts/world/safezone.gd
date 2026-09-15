@@ -15,8 +15,13 @@ func _on_enter(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		_player_inside = body
 		GameState.in_safezone = true
+		var before := GameState.heals
 		GameState.refill_heals()
 		GameState.safezone_position = global_position + Vector3(0, 1, 0)
+		if GameState.heals > before:
+			GameState.show_toast("Safezone · latas cheias")
+		else:
+			GameState.show_toast("Safezone · em segurança")
 
 
 func _on_exit(body: Node3D) -> void:

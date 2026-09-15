@@ -40,7 +40,10 @@ func _physics_process(delta: float) -> void:
 		return
 	global_position += velocity * delta
 	if velocity.length_squared() > 0.01:
-		look_at(global_position + velocity, Vector3.UP)
+		var tip := global_position + velocity.normalized()
+		# Evita look_at inválido se velocity ~ paralelo a UP
+		if absf(velocity.normalized().dot(Vector3.UP)) < 0.98:
+			look_at(tip, Vector3.UP)
 
 
 func _on_body_entered(body: Node3D) -> void:
@@ -51,6 +54,8 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.has_method("take_damage"):
 		var knock := velocity.normalized() * knock_strength
 		body.take_damage(damage, knock, source)
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.spark_at(global_position, Color(0.45, 1.0, 0.55), 0.85)
 		queue_free()
 		return
 	_try_bounce(body)

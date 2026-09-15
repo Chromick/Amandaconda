@@ -227,12 +227,19 @@ func _update_lock_marker(delta: float) -> void:
 	if _lock_marker == null:
 		return
 	if lock_target and is_instance_valid(lock_target):
+		if lock_target.has_method("is_alive") and not lock_target.is_alive():
+			lock_target = null
+		elif "health" in lock_target and float(lock_target.health) <= 0.0:
+			lock_target = null
+	if lock_target and is_instance_valid(lock_target):
 		# top_level evita o marker herdar yaw do player e "orbita" errado
 		_lock_marker.top_level = true
 		_lock_marker.visible = true
 		_lock_marker.global_position = lock_target.global_position + Vector3.UP * 2.35
 		_lock_marker.rotate_y(delta * 2.8)
 	else:
+		if lock_target != null and not is_instance_valid(lock_target):
+			lock_target = null
 		_lock_marker.visible = false
 		_lock_marker.top_level = false
 
@@ -948,6 +955,7 @@ func _require_stamina(cost: float) -> bool:
 func _toggle_lock_on() -> void:
 	if lock_target and is_instance_valid(lock_target):
 		lock_target = null
+		GameState.show_toast("Lock off")
 		return
 	var best: Node3D = null
 	var best_d := float(Balance.camera().get("lock_on_distance", 18.0))
@@ -959,7 +967,13 @@ func _toggle_lock_on() -> void:
 			best_d = d
 			best = body
 	lock_target = best
-
+	if lock_target:
+		GameState.show_toast("Lock on")
+	else:
+		GameState.show_toast("Sem alvo no alcance")
+		var hud := get_tree().get_first_node_in_group("hud")
+		if hud and hud.has_method("flash_stamina"):
+			hud.flash_stamina()
 
 func _update_mesh_facing(delta: float) -> void:
 	if facing.length_squared() < 0.001:
