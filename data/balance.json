@@ -76,10 +76,10 @@
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
-          "preparacao": 0.26,
-          "carga_maxima": 0.7,
-          "acerto": 0.1,
-          "recuperacao": 0.34,
+          "preparacao": 0.24,
+          "carga_maxima": 0.65,
+          "acerto": 0.09,
+          "recuperacao": 0.32,
           "dano": 28,
           "dano_carregado": 48,
           "vigor": 30,
