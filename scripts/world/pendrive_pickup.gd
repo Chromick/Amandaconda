@@ -12,6 +12,12 @@ var _spin: float = 0.0
 func _ready() -> void:
 	body_entered.connect(_on_body)
 	_refresh_visual()
+	var light := OmniLight3D.new()
+	light.light_color = Color(0.95, 0.8, 0.4) if kind != "especial" else Color(0.45, 1.0, 0.55)
+	light.light_energy = 1.5
+	light.omni_range = 3.2
+	light.position = Vector3(0, 0.4, 0)
+	add_child(light)
 
 
 func _process(delta: float) -> void:
