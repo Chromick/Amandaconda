@@ -50,9 +50,9 @@
     "rolamento": {
       "duracao": 0.42,
       "inv_inicio": 0.03,
-      "inv_duracao": 0.34,
-      "vigor": 22,
-      "velocidade": 12.6,
+      "inv_duracao": 0.36,
+      "vigor": 21,
+      "velocidade": 13.0,
       "atrito_final": 28.0
     },
 
