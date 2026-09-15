@@ -170,7 +170,7 @@ func _style_for_night() -> void:
 func _style_bar(bar: ProgressBar, fill: Color, bg: Color) -> void:
 	if bar == null:
 		return
-	bar.custom_minimum_size.y = maxf(bar.custom_minimum_size.y, 18.0)
+	bar.custom_minimum_size.y = maxf(bar.custom_minimum_size.y, 20.0)
 	var bg_box := StyleBoxFlat.new()
 	bg_box.bg_color = bg
 	bg_box.set_corner_radius_all(4)
