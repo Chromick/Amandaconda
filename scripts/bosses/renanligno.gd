@@ -274,7 +274,7 @@ func _ghost_hit() -> void:
 			away.y = 0.0
 			if away.length_squared() < 0.01:
 				away = Vector3.FORWARD
-			player.take_damage(float(_cfg.get("dano", 18)), away.normalized() * 4.0, self)
+			player.take_damage(float(_cfg.get("dano", 18)) * (1.12 if _enraged else 1.0), away.normalized() * (4.5 if _enraged else 4.0), self)
 			HitFeel.punch(0.04)
 			HitFeel.shake(0.2)
 			HitFeel.spark_at(_strike_pos + Vector3.UP * 1.1, Color(0.7, 0.45, 1.0), 1.2)
@@ -287,5 +287,5 @@ func _do_strike() -> void:
 	var player := _get_player()
 	if player and player.global_position.distance_to(global_position) < 2.2:
 		if player.has_method("take_damage"):
-			player.take_damage(float(_cfg.get("dano", 18)) * 0.35, -global_transform.basis.z * 3.0, self)
+			player.take_damage(float(_cfg.get("dano", 18)) * (0.4 if _enraged else 0.35), -global_transform.basis.z * 3.0, self)
 			HitFeel.spark_at(player.global_position + Vector3.UP * 1.0, Color(0.45, 0.85, 1.0), 0.85)
