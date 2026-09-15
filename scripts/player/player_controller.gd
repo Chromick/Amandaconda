@@ -488,6 +488,8 @@ func _try_sprint_attack(dir: Vector3) -> void:
 	if dir.length_squared() > 0.01:
 		facing = dir.normalized()
 	state = State.ATTACK_HEAVY
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(global_position + Vector3.UP * 0.4 + facing * 0.5, Color(1.0, 0.55, 0.25), 0.75)
 	_charge_ratio = 0.55
 	_hit_targets.clear()
 	attack_area.monitoring = false
