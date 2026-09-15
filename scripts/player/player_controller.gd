@@ -27,6 +27,7 @@ var _atk_telegraph: MeshInstance3D
 var _virus_charge_fx: MeshInstance3D
 var _lock_marker: MeshInstance3D
 var _roll_ghost_timer: float = 0.0
+var _heal_light: OmniLight3D
 
 var state: State = State.MOVE
 var health: float = 100.0
@@ -1069,6 +1070,7 @@ func _try_heal() -> void:
 	_set_mesh_color(Color(0.45, 1.0, 0.55))
 	drinks_changed.emit(GameState.heals, GameState.max_heals)
 	GameState.show_toast("Bebendo lata…")
+	_ensure_heal_light(true)
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * 1.15, Color(0.5, 1.0, 0.6), 0.55)
 		HitFeel.shake(0.05)
@@ -1078,6 +1080,8 @@ func _process_healing(delta: float) -> void:
 	_heal_timer -= delta
 	velocity.x = 0.0
 	velocity.z = 0.0
+	if _heal_light:
+		_heal_light.light_energy = 1.4 + sin(Time.get_ticks_msec() * 0.012) * 0.55
 	# Ping visual enquanto bebe.
 	if fmod(_heal_timer, 0.28) < delta and typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * (1.0 + randf() * 0.4), Color(0.45, 1.0, 0.55), 0.35)
@@ -1086,6 +1090,7 @@ func _process_healing(delta: float) -> void:
 		heal(amount)
 		state = State.MOVE
 		_set_mesh_color(_default_color)
+		_ensure_heal_light(false)
 		var hud := get_tree().get_first_node_in_group("hud")
 		if hud and hud.has_method("pulse_heal"):
 			hud.pulse_heal()
@@ -1095,6 +1100,21 @@ func _process_healing(delta: float) -> void:
 			if cam and cam.has_method("punch_fov"):
 				cam.punch_fov(2.5)
 				break
+
+
+func _ensure_heal_light(on: bool) -> void:
+	if on:
+		if _heal_light == null or not is_instance_valid(_heal_light):
+			_heal_light = OmniLight3D.new()
+			_heal_light.light_color = Color(0.45, 1.0, 0.6)
+			_heal_light.omni_range = 4.5
+			_heal_light.position = Vector3(0, 1.4, 0)
+			add_child(_heal_light)
+		_heal_light.light_energy = 1.8
+		_heal_light.visible = true
+	elif _heal_light and is_instance_valid(_heal_light):
+		_heal_light.visible = false
+		_heal_light.light_energy = 0.0
 
 
 func _on_died() -> void:
@@ -1339,6 +1359,7 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 		return
 	if state == State.HEALING:
 		_heal_timer = 0.0
+		_ensure_heal_light(false)
 		GameState.show_toast("Cura interrompida")
 		HitFeel.shake(0.12)
 		HitFeel.spark_at(global_position + Vector3.UP * 1.0, Color(0.9, 0.35, 0.35), 0.7)
