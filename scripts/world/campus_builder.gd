@@ -368,6 +368,9 @@ func _spawn_gameplay() -> void:
 	_spawn_enemy(CHATANA, Vector3(-28, 1, -24), "modular/Beach.gltf", 1.03, Color(0.5, 0.9, 0.95, 1))
 	_spawn_enemy(NET, Vector3(28, 1, -24), "modular/Punk.gltf", 1.05, Color(0.86, 0.45, 1, 1))
 	_spawn_enemy(PORTARA, Vector3(0, 1, -32), "modular/King.gltf", 1.2, Color(0.72, 0.58, 0.46, 1))
+	_spawn_enemy(CHATANA, Vector3(-10, 1, -4), "modular/Casual_2.gltf", 1.03, Color(0.55, 0.92, 0.98, 1))
+	_spawn_enemy(NET, Vector3(10, 1, -4), "modular/Swat.gltf", 1.06, Color(0.88, 0.48, 1, 1))
+	_spawn_enemy(PORTARA, Vector3(4, 1, -18), "modular/Worker.gltf", 1.17, Color(0.76, 0.6, 0.48, 1))
 	_spawn(BYTES, Vector3(0, 0.6, -32))
 	_spawn(BYTES, Vector3(-6, 0.6, -30))
 	_spawn(BYTES, Vector3(6, 0.6, -30))
@@ -870,8 +873,8 @@ func _spawn_node(packed: PackedScene, pos: Vector3) -> Node:
 
 func _street_lamp(pos: Vector3) -> void:
 	_box(pos + Vector3(0, 2.0, 0), Vector3(0.12, 4.0, 0.12), Color(0.25, 0.25, 0.28), true)
-	_emissive_box(pos + Vector3(0, 4.15, 0), Vector3(0.55, 0.25, 0.55), Color(1.0, 0.9, 0.65), Color(1.0, 0.8, 0.4), 4.0)
-	_add_room_light(pos + Vector3(0, 4.0, 0), Color(1.0, 0.85, 0.55), 7.0, 12.0)
+	_emissive_box(pos + Vector3(0, 4.15, 0), Vector3(0.55, 0.25, 0.55), Color(1.0, 0.9, 0.65), Color(1.0, 0.8, 0.4), 4.8)
+	_add_room_light(pos + Vector3(0, 4.0, 0), Color(1.0, 0.85, 0.55), 8.0, 13.5)
 
 
 func _way_sign(pos: Vector3, text: String, color: Color) -> void:
@@ -888,8 +891,8 @@ func _way_sign(pos: Vector3, text: String, color: Color) -> void:
 	var light := OmniLight3D.new()
 	light.set_script(preload("res://scripts/world/light_flicker.gd"))
 	light.light_color = color
-	light.light_energy = 0.85
-	light.omni_range = 3.5
+	light.light_energy = 1.05
+	light.omni_range = 4.0
 	light.position = pos + Vector3(0, 0.2, 0.3)
 	rooms_root.add_child(light)
 
