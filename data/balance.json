@@ -80,12 +80,12 @@
           "carga_maxima": 0.65,
           "acerto": 0.09,
           "recuperacao": 0.32,
-          "dano": 31,
-          "dano_carregado": 54,
-          "vigor": 26,
-          "alcance": 1.85,
-          "altura": 1.4,
-          "avanco": 4.8
+          "dano": 32,
+          "dano_carregado": 56,
+          "vigor": 25,
+          "alcance": 1.9,
+          "altura": 1.42,
+          "avanco": 5.0
         }
       },
       "virus": {
