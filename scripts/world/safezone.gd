@@ -16,8 +16,8 @@ func _ready() -> void:
 	_ensure_ring()
 	_light = OmniLight3D.new()
 	_light.light_color = Color(0.4, 1.0, 0.65)
-	_light.light_energy = 1.15
-	_light.omni_range = 9.0
+	_light.light_energy = 1.35
+	_light.omni_range = 10.0
 	_light.position = Vector3(0, 1.2, 0)
 	add_child(_light)
 
@@ -100,7 +100,7 @@ func _physics_process(delta: float) -> void:
 		_ring_inner.scale = _ring_inner.scale.lerp(Vector3(si, 1.0, si), clampf(3.5 * delta, 0.0, 1.0))
 	if _light:
 		var active_l := _player_inside != null and is_instance_valid(_player_inside)
-		var target_e := 2.8 if active_l else 1.0
+		var target_e := 3.2 if active_l else 1.15
 		_light.light_energy = lerpf(_light.light_energy, target_e + sin(_pulse * 4.0) * 0.15, clampf(4.0 * delta, 0.0, 1.0))
 	if _player_inside == null or not is_instance_valid(_player_inside):
 		return
