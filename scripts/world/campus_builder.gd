@@ -402,6 +402,8 @@ func _spawn_gameplay() -> void:
 	_spawn_enemy(CHATANA, Vector3(-30, 1, 2), "modular/Beach.gltf", 1.02, Color(0.5, 0.9, 0.95, 1))
 	_spawn_enemy(PORTARA, Vector3(30, 1, -2), "modular/Worker.gltf", 1.16, Color(0.75, 0.58, 0.46, 1))
 	_spawn_enemy(NET, Vector3(0, 1, -34), "modular/Swat.gltf", 1.06, Color(0.88, 0.48, 1, 1))
+	_spawn_enemy(CHATANA, Vector3(-32, 1, -16), "modular/Punk.gltf", 1.03, Color(0.55, 0.95, 1, 1))
+	_spawn_enemy(PORTARA, Vector3(32, 1, -16), "modular/King.gltf", 1.18, Color(0.72, 0.56, 0.45, 1))
 	_spawn(BYTES, Vector3(8, 0.6, 18))
 	_spawn(BYTES, Vector3(-8, 0.6, 18))
 	_spawn(BYTES, Vector3(0, 0.6, 22))
@@ -917,7 +919,7 @@ func _spawn_night_stars() -> void:
 	stars.name = "NightStars"
 	stars.set_script(preload("res://scripts/world/star_field.gd"))
 	rooms_root.add_child(stars)
-	for i in 430:
+	for i in 450:
 		var star := MeshInstance3D.new()
 		var sm := SphereMesh.new()
 		sm.radius = randf_range(0.08, 0.22)

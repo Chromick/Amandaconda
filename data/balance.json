@@ -39,10 +39,10 @@
     "turn_speed": 24.0,
     "attack_move_mult": 0.36,
     "buffer_de_acao": 0.4,
-    "combo_janela": 1.15,
+    "combo_janela": 1.2,
     "combo_max": 3,
-    "sprint_attack_dash": 18.5,
-    "sprint_stamina_drain": 2.9,
+    "sprint_attack_dash": 19.0,
+    "sprint_stamina_drain": 2.8,
 
     "arma_inicial": "teclado",
     "virus_desbloqueado": true,
@@ -57,9 +57,9 @@
     },
 
     "dano_recebido": {
-      "invencibilidade": 1.0,
-      "travado": 0.11,
-      "empurrao": 2.7
+      "invencibilidade": 1.05,
+      "travado": 0.1,
+      "empurrao": 2.85
     },
 
     "armas": {
