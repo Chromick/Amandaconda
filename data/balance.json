@@ -295,6 +295,13 @@
         "custo": 90,
         "texto": "+0.06 coyote",
         "coyote_bonus": 0.06
+      },
+      {
+        "id": "magnet_boost",
+        "nome": "magnet_boost",
+        "custo": 95,
+        "texto": "+25% magnet",
+        "magnet_mult": 1.25
       }
     ]
   },

@@ -22,6 +22,7 @@ const HINTS: PackedStringArray = [
 	"Entre na névoa · a porta fecha até o fim · 3 chefes abrem servidores",
 	"KB e pendrives puxam pra perto · turbo_sprint corta custo de corrida",
 	"coyote_extend alonga o salto · iframe_lite barateia o rolamento",
+	"magnet_boost puxa KB/pendrives mais longe · 4 slots de patch",
 	"Net marca e freia · role através · Espelho devolve o golpe",
 ]
 

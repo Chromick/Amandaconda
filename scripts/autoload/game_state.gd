@@ -183,6 +183,14 @@ func coyote_bonus() -> float:
 	return bonus
 
 
+func magnet_mult() -> float:
+	var mult := 1.0
+	for pid in active_patches:
+		var patch := _find_patch(pid)
+		mult *= float(patch.get("magnet_mult", 1.0))
+	return maxf(1.0, mult)
+
+
 func refresh_heal_slots() -> void:
 	var cura: Dictionary = Balance.data.get("cura", {})
 	var base := int(cura.get("latas", 3))

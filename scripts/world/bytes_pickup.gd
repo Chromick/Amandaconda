@@ -43,10 +43,10 @@ func _process(delta: float) -> void:
 		var to_p := player.global_position - global_position
 		to_p.y = 0.0
 		var dist := to_p.length()
-		if dist <= magnet_radius:
+		if dist <= magnet_radius * GameState.magnet_mult():
 			_magnet_on = true
 		if _magnet_on and dist > 0.05:
-			var step := minf(magnet_speed * delta * (1.0 + (magnet_radius - dist) * 0.15), dist)
+			var step := minf(magnet_speed * GameState.magnet_mult() * delta * (1.0 + (magnet_radius - dist) * 0.15), dist)
 			global_position += to_p.normalized() * step
 			global_position.y = player.global_position.y + 0.9 + sin(_spin * 6.0) * 0.04
 		else:
