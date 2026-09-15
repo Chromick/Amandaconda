@@ -461,7 +461,7 @@ func _process_move(delta: float) -> void:
 	var wants_sprint := Input.is_action_pressed("sprint") and dir.length_squared() > 0.01 and stamina > 1.0
 	var sprinting := wants_sprint
 	if sprinting and is_on_floor():
-		var drain := float(_cfg.get("sprint_stamina_drain", 7.5))
+		var drain := float(_cfg.get("sprint_stamina_drain", 7.5)) * GameState.sprint_drain_mult()
 		stamina = maxf(0.0, stamina - drain * delta)
 		stamina_changed.emit(stamina, max_stamina)
 		stamina_regen_timer = maxf(stamina_regen_timer, 0.35)

@@ -259,6 +259,13 @@
         "custo": 140,
         "texto": "+1 lata max",
         "latas_max": 1
+      },
+      {
+        "id": "turbo_sprint",
+        "nome": "turbo_sprint",
+        "custo": 110,
+        "texto": "-30% custo sprint",
+        "sprint_drain_mult": 0.7
       }
     ]
   },

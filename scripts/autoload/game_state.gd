@@ -159,6 +159,14 @@ func bonus_max_heals() -> int:
 	return bonus
 
 
+func sprint_drain_mult() -> float:
+	var mult := 1.0
+	for pid in active_patches:
+		var patch := _find_patch(pid)
+		mult *= float(patch.get("sprint_drain_mult", 1.0))
+	return maxf(0.35, mult)
+
+
 func refresh_heal_slots() -> void:
 	var cura: Dictionary = Balance.data.get("cura", {})
 	var base := int(cura.get("latas", 3))
