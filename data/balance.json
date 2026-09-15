@@ -395,22 +395,22 @@
       "vida": 240,
       "nome": "RENANLIGNO",
       "local": "Laboratório",
-      "bytes": [140, 200]
+      "bytes": [150, 210]
     },
     "balarrals": {
       "vida": 220,
       "nome": "BALARRALS",
       "local": "Pátio",
-      "bytes": [120, 180],
+      "bytes": [130, 190],
       "dano_leve": 14,
       "dano_pesado": 28,
-      "velocidade": 5.8
+      "velocidade": 5.9
     },
     "marlombolico": {
       "vida": 300,
       "nome": "MARLOMBÓLICO",
       "local": "Servidores",
-      "bytes": [180, 260],
+      "bytes": [190, 270],
       "velocidade": 3.8,
       "dano": 15,
       "intervalo": 1.5,
