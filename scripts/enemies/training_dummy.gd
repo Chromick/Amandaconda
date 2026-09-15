@@ -88,6 +88,9 @@ func _revive() -> void:
 	_set_color(Color(0.75, 0.55, 0.35))
 	_update_label()
 	health_changed.emit(health, max_health)
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.85, 0.7, 0.4), 0.8)
+		GameState.show_toast("Boneco · revida")
 
 
 func _update_label() -> void:
