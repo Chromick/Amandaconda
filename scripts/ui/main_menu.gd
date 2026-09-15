@@ -57,13 +57,20 @@ func _fill_version() -> void:
 
 
 func _on_fisico_pressed() -> void:
-	GameState.show_toast("Escola Físico · Teclado")
+	_flash_school_pick("Físico · Teclado")
 	GameState.start_run(GameState.WeaponSchool.TECLADO)
 
 
 func _on_especial_pressed() -> void:
-	GameState.show_toast("Escola Especial · Vírus")
+	_flash_school_pick("Especial · Vírus")
 	GameState.start_run(GameState.WeaponSchool.VIRUS)
+
+
+func _flash_school_pick(name: String) -> void:
+	var prompt := get_node_or_null("Center/SchoolPrompt") as Label
+	if prompt:
+		prompt.text = "Entrando · %s" % name
+		prompt.modulate = Color(0.55, 1.0, 0.75)
 
 
 func _on_quit_pressed() -> void:
