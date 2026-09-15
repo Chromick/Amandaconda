@@ -19,8 +19,8 @@
 
     "max_health": 100,
     "max_stamina": 100,
-    "stamina_regen": 44,
-    "stamina_regen_delay": 0.62,
+    "stamina_regen": 48,
+    "stamina_regen_delay": 0.55,
 
     "walk_speed": 5.3,
     "run_speed": 8.8,
