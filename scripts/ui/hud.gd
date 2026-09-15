@@ -246,6 +246,10 @@ func flash_mark() -> void:
 	_pulse_screen(Color(0.7, 0.25, 0.95, 0.3), 0.35)
 
 
+func pulse_combo_finisher() -> void:
+	_pulse_screen(Color(1.0, 0.85, 0.35, 0.22), 0.24)
+
+
 func _pulse_screen(color: Color, duration: float) -> void:
 	if _flash == null:
 		return
