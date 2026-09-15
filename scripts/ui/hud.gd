@@ -111,11 +111,11 @@ func _process(delta: float) -> void:
 		if _meta_flash <= 0.0:
 			meta_label.modulate = Color.WHITE
 	# Vida crítica: pulso vermelho na barra + vinheta
-	if health_bar and _heal_pulse <= 0.0 and _real_max > 0.0 and _real_hp / _real_max < 0.3 and _real_hp > 0.0:
+	if health_bar and _heal_pulse <= 0.0 and _real_max > 0.0 and _real_hp / _real_max < 0.35 and _real_hp > 0.0:
 		var pulse := 0.55 + 0.45 * sin(Time.get_ticks_msec() * 0.008)
 		health_bar.modulate = Color(1.0, pulse * 0.45, pulse * 0.4)
 		if _vignette:
-			var ratio := clampf(1.0 - (_real_hp / (_real_max * 0.3)), 0.0, 1.0)
+			var ratio := clampf(1.0 - (_real_hp / (_real_max * 0.35)), 0.0, 1.0)
 			_vignette.color = Color(0.55, 0.05, 0.08, 1.0)
 			_vignette.color.a = (0.16 + 0.24 * pulse) * (0.55 + 0.45 * ratio)
 	elif _player and is_instance_valid(_player) and _player.has_method("is_marked") and _player.is_marked():

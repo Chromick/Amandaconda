@@ -613,6 +613,10 @@ func _dress_entry(root: Node3D) -> void:
 	_emissive_box(Vector3(6, 0.04, -14), Vector3(0.85, 0.03, 0.38), Color(0.08, 0.12, 0.1), Color(0.4, 1.0, 0.55), 0.55)
 	_emissive_box(Vector3(0, 0.05, -28), Vector3(1.6, 0.03, 0.55), Color(0.16, 0.04, 0.08), Color(1.0, 0.2, 0.3), 1.2)
 	_street_lamp(Vector3(0, 0, -30))
+	_street_lamp(Vector3(-4, 0, -32))
+	_street_lamp(Vector3(4, 0, -32))
+	_street_lamp(Vector3(-8, 0, -30))
+	_street_lamp(Vector3(8, 0, -30))
 
 
 func _dress_bandejao(root: Node3D) -> void:
