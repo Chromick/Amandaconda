@@ -22,10 +22,10 @@
     "stamina_regen": 100,
     "stamina_regen_delay": 0.16,
 
-    "walk_speed": 7.0,
-    "run_speed": 11.5,
-    "ground_accel": 36.0,
-    "ground_friction": 42.0,
+    "walk_speed": 7.15,
+    "run_speed": 11.8,
+    "ground_accel": 38.0,
+    "ground_friction": 44.0,
     "air_accel": 21.5,
     "air_friction": 7.0,
 
@@ -185,7 +185,7 @@
     "alcance": 1.5,
     "altura": 1.6,
     "renascer_em": 4.0,
-    "bytes": [80, 112]
+    "bytes": [85, 118]
   },
 
   "net": {
@@ -406,18 +406,18 @@
       "fase2_vida": 0.5
     },
     "renanligno": {
-      "vida": 270,
+      "vida": 280,
       "nome": "RENANLIGNO",
       "local": "Laboratório",
-      "bytes": [165, 230],
-      "velocidade": 4.5,
-      "intervalo": 1.5,
-      "telegraph": 0.46,
-      "delay_hit": 0.24,
-      "acerto": 0.1,
-      "recuperacao": 0.44,
-      "dano": 21,
-      "alcance": 1.95
+      "bytes": [170, 240],
+      "velocidade": 4.55,
+      "intervalo": 1.45,
+      "telegraph": 0.44,
+      "delay_hit": 0.23,
+      "acerto": 0.095,
+      "recuperacao": 0.42,
+      "dano": 22,
+      "alcance": 2.0
     },
     "balarrals": {
       "vida": 250,
