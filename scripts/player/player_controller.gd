@@ -277,7 +277,7 @@ func _spawn_land_dust() -> void:
 	if host == null:
 		return
 	var impact := clampf(absf(_air_vy) / 14.0, 0.55, 1.6)
-	var count := 9 if impact < 1.1 else 14
+	var count := 11 if impact < 1.1 else 16
 	for i in count:
 		var p := MeshInstance3D.new()
 		var sm := SphereMesh.new()

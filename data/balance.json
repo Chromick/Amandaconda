@@ -93,13 +93,13 @@
           "preparacao": 0.09,
           "acerto": 0.055,
           "recuperacao": 0.18,
-          "dano": 20,
-          "vigor": 5,
+          "dano": 21,
+          "vigor": 4,
           "avanco": 0,
-          "velocidade": 18.5,
-          "tempo_de_vida": 1.85,
-          "raio": 0.44,
-          "quique": 0.72
+          "velocidade": 19.0,
+          "tempo_de_vida": 1.9,
+          "raio": 0.46,
+          "quique": 0.74
         },
         "ataque_pesado": {
           "preparacao": 0.26,
@@ -420,18 +420,18 @@
       "fase2_vida": 0.48
     },
     "renanligno": {
-      "vida": 320,
+      "vida": 330,
       "nome": "RENANLIGNO",
       "local": "Laboratório",
-      "bytes": [190, 270],
-      "velocidade": 4.95,
-      "intervalo": 1.25,
-      "telegraph": 0.38,
-      "delay_hit": 0.2,
-      "acerto": 0.08,
-      "recuperacao": 0.36,
-      "dano": 25,
-      "alcance": 2.15
+      "bytes": [200, 280],
+      "velocidade": 5.05,
+      "intervalo": 1.2,
+      "telegraph": 0.36,
+      "delay_hit": 0.19,
+      "acerto": 0.075,
+      "recuperacao": 0.34,
+      "dano": 26,
+      "alcance": 2.2
     },
     "balarrals": {
       "vida": 290,
