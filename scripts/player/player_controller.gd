@@ -496,7 +496,13 @@ func _process_move(delta: float) -> void:
 				_sync_virus_charge_telegraph(t)
 			else:
 				_sync_charge_telegraph(t)
+			if t >= 0.95 and not has_meta("_charge_ready_fx"):
+				set_meta("_charge_ready_fx", true)
+				HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(1.0, 0.55, 0.25), 0.55)
+				HitFeel.shake(0.06)
 		else:
+			if has_meta("_charge_ready_fx"):
+				remove_meta("_charge_ready_fx")
 			heavy_charging = false
 			_sync_atk_telegraph(false, false)
 			_clear_virus_charge_telegraph()
