@@ -418,6 +418,7 @@ func _dress_bandejao(root: Node3D) -> void:
 		fan.set_script(preload("res://scripts/world/spin_y.gd"))
 	_emissive_box(center + Vector3(-1.5, 0.05, 2.0), Vector3(1.2, 0.05, 1.0), Color(0.45, 0.22, 0.08), Color(1.0, 0.4, 0.1), 1.8)
 	_emissive_box(center + Vector3(2.2, 0.05, -1.5), Vector3(0.9, 0.05, 0.8), Color(0.4, 0.2, 0.08), Color(0.95, 0.35, 0.08), 1.4)
+	_emissive_box(center + Vector3(0, 0.05, -3.5), Vector3(1.1, 0.05, 0.9), Color(0.42, 0.2, 0.08), Color(1.0, 0.38, 0.1), 1.5)
 	_add_room_light(center + Vector3(0, 2.2, 2.5), Color(1.0, 0.5, 0.2), 5.5, 9.0)
 
 
