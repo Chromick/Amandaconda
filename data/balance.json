@@ -39,9 +39,9 @@
     "buffer_de_acao": 0.16,
     "turn_speed": 11.0,
     "attack_move_mult": 0.1,
-    "combo_janela": 0.55,
+    "combo_janela": 0.58,
     "combo_max": 3,
-    "sprint_attack_dash": 11.0,
+    "sprint_attack_dash": 11.5,
     "sprint_stamina_drain": 7.0,
 
     "arma_inicial": "teclado",
