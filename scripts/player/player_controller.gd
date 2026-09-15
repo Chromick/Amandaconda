@@ -575,6 +575,11 @@ func _try_sprint_attack(dir: Vector3) -> void:
 	if not _is_ranged():
 		_update_attack_shape(float(_heavy.get("alcance", 1.6)), float(_heavy.get("altura", 1.3)))
 	_set_mesh_color(Color(1.0, 0.4, 0.2))
+	GameState.show_toast("Investida!")
+	for cam in get_tree().get_nodes_in_group("player_camera"):
+		if cam and cam.has_method("punch_fov"):
+			cam.punch_fov(3.5)
+			break
 	_pulse_weapon(Color(1.0, 0.35, 0.15))
 	for cam in get_tree().get_nodes_in_group("player_camera"):
 		if cam and cam.has_method("punch_fov"):
