@@ -42,7 +42,7 @@
     "combo_janela": 0.55,
     "combo_max": 3,
     "sprint_attack_dash": 11.0,
-    "sprint_stamina_drain": 7.5,
+    "sprint_stamina_drain": 7.0,
 
     "arma_inicial": "teclado",
     "virus_desbloqueado": true,
