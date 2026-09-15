@@ -16,8 +16,8 @@ func _ready() -> void:
 	_ensure_ring()
 	_light = OmniLight3D.new()
 	_light.light_color = Color(0.4, 1.0, 0.65)
-	_light.light_energy = 0.85
-	_light.omni_range = 7.5
+	_light.light_energy = 1.0
+	_light.omni_range = 8.5
 	_light.position = Vector3(0, 1.2, 0)
 	add_child(_light)
 
