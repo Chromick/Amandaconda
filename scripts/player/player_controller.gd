@@ -436,7 +436,14 @@ func _process_move(delta: float) -> void:
 				break
 
 	var dir := _input_dir()
-	var sprinting := Input.is_action_pressed("sprint") and dir.length_squared() > 0.01
+	var wants_sprint := Input.is_action_pressed("sprint") and dir.length_squared() > 0.01 and stamina > 1.0
+	var sprinting := wants_sprint
+	if sprinting and is_on_floor():
+		var drain := float(_cfg.get("sprint_stamina_drain", 7.5))
+		stamina = maxf(0.0, stamina - drain * delta)
+		stamina_changed.emit(stamina, max_stamina)
+		if stamina <= 0.5:
+			sprinting = false
 	_was_sprinting = sprinting
 	var target_speed := float(_cfg.get("run_speed", 8.8) if sprinting else _cfg.get("walk_speed", 5.3))
 	target_speed *= speed_mult
