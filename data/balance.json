@@ -65,14 +65,14 @@
     "armas": {
       "teclado": {
         "ataque_leve": {
-          "preparacao": 0.075,
-          "acerto": 0.055,
-          "recuperacao": 0.15,
-          "dano": 18,
-          "vigor": 9,
-          "alcance": 1.62,
-          "altura": 1.16,
-          "avanco": 3.25,
+          "preparacao": 0.07,
+          "acerto": 0.05,
+          "recuperacao": 0.14,
+          "dano": 19,
+          "vigor": 8,
+          "alcance": 1.65,
+          "altura": 1.18,
+          "avanco": 3.35,
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
@@ -93,13 +93,13 @@
           "preparacao": 0.09,
           "acerto": 0.055,
           "recuperacao": 0.18,
-          "dano": 15,
-          "vigor": 7,
+          "dano": 16,
+          "vigor": 6,
           "avanco": 0,
-          "velocidade": 16.0,
-          "tempo_de_vida": 1.6,
-          "raio": 0.35,
-          "quique": 0.6
+          "velocidade": 16.5,
+          "tempo_de_vida": 1.65,
+          "raio": 0.36,
+          "quique": 0.62
         },
         "ataque_pesado": {
           "preparacao": 0.28,
