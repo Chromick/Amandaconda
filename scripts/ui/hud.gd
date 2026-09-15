@@ -15,7 +15,7 @@ extends Control
 
 const HINTS: PackedStringArray = [
 	"WASD move · mouse olha · Ctrl/C rola · Shift corre (gasta vigor) · LMB ataca",
-	"Q ou MMB trava alvo · R bebe lata · F habilidade · T na safe",
+	"Q ou MMB trava alvo · R bebe lata · F habilidade · T na safe · E patches",
 	"Segure RMB/pesado pra carregar · Shift+LMB = investida (+dano) · LMB×3 = combo",
 	"Escola (Teclado/Vírus) no menu · patches no servidor de backup [E]",
 	"Safezone restaura latas · chefs ficam nas salas · siga as placas",
