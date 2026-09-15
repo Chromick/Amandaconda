@@ -483,6 +483,8 @@ func _process_move(delta: float) -> void:
 	var target_speed := float(_cfg.get("run_speed", 8.8) if sprinting else _cfg.get("walk_speed", 5.3))
 	target_speed *= speed_mult
 	var accel := float(_cfg.get("ground_accel", 22.0) if is_on_floor() else _cfg.get("air_accel", 14.0))
+	if not is_on_floor():
+		accel += GameState.air_accel_bonus()
 	var friction := float(_cfg.get("ground_friction", 28.0) if is_on_floor() else _cfg.get("air_friction", 4.0))
 
 	if is_on_floor() and dir.length_squared() > 0.01 and _land_dust_cd <= 0.0:

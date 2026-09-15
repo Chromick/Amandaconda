@@ -24,10 +24,10 @@
 
     "walk_speed": 6.35,
     "run_speed": 10.4,
-    "ground_accel": 30.0,
-    "ground_friction": 36.0,
-    "air_accel": 18.5,
-    "air_friction": 5.5,
+    "ground_accel": 32.0,
+    "ground_friction": 38.0,
+    "air_accel": 19.5,
+    "air_friction": 6.0,
 
     "gravity": 23.5,
     "max_fall_speed": 32.0,
@@ -372,6 +372,13 @@
         "custo": 110,
         "texto": "+8 cura lata",
         "cura_bonus": 8
+      },
+      {
+        "id": "air_grip",
+        "nome": "air_grip",
+        "custo": 92,
+        "texto": "+air control",
+        "air_accel_bonus": 4.0
       }
     ]
   },

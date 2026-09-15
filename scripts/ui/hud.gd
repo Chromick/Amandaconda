@@ -25,6 +25,7 @@ const HINTS: PackedStringArray = [
 	"magnet_boost puxa KB/pendrives mais longe · 8 slots de patch",
 	"turn_snap deixa o giro mais ágil · bom pra kiting",
 	"heal_burst +8 cura por lata · 8 slots de patch",
+	"air_grip melhora controle no ar · ótimo pra kiting",
 	"jump_buffer_plus perdoa timing do pulo · coyote_extend também",
 	"impact_frame +12% dano · macro_combo ainda mais forte",
 	"stamina_siphon +25 vigor · hotfix_vigor ainda ajuda",

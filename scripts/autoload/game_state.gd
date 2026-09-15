@@ -215,6 +215,14 @@ func heal_amount_bonus() -> float:
 	return bonus
 
 
+func air_accel_bonus() -> float:
+	var bonus := 0.0
+	for pid in active_patches:
+		var patch := _find_patch(pid)
+		bonus += float(patch.get("air_accel_bonus", 0.0))
+	return bonus
+
+
 func refresh_heal_slots() -> void:
 	var cura: Dictionary = Balance.data.get("cura", {})
 	var base := int(cura.get("latas", 3))
