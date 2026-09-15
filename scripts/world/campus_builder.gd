@@ -552,9 +552,16 @@ func _dress_porta(root: Node3D) -> void:
 	_prop(root, "trashcan.glb", center + Vector3(4.5, 0, 3.5), 20.0)
 	_prop(root, "pottedPlant.glb", center + Vector3(-4.5, 0, 2.5), 35.0)
 	_prop(root, "loungeSofa.glb", center + Vector3(0, 0, 3.5), 180.0)
+	_prop(root, "pottedPlant.glb", center + Vector3(4.5, 0, 2.0), -40.0)
+	_prop(root, "trashcan.glb", center + Vector3(-4.5, 0, -2.5), 5.0)
 	_emissive_box(center + Vector3(0, 0.08, 1.0), Vector3(2.0, 0.06, 2.0), Color(0.15, 0.08, 0.1), Color(0.9, 0.25, 0.4), 1.8)
+	_emissive_box(center + Vector3(0, 0.06, -2.0), Vector3(1.4, 0.05, 1.2), Color(0.12, 0.06, 0.08), Color(0.85, 0.2, 0.35), 1.5)
 	_add_room_light(center + Vector3(-2, 2.5, 0), Color(0.25, 0.7, 0.4), 5.0, 10.0)
 	_add_room_light(center + Vector3(2, 2.5, 0), Color(1.0, 0.3, 0.45), 5.5, 10.0)
+	_add_room_light(center + Vector3(0, 2.8, -2), Color(0.9, 0.25, 0.4), 4.0, 8.0)
+	var fan := _prop(root, "ceilingFan.glb", center + Vector3(0, 3.1, 0), 0.0)
+	if fan:
+		fan.set_script(preload("res://scripts/world/spin_y.gd"))
 
 
 func _car(pos: Vector3, color: Color, rot_y: float) -> void:
