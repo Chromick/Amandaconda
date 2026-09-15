@@ -36,6 +36,6 @@ func _process(delta: float) -> void:
 		n.position.y += sin(t * sp + ph) * delta * 0.25
 		n.position.x += cos(t * sp * 0.7 + ph) * delta * 0.12
 		# Mantém um pouco de poeira perto do jogador.
-		if player and is_instance_valid(player) and randf() < 0.002:
+		if player and is_instance_valid(player) and randf() < 0.0004:
 			var around := player.global_position + Vector3(randf_range(-8.0, 8.0), randf_range(1.0, 4.0), randf_range(-8.0, 8.0))
 			n.global_position = around
