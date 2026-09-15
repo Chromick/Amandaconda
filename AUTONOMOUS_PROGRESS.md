@@ -150,3 +150,23 @@ Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil,
 
 ### Próxima tarefa
 - Continuar: heal popup verde / streak de bytes pickup feedback
+
+## 2026-09-15 01:57 BRT
+
+### Alteração
+- Cura de lata: popup verde + spark (safezone drip sem spam).
+- Bytes pickup: spin/bob, toast \+N KB\, spark dourado.
+
+### Arquivos modificados
+- scripts/player/player_controller.gd
+- scripts/world/bytes_pickup.gd
+- AUTONOMOUS_PROGRESS.md
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- (nenhum)
+
+### Próxima tarefa
+- Continuar no loop (pendrive pickup / patch shop UX)

@@ -714,6 +714,13 @@ func heal(amount: float) -> void:
 	health = minf(max_health, health + amount)
 	if health != before:
 		health_changed.emit(health, max_health)
+		# Só popup em cura “de lata” (>=1); safezone drip é fracionária.
+		if amount >= 1.0:
+			var pop := POPUP_SCENE.instantiate()
+			pop.amount = health - before
+			pop.color = Color(0.45, 1.0, 0.55)
+			SceneUtil.add_to_world(pop, self, global_position + Vector3(0, 1.8, 0))
+			HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.4, 1.0, 0.5), 0.7)
 
 
 func apply_mark(duration: float, mult: float) -> void:
