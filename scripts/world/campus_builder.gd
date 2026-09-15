@@ -667,9 +667,10 @@ func _make_safezone(pos: Vector3, size: Vector3) -> void:
 	area.add_child(mesh)
 	var lab := Label3D.new()
 	lab.text = "SAFEZONE · ENTRADA"
-	lab.font_size = 64
-	lab.outline_size = 10
+	lab.font_size = 68
+	lab.outline_size = 12
 	lab.outline_modulate = Color(0, 0, 0, 0.85)
+	lab.modulate = Color(0.55, 1.0, 0.7)
 	lab.position = Vector3(0, 1.2, 0)
 	area.add_child(lab)
 	rooms_root.add_child(area)
