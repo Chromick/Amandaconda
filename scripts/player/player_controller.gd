@@ -741,11 +741,15 @@ func _process_attack(delta: float) -> void:
 				_combo_window = float(_cfg.get("combo_janela", 0.45))
 				state = State.MOVE
 				if _combo_step >= 1:
-					GameState.show_toast("Combo %d!" % (_combo_step + 1))
-					HitFeel.spark_at(global_position + Vector3.UP * 1.1 + facing * 0.6, Color(1.0, 0.85, 0.4), 0.7)
+					var max_c := int(_cfg.get("combo_max", 3))
+					var finisher := _combo_step + 1 >= max_c
+					GameState.show_toast("Combo %d%s" % [_combo_step + 1, "!" if finisher else ""])
+					HitFeel.spark_at(global_position + Vector3.UP * 1.1 + facing * 0.6, Color(1.0, 0.85, 0.4), 0.7 if not finisher else 1.15)
+					if finisher and typeof(HitFeel) != TYPE_NIL:
+						HitFeel.shake(0.12)
 					for cam in get_tree().get_nodes_in_group("player_camera"):
 						if cam and cam.has_method("punch_fov"):
-							cam.punch_fov(2.5)
+							cam.punch_fov(4.0 if finisher else 2.5)
 							break
 				_try_light()
 			else:

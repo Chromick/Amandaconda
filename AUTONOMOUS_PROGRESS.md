@@ -1,24 +1,24 @@
 # AUTONOMOUS_PROGRESS
 
-Registro de desenvolvimento autÃ´nomo do runtime **Godot 4.7**  
-Repo: [Chromick/Amandaconda](https://github.com/Chromick/Amandaconda) Â· branch `godot-4`  
+Registro de desenvolvimento autônomo do runtime **Godot 4.7**  
+Repo: [Chromick/Amandaconda](https://github.com/Chromick/Amandaconda) · branch `godot-4`  
 Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
-## 2026-09-15 ~08:10 BRT
+## 2026-09-15 ~continuação loop
 
 ### Alteração
-- v0.4.5+: hard landing; ability ready flash; Net trail; arena juice; charged heavy FOV; patch shop spark; KB pickups; pendrive light; hack flash.
+- v0.5.1: hit-flash longer; denser roll ghosts; light-hit sparks; damage popup scale; hard-landing dust; gate progress pulse; Net/Chatana/Portara enrage bite.
 
 ### Testes
-- Hub headless EXIT 0 (vários ciclos)
+- Hub headless EXIT 0 (cada ciclo)
 
 ### Problemas encontrados
 - Joãosias AGUARDANDO DECISÃO
 
 ### Próxima tarefa
-- Continuar
+- Continuar até o usuário parar
 
 ---
 ## 2026-09-15 ~07:45 BRT

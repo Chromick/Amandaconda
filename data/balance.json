@@ -40,7 +40,7 @@
     "turn_speed": 10.0,
     "attack_move_mult": 0.08,
     "combo_janela": 0.45,
-    "combo_max": 2,
+    "combo_max": 3,
     "sprint_attack_dash": 10.5,
     "sprint_stamina_drain": 7.5,
 
