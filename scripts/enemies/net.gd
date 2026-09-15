@@ -102,6 +102,11 @@ func _update_beam_telegraph(active: bool, flash: bool) -> void:
 	AttackTelegraphScript.set_active(_beam, active, flash)
 	if not active:
 		return
+	var mat := _beam.material_override as StandardMaterial3D
+	if mat and _enraged:
+		mat.albedo_color = Color(1.0, 0.2, 0.95, 0.55 if flash else 0.4)
+		mat.emission = Color(1.0, 0.15, 0.9)
+		mat.emission_energy_multiplier = 3.2 if flash else 2.2
 	var player := _get_player()
 	if player:
 		_aim_dir = player.global_position + Vector3.UP * 1.0 - (global_position + Vector3.UP * 1.4)
