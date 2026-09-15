@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src import config  # noqa: E402
 from src.game import Game  # noqa: E402
 from src.scenes.intro import IntroScene  # noqa: E402
+from src.scenes.loadout import LoadoutScene  # noqa: E402
 from src.scenes.menu import MenuScene  # noqa: E402
 from src.scenes.options import OptionsScene  # noqa: E402
 from src.scenes.play import PlayScene  # noqa: E402
@@ -46,7 +47,8 @@ def main() -> int:
     exercise(game, MenuScene(game), "menu")
     # Tempo suficiente para a abertura rolar inteira e passar sozinha para o jogo.
     exercise(game, IntroScene(game), "intro", seconds=90.0)
-    exercise(game, PlayScene(game), "play")
+    exercise(game, LoadoutScene(game), "loadout", seconds=1.0)
+    exercise(game, PlayScene(game, escola="teclado"), "play")
 
     game.push_scene(OptionsScene(game))
     game._flush_scene_changes()

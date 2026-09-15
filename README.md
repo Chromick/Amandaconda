@@ -1,11 +1,12 @@
 # AMANDACONDA
 
-Soulslike reduzido: uma faculdade à noite, quatro minichefes, e ela na porta.
+Action soulslike 3D (Unreal): campus semiaberto estilo Elden Ring — exploração, chefes-base
+quando você aguentar, finais liberados depois — e ela na porta.
 
-> Você atravessa a faculdade apanhando, morre dezenas de vezes, derruba os quatro, e chega na
-> saída. A Amandaconda está encostada na porta, fumando, com um café na mão. Esperando.
+> Você anda pela faculdade à noite. Os três chefes-base estão no mapa. Pode ir cedo.
+> Vai doer. Mata eles, libera o Marlon, depois a saída.
 >
-> Tudo que você acabou de passar, pra ela, foi o tempo de um cigarro.
+> A Amandaconda está encostada na porta, fumando, com um café na mão. Esperando.
 
 Este projeto é uma homenagem a um grupo de amigos. Os quatro minichefes são eles, virados em
 versões monstruosas da própria personalidade. A Amandaconda é a quinta, e é a única que não é
@@ -41,7 +42,8 @@ marca à distância.
 
 ## Estado do projeto
 
-Conceito e arte fechados. Fase 1 em andamento — semana 1: motor, movimento e colisão.
+Conceito v4 (Dead Cells + Mega Man) no [GDD](docs/GDD.md). Fase 1: sala de risco jogável —
+inimigos comuns, pendrives, safezone, teclado e bola de vírus.
 
 ## Como rodar
 
@@ -80,6 +82,13 @@ ajustar com `F5` no meio da rolagem.
 | `A` `D` ou setas | Andar |
 | `Shift` | Correr |
 | `Espaço` | Pular (soltar cedo encurta o pulo) |
+| `J` | Ataque leve (teclado ou vírus) |
+| `L` | Ataque pesado (segurar carrega) |
+| `K` / `Ctrl` | Rolamento |
+| `R` | Mostrar caixas de acerto |
+
+Depois da abertura você escolhe **Físico (teclado)** ou **Especial (poder)**. Pendrives no
+chão abrem a escolha Físico (+vida) vs Especial (+dano).
 | `Esc` | Voltar ao menu |
 
 **Sempre**
@@ -118,6 +127,7 @@ lado antes de decidir qual vai para [docs/NUMEROS.md](docs/NUMEROS.md).
 
 - [Documento de Design](docs/GDD.md) — independente de engine: combate, chefes, mapa, final
 - [Especificação de arte](docs/ARTE.md) — tamanhos, paleta, quadros e o que desenhar primeiro
+- [PixelLab](docs/PIXELLAB.md) — prompts, MCP no Cursor e como importar sprites
 - [Fase 1 — Pygame](docs/ROADMAP-pygame.md) — plano de 8 semanas
 - [Fase 2 — Unreal](docs/ROADMAP-unreal.md) — plano de 8 semanas
 - [Tabela de ajuste](docs/NUMEROS.md) — os números que atravessam as duas fases

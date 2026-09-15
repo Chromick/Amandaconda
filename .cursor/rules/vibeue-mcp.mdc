@@ -1,0 +1,15 @@
+---
+description: Follow VibeUE / UE 5.8 MCP operating guide for Unreal Editor work
+alwaysApply: true
+---
+
+# Unreal MCP + VibeUE
+
+When working with Unreal Editor, MCP, VibeUE, Blueprints, materials, PCG, or PIE:
+
+1. Read and follow **`AGENTS.md`** and **`CLAUDE.md`** at the project root (same guide; also at `D:\AmandacondaUE\`).
+2. Prefer native MCP meta-tools: `list_toolsets` → `describe_toolset` → `call_tool`.
+3. Load domain skills before first action in that domain (skills-first protocol).
+4. Use `execute_python_code` only when no typed tool covers the job; defer world-lifecycle/import ops to post-tick.
+5. Programmatic verify yourself; **visual** viewport judgments go to the user (never self-certify from screenshots alone).
+6. Game Unreal project path: `D:\AmandacondaUE`. Endpoint: `http://127.0.0.1:8000/mcp`.

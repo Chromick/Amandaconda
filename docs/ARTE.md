@@ -18,6 +18,19 @@ está escrito aqui explica **por quê**.
 
 Nenhuma das três dá erro ao rodar. Por isso existe o validador, no fim deste documento.
 
+## Enquanto o sprite não chega
+
+O jogo desenha **silhuetas** em `src/visual.py` (jogador com teclado/vírus, Chatana,
+Portara, pendrive, fundo do corredor). Elas somem sozinhas quando existir um PNG válido em
+`assets/sprites/...` — o `Animator` tem prioridade.
+
+Prioridade de arte de verdade (PixelLab ou Aseprite), nesta ordem:
+
+1. Jogador: `parado` + `andando` (já troca o personagem na tela o tempo todo)
+2. Chatana e Portara (aparecem em toda sala de risco)
+3. Ataques do jogador / vírus
+4. Chefes
+
 ## Você não precisa saber desenhar
 
 Existem duas rotas. As duas terminam no mesmo lugar, porque o validador e o ajustador não se

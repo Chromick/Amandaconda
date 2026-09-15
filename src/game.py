@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pygame
 
-from . import config, display, sprites, ui
+from . import config, display, fonts, sprites, ui
 from .balance import Balance
 from .input import Input
 from .scene import Scene
@@ -31,9 +31,10 @@ class Game:
 
         sprites.carregar()
 
-        self.font_small = pygame.font.Font(None, 15)
-        self.font_medium = pygame.font.Font(None, 22)
-        self.font_title = pygame.font.Font(None, 52)
+        self.fonts = fonts.carregar()
+        self.font_small = self.fonts.small
+        self.font_medium = self.fonts.medium
+        self.font_title = self.fonts.title
 
         self.show_debug = bool(self.settings["show_debug"])
         self.running = True

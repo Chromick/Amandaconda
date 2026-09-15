@@ -85,6 +85,19 @@ Repetir este bloco para LuanEvil, Renanligno, Balarrals, Marlombólico e Amandac
 | Distância de alcance | — | — | |
 | Tempo mínimo entre ataques | — | — | s |
 
+## Bytes / KB
+
+| Valor | Pygame | Unreal | Observação |
+|---|---|---|---|
+| Drop Chatana | 24–40 | — | `balance.bytes.chatana` |
+| Drop Portara | 48–72 | — | |
+| Drop Net | 32–56 | — | |
+| Slots de Patch | 3 | — | playthrough |
+| Custo Patch comum | — | — | preencher ao criar catálogo |
+| Custo Driver | — | — | meta permanente |
+
+HUD mostra `N KB` (ou `N.N MB` se ≥ 1024).
+
 ## Como preencher
 
 Preencha a coluna Pygame durante a fase 1, ajustando até a luta parecer justa. Só depois de

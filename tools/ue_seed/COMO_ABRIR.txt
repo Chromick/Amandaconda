@@ -1,0 +1,20 @@
+AMANDACONDA — projeto Unreal (pasta REAL no D:, sem OneDrive)
+
+Abrir sempre:
+  D:\AmandacondaUE\Amandaconda.uproject
+
+Já vem com:
+  - Config leve (DX11, sem Lumen/Nanite/RT, qualidade baixa, FPS 30)
+  - Python Marco 2: ataque + vigor + rolamento + dummy que rebate
+  - init_unreal.py no boot do Editor
+
+Play (Alt+P):
+  LMB / Face X  — ataque (16 vigor)
+  Ctrl ou C / B — roll com i-frames (25 vigor)
+  Dummy amarelo = windup; verde no player = i-frame
+
+Se aviso ao salvar (Bootstrap transient):
+  Output Log →  py fix_save_warning.py  → Ctrl+S
+
+NÃO coloque o projeto de volta no OneDrive.
+DDC / Intermediate ficam em D:\AmandacondaUE (disco local).

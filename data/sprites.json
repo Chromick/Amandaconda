@@ -20,15 +20,26 @@
       "rolando": { "quadros": 4, "duracao": 0.08 },
       "ataque_leve": { "quadros": 3, "duracao": 0.08 },
       "ataque_pesado": { "quadros": 4, "duracao": 0.1 },
+      "lancar": { "quadros": 4, "duracao": 0.08, "nota": "escola Especial — bola virus" },
       "dano": { "quadros": 1, "duracao": 0.2 },
       "curando": { "quadros": 2, "duracao": 0.3 },
       "morte": { "quadros": 2, "duracao": 0.4 }
     }
   },
 
+  "pendrive": {
+    "canvas": [16, 16],
+    "hitbox": [14, 10],
+    "nota": "USB ambár com LED. Base do canvas = chao.",
+    "animacoes": {
+      "parado": { "quadros": 2, "duracao": 0.35 }
+    }
+  },
+
   "chatana": {
     "canvas": [32, 32],
     "hitbox": [16, 16],
+    "nota": "Webcam/caixa feminina. Oculos, cilios, cabelo preto com franja. Ri alto.",
     "animacoes": {
       "parado": { "quadros": 2, "duracao": 0.25 },
       "ataque": { "quadros": 2, "duracao": 0.12 },
@@ -39,6 +50,7 @@
   "portara": {
     "canvas": [48, 56],
     "hitbox": [28, 48],
+    "nota": "Porta andando feminina. Cabelo preto ondulado longo + maca mordida (Apple).",
     "animacoes": {
       "parado": { "quadros": 2, "duracao": 0.6 },
       "andando": { "quadros": 4, "duracao": 0.2 },
@@ -50,6 +62,7 @@
   "net": {
     "canvas": [32, 48],
     "hitbox": [14, 36],
+    "nota": "Antena parabolica feminina com cabelo ruivo longo/ondulado.",
     "animacoes": {
       "parado": { "quadros": 2, "duracao": 0.4 },
       "ataque": { "quadros": 3, "duracao": 0.12 },
@@ -60,12 +73,13 @@
   "luanevil": {
     "canvas": [96, 64],
     "hitbox": [34, 46],
-    "nota": "Corpo largo. O headphone no pescoco aparece em todos os quadros.",
+    "nota": "Corpo largo. Fase 1: headphone no pescoco. Fase 2 (meia vida): no ouvido apos fase2_fone.",
     "animacoes": {
       "parado": { "quadros": 2, "duracao": 0.5 },
       "andando": { "quadros": 4, "duracao": 0.16 },
       "investida": { "quadros": 4, "duracao": 0.1 },
       "pisada": { "quadros": 4, "duracao": 0.12, "nota": "espalha o caramelo" },
+      "fase2_fone": { "quadros": 3, "duracao": 0.35, "nota": "transicao pescoco -> orelha" },
       "cambaleando": { "quadros": 2, "duracao": 0.25 },
       "dano": { "quadros": 1, "duracao": 0.2 },
       "morte": { "quadros": 2, "duracao": 0.5 }
@@ -91,7 +105,10 @@
     "canvas": [64, 48],
     "hitbox": [18, 40],
     "espelha": "player",
-    "nota": "Usa o seu moveset. Redesenhar do zero seria desperdicio: copie a folha do jogador, troque a rampa de cor pela do Balarrals e inverta a arma de mao. E o chefe mais barato do jogo, de proposito."
+    "nota": "Idle proprio (prata). Moveset = recolor das folhas do jogador + arma invertida.",
+    "animacoes": {
+      "parado": { "quadros": 2, "duracao": 0.5 }
+    }
   },
 
   "marlombolico": {

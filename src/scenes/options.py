@@ -140,7 +140,11 @@ class OptionsScene(Scene):
 
         cx = config.INTERNAL_WIDTH // 2
         ui.draw_text(
-            surface, self.game.font_medium, "CONFIGURACOES", (cx, 34),
+            surface, self.game.font_small, "SISTEMA · PREFS", (cx, 22),
+            config.COLOR_UI_TEXT_DIM, align="center",
+        )
+        ui.draw_text(
+            surface, self.game.font_medium, "CONFIGURACOES", (cx, 38),
             config.COLOR_ACCENT, align="center",
         )
 

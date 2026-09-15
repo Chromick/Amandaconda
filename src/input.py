@@ -20,6 +20,7 @@ BINDINGS: dict[str, tuple[int, ...]] = {
     "attack": (pygame.K_j,),
     "heavy": (pygame.K_l,),
     "heal": (pygame.K_r,),
+    "switch_weapon": (pygame.K_q, pygame.K_TAB),
     "confirm": (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE),
     "back": (pygame.K_ESCAPE, pygame.K_BACKSPACE),
     "pause": (pygame.K_ESCAPE, pygame.K_p),

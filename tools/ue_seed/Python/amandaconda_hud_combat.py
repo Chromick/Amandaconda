@@ -51,13 +51,11 @@ DUMMY_PREP = 0.55
 DUMMY_RECUP = 0.6
 BYTES_POR_KILL = 32
 
-ATTACK_SEQ = "/Game/Characters/Mannequins/Anims/Unarmed/Attack/MM_Attack_01"
-ATTACK_SEQ_2 = "/Game/Characters/Mannequins/Anims/Unarmed/Attack/MM_Attack_02"
-# Pesado: montage do Variant_Combat (root ok no AnimBP). Fallback Attack_03 bem lento.
-HEAVY_SEQ = "/Game/Characters/Mannequins/Anims/Unarmed/Attack/MM_Attack_03"
-HEAVY_MONTAGE = "/Game/Amandaconda/Combat/Anims/AM_ChargedAttack"
-DASH_SEQ = "/Game/Characters/Mannequins/Anims/Unarmed/Jump/MM_Dash"
-LAND_SEQ = "/Game/Characters/Mannequins/Anims/Unarmed/Jump/MM_Land"
+ATTACK_SEQ = "/Game/Amandaconda/Animation/GASP/Combat/AS_Attack_Light_01_GASP"
+ATTACK_SEQ_2 = "/Game/Amandaconda/Animation/GASP/Combat/AS_Attack_Light_02_GASP"
+HEAVY_SEQ = "/Game/Amandaconda/Animation/GASP/Combat/AS_Attack_Heavy_GASP"
+HEAVY_MONTAGE = "/Game/Amandaconda/Animation/GASP/Combat/AM_Attack_Heavy_GASP"
+LAND_SEQ = "/Game/Amandaconda/Animation/GASP/Combat/AS_Land_GASP"
 # GASP aparado para conter apenas aterrissagem + cambalhota (1,07 s).
 GASP_ROLL_MONTAGE = "/Game/Amandaconda/Animation/GASP/AM_Roll_Forward_GASP"
 MANNEQUIN_ROLL_SEQ = (
@@ -68,8 +66,6 @@ ROLL_SEQ_CANDIDATES = (
     MANNEQUIN_ROLL_SEQ,
     GASP_ROLL_SEQ,
 )
-MONTAGE_PATH = "/Game/Amandaconda/Combat/AM_Attack_01"
-
 # Slate: um unico callback; reload so troca a implementacao (evita handlers velhos quebrados)
 _REGISTERED = False
 _TICK_IMPL = []
@@ -119,10 +115,8 @@ def preload_combat_assets() -> None:
         ATTACK_SEQ_2,
         HEAVY_SEQ,
         HEAVY_MONTAGE,
-        DASH_SEQ,
         LAND_SEQ,
         GASP_ROLL_MONTAGE,
-        MONTAGE_PATH,
         "/Engine/BasicShapes/Cube",
     ]
     paths.extend(ROLL_SEQ_CANDIDATES)
@@ -584,7 +578,9 @@ def _flatten_pawn(pawn) -> None:
     try:
         r = pawn.get_actor_rotation()
         if abs(r.pitch) > 0.5 or abs(r.roll) > 0.5:
-            pawn.set_actor_rotation(unreal.Rotator(0.0, r.yaw, 0.0), False)
+            pawn.set_actor_rotation(
+                unreal.Rotator(roll=0.0, pitch=0.0, yaw=r.yaw), False
+            )
     except Exception:
         pass
 
@@ -597,7 +593,9 @@ def _face_dir(pawn, direction) -> None:
         if _v_len_sq(d) < 0.01:
             return
         rot = unreal.MathLibrary.make_rot_from_x(d)
-        pawn.set_actor_rotation(unreal.Rotator(0.0, rot.yaw, 0.0), False)
+        pawn.set_actor_rotation(
+            unreal.Rotator(roll=0.0, pitch=0.0, yaw=rot.yaw), False
+        )
     except Exception:
         pass
 
@@ -735,24 +733,14 @@ def _play_anim_seq(
     if anim:
         for slot in ("DefaultSlot", "FullBody", "UpperBody", "Action", "Default"):
             try:
-                dur = anim.play_slot_animation_as_dynamic_montage(
+                dynamic_montage = anim.play_slot_animation_as_dynamic_montage(
                     seq, slot, 0.05, 0.15, rate, 1
                 )
-                if dur and float(dur) > 0.0:
-                    _log(f"anim OK slot={slot} dur={float(dur):.2f}")
+                if dynamic_montage:
+                    _log(f"anim OK dynamic montage slot={slot} rate={rate}")
                     return True
             except Exception as exc:
                 _log(f"anim slot {slot}: {exc}")
-        try:
-            mont = _load_asset(MONTAGE_PATH)
-            if mont:
-                dur = anim.montage_play(mont, rate)
-                if dur and float(dur) > 0.0:
-                    _log(f"anim OK montage dur={float(dur):.2f}")
-                    return True
-        except Exception as exc:
-            _log(f"montage: {exc}")
-
     # Fallback: Single Node (sempre aparece o soco)
     try:
         try:
@@ -802,6 +790,8 @@ def _tick_restore_anim(dt: float) -> None:
     mode = getattr(STATE, "restore_anim_mode", None)
     if mesh and mode is not None:
         try:
+            if mode == unreal.AnimationMode.ANIMATION_SINGLE_NODE:
+                mode = unreal.AnimationMode.ANIMATION_BLUEPRINT
             mesh.set_animation_mode(mode)
             _log("anim: voltou pro AnimBP")
         except Exception as exc:
@@ -956,7 +946,9 @@ def _tick_lock_on(world, pawn) -> None:
             pawn.get_actor_location(), target.get_actor_location()
         )
         # so yaw — nunca pitch/roll (evita deitar/inverter)
-        pawn.set_actor_rotation(unreal.Rotator(0.0, rot.yaw, 0.0), False)
+        pawn.set_actor_rotation(
+            unreal.Rotator(roll=0.0, pitch=0.0, yaw=rot.yaw), False
+        )
         tloc = target.get_actor_location()
         tloc.z += 120.0
         unreal.SystemLibrary.draw_debug_sphere(
@@ -1071,7 +1063,11 @@ def _tick_roll(dt: float, pawn) -> None:
                     ease = t * t * (3.0 - 2.0 * t)
                     spin = 360.0 * ease
                     mesh.set_relative_rotation(
-                        unreal.Rotator(base.pitch + spin, base.yaw, base.roll)
+                        unreal.Rotator(
+                            roll=base.roll,
+                            pitch=base.pitch + spin,
+                            yaw=base.yaw,
+                        )
                     )
                     if base_loc is not None:
                         # seno: desce no meio (contato com o chao)

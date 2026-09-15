@@ -27,7 +27,147 @@
     "jump_velocity": 420,
     "jump_cut_multiplier": 0.45,
     "coyote_time": 0.1,
-    "jump_buffer": 0.12
+    "jump_buffer": 0.12,
+
+    "buffer_de_acao": 0.15,
+    "atrito_travado": 900,
+
+    "arma_inicial": null,
+    "virus_desbloqueado": false,
+
+    "rolamento": {
+      "duracao": 0.42,
+      "inv_inicio": 0.05,
+      "inv_duracao": 0.26,
+      "vigor": 25,
+      "velocidade": 260,
+      "atrito_final": 1400
+    },
+
+    "dano_recebido": {
+      "invencibilidade": 0.7,
+      "travado": 0.28,
+      "empurrao": 90
+    },
+
+    "armas": {
+      "teclado": {
+        "ataque_leve": {
+          "preparacao": 0.09,
+          "acerto": 0.07,
+          "recuperacao": 0.2,
+          "dano": 12,
+          "vigor": 16,
+          "alcance": 26,
+          "altura": 24,
+          "avanco": 70,
+          "golpes_no_combo": 3
+        },
+        "ataque_pesado": {
+          "preparacao": 0.26,
+          "carga_maxima": 0.7,
+          "acerto": 0.1,
+          "recuperacao": 0.38,
+          "dano": 26,
+          "dano_carregado": 45,
+          "vigor": 32,
+          "alcance": 34,
+          "altura": 30,
+          "avanco": 110
+        }
+      },
+      "virus": {
+        "ataque_leve": {
+          "preparacao": 0.1,
+          "acerto": 0.06,
+          "recuperacao": 0.22,
+          "dano": 9,
+          "vigor": 14,
+          "avanco": 0,
+          "velocidade": 240,
+          "gravidade": 120,
+          "tempo_de_vida": 1.1,
+          "raio": 5,
+          "quique": 0.35
+        },
+        "ataque_pesado": {
+          "preparacao": 0.28,
+          "carga_maxima": 0.55,
+          "acerto": 0.08,
+          "recuperacao": 0.4,
+          "dano": 18,
+          "dano_carregado": 32,
+          "vigor": 28,
+          "avanco": 0,
+          "velocidade": 180,
+          "gravidade": 60,
+          "tempo_de_vida": 1.6,
+          "raio": 8,
+          "quique": 0.55
+        }
+      }
+    }
+  },
+
+  "pendrives": {
+    "fisico": {
+      "dano_por_nivel": 0.08,
+      "vida_por_nivel": 18
+    },
+    "especial": {
+      "dano_por_nivel": 0.15,
+      "vida_por_nivel": 8
+    }
+  },
+
+  "impacto": {
+    "pausa_no_acerto": 0.07,
+    "pausa_ao_matar": 0.22,
+    "tranco": 3.5,
+    "tranco_duracao": 0.18,
+    "empurrao_no_alvo": 70,
+    "piscada": 0.12
+  },
+
+  "boneco": {
+    "width": 22,
+    "height": 44,
+    "vida": 200,
+    "revida": true,
+    "intervalo_do_golpe": 2.6,
+    "preparacao": 0.55,
+    "acerto": 0.12,
+    "recuperacao": 0.6,
+    "dano": 18,
+    "alcance": 34,
+    "altura": 30,
+    "renascer_em": 2.0
+  },
+
+  "chatana": {
+    "width": 16,
+    "height": 16,
+    "vida": 28,
+    "intervalo": 2.0,
+    "preparacao": 0.4,
+    "acerto": 0.35,
+    "recuperacao": 0.5,
+    "dano": 8,
+    "raio": 54
+  },
+
+  "portara": {
+    "width": 28,
+    "height": 48,
+    "vida": 70,
+    "velocidade": 45,
+    "intervalo": 1.8,
+    "preparacao": 0.5,
+    "acerto": 0.14,
+    "recuperacao": 0.7,
+    "dano": 16,
+    "alcance": 28,
+    "altura": 36
   },
 
   "camera": {
@@ -35,6 +175,82 @@
     "look_ahead": 24,
     "vertical_offset": -12
   },
+
+  "bytes": {
+    "chatana": [24, 40],
+    "portara": [48, 72],
+    "net": [32, 56],
+    "hud_unidade": "KB"
+  },
+
+  "patches": {
+    "slots": 3,
+    "catalogo": [
+      {
+        "id": "hotfix_vigor",
+        "nome": "hotfix_vigor",
+        "custo": 80,
+        "texto": "+20 vigor max",
+        "vigor_max": 20
+      },
+      {
+        "id": "daemon_safe",
+        "nome": "daemon_safe",
+        "custo": 120,
+        "texto": "safezone +15 vida",
+        "cura_safe_extra": 15
+      },
+      {
+        "id": "macro_dano",
+        "nome": "macro_dano",
+        "custo": 160,
+        "texto": "+8% dano",
+        "dano_mult": 0.08
+      }
+    ]
+  },
+
+  "chefes": {
+    "balarrals": {
+      "vida": 220,
+      "nome": "BALARRALS",
+      "cor": [124, 132, 148],
+      "dano_leve": 14,
+      "dano_pesado": 28,
+      "intervalo_decisao": 0.55,
+      "alcance_leve": 28,
+      "alcance_pesado": 36,
+      "preparacao_leve": 0.12,
+      "acerto_leve": 0.08,
+      "recuperacao_leve": 0.22,
+      "preparacao_pesado": 0.32,
+      "acerto_pesado": 0.1,
+      "recuperacao_pesado": 0.4,
+      "velocidade": 130,
+      "retry_delay": 1.2
+    }
+  },
+
+
+  "mapa_risco": {
+    "largura": 1680,
+    "altura": 270,
+    "safe_largura": 360,
+    "plataformas_min": 5,
+    "plataformas_max": 8,
+    "largura_plat_min": 56,
+    "largura_plat_max": 120,
+    "espaco_x_min": 36,
+    "espaco_x_max": 88,
+    "delta_y_min": 20,
+    "delta_y_max": 48,
+    "altura_max_do_chao": 96,
+    "margem_inicio": 160,
+    "margem_safe": 80,
+    "inimigos": [["chatana", "plataforma"], ["portara", "chao"], ["chatana", "plataforma"]],
+    "pendrives": 2
+  },
+
 
   "intro": {
     "scroll_speed": 20,

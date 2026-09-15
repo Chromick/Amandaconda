@@ -70,7 +70,7 @@ class MenuScene(Scene):
             config.COLOR_ACCENT, align="center",
         )
         ui.draw_text(
-            surface, self.game.font_small, "nao existe saida", (cx, 78),
+            surface, self.game.font_small, "> nao existe saida_", (cx, 78),
             config.COLOR_UI_TEXT_DIM, align="center",
         )
 

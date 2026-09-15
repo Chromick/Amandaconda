@@ -45,66 +45,39 @@ câmera seguindo o jogador.
 
 Sem arte nenhuma. Retângulos coloridos.
 
-### Semana 2 — Combate contra um boneco parado
+### Semana 2 — Combate no teclado contra um boneco
 
-Ataque leve com encadeamento, ataque pesado carregável, rolamento com invencibilidade, vigor,
-vida, dano, morte. Caixa de acerto e caixa de dano separadas do sprite. Tranco de impacto,
-pausa no acerto, e o começo do arquivo de balanceamento.
+Ataque leve/pesado, rolamento, vigor, vida, tranco, HUD. O teclado é a arma de perto.
+**MARCO:** alguém bate no boneco por dois minutos. Se largar o controle, pare e conserte.
 
-**MARCO:** ponha alguém pra bater no boneco por dois minutos. Se largar o controle na hora,
-**pare o cronograma e conserte**. Isso vale ainda mais em 2D, onde não existe arte bonita
-pra disfarçar combate ruim.
+### Semana 3 — Bola de vírus + pendrive + sala de risco
 
-Aqui também é quando você faz a pixel art do jogador, porque é o sprite que fica em tela o
-tempo todo e é ele que define o estilo.
+Segunda arma (longe), troca de arma, pendrive de Processamento / Armazenamento no chão,
+uma sala de risco com os três inimigos comuns (mesmo que feios), safezone mínima (cura +
+porta). Aqui o loop Dead Cells existe pela primeira vez, ainda sem chefe de verdade.
 
-### Semana 3 — Sistema de chefe, e o Balarrals
+### Semana 4 — Sistema de chefe + Balarrals + hub
 
-O sistema completo: máquina de estados do chefe, telegrafia, barra de vida, portão de arena,
-atordoamento com janela de crítico, morte, e **retorno imediato** (menos de dois segundos,
-sem tela de carregamento).
+Máquina de estados de chefe, telegrafia, barra, retry em menos de 2 s, hub com três portas.
+**Balarrals** primeiro na produção (sprite espelhado = custo zero). Habilidade **Espelho**
+mínima. As outras duas portas podem levar a um stub “em breve” até a semana seguinte.
 
-O primeiro chefe é o **Balarrals**, porque em 2D ele é literalmente o sprite do jogador
-espelhado. Custo de arte: zero. Ele existe pra validar o sistema, não pra dar trabalho.
+### Semana 5 — LuanEvil e Renanligno
 
-Depois desta semana, cada chefe novo é uma variação de algo que já funciona.
+Ordem jogável nos três. Habilidades Caramelo e Eco. Pixel art dos dois conforme der.
 
-### Semana 4 — LuanEvil
+### Semana 6 — Marlombólico
 
-Tanque, caramelo subindo pelo chão e reduzindo o espaço, e o momento do headphone com a
-troca de trilha. Mais a pixel art dela.
+Trava o hub até os três estarem mortos; abre a porta dele. Interface mentindo.
 
-### Semana 5 — Renanligno e Marlombólico
+### Semana 7 — Amandaconda
 
-Os fantasmas atrasados do Renanligno são o mesmo sprite desenhado de novo com transparência
-nas posições anteriores — algumas linhas de código. O Marlombólico mexe na interface, o que
-em 2D é mais fácil e mais convincente que em 3D.
-
-Mais a pixel art dos dois.
-
-### Semana 6 — Amandaconda
-
-As duas fases, os oito ataques, a transição, a cena da porta com o cigarro e a xícara, e o
-final em que ela te oferece o café.
-
-Ela é a única com tratamento completo, e leva uma semana só pra ela. Um corpo de serpente
-enorme ocupando a tela é um clássico do chefe 2D e vai ficar melhor aqui do que em 3D.
-
-### Semana 7 — A faculdade e os inimigos comuns
-
-Chatana, Portara e Net, os encontros da travessia, os nove espaços ligando os chefes, o menu,
-e os cartões de entrada.
-
-**Esta é a semana cortável.** Se você estiver atrasado, encolha a travessia e reduza pra um
-inimigo comum. Os cinco chefes são a entrega; o corredor é tecido conjuntivo.
+Duas fases, cena da porta, final do café. Única com tratamento completo.
 
 ### Semana 8 — Som, balanceamento e entrega
 
-Efeitos sonoros (cada ataque de chefe com um som de preparação distinto — é isso que separa
-difícil de injusto), música, passada final de balanceamento com testadores, empacotamento com
-PyInstaller e teste numa máquina que não é a sua.
-
-Reserva pra desastre. Se não houve, use pra polir.
+SFX de preparação por golpe de chefe, música, PyInstaller, teste em outra máquina.
+**Corte se atrasar:** encolher salas de risco, não cortar chefe.
 
 ## A pixel art é o seu maior risco
 

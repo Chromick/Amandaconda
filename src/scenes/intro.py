@@ -145,9 +145,9 @@ class IntroScene(Scene):
                 self._start_game()
 
     def _start_game(self) -> None:
-        from .play import PlayScene
+        from .loadout import LoadoutScene
 
-        self.game.set_scene(PlayScene(self.game))
+        self.game.set_scene(LoadoutScene(self.game))
 
     def draw(self, surface: pygame.Surface) -> None:
         surface.fill(config.COLOR_BG)
