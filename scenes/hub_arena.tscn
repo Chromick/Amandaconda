@@ -27,11 +27,11 @@ ambient_light_energy = 0.35
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
-glow_intensity = 0.55
-glow_bloom = 0.15
+glow_intensity = 0.62
+glow_bloom = 0.18
 fog_enabled = true
 fog_light_color = Color(0.08, 0.1, 0.16, 1)
-fog_density = 0.0018
+fog_density = 0.0021
 
 [node name="HubArena" type="Node3D"]
 script = ExtResource("1_hub")
