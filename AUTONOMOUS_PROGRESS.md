@@ -6,6 +6,22 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.6.27
+
+### Alteração
+- HUD bars 20px; room label outlines; hitstop/shake; roll iframes; ability CDs.
+- Versão 0.6.27.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.6.25
 
 ### Alteração
