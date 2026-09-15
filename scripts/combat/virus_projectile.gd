@@ -39,13 +39,13 @@ func setup(cfg: Dictionary, dir: Vector3, from: Node) -> void:
 	mat.albedo_color = Color(0.35, 1.0, 0.55)
 	mat.emission_enabled = true
 	mat.emission = Color(0.3, 1.0, 0.5)
-	mat.emission_energy_multiplier = 2.8
+	mat.emission_energy_multiplier = 3.2
 	if mesh:
 		mesh.material_override = mat
 	_light = OmniLight3D.new()
 	_light.light_color = Color(0.4, 1.0, 0.55)
-	_light.light_energy = 2.2
-	_light.omni_range = 3.5
+	_light.light_energy = 2.6
+	_light.omni_range = 4.0
 	add_child(_light)
 
 
@@ -61,10 +61,10 @@ func _physics_process(delta: float) -> void:
 			look_at(tip, Vector3.UP)
 	_trail_cd -= delta
 	if _trail_cd <= 0.0:
-		_trail_cd = 0.028
+		_trail_cd = 0.022
 		_spawn_trail()
 	if _light:
-		_light.light_energy = lerpf(_light.light_energy, 2.4, clampf(6.0 * delta, 0.0, 1.0))
+		_light.light_energy = lerpf(_light.light_energy, 2.8, clampf(6.0 * delta, 0.0, 1.0))
 
 
 func _spawn_trail() -> void:
@@ -73,22 +73,22 @@ func _spawn_trail() -> void:
 		return
 	var p := MeshInstance3D.new()
 	var sm := SphereMesh.new()
-	sm.radius = 0.08
-	sm.height = 0.16
+	sm.radius = 0.095
+	sm.height = 0.19
 	p.mesh = sm
 	var mat := StandardMaterial3D.new()
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	mat.albedo_color = Color(0.4, 1.0, 0.55, 0.62)
+	mat.albedo_color = Color(0.4, 1.0, 0.55, 0.7)
 	mat.emission_enabled = true
 	mat.emission = Color(0.35, 1.0, 0.5)
-	mat.emission_energy_multiplier = 1.85
+	mat.emission_energy_multiplier = 2.2
 	p.material_override = mat
 	host.add_child(p)
 	p.global_position = global_position
 	var tw := create_tween()
-	tw.tween_property(mat, "albedo_color:a", 0.0, 0.28)
-	tw.parallel().tween_property(p, "scale", Vector3.ONE * 0.15, 0.28)
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.32)
+	tw.parallel().tween_property(p, "scale", Vector3.ONE * 0.12, 0.32)
 	tw.tween_callback(p.queue_free)
 
 
