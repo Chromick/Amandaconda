@@ -182,11 +182,19 @@ func _on_body_entered(body: Node3D) -> void:
 func _on_boss_died() -> void:
 	end_fight()
 	_fog_label.text = "arena liberada"
+	_fog_label.modulate = Color(0.45, 1.0, 0.6)
 	if typeof(GameState) != TYPE_NIL:
 		GameState.show_toast("%s · névoa dissipada" % _boss_title())
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.55, 1.0, 0.65), 1.2)
 		HitFeel.shake(0.2)
+	for cam in get_tree().get_nodes_in_group("player_camera"):
+		if cam and cam.has_method("punch_fov"):
+			cam.punch_fov(5.0)
+			break
+	var hud := get_tree().get_first_node_in_group("hud")
+	if hud and hud.has_method("pulse_heal"):
+		hud.pulse_heal()
 
 
 func _on_player_died() -> void:
