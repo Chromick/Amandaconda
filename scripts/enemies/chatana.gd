@@ -188,7 +188,7 @@ func _ai_idle(delta: float) -> void:
 			_cooldown = 0.4
 			return
 		_phase = Phase.WINDUP
-		_windup_total = float(_cfg.get("preparacao", 0.4))
+		_windup_total = float(_cfg.get("preparacao", 0.4)) * (0.75 if _enraged else 1.0)
 		_phase_t = _windup_total
 		velocity = Vector3.ZERO
 		_update_pulse_telegraph(true, false)
@@ -214,5 +214,6 @@ func _try_damage(body: Node) -> void:
 		away.y = 0.0
 		if away.length_squared() < 0.01:
 			away = Vector3.FORWARD
-		body.take_damage(float(_cfg.get("dano", 8)), away.normalized() * 3.0, self)
+		var dmg := float(_cfg.get("dano", 8)) * (1.12 if _enraged else 1.0)
+		body.take_damage(dmg, away.normalized() * (3.4 if _enraged else 3.0), self)
 		HitFeel.spark_at(body.global_position + Vector3.UP * 1.0, Color(1.0, 0.85, 0.35), 0.9)

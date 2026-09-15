@@ -162,7 +162,7 @@ func _ai_chase(delta: float) -> void:
 			_cooldown = 0.45
 			return
 		_phase = Phase.WINDUP
-		_phase_t = float(_cfg.get("preparacao", 0.5))
+		_phase_t = float(_cfg.get("preparacao", 0.5)) * (0.7 if _enraged else 1.0)
 		velocity = Vector3.ZERO
 		AttackTelegraphScript.set_active(_telegraph, true, false)
 		if typeof(HitFeel) != TYPE_NIL:
@@ -177,7 +177,8 @@ func _on_hit_body(body: Node3D) -> void:
 	if body.has_method("take_damage"):
 		_hit_done = true
 		var forward := -global_transform.basis.z
-		body.take_damage(float(_cfg.get("dano", 16)), forward * 5.0, self)
+		var dmg := float(_cfg.get("dano", 16)) * (1.15 if _enraged else 1.0)
+		body.take_damage(dmg, forward * (5.5 if _enraged else 5.0), self)
 		HitFeel.punch(0.035)
 		HitFeel.shake(0.28)
 		HitFeel.spark_at(body.global_position + Vector3.UP * 1.1, Color(0.85, 0.55, 0.3), 1.1)
