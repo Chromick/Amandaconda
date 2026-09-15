@@ -239,11 +239,11 @@ func mark_boss_defeated(boss_id: String) -> void:
 		bosses_defeated.append(boss_id)
 	match boss_id:
 		"luanevil":
-			unlock_ability(ABILITY_CARAMELO, "Roubou CARAMELO da LuanEvil")
+			unlock_ability(ABILITY_CARAMELO, "Roubou CARAMELO · chefes-base %d/3" % (base_bosses_cleared()))
 		"renanligno":
-			unlock_ability(ABILITY_ECO, "Roubou ECO do Renanligno")
+			unlock_ability(ABILITY_ECO, "Roubou ECO · chefes-base %d/3" % (base_bosses_cleared()))
 		"balarrals":
-			unlock_ability(ABILITY_ESPELHO, "Roubou ESPELHO do Balarrals")
+			unlock_ability(ABILITY_ESPELHO, "Roubou ESPELHO · chefes-base %d/3" % (base_bosses_cleared()))
 		"marlombolico":
 			clear_hacks()
 			show_toast("Servidores limpos · caminho pra porta aberto")
@@ -251,6 +251,8 @@ func mark_boss_defeated(boss_id: String) -> void:
 			show_toast("SESSION_CLOSED · você pode sair")
 			ending_reached.emit()
 	gates_changed.emit()
+	if boss_id in BASE_BOSSES and base_bosses_cleared() >= 3:
+		show_toast("3/3 · portão dos servidores liberado")
 
 
 func show_toast(message: String) -> void:
