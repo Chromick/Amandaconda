@@ -6,6 +6,30 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~07:55 BRT
+
+### Alteração
+- Luzes noturnas: flicker com variação de cor quente.
+- Damage popup: punch de escala + drift lateral.
+- HUD: barra de vida pulsa vermelho abaixo de 30% HP.
+
+### Arquivos modificados
+- `scripts/world/light_flicker.gd`
+- `scripts/combat/damage_popup.gd`
+- `scripts/ui/hud.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar loop (próximo turno / próximo pedido)
+
+---
+
 ## 2026-09-15 ~07:50 BRT
 
 ### Alteração

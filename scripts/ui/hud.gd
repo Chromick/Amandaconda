@@ -80,6 +80,12 @@ func _process(delta: float) -> void:
 		meta_label.modulate = Color(1.0, 0.92, 0.45).lerp(Color.WHITE, 1.0 - m)
 		if _meta_flash <= 0.0:
 			meta_label.modulate = Color.WHITE
+	# Vida crítica: pulso vermelho na barra
+	if health_bar and _heal_pulse <= 0.0 and _real_max > 0.0 and _real_hp / _real_max < 0.3 and _real_hp > 0.0:
+		var pulse := 0.55 + 0.45 * sin(Time.get_ticks_msec() * 0.008)
+		health_bar.modulate = Color(1.0, pulse * 0.45, pulse * 0.4)
+	elif health_bar and _heal_pulse <= 0.0:
+		health_bar.modulate = Color.WHITE
 	_hint_timer -= delta
 	if _hint_timer <= 0.0:
 		_rotate_hint(false)
