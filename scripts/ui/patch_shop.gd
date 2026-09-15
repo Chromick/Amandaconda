@@ -21,6 +21,11 @@ func open_menu() -> void:
 		HitFeel.cancel()
 	_refresh()
 	GameState.show_toast("Servidor de backup · escolha um patch")
+	if panel:
+		panel.modulate.a = 0.0
+		var tw := create_tween()
+		tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tw.tween_property(panel, "modulate:a", 1.0, 0.2)
 
 
 func close_menu() -> void:
