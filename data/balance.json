@@ -65,14 +65,14 @@
     "armas": {
       "teclado": {
         "ataque_leve": {
-          "preparacao": 0.07,
-          "acerto": 0.05,
-          "recuperacao": 0.14,
-          "dano": 19,
+          "preparacao": 0.065,
+          "acerto": 0.048,
+          "recuperacao": 0.13,
+          "dano": 20,
           "vigor": 8,
-          "alcance": 1.65,
-          "altura": 1.18,
-          "avanco": 3.35,
+          "alcance": 1.68,
+          "altura": 1.2,
+          "avanco": 3.45,
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
@@ -209,9 +209,9 @@
 
   "cura": {
     "latas": 9,
-    "cura": 82,
-    "tempo_uso": 0.4,
-    "safezone_regen": 78.0,
+    "cura": 85,
+    "tempo_uso": 0.38,
+    "safezone_regen": 82.0,
     "safezone_latas": true
   },
 
