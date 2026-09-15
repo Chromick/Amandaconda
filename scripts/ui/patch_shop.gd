@@ -39,7 +39,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _refresh(_a: Variant = null) -> void:
 	if info:
-		info.text = "%d KB · slots %d/%d · Fis%d Esp%d" % [
+		info.text = "%d KB · slots %d/%d · Fis%d Esp%d · Esc fecha" % [
 			GameState.bytes,
 			GameState.active_patches.size(),
 			int(Balance.data.get("patches", {}).get("slots", 3)),
@@ -85,6 +85,8 @@ func _buy(pid: String) -> void:
 		GameState.show_toast("Patch instalado · %s" % _patch_name(pid))
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.shake(0.1)
+			if player and is_instance_valid(player):
+				HitFeel.spark_at(player.global_position + Vector3.UP * 1.2, Color(0.55, 1.0, 0.7), 0.9)
 		_refresh()
 	else:
 		GameState.show_toast("Não foi possível comprar")
