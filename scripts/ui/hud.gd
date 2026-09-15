@@ -33,6 +33,7 @@ var _stamina_flash: float = 0.0
 var _meta_flash: float = 0.0
 var _hint_timer: float = 0.0
 var _hint_index: int = 0
+var _ability_was_cd: bool = false
 
 
 func _ready() -> void:
@@ -318,6 +319,14 @@ func _refresh_ability() -> void:
 		if cd > 0.05:
 			ability_label.text = "%s · CD %.1fs" % [base, cd]
 			ability_label.modulate = Color(0.75, 0.8, 0.9)
+			_ability_was_cd = true
+			return
+		if _ability_was_cd:
+			_ability_was_cd = false
+			ability_label.modulate = Color(0.55, 1.0, 0.75)
+			var tw := create_tween()
+			tw.tween_property(ability_label, "modulate", Color.WHITE, 0.45)
+			ability_label.text = base
 			return
 	ability_label.text = base
 	ability_label.modulate = Color.WHITE
