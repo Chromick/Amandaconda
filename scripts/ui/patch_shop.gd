@@ -77,7 +77,13 @@ func _refresh(_a: Variant = null) -> void:
 			btn.tooltip_text = "KB insuficiente"
 		btn.add_theme_color_override("font_hover_color", Color(0.55, 1.0, 0.7))
 		if owned:
-			btn.add_theme_color_override("font_color", Color(0.55, 0.9, 0.65))
+			btn.add_theme_color_override("font_color", Color(0.55, 1.0, 0.7))
+		elif not can_afford:
+			btn.add_theme_color_override("font_color", Color(0.75, 0.45, 0.45))
+		elif full:
+			btn.add_theme_color_override("font_color", Color(0.7, 0.7, 0.55))
+		else:
+			btn.add_theme_color_override("font_color", Color(0.9, 0.95, 0.92))
 		btn.pressed.connect(_buy.bind(pid))
 		list.add_child(btn)
 
