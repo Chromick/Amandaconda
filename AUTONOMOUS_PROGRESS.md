@@ -9,7 +9,7 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 ## 2026-09-15 ~continuação loop
 
 ### Alteração
-- v0.5.7: Eco/virus double-hit fixes; roll i-frames; enrage FOV; investida toast; camera blends; caramel toast dedupe; phase2 juice.
+- v0.5.8: speed_mult refresh fix; pickup double-collect guard; heal snappier; hurt flash; empty-ability toast; roll/heal balance.
 
 ### Testes
 - Hub headless EXIT 0 (cada ciclo)
