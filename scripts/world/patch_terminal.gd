@@ -58,4 +58,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if event.is_action_pressed("interact"):
 		opened.emit()
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.4, 1.0, 0.65), 0.75)
+			HitFeel.kick_fov(2.0, 0.1)
 		get_viewport().set_input_as_handled()
