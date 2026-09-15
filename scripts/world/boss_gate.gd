@@ -15,6 +15,9 @@ var _is_open: bool = false
 func _ready() -> void:
 	add_to_group("boss_gate")
 	GameState.gates_changed.connect(_refresh)
+	if label:
+		label.outline_size = 8
+		label.outline_modulate = Color(0, 0, 0, 0.85)
 	_open_light = OmniLight3D.new()
 	_open_light.light_color = Color(0.45, 1.0, 0.65)
 	_open_light.light_energy = 0.0
