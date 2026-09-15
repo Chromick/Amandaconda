@@ -478,6 +478,8 @@ func _dress_bandejao(root: Node3D) -> void:
 	_emissive_box(center + Vector3(0, 0.05, -3.5), Vector3(1.1, 0.05, 0.9), Color(0.42, 0.2, 0.08), Color(1.0, 0.38, 0.1), 1.5)
 	_prop(root, "kitchenCoffeeMachine.glb", center + Vector3(4.5, 0, -4.0), -90.0)
 	_prop(root, "bench.glb", center + Vector3(0, 0, 4.5), 0.0)
+	_prop(root, "trashcan.glb", center + Vector3(0, 0, -4.8), 0.0)
+	_prop(root, "pottedPlant.glb", center + Vector3(0, 0, 4.8), 180.0)
 	_add_room_light(center + Vector3(0, 2.2, 2.5), Color(1.0, 0.5, 0.2), 5.5, 9.0)
 	_add_room_light(center + Vector3(-3.5, 2.0, -2.5), Color(1.0, 0.55, 0.25), 3.5, 7.0)
 	_add_room_light(center + Vector3(3.2, 2.0, 1.5), Color(0.95, 0.4, 0.2), 3.2, 6.5)
