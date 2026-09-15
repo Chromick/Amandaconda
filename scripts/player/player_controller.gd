@@ -1177,7 +1177,7 @@ func _try_ability() -> void:
 			GameState.show_toast("Espelho: role através do golpe")
 			_ability_cd = 0.4
 		_:
-			pass
+			GameState.show_toast("Sem habilidade · mate um chefe-base")
 
 
 func _cast_caramelo() -> void:
