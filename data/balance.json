@@ -22,12 +22,12 @@
     "stamina_regen": 64,
     "stamina_regen_delay": 0.36,
 
-    "walk_speed": 5.85,
-    "run_speed": 9.6,
-    "ground_accel": 26.0,
-    "ground_friction": 33.0,
-    "air_accel": 16.0,
-    "air_friction": 4.5,
+    "walk_speed": 6.0,
+    "run_speed": 9.8,
+    "ground_accel": 27.0,
+    "ground_friction": 34.0,
+    "air_accel": 17.0,
+    "air_friction": 4.8,
 
     "gravity": 23.0,
     "max_fall_speed": 30.0,
