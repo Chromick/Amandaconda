@@ -337,6 +337,13 @@
         "custo": 90,
         "texto": "+1 lata max",
         "latas_max": 1
+      },
+      {
+        "id": "roll_cheap",
+        "nome": "roll_cheap",
+        "custo": 100,
+        "texto": "-20% custo rolamento",
+        "roll_cost_mult": 0.8
       }
     ]
   },
