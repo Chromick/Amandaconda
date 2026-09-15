@@ -375,6 +375,7 @@ func _tick_timers(delta: float) -> void:
 		_mark_timer -= delta
 		if _mark_timer <= 0.0:
 			_mark_mult = 1.0
+			_refresh_speed_mult()
 			if state == State.MOVE:
 				_set_mesh_color(_default_color)
 			GameState.show_toast("Marca dissipada")
@@ -1015,6 +1016,7 @@ func apply_mark(duration: float, mult: float) -> void:
 	var was_clear := _mark_timer <= 0.0
 	_mark_timer = maxf(_mark_timer, duration)
 	_mark_mult = mult
+	_refresh_speed_mult()
 	_set_mesh_color(Color(0.75, 0.45, 1.0))
 	if was_clear:
 		GameState.show_toast("MARCADO · velocidade reduzida")
@@ -1035,10 +1037,12 @@ func mark_remaining() -> float:
 
 func set_ground_slow(mult: float) -> void:
 	_ground_slow = mult
+	_refresh_speed_mult()
 
 
 func clear_ground_slow() -> void:
 	_ground_slow = 1.0
+	_refresh_speed_mult()
 
 
 func _try_heal() -> void:
