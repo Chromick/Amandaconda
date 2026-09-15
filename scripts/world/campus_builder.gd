@@ -708,6 +708,9 @@ func _make_safezone(pos: Vector3, size: Vector3) -> void:
 	area.add_child(lab)
 	rooms_root.add_child(area)
 	area.global_position = pos
+	# Anéis emissivos (visual dual-ring)
+	_emissive_box(pos + Vector3(0, 0.02, 0), Vector3(size.x + 0.6, 0.04, size.z + 0.6), Color(0.15, 0.35, 0.22), Color(0.35, 1.0, 0.55), 1.4)
+	_emissive_box(pos + Vector3(0, 0.04, 0), Vector3(size.x - 1.2, 0.03, size.z - 1.0), Color(0.12, 0.28, 0.18), Color(0.55, 1.0, 0.7), 2.0)
 
 
 func _build_room(center: Vector3, size: Vector3, color: Color, title: String) -> Array:

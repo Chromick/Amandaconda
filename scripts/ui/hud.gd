@@ -21,6 +21,7 @@ const HINTS: PackedStringArray = [
 	"Safezone restaura latas · chefs ficam nas salas · siga as placas",
 	"Entre na névoa · a porta fecha até o fim · 3 chefes abrem servidores",
 	"KB e pendrives puxam pra perto · turbo_sprint corta custo de corrida",
+	"coyote_extend alonga o salto · iframe_lite barateia o rolamento",
 	"Net marca e freia · role através · Espelho devolve o golpe",
 ]
 
