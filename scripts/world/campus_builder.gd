@@ -313,6 +313,7 @@ func _dress_campus() -> void:
 	_dress_porta(props)
 	_add_night_lights()
 	_spawn_night_stars()
+	_spawn_dust_motes()
 
 
 func _add_night_lights() -> void:
@@ -488,6 +489,13 @@ func _spawn_night_stars() -> void:
 			randf_range(28.0, 55.0),
 			randf_range(-70.0, 70.0)
 		)
+
+
+func _spawn_dust_motes() -> void:
+	var motes := Node3D.new()
+	motes.name = "DustMotes"
+	motes.set_script(preload("res://scripts/world/dust_motes.gd"))
+	rooms_root.add_child(motes)
 
 
 func _spawn(packed: PackedScene, pos: Vector3) -> void:

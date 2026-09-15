@@ -6,6 +6,29 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~08:06 BRT
+
+### Alteração
+- Toast HUD com punch de escala + fade-out.
+- Dust motes flutuando no campus (`dust_motes.gd`).
+
+### Arquivos modificados
+- `scripts/ui/hud.gd`
+- `scripts/world/dust_motes.gd` (novo)
+- `scripts/world/campus_builder.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar
+
+---
+
 ## 2026-09-15 ~08:02 BRT
 
 ### Alteração

@@ -60,8 +60,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if _toast_timer > 0.0:
 		_toast_timer -= delta
+		if toast_label:
+			if _toast_timer < 0.45:
+				toast_label.modulate.a = clampf(_toast_timer / 0.45, 0.0, 1.0)
+			else:
+				toast_label.modulate.a = 1.0
 		if _toast_timer <= 0.0 and toast_label:
 			toast_label.visible = false
+			toast_label.modulate.a = 1.0
 	if _heal_pulse > 0.0:
 		_heal_pulse -= delta
 		var t := clampf(_heal_pulse / 0.45, 0.0, 1.0)
@@ -301,7 +307,11 @@ func _show_toast(message: String) -> void:
 		return
 	toast_label.text = message
 	toast_label.visible = true
+	toast_label.modulate.a = 1.0
+	toast_label.scale = Vector2(1.08, 1.08)
 	_toast_timer = 3.2
+	var tw := create_tween()
+	tw.tween_property(toast_label, "scale", Vector2.ONE, 0.18).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func _on_ending() -> void:
