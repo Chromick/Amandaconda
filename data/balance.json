@@ -399,10 +399,18 @@
       "fase2_vida": 0.5
     },
     "renanligno": {
-      "vida": 240,
+      "vida": 250,
       "nome": "RENANLIGNO",
       "local": "Laboratório",
-      "bytes": [150, 210]
+      "bytes": [155, 215],
+      "velocidade": 4.35,
+      "intervalo": 1.6,
+      "telegraph": 0.5,
+      "delay_hit": 0.26,
+      "acerto": 0.11,
+      "recuperacao": 0.48,
+      "dano": 19,
+      "alcance": 1.85
     },
     "balarrals": {
       "vida": 220,

@@ -25,14 +25,14 @@ func _ready() -> void:
 	_cfg = {
 		"vida": float(Balance.data.get("chefes", {}).get("renanligno", {}).get("vida", 240)),
 		"nome": "RENANLIGNO",
-		"velocidade": 4.2,
-		"intervalo": 1.7,
-		"telegraph": 0.55,
-		"delay_hit": 0.28,
-		"acerto": 0.12,
-		"recuperacao": 0.5,
-		"dano": 18,
-		"alcance": 1.8,
+		"velocidade": float(Balance.data.get("chefes", {}).get("renanligno", {}).get("velocidade", 4.2)),
+		"intervalo": float(Balance.data.get("chefes", {}).get("renanligno", {}).get("intervalo", 1.7)),
+		"telegraph": float(Balance.data.get("chefes", {}).get("renanligno", {}).get("telegraph", 0.55)),
+		"delay_hit": float(Balance.data.get("chefes", {}).get("renanligno", {}).get("delay_hit", 0.28)),
+		"acerto": float(Balance.data.get("chefes", {}).get("renanligno", {}).get("acerto", 0.12)),
+		"recuperacao": float(Balance.data.get("chefes", {}).get("renanligno", {}).get("recuperacao", 0.5)),
+		"dano": float(Balance.data.get("chefes", {}).get("renanligno", {}).get("dano", 18)),
+		"alcance": float(Balance.data.get("chefes", {}).get("renanligno", {}).get("alcance", 1.8)),
 		"bytes": Balance.data.get("chefes", {}).get("renanligno", {}).get("bytes", [120, 180]),
 	}
 	max_health = float(_cfg.get("vida", 240))
@@ -52,7 +52,7 @@ func _style_ghost() -> void:
 	_ghost_glow.albedo_color = Color(0.55, 0.75, 1.0, 0.45)
 	_ghost_glow.emission_enabled = true
 	_ghost_glow.emission = Color(0.4, 0.9, 1.0)
-	_ghost_glow.emission_energy_multiplier = 2.2
+	_ghost_glow.emission_energy_multiplier = 2.8
 	_ghost.material_override = _ghost_glow
 
 
