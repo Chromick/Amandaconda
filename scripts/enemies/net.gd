@@ -47,17 +47,6 @@ func _visual_action() -> String:
 			return ""
 
 
-func _die() -> void:
-	_drop_bytes()
-	super._die()
-
-
-func _drop_bytes() -> void:
-	var rng: Variant = _cfg.get("bytes", [32, 56])
-	if typeof(rng) == TYPE_ARRAY and rng.size() >= 2:
-		GameState.add_bytes(int(randi_range(int(rng[0]), int(rng[1]))))
-
-
 func _physics_process(delta: float) -> void:
 	if _dead:
 		velocity = Vector3.ZERO

@@ -6,6 +6,32 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~02:12 BRT
+
+### Alteração
+- Drop de KB dos inimigos (Chatana/Net/Portara) unificado em `enemy_base._drop_bytes()` com toast `+N KB`, spark e shake leve (antes era silencioso).
+
+### Arquivos modificados
+- `scripts/enemies/enemy_base.gd`
+- `scripts/enemies/chatana.gd`
+- `scripts/enemies/net.gd`
+- `scripts/enemies/portara.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+- Drop em combate: não testado em PIE
+
+### Problemas encontrados
+- Bosses sobrescrevem `_die` sem `super` (intencional); recompensa de boss continua só via `mark_boss_defeated`
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Toast ao trocar arma (Q) / polish do terminal de patches
+- Revisar feedback de boss reward se houver bytes no balance
+
+---
+
 ## 2026-09-15 ~02:05 BRT
 
 ### Alteração

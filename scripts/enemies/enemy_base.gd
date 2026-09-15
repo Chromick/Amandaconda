@@ -192,6 +192,7 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, _source: Node
 func _die() -> void:
 	_dead = true
 	died.emit()
+	_drop_bytes()
 	_set_color(Color(0.2, 0.2, 0.22))
 	if label:
 		label.text = "KO"
@@ -203,6 +204,20 @@ func _die() -> void:
 		_revive_timer = delay
 	else:
 		queue_free()
+
+
+func _drop_bytes() -> void:
+	var rng: Variant = _cfg.get("bytes", null)
+	if typeof(rng) != TYPE_ARRAY or rng.size() < 2:
+		return
+	var got := int(randi_range(int(rng[0]), int(rng[1])))
+	if got <= 0:
+		return
+	GameState.add_bytes(got)
+	GameState.show_toast("+%d KB" % got)
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(global_position + Vector3.UP * 0.85, Color(0.95, 0.85, 0.35), 1.05)
+		HitFeel.shake(0.08)
 
 
 func _revive() -> void:
