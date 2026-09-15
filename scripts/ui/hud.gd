@@ -346,6 +346,8 @@ func _refresh_ability() -> void:
 			var tw := create_tween()
 			tw.tween_property(ability_label, "modulate", Color.WHITE, 0.45)
 			ability_label.text = base
+			GameState.show_toast("%s pronta" % GameState.ability_label())
+			_pulse_screen(Color(0.45, 1.0, 0.75, 0.18), 0.28)
 			return
 	ability_label.text = base
 	ability_label.modulate = Color.WHITE
