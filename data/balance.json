@@ -420,15 +420,15 @@
       "alcance": 1.85
     },
     "balarrals": {
-      "vida": 220,
+      "vida": 230,
       "nome": "BALARRALS",
       "local": "Pátio",
-      "bytes": [130, 190],
+      "bytes": [135, 195],
       "dano_leve": 15,
       "dano_pesado": 30,
-      "velocidade": 6.0,
-      "intervalo": 1.2,
-      "alcance": 1.75
+      "velocidade": 6.1,
+      "intervalo": 1.15,
+      "alcance": 1.8
     },
     "marlombolico": {
       "vida": 310,
