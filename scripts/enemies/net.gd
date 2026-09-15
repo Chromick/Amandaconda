@@ -148,7 +148,7 @@ func _ai_idle(delta: float) -> void:
 	_cooldown -= delta
 	if _cooldown <= 0.0 and dist < prefer + 4.0:
 		_phase = Phase.WINDUP
-		_windup_total = float(_cfg.get("preparacao", 0.55))
+		_windup_total = float(_cfg.get("preparacao", 0.55)) * (0.72 if _enraged else 1.0)
 		_phase_t = _windup_total
 		velocity = Vector3.ZERO
 		_update_beam_telegraph(true, false)
@@ -167,4 +167,8 @@ func _fire() -> void:
 	var spawn_pos := global_position + Vector3.UP * 1.4
 	if not SceneUtil.add_to_world(shot, self, spawn_pos):
 		return
-	shot.setup(_cfg, dir.normalized(), self)
+	var cfg := _cfg.duplicate()
+	if _enraged:
+		cfg["proj_speed"] = float(cfg.get("proj_speed", 14.0)) * 1.28
+		cfg["dano"] = float(cfg.get("dano", 11)) * 1.1
+	shot.setup(cfg, dir.normalized(), self)
