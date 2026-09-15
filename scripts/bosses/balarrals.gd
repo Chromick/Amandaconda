@@ -273,6 +273,8 @@ func _ai(delta: float) -> void:
 	to.y = 0.0
 	var dist := to.length()
 	var spd := float(_cfg.get("velocidade", 5.8)) * move_scale()
+	if _enraged:
+		spd *= 1.15
 	if dist > 0.05:
 		var dir := to.normalized()
 		# Espelho: arma na mão trocada — gira um pouco “errado”.
