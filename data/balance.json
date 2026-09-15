@@ -125,11 +125,11 @@
     "min_pitch": -40.0,
     "max_pitch": 55.0,
     "sensitivity": 0.13,
-    "follow_speed": 13.5,
+    "follow_speed": 14.5,
     "lock_on_distance": 22.0,
     "lock_on_height_bias": 1.25,
-    "idle_yaw_delay": 1.1,
-    "idle_yaw_speed": 3.5
+    "idle_yaw_delay": 1.0,
+    "idle_yaw_speed": 4.0
   },
 
   "impacto": {

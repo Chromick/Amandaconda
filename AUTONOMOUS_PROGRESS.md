@@ -6,6 +6,22 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.6.7
+
+### Alteração
+- Bandejão/lab: mais props (lixo, plantas, monitor).
+- Câmera: follow/idle yaw um pouco mais ágeis.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.6.6
 
 ### Alteração
