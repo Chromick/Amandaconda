@@ -116,13 +116,19 @@ func _setup_combat_fx() -> void:
 	var mat := StandardMaterial3D.new()
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	mat.albedo_color = Color(1.0, 0.35, 0.35, 0.75)
+	mat.albedo_color = Color(0.45, 0.95, 1.0, 0.8)
 	mat.emission_enabled = true
-	mat.emission = Color(1.0, 0.25, 0.25)
-	mat.emission_energy_multiplier = 2.2
+	mat.emission = Color(0.35, 0.9, 1.0)
+	mat.emission_energy_multiplier = 2.4
 	_lock_marker.material_override = mat
 	_lock_marker.visible = false
 	add_child(_lock_marker)
+	var lock_light := OmniLight3D.new()
+	lock_light.name = "LockLight"
+	lock_light.light_color = Color(0.45, 0.95, 1.0)
+	lock_light.light_energy = 1.4
+	lock_light.omni_range = 2.2
+	_lock_marker.add_child(lock_light)
 
 
 func _setup_character_visual() -> void:
