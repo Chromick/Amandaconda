@@ -115,16 +115,16 @@ func _physics_process(delta: float) -> void:
 func _check_enrage() -> void:
 	if _enraged or _dead:
 		return
-	if health <= max_health * 0.45:
+	if health <= max_health * 0.5:
 		_enraged = true
 		_base_color = Color(0.85, 0.55, 0.25)
 		_restore_color()
-		_pulse_radius *= 1.12
+		_pulse_radius *= 1.15
 		GameState.show_toast("CHATANA · feedback alto")
 		if typeof(HitFeel) != TYPE_NIL:
-			HitFeel.shake(0.26)
-			HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(1.0, 0.85, 0.35), 1.25)
-			HitFeel.kick_fov(5.5, 0.18)
+			HitFeel.shake(0.3)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(1.0, 0.85, 0.35), 1.35)
+			HitFeel.kick_fov(6.0, 0.2)
 		scale = Vector3(1.14, 0.92, 1.14)
 		var tw := create_tween()
 		tw.tween_property(self, "scale", Vector3.ONE, 0.16).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)

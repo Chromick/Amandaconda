@@ -6,6 +6,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.7.73
+
+### Alteração
+- Safezone glow; telegraph; enrage @50% trash (Net/Portara/Chatana).
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.7.72
 
 ### Alteração

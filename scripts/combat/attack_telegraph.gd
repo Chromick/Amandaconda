@@ -15,7 +15,7 @@ static func make_box(host: Node3D, size: Vector3, local_pos: Vector3, color: Col
 	mat.albedo_color = color
 	mat.emission_enabled = true
 	mat.emission = Color(color.r, color.g, color.b)
-	mat.emission_energy_multiplier = 1.6
+	mat.emission_energy_multiplier = 2.0
 	mi.material_override = mat
 	mi.position = local_pos
 	mi.visible = false
@@ -36,7 +36,7 @@ static func make_sphere(host: Node3D, radius: float, local_pos: Vector3, color: 
 	mat.albedo_color = color
 	mat.emission_enabled = true
 	mat.emission = Color(color.r, color.g, color.b)
-	mat.emission_energy_multiplier = 1.4
+	mat.emission_energy_multiplier = 1.8
 	mi.material_override = mat
 	mi.position = local_pos
 	mi.visible = false

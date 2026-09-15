@@ -86,15 +86,15 @@ func _physics_process(delta: float) -> void:
 func _check_enrage() -> void:
 	if _enraged or _dead:
 		return
-	if health <= max_health * 0.45:
+	if health <= max_health * 0.5:
 		_enraged = true
 		_base_color = Color(0.75, 0.25, 0.95)
 		_restore_color()
 		GameState.show_toast("NET · sinal saturado")
 		if typeof(HitFeel) != TYPE_NIL:
-			HitFeel.shake(0.24)
-			HitFeel.spark_at(global_position + Vector3.UP * 1.4, Color(0.95, 0.3, 0.9), 1.2)
-			HitFeel.kick_fov(5.5, 0.18)
+			HitFeel.shake(0.28)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.4, Color(0.95, 0.3, 0.9), 1.35)
+			HitFeel.kick_fov(6.0, 0.2)
 		scale = Vector3(1.14, 0.92, 1.14)
 		var tw := create_tween()
 		tw.tween_property(self, "scale", Vector3.ONE, 0.16).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
