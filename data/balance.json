@@ -280,6 +280,13 @@
         "custo": 150,
         "texto": "+12% dano",
         "dano_mult": 0.12
+      },
+      {
+        "id": "heal_cache",
+        "nome": "heal_cache",
+        "custo": 100,
+        "texto": "+1 lata max",
+        "latas_max": 1
       }
     ]
   },
