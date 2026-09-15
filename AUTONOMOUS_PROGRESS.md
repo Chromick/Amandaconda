@@ -6,6 +6,22 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.6.38
+
+### Alteração
+- Boss KB rewards up across the board; movement accel; safezone label.
+- Versão 0.6.38.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.6.36
 
 ### Alteração
