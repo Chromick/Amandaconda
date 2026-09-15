@@ -155,8 +155,8 @@
   },
 
   "chatana": {
-    "vida": 36,
-    "velocidade": 3.65,
+    "vida": 38,
+    "velocidade": 3.7,
     "prefer_distance": 4.9,
     "aggro": 11.2,
     "leash": 16.5,
@@ -189,8 +189,8 @@
   },
 
   "net": {
-    "vida": 48,
-    "velocidade": 1.55,
+    "vida": 50,
+    "velocidade": 1.6,
     "prefer_distance": 9.2,
     "aggro": 12.0,
     "leash": 18.0,
@@ -211,7 +211,7 @@
     "latas": 11,
     "cura": 95,
     "tempo_uso": 0.34,
-    "safezone_regen": 90.0,
+    "safezone_regen": 95.0,
     "safezone_latas": true
   },
 
