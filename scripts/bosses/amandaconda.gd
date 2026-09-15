@@ -177,6 +177,11 @@ func _die() -> void:
 		_coil.visible = false
 	HitFeel.kill_punch()
 	HitFeel.spark_at(global_position + Vector3.UP * 1.3, Color(0.95, 0.35, 0.5), 1.6)
+	HitFeel.kick_fov(8.0, 0.25)
+	HitFeel.shake(0.45)
+	var hud := get_tree().get_first_node_in_group("hud")
+	if hud and hud.has_method("flash_danger"):
+		hud.flash_danger()
 
 
 func on_arena_engaged() -> void:
