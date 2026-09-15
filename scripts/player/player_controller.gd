@@ -62,6 +62,7 @@ var _ability_cd: float = 0.0
 var _eco_pending: bool = false
 var _eco_pos: Vector3 = Vector3.ZERO
 var _eco_timer: float = 0.0
+var _eco_telegraph: MeshInstance3D = null
 var _combo_step: int = 0
 var _combo_window: float = 0.0
 var _queued_combo: bool = false
@@ -753,6 +754,12 @@ func clear_ground_slow() -> void:
 func _try_heal() -> void:
 	if state != State.MOVE:
 		return
+	if health >= max_health - 0.5:
+		GameState.show_toast("Vida cheia")
+		return
+	if GameState.heals <= 0:
+		GameState.show_toast("Sem latas")
+		return
 	if not GameState.try_consume_heal():
 		return
 	state = State.HEALING
@@ -762,6 +769,7 @@ func _try_heal() -> void:
 	velocity.z = 0.0
 	_set_mesh_color(Color(0.45, 1.0, 0.55))
 	drinks_changed.emit(GameState.heals, GameState.max_heals)
+	GameState.show_toast("Bebendo lata…")
 
 
 func _process_healing(delta: float) -> void:
@@ -799,6 +807,7 @@ func _respawn() -> void:
 	_mark_mult = 1.0
 	_ground_slow = 1.0
 	_eco_pending = false
+	_clear_eco_telegraph()
 	_clear_attack_meta()
 	attack_area.monitoring = false
 	heavy_charging = false
@@ -820,6 +829,8 @@ func _tick_ability(delta: float) -> void:
 		_ability_cd -= delta
 	if _eco_pending:
 		_eco_timer -= delta
+		if _eco_telegraph != null and is_instance_valid(_eco_telegraph):
+			AttackTelegraphScript.set_active(_eco_telegraph, true, _eco_timer < 0.2)
 		if _eco_timer <= 0.0:
 			_eco_pending = false
 			_resolve_eco()
@@ -832,6 +843,7 @@ func _try_ability() -> void:
 		GameState.show_toast("Sem habilidade equipada")
 		return
 	if _ability_cd > 0.0:
+		GameState.show_toast("%s em recarga · %.1fs" % [GameState.ability_label(), _ability_cd])
 		return
 	match GameState.equipped_ability:
 		GameState.ABILITY_CARAMELO:
@@ -848,6 +860,7 @@ func _try_ability() -> void:
 func _cast_caramelo() -> void:
 	var cost := 20.0
 	if stamina < cost:
+		GameState.show_toast("Vigor insuficiente")
 		return
 	_spend_stamina(cost)
 	_ability_cd = 6.0
@@ -857,11 +870,13 @@ func _cast_caramelo() -> void:
 		return
 	puddle.setup(2.4, 5.5, 0.4)
 	_set_mesh_color(Color(0.85, 0.55, 0.2))
+	GameState.show_toast("Caramelo!")
 
 
 func _cast_eco() -> void:
 	var cost := 22.0
 	if stamina < cost:
+		GameState.show_toast("Vigor insuficiente")
 		return
 	_spend_stamina(cost)
 	_ability_cd = 5.0
@@ -871,11 +886,39 @@ func _cast_eco() -> void:
 	if lock_target and is_instance_valid(lock_target):
 		_eco_pos = lock_target.global_position
 	_set_mesh_color(Color(0.55, 0.85, 1.0))
+	_spawn_eco_telegraph()
 	GameState.show_toast("Eco…")
+
+
+func _spawn_eco_telegraph() -> void:
+	_clear_eco_telegraph()
+	var host := get_tree().current_scene
+	if host == null:
+		host = self
+	_eco_telegraph = AttackTelegraphScript.make_sphere(
+		host,
+		2.1,
+		Vector3.ZERO,
+		Color(0.45, 0.85, 1.0, 0.32)
+	)
+	_eco_telegraph.top_level = true
+	_eco_telegraph.global_position = _eco_pos + Vector3(0, 0.4, 0)
+	AttackTelegraphScript.set_active(_eco_telegraph, true, false)
+
+
+func _clear_eco_telegraph() -> void:
+	if _eco_telegraph != null and is_instance_valid(_eco_telegraph):
+		_eco_telegraph.queue_free()
+	_eco_telegraph = null
+
+
+func ability_cooldown_remaining() -> float:
+	return maxf(_ability_cd, 0.0)
 
 
 func _resolve_eco() -> void:
 	_set_mesh_color(_default_color)
+	_clear_eco_telegraph()
 	var dmg := 22.0 * GameState.damage_multiplier()
 	for node in get_tree().get_nodes_in_group("enemy"):
 		if node == null or not is_instance_valid(node):
@@ -895,7 +938,9 @@ func _resolve_eco() -> void:
 			continue
 		if node.global_position.distance_to(_eco_pos) <= 2.2:
 			node.take_damage(dmg, facing * 4.0, self)
-	HitFeel.punch()
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(_eco_pos + Vector3.UP * 0.6, Color(0.5, 0.9, 1.0), 1.35)
+		HitFeel.punch()
 
 
 func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node = null) -> void:

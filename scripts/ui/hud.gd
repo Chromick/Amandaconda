@@ -78,6 +78,7 @@ func _process(delta: float) -> void:
 		_rotate_hint(false)
 	_update_status_bits()
 	_update_boss_bar()
+	_refresh_ability()
 
 
 func _update_status_bits() -> void:
@@ -268,8 +269,17 @@ func _refresh_meta(_a: Variant = null) -> void:
 
 
 func _refresh_ability() -> void:
-	if ability_label:
-		ability_label.text = "Habilidade: %s  [F] usa · [T] troca na safe" % GameState.ability_label()
+	if ability_label == null:
+		return
+	var base := "Habilidade: %s  [F] usa · [T] troca na safe" % GameState.ability_label()
+	if _player and is_instance_valid(_player) and _player.has_method("ability_cooldown_remaining"):
+		var cd: float = float(_player.ability_cooldown_remaining())
+		if cd > 0.05:
+			ability_label.text = "%s · CD %.1fs" % [base, cd]
+			ability_label.modulate = Color(0.75, 0.8, 0.9)
+			return
+	ability_label.text = base
+	ability_label.modulate = Color.WHITE
 
 
 func _show_toast(message: String) -> void:

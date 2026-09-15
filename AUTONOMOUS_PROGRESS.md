@@ -6,6 +6,36 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~02:05 BRT
+
+### Alteração
+- **Pendrive pickup**: spin/bob, cor emissiva por tipo, toast com nível Fis/Esp, spark + shake ao coletar.
+- **Patch shop**: HitFeel.cancel ao abrir; toast de abertura; slots cheios / KB insuficiente (tooltip + disable); toast com nome do patch ao comprar.
+- **Habilidades**: toast de CD (`Eco em recarga · Xs`), vigor insuficiente, Caramelo confirmado; telegraph esférico do Eco com flash no impacto + spark.
+- **HUD**: label de habilidade mostra `CD Xs` em tempo real.
+- **Cura**: feedback “Vida cheia” / “Sem latas” / “Bebendo lata…”.
+
+### Arquivos modificados
+- `scripts/world/pendrive_pickup.gd`
+- `scripts/ui/patch_shop.gd`
+- `scripts/player/player_controller.gd`
+- `scripts/ui/hud.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless `--quit-after 3` EXIT 0 (Balance OK)
+- PIE visual (pendrive/shop/eco telegraph): **não** executado
+
+### Problemas encontrados
+- Elite Joãosias ainda **AGUARDANDO DECISÃO** (sala de spawn)
+- Feedback visual fino depende de PIE do usuário
+
+### Próxima tarefa
+- Feedback de roll/ataque sem vigor (toast leve ou só flash já existente)
+- Revisar terminal/interações E próximos juice de combate
+
+---
+
 ## 2026-09-15 ~01:50 BRT
 
 ### Alteração
