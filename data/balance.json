@@ -19,8 +19,8 @@
 
     "max_health": 140,
     "max_stamina": 140,
-    "stamina_regen": 70,
-    "stamina_regen_delay": 0.3,
+    "stamina_regen": 74,
+    "stamina_regen_delay": 0.28,
 
     "walk_speed": 6.25,
     "run_speed": 10.2,
@@ -158,9 +158,9 @@
     "vida": 28,
     "velocidade": 3.35,
     "prefer_distance": 5.2,
-    "aggro": 10.5,
-    "leash": 16.0,
-    "deaggro": 21.0,
+    "aggro": 10.8,
+    "leash": 16.5,
+    "deaggro": 21.5,
     "intervalo": 1.85,
     "preparacao": 0.4,
     "acerto": 0.35,
@@ -168,7 +168,7 @@
     "dano": 12,
     "raio": 2.5,
     "renascer_em": 3.2,
-    "bytes": [44, 68]
+    "bytes": [48, 72]
   },
 
   "portara": {
@@ -201,8 +201,8 @@
     "recuperacao": 0.7,
     "dano": 11,
     "proj_speed": 15.5,
-    "mark_duration": 4.0,
-    "mark_speed_mult": 0.66,
+    "mark_duration": 4.2,
+    "mark_speed_mult": 0.64,
     "renascer_em": 4.5,
     "bytes": [52, 84]
   },
