@@ -120,16 +120,16 @@
   },
 
   "camera": {
-    "distance": 5.0,
+    "distance": 4.8,
     "height": 1.65,
     "min_pitch": -40.0,
     "max_pitch": 55.0,
-    "sensitivity": 0.12,
-    "follow_speed": 12.0,
-    "lock_on_distance": 20.0,
-    "lock_on_height_bias": 1.2,
-    "idle_yaw_delay": 1.2,
-    "idle_yaw_speed": 3.2
+    "sensitivity": 0.13,
+    "follow_speed": 13.5,
+    "lock_on_distance": 22.0,
+    "lock_on_height_bias": 1.25,
+    "idle_yaw_delay": 1.1,
+    "idle_yaw_speed": 3.5
   },
 
   "impacto": {
