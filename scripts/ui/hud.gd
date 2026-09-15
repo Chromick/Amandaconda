@@ -16,7 +16,7 @@ extends Control
 const HINTS: PackedStringArray = [
 	"WASD move · mouse olha · Ctrl/C rola · Shift corre (gasta vigor) · LMB ataca",
 	"Q ou MMB trava alvo · R bebe lata · F habilidade · T na safe",
-	"Segure RMB/pesado pra carregar · Shift+LMB = investida",
+	"Segure RMB/pesado pra carregar · Shift+LMB = investida · LMB×3 = combo",
 	"Escola (Teclado/Vírus) no menu · patches no servidor de backup [E]",
 	"Safezone restaura latas · chefs ficam nas salas · siga as placas",
 	"Entre na névoa · a porta fecha até o fim · 3 chefes abrem servidores",
@@ -404,8 +404,8 @@ func _update_boss_bar() -> void:
 		boss_bar.max_value = target.max_health
 		boss_bar.value = target.health
 		var mh := float(target.max_health)
-		if mh > 0.0 and float(target.health) / mh < 0.3:
+		if mh > 0.0 and float(target.health) / mh < 0.4:
 			var pulse := 0.55 + 0.45 * sin(Time.get_ticks_msec() * 0.01)
-			boss_bar.modulate = Color(1.0, pulse * 0.5, pulse * 0.45)
+			boss_bar.modulate = Color(1.0, pulse * 0.45, pulse * 0.4)
 		else:
 			boss_bar.modulate = Color.WHITE
