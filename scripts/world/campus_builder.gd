@@ -488,6 +488,7 @@ func _dress_patio(root: Node3D) -> void:
 	_emissive_box(center + Vector3(0, 0.08, 1.5), Vector3(1.4, 0.06, 1.4), Color(0.15, 0.08, 0.05), Color(1.0, 0.35, 0.1), 2.2)
 	_add_room_light(center + Vector3(-2.5, 2.4, 2.0), Color(1.0, 0.4, 0.18), 6.0, 10.0)
 	_add_room_light(center + Vector3(2.5, 2.2, -1.5), Color(0.35, 0.4, 0.55), 4.5, 9.0)
+	_add_room_light(center + Vector3(0, 2.6, 0), Color(1.0, 0.55, 0.3), 3.5, 8.0)
 
 
 func _dress_porta(root: Node3D) -> void:
