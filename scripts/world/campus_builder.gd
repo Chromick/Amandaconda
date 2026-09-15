@@ -367,6 +367,9 @@ func _spawn_gameplay() -> void:
 	_spawn(BYTES, Vector3(-10, 0.6, 6))
 	_spawn(BYTES, Vector3(10, 0.6, 6))
 	_spawn(BYTES, Vector3(-3, 0.6, -10))
+	_spawn(BYTES, Vector3(8, 0.6, 14))
+	_spawn(BYTES, Vector3(-8, 0.6, 14))
+	_spawn(BYTES, Vector3(0, 0.6, -16))
 
 	var luan := _spawn_node(LUAN, ROOM_BANDEJAO + Vector3(0, 1, 0))
 	var renan := _spawn_node(RENAN, ROOM_LAB + Vector3(0, 1, 0))
