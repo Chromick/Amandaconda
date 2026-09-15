@@ -1408,6 +1408,9 @@ func _require_stamina(cost: float) -> bool:
 	var hud := get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("flash_stamina"):
 		hud.flash_stamina()
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.shake(0.05)
+		HitFeel.kick_fov(1.2, 0.08)
 	if _stamina_toast_cd <= 0.0:
 		GameState.show_toast("Vigor insuficiente")
 		_stamina_toast_cd = 0.9
