@@ -192,6 +192,8 @@ func _ai_idle(delta: float) -> void:
 		_phase_t = _windup_total
 		velocity = Vector3.ZERO
 		_update_pulse_telegraph(true, false)
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.07)
 
 
 func _hit_players_in_pulse() -> void:
