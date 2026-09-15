@@ -9,7 +9,7 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 ## 2026-09-15 ~continuação loop
 
 ### Alteração
-- v0.5.1: hit-flash longer; denser roll ghosts; light-hit sparks; damage popup scale; hard-landing dust; gate progress pulse; Net/Chatana/Portara enrage bite.
+- v0.5.3: 3-hit combo + damage scale; elite/boss enrage bite; cyan lock marker; stars/dust/gates/safezone; ability-ready toast; heal-drink sparks; Luanevil/Amandaconda phase2 snappier.
 
 ### Testes
 - Hub headless EXIT 0 (cada ciclo)
