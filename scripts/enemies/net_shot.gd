@@ -78,9 +78,10 @@ func _spawn_trail() -> void:
 
 
 func _on_body(body: Node3D) -> void:
-	if body == source:
+	if body == source or not is_instance_valid(self):
 		return
 	if body.is_in_group("player") and body.has_method("take_damage"):
+		set_deferred("monitoring", false)
 		body.take_damage(damage, velocity.normalized() * 2.0, source)
 		if body.has_method("apply_mark"):
 			body.apply_mark(mark_duration, mark_speed)
