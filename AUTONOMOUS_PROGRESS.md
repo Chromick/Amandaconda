@@ -63,3 +63,30 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 ## Histórico anterior (bugs SessionUtil / HitFeel / Portara / etc.)
 
 Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil, restore/balance, hitstop, mark toast, arena toast, net shot magenta.
+
+## 2026-09-15 01:53 BRT
+
+### Alteração
+- Autônomo confirmado ligado (enabled: true).
+- \HitFeel.cancel()\: pause/menu/respawn não deixam \	ime_scale\ preso.
+- Respawn limpa mark, slow, eco e hacks.
+- \enemy_base._face_flat()\: look_at XZ seguro no retorno ao spawn.
+
+### Arquivos modificados
+- scripts/combat/hit_feel.gd
+- scripts/ui/pause_menu.gd
+- scripts/player/player_controller.gd
+- scripts/autoload/game_state.gd
+- scripts/enemies/enemy_base.gd
+- AUTONOMOUS_PROGRESS.md
+
+### Testes
+- Hub headless EXIT 0
+- PIE pause-durante-hitstop: não testado visualmente
+
+### Problemas encontrados
+- Joãosias spawn ainda AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Migrar look_at dos bosses/trash para \_face_flat\ onde fizer sentido
+- Continuar polish de combate / UI

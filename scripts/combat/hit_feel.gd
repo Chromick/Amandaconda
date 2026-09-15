@@ -7,6 +7,12 @@ const SceneUtil := preload("res://scripts/combat/scene_util.gd")
 var _hitstop_token: int = 0
 
 
+func cancel() -> void:
+	## Cancela hitstop pendente e garante time_scale normal (pause/morte/menu).
+	_hitstop_token += 1
+	Engine.time_scale = 1.0
+
+
 func punch(duration: float = -1.0) -> void:
 	if duration < 0.0:
 		duration = float(Balance.get_path_value("impacto.pausa_no_acerto", 0.07))

@@ -780,15 +780,22 @@ func _respawn() -> void:
 	health = max_health
 	stamina = max_stamina
 	invuln_timer = 1.0
+	_mark_timer = 0.0
+	_mark_mult = 1.0
+	_ground_slow = 1.0
+	_eco_pending = false
 	_clear_attack_meta()
 	attack_area.monitoring = false
 	heavy_charging = false
+	if typeof(HitFeel) != TYPE_NIL and HitFeel.has_method("cancel"):
+		HitFeel.cancel()
 	global_position = GameState.safezone_position
 	velocity = Vector3.ZERO
 	_set_mesh_color(_default_color)
 	health_changed.emit(health, max_health)
 	stamina_changed.emit(stamina, max_stamina)
 	GameState.refill_heals()
+	GameState.clear_hacks()
 	drinks_changed.emit(GameState.heals, GameState.max_heals)
 	GameState.show_toast("Safezone · latas restauradas")
 

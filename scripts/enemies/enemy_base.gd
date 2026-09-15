@@ -89,10 +89,18 @@ func _idle_or_home(delta: float, spd: float = 2.6) -> void:
 		velocity.z = move_toward(velocity.z, 0.0, 12.0 * delta)
 		return
 	var dir := to.normalized()
-	look_at(global_position + dir, Vector3.UP)
+	_face_flat(dir)
 	var s := spd * move_scale()
 	velocity.x = dir.x * s
 	velocity.z = dir.z * s
+
+
+func _face_flat(dir: Vector3) -> void:
+	## look_at seguro no plano XZ (evita erro com dir ~0 ou paralelo a UP).
+	dir.y = 0.0
+	if dir.length_squared() < 0.0001:
+		return
+	look_at(global_position + dir.normalized(), Vector3.UP)
 
 
 func _clamp_to_arena() -> void:

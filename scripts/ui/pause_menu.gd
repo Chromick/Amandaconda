@@ -17,6 +17,9 @@ func _toggle() -> void:
 	visible = not visible
 	get_tree().paused = visible
 	GameState.paused = visible
+	# Hitstop não pode deixar o jogo em 0.12x ao pausar/despausar.
+	if typeof(HitFeel) != TYPE_NIL and HitFeel.has_method("cancel"):
+		HitFeel.cancel()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if visible else Input.MOUSE_MODE_CAPTURED
 
 
@@ -27,4 +30,7 @@ func _on_resume_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	get_tree().paused = false
+	GameState.paused = false
+	if typeof(HitFeel) != TYPE_NIL and HitFeel.has_method("cancel"):
+		HitFeel.cancel()
 	GameState.go_to_menu()

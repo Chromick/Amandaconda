@@ -271,5 +271,7 @@ func go_to_hub() -> void:
 func go_to_menu() -> void:
 	paused = false
 	clear_hacks()
+	if typeof(HitFeel) != TYPE_NIL and HitFeel.has_method("cancel"):
+		HitFeel.cancel()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
