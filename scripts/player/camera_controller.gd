@@ -111,10 +111,17 @@ func _physics_process(delta: float) -> void:
 		sprinting = Vector3(v.x, 0.0, v.z).length() > 1.0
 	if lock_target and is_instance_valid(lock_target):
 		_fov_target = _base_fov - 4.0
+		# Aproxima um pouco no lock
+		var lock_len := float(Balance.camera().get("distance", 4.5)) * 0.88
+		spring.spring_length = lerpf(spring.spring_length, lock_len, clampf(4.0 * delta, 0.0, 1.0))
 	elif sprinting:
 		_fov_target = _base_fov + 6.0
+		var run_len := float(Balance.camera().get("distance", 4.5)) * 1.06
+		spring.spring_length = lerpf(spring.spring_length, run_len, clampf(3.0 * delta, 0.0, 1.0))
 	else:
 		_fov_target = _base_fov
+		var base_len := float(Balance.camera().get("distance", 4.5))
+		spring.spring_length = lerpf(spring.spring_length, base_len, clampf(3.0 * delta, 0.0, 1.0))
 	if camera:
 		camera.fov = lerpf(camera.fov, _fov_target, clampf(6.0 * delta, 0.0, 1.0))
 
