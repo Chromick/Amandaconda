@@ -926,8 +926,8 @@ func _spawn_node(packed: PackedScene, pos: Vector3) -> Node:
 
 func _street_lamp(pos: Vector3) -> void:
 	_box(pos + Vector3(0, 2.0, 0), Vector3(0.12, 4.0, 0.12), Color(0.25, 0.25, 0.28), true)
-	_emissive_box(pos + Vector3(0, 4.15, 0), Vector3(0.55, 0.25, 0.55), Color(1.0, 0.9, 0.65), Color(1.0, 0.8, 0.4), 4.8)
-	_add_room_light(pos + Vector3(0, 4.0, 0), Color(1.0, 0.85, 0.55), 8.0, 13.5)
+	_emissive_box(pos + Vector3(0, 4.15, 0), Vector3(0.55, 0.25, 0.55), Color(1.0, 0.9, 0.65), Color(1.0, 0.8, 0.4), 5.2)
+	_add_room_light(pos + Vector3(0, 4.0, 0), Color(1.0, 0.85, 0.55), 8.5, 14.5)
 
 
 func _way_sign(pos: Vector3, text: String, color: Color) -> void:

@@ -39,10 +39,10 @@
     "turn_speed": 16.0,
     "attack_move_mult": 0.2,
     "buffer_de_acao": 0.24,
-    "combo_janela": 0.8,
+    "combo_janela": 0.85,
     "combo_max": 3,
-    "sprint_attack_dash": 14.8,
-    "sprint_stamina_drain": 4.5,
+    "sprint_attack_dash": 15.0,
+    "sprint_stamina_drain": 4.2,
 
     "arma_inicial": "teclado",
     "virus_desbloqueado": true,
@@ -209,9 +209,9 @@
 
   "cura": {
     "latas": 8,
-    "cura": 78,
-    "tempo_uso": 0.42,
-    "safezone_regen": 70.0,
+    "cura": 80,
+    "tempo_uso": 0.4,
+    "safezone_regen": 74.0,
     "safezone_latas": true
   },
 
