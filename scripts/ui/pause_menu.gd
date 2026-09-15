@@ -59,9 +59,12 @@ func _toggle() -> void:
 		if ver:
 			ver.text = "v%s · godot-4" % str(ProjectSettings.get_setting("application/config/version", "0.4"))
 		center.modulate.a = 0.0
+		center.scale = Vector2(0.94, 0.94)
 		var tw := create_tween()
 		tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tw.set_parallel(true)
 		tw.tween_property(center, "modulate:a", 1.0, 0.18)
+		tw.tween_property(center, "scale", Vector2.ONE, 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func _on_resume_pressed() -> void:

@@ -13,6 +13,7 @@ var _look_idle: float = 0.0
 var trauma: float = 0.0
 var _base_fov: float = 70.0
 var _fov_target: float = 70.0
+var _fov_punch: float = 0.0
 
 
 func _ready() -> void:
@@ -42,11 +43,10 @@ func add_trauma(amount: float) -> void:
 
 
 func punch_fov(amount: float = 8.0) -> void:
-	## Kick breve no FOV (hit / impacto).
-	if camera == null:
-		return
-	camera.fov = _base_fov + amount
-	_fov_target = _base_fov
+	## Kick breve no FOV (hit / impacto). Empilha e decai sem brigar com sprint/lock.
+	_fov_punch = amount
+	if camera:
+		camera.fov = _fov_target + amount
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -122,8 +122,10 @@ func _physics_process(delta: float) -> void:
 		_fov_target = _base_fov
 		var base_len := float(Balance.camera().get("distance", 4.5))
 		spring.spring_length = lerpf(spring.spring_length, base_len, clampf(4.0 * delta, 0.0, 1.0))
+	if _fov_punch != 0.0:
+		_fov_punch = move_toward(_fov_punch, 0.0, 55.0 * delta)
 	if camera:
-		camera.fov = lerpf(camera.fov, _fov_target, clampf(7.5 * delta, 0.0, 1.0))
+		camera.fov = lerpf(camera.fov, _fov_target + _fov_punch, clampf(7.5 * delta, 0.0, 1.0))
 
 	if trauma > 0.0:
 		var decay := float(Balance.get_path_value("impacto.shake_decay", 1.7))
