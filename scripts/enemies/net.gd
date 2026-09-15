@@ -94,6 +94,10 @@ func _check_enrage() -> void:
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.shake(0.2)
 			HitFeel.spark_at(global_position + Vector3.UP * 1.4, Color(0.95, 0.3, 0.9), 1.0)
+		for cam in get_tree().get_nodes_in_group("player_camera"):
+			if cam and cam.has_method("punch_fov"):
+				cam.punch_fov(3.5)
+				break
 
 
 func _update_beam_telegraph(active: bool, flash: bool) -> void:
