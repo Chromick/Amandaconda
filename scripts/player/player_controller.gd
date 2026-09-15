@@ -627,6 +627,8 @@ func _process_attack(delta: float) -> void:
 		facing = _aim_dir()
 		if not _is_ranged():
 			_sync_atk_telegraph(true, false)
+	elif phase == "active" and not _is_ranged() and Engine.get_physics_frames() % 2 == 0:
+		_spawn_weapon_trail()
 
 	if phase_t > 0.0:
 		return
@@ -1275,6 +1277,31 @@ func _pulse_weapon(c: Color) -> void:
 	mat.emission_enabled = true
 	mat.emission = c
 	mat.emission_energy_multiplier = 2.0
+
+
+func _spawn_weapon_trail() -> void:
+	var host := get_tree().current_scene
+	if host == null or weapon_visual == null:
+		return
+	var p := MeshInstance3D.new()
+	var sm := SphereMesh.new()
+	sm.radius = 0.06
+	sm.height = 0.12
+	p.mesh = sm
+	var mat := StandardMaterial3D.new()
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.albedo_color = Color(1.0, 0.9, 0.45, 0.55)
+	mat.emission_enabled = true
+	mat.emission = Color(1.0, 0.85, 0.3)
+	mat.emission_energy_multiplier = 1.5
+	p.material_override = mat
+	host.add_child(p)
+	p.global_position = weapon_visual.global_position
+	var tw := create_tween()
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.16)
+	tw.parallel().tween_property(p, "scale", Vector3.ONE * 0.2, 0.16)
+	tw.tween_callback(p.queue_free)
 
 
 func _set_mesh_color(c: Color) -> void:
