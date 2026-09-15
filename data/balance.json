@@ -48,12 +48,12 @@
     "virus_desbloqueado": true,
 
     "rolamento": {
-      "duracao": 0.25,
+      "duracao": 0.24,
       "inv_inicio": 0.0,
-      "inv_duracao": 0.64,
+      "inv_duracao": 0.66,
       "vigor": 7,
-      "velocidade": 18.0,
-      "atrito_final": 56.0
+      "velocidade": 18.5,
+      "atrito_final": 58.0
     },
 
     "dano_recebido": {
@@ -80,12 +80,12 @@
           "carga_maxima": 0.5,
           "acerto": 0.06,
           "recuperacao": 0.2,
-          "dano": 40,
-          "dano_carregado": 70,
-          "vigor": 18,
-          "alcance": 2.28,
-          "altura": 1.58,
-          "avanco": 6.4
+          "dano": 42,
+          "dano_carregado": 72,
+          "vigor": 17,
+          "alcance": 2.35,
+          "altura": 1.6,
+          "avanco": 6.6
         }
       },
       "virus": {
@@ -155,56 +155,56 @@
   },
 
   "chatana": {
-    "vida": 42,
-    "velocidade": 3.85,
-    "prefer_distance": 5.0,
-    "aggro": 11.5,
-    "leash": 17.0,
-    "deaggro": 22.0,
-    "intervalo": 1.7,
-    "preparacao": 0.36,
-    "acerto": 0.3,
-    "recuperacao": 0.46,
-    "dano": 12,
-    "raio": 2.65,
-    "renascer_em": 3.1,
-    "bytes": [62, 90]
+    "vida": 44,
+    "velocidade": 3.95,
+    "prefer_distance": 5.1,
+    "aggro": 11.8,
+    "leash": 17.5,
+    "deaggro": 22.5,
+    "intervalo": 1.65,
+    "preparacao": 0.34,
+    "acerto": 0.28,
+    "recuperacao": 0.44,
+    "dano": 13,
+    "raio": 2.7,
+    "renascer_em": 3.0,
+    "bytes": [65, 95]
   },
 
   "portara": {
-    "vida": 96,
-    "velocidade": 2.6,
-    "aggro": 10.0,
-    "leash": 16.5,
-    "deaggro": 20.5,
-    "intervalo": 1.45,
-    "preparacao": 0.48,
-    "acerto": 0.13,
-    "recuperacao": 0.68,
-    "dano": 18,
-    "alcance": 1.55,
-    "altura": 1.6,
-    "renascer_em": 3.9,
-    "bytes": [85, 118]
+    "vida": 100,
+    "velocidade": 2.7,
+    "aggro": 10.2,
+    "leash": 17.0,
+    "deaggro": 21.0,
+    "intervalo": 1.4,
+    "preparacao": 0.46,
+    "acerto": 0.12,
+    "recuperacao": 0.65,
+    "dano": 19,
+    "alcance": 1.6,
+    "altura": 1.65,
+    "renascer_em": 3.8,
+    "bytes": [90, 125]
   },
 
   "net": {
-    "vida": 54,
-    "velocidade": 1.7,
-    "prefer_distance": 9.4,
-    "aggro": 12.2,
-    "leash": 18.5,
-    "deaggro": 23.5,
-    "intervalo": 2.0,
-    "preparacao": 0.48,
-    "acerto": 0.1,
-    "recuperacao": 0.62,
-    "dano": 12,
-    "proj_speed": 16.5,
-    "mark_duration": 4.7,
-    "mark_speed_mult": 0.58,
-    "renascer_em": 4.4,
-    "bytes": [68, 100]
+    "vida": 56,
+    "velocidade": 1.75,
+    "prefer_distance": 9.6,
+    "aggro": 12.5,
+    "leash": 19.0,
+    "deaggro": 24.0,
+    "intervalo": 1.95,
+    "preparacao": 0.46,
+    "acerto": 0.095,
+    "recuperacao": 0.6,
+    "dano": 13,
+    "proj_speed": 17.0,
+    "mark_duration": 4.8,
+    "mark_speed_mult": 0.55,
+    "renascer_em": 4.2,
+    "bytes": [72, 105]
   },
 
   "cura": {

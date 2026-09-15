@@ -32,7 +32,7 @@ func kill_punch(duration: float = -1.0) -> void:
 	if duration < 0.0:
 		duration = float(Balance.get_path_value("impacto.pausa_ao_matar", 0.22))
 	shake(0.55)
-	await punch(duration, 8.2)
+	await punch(duration, 8.8)
 
 
 func shake(amount: float = -1.0) -> void:

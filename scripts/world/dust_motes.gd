@@ -5,7 +5,7 @@ var _pts: Array = []
 
 
 func _ready() -> void:
-	for i in 240:
+	for i in 260:
 		var m := MeshInstance3D.new()
 		var s := SphereMesh.new()
 		s.radius = randf_range(0.025, 0.045)
