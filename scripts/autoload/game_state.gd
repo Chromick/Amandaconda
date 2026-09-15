@@ -274,6 +274,16 @@ func mark_boss_defeated(boss_id: String) -> void:
 		# Adia pra não sobrescrever o toast da habilidade no mesmo frame.
 		get_tree().create_timer(1.4).timeout.connect(func ():
 			show_toast("3/3 · portão dos servidores liberado")
+			var player := get_tree().get_first_node_in_group("player")
+			if player and typeof(HitFeel) != TYPE_NIL:
+				HitFeel.spark_at(player.global_position + Vector3.UP * 1.2, Color(0.45, 1.0, 0.6), 1.15)
+				HitFeel.shake(0.18)
+		, CONNECT_ONE_SHOT)
+	if boss_id == "marlombolico":
+		get_tree().create_timer(0.9).timeout.connect(func ():
+			var player := get_tree().get_first_node_in_group("player")
+			if player and typeof(HitFeel) != TYPE_NIL:
+				HitFeel.spark_at(player.global_position + Vector3.UP * 1.2, Color(0.35, 1.0, 0.5), 1.0)
 		, CONNECT_ONE_SHOT)
 
 
