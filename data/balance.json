@@ -22,12 +22,12 @@
     "stamina_regen": 128,
     "stamina_regen_delay": 0.08,
 
-    "walk_speed": 8.05,
-    "run_speed": 13.25,
-    "ground_accel": 46.0,
-    "ground_friction": 52.0,
-    "air_accel": 25.0,
-    "air_friction": 7.0,
+    "walk_speed": 8.2,
+    "run_speed": 13.5,
+    "ground_accel": 48.0,
+    "ground_friction": 54.0,
+    "air_accel": 26.0,
+    "air_friction": 6.8,
 
     "gravity": 24.0,
     "max_fall_speed": 33.0,
@@ -106,14 +106,14 @@
           "carga_maxima": 0.52,
           "acerto": 0.075,
           "recuperacao": 0.36,
-          "dano": 28,
-          "dano_carregado": 56,
-          "vigor": 17,
+          "dano": 30,
+          "dano_carregado": 58,
+          "vigor": 16,
           "avanco": 0,
-          "velocidade": 14.5,
-          "tempo_de_vida": 2.4,
-          "raio": 0.62,
-          "quique": 0.78
+          "velocidade": 15.0,
+          "tempo_de_vida": 2.5,
+          "raio": 0.64,
+          "quique": 0.8
         }
       }
     }
@@ -208,10 +208,10 @@
   },
 
   "cura": {
-    "latas": 14,
-    "cura": 115,
-    "tempo_uso": 0.28,
-    "safezone_regen": 120.0,
+    "latas": 15,
+    "cura": 120,
+    "tempo_uso": 0.26,
+    "safezone_regen": 125.0,
     "safezone_latas": true
   },
 
