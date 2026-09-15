@@ -28,7 +28,6 @@ func _refresh() -> void:
 		_:
 			label.text = title
 	col.disabled = open
-	mesh.visible = not open
 	# Mantém o label visível mesmo aberto, sumido o bloqueio.
 	if open:
 		label.modulate = Color(0.5, 1.0, 0.6)
@@ -38,17 +37,30 @@ func _refresh() -> void:
 			if typeof(HitFeel) != TYPE_NIL:
 				HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.45, 1.0, 0.6), 1.2)
 				HitFeel.shake(0.15)
-			if mesh and mesh.material_override is StandardMaterial3D:
-				var mat := mesh.material_override as StandardMaterial3D
-				var tw := create_tween()
-				tw.tween_property(mat, "albedo_color:a", 0.0, 0.5)
-			elif mesh:
-				var mat2 := StandardMaterial3D.new()
-				mat2.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-				mat2.albedo_color = Color(0.4, 0.4, 0.45, 1.0)
-				mesh.material_override = mat2
-				var tw2 := create_tween()
-				tw2.tween_property(mat2, "albedo_color:a", 0.0, 0.5)
-				tw2.tween_callback(func(): mesh.visible = false)
+			_fade_mesh_out()
+		else:
+			mesh.visible = false
 	else:
+		mesh.visible = true
 		label.modulate = Color(1.0, 0.55, 0.45)
+		if mesh and mesh.material_override is StandardMaterial3D:
+			(mesh.material_override as StandardMaterial3D).albedo_color.a = 1.0
+
+
+func _fade_mesh_out() -> void:
+	if mesh == null:
+		return
+	mesh.visible = true
+	var mat := mesh.material_override as StandardMaterial3D
+	if mat == null:
+		mat = StandardMaterial3D.new()
+		mat.albedo_color = Color(0.4, 0.4, 0.45, 1.0)
+		mesh.material_override = mat
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.albedo_color.a = 1.0
+	var tw := create_tween()
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.55)
+	tw.tween_callback(func():
+		if is_instance_valid(mesh):
+			mesh.visible = false
+	)
