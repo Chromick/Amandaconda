@@ -201,14 +201,19 @@ func _die() -> void:
 	visible = true
 	# Desliga colisão enquanto morto.
 	$CollisionShape3D.disabled = true
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(global_position + Vector3.UP * 1.0, Color(1.0, 0.45, 0.3), 0.95)
+		HitFeel.shake(0.2)
 	var delay := float(_cfg.get("renascer_em", 0.0))
 	if delay > 0.0:
 		_revive_timer = delay
 	else:
-		# Breve permanência do KO antes de sumir.
+		# Breve permanência do KO antes de sumir (encolhe).
 		var tw := create_tween()
+		tw.set_parallel(true)
+		tw.tween_property(self, "scale", Vector3(0.35, 0.15, 0.35), 0.4)
 		tw.tween_interval(0.45)
-		tw.tween_callback(queue_free)
+		tw.chain().tween_callback(queue_free)
 
 
 func _drop_bytes(announce: bool = true) -> void:
