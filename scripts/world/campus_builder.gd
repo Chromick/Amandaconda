@@ -439,6 +439,9 @@ func _dress_lab(root: Node3D) -> void:
 	_emissive_box(center + Vector3(0, 0.08, 0), Vector3(0.4, 0.06, 3.5), Color(0.08, 0.1, 0.14), Color(0.4, 0.7, 1.0), 1.6)
 	_add_room_light(center + Vector3(-2, 2.5, 0), Color(0.45, 0.75, 1.0), 5.0, 10.0)
 	_add_room_light(center + Vector3(2, 2.2, 1), Color(0.7, 0.35, 0.9), 3.5, 8.0)
+	var fan := _prop(root, "ceilingFan.glb", center + Vector3(0, 3.1, 0), 0.0)
+	if fan:
+		fan.set_script(preload("res://scripts/world/spin_y.gd"))
 
 
 func _dress_servers(root: Node3D) -> void:
