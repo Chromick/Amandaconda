@@ -61,10 +61,10 @@ func _physics_process(delta: float) -> void:
 			look_at(tip, Vector3.UP)
 	_trail_cd -= delta
 	if _trail_cd <= 0.0:
-		_trail_cd = 0.04
+		_trail_cd = 0.028
 		_spawn_trail()
 	if _light:
-		_light.light_energy = lerpf(_light.light_energy, 2.2, clampf(6.0 * delta, 0.0, 1.0))
+		_light.light_energy = lerpf(_light.light_energy, 2.4, clampf(6.0 * delta, 0.0, 1.0))
 
 
 func _spawn_trail() -> void:
@@ -79,16 +79,16 @@ func _spawn_trail() -> void:
 	var mat := StandardMaterial3D.new()
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	mat.albedo_color = Color(0.4, 1.0, 0.55, 0.55)
+	mat.albedo_color = Color(0.4, 1.0, 0.55, 0.62)
 	mat.emission_enabled = true
 	mat.emission = Color(0.35, 1.0, 0.5)
-	mat.emission_energy_multiplier = 1.6
+	mat.emission_energy_multiplier = 1.85
 	p.material_override = mat
 	host.add_child(p)
 	p.global_position = global_position
 	var tw := create_tween()
-	tw.tween_property(mat, "albedo_color:a", 0.0, 0.22)
-	tw.parallel().tween_property(p, "scale", Vector3.ONE * 0.2, 0.22)
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.28)
+	tw.parallel().tween_property(p, "scale", Vector3.ONE * 0.15, 0.28)
 	tw.tween_callback(p.queue_free)
 
 

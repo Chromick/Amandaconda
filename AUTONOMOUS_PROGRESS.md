@@ -6,6 +6,23 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.6.5
+
+### Alteração
+- Patio: mais bancos/plantas/cadeiras.
+- Vírus: trail mais denso + leve balance (vida/raio/quique).
+- Pendrive magnet.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.6.4
 
 ### Alteração

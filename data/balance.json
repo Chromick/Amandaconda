@@ -97,9 +97,9 @@
           "vigor": 13,
           "avanco": 0,
           "velocidade": 12.5,
-          "tempo_de_vida": 1.15,
-          "raio": 0.26,
-          "quique": 0.38
+          "tempo_de_vida": 1.25,
+          "raio": 0.28,
+          "quique": 0.42
         },
         "ataque_pesado": {
           "preparacao": 0.28,
