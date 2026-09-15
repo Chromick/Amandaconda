@@ -306,6 +306,8 @@ func _ai(delta: float) -> void:
 		velocity = Vector3.ZERO
 		AttackTelegraphScript.set_active(_telegraph, true, false)
 		AttackTelegraphScript.set_active(_slam_ring, _heavy, false)
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.1 if _heavy else 0.06)
 
 
 func _on_hit(body: Node3D) -> void:
