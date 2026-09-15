@@ -277,6 +277,9 @@ func _ai(delta: float) -> void:
 		_phase = Phase.ROLL
 		_phase_t = 0.42
 		_roll_dir = to.normalized() if dist > 0.01 else -global_transform.basis.z
+		GameState.show_toast("BALARRALS · espelho")
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.spark_at(global_position + Vector3.UP * 0.8, Color(1.0, 0.45, 0.15), 0.85)
 		return
 	if dist <= float(_cfg.get("alcance", 1.7)) + 0.4:
 		_heavy = randf() > 0.55

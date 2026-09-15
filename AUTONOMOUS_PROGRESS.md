@@ -6,6 +6,28 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~08:12 BRT
+
+### Alteração
+- Poeira no jump; ending com flash rosa e toast mais longo.
+- v0.4.2 + enrage elites (commit anterior).
+
+### Arquivos modificados
+- `scripts/ui/hud.gd`
+- `scripts/player/player_controller.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar
+
+---
+
 ## 2026-09-15 ~08:10 BRT
 
 ### Alteração

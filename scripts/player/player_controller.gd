@@ -312,6 +312,10 @@ func _update_lock_marker(delta: float) -> void:
 		_lock_marker.visible = true
 		_lock_marker.global_position = lock_target.global_position + Vector3.UP * 2.35
 		_lock_marker.rotate_y(delta * 2.8)
+		var mat := _lock_marker.material_override as StandardMaterial3D
+		if mat:
+			mat.emission_energy_multiplier = 1.8 + sin(Time.get_ticks_msec() * 0.01) * 0.9
+			mat.albedo_color.a = 0.55 + sin(Time.get_ticks_msec() * 0.008) * 0.25
 	else:
 		if lock_target != null and not is_instance_valid(lock_target):
 			lock_target = null
