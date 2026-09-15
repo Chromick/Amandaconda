@@ -13,7 +13,7 @@ func cancel() -> void:
 	Engine.time_scale = 1.0
 
 
-func punch(duration: float = -1.0) -> void:
+func punch(duration: float = -1.0, fov_kick: float = 5.0) -> void:
 	if duration < 0.0:
 		duration = float(Balance.get_path_value("impacto.pausa_no_acerto", 0.07))
 	if duration <= 0.0:
@@ -21,9 +21,8 @@ func punch(duration: float = -1.0) -> void:
 	_hitstop_token += 1
 	var token := _hitstop_token
 	Engine.time_scale = 0.12
-	for node in get_tree().get_nodes_in_group("player_camera"):
-		if node and node.has_method("punch_fov"):
-			node.punch_fov(5.0)
+	if fov_kick != 0.0:
+		kick_fov(fov_kick, 0.12)
 	await get_tree().create_timer(duration, true, false, true).timeout
 	if token == _hitstop_token:
 		Engine.time_scale = 1.0
@@ -33,7 +32,7 @@ func kill_punch(duration: float = -1.0) -> void:
 	if duration < 0.0:
 		duration = float(Balance.get_path_value("impacto.pausa_ao_matar", 0.22))
 	shake(0.55)
-	await punch(duration)
+	await punch(duration, 7.5)
 
 
 func shake(amount: float = -1.0) -> void:
