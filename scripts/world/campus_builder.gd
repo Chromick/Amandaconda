@@ -344,6 +344,10 @@ func _add_night_lights() -> void:
 	# Corredor interno
 	_add_room_light(Vector3(0, 3.5, 4), Color(1.0, 0.9, 0.7), 6.5, 12.0)
 	_add_room_light(Vector3(0, 3.5, -12), Color(0.85, 0.8, 1.0), 5.5, 12.0)
+	_add_room_light(Vector3(-10, 3.2, -2), Color(1.0, 0.75, 0.55), 5.0, 11.0)
+	_add_room_light(Vector3(10, 3.2, -2), Color(0.7, 0.85, 1.0), 5.0, 11.0)
+	_add_room_light(Vector3(-10, 3.2, -18), Color(1.0, 0.55, 0.4), 5.0, 11.0)
+	_add_room_light(Vector3(10, 3.2, -18), Color(0.45, 1.0, 0.6), 5.0, 11.0)
 	# Salas de chefe
 	_add_room_light(ROOM_BANDEJAO + Vector3(0, 3.2, 0), Color(1.0, 0.5, 0.28), 11.0, 16.0)
 	_add_room_light(ROOM_LAB + Vector3(0, 3.2, 0), Color(0.45, 0.7, 1.0), 11.0, 16.0)
