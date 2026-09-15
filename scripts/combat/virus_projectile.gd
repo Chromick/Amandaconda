@@ -62,6 +62,8 @@ func _physics_process(delta: float) -> void:
 	if _trail_cd <= 0.0:
 		_trail_cd = 0.04
 		_spawn_trail()
+	if _light:
+		_light.light_energy = lerpf(_light.light_energy, 2.2, clampf(6.0 * delta, 0.0, 1.0))
 
 
 func _spawn_trail() -> void:
@@ -125,3 +127,5 @@ func _try_bounce(_body: Node3D) -> void:
 	velocity.y = absf(velocity.y) * 0.2
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position, Color(0.5, 1.0, 0.6), 0.45)
+	if _light:
+		_light.light_energy = 3.5
