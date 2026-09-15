@@ -1130,6 +1130,8 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 		if source != null and source.has_method("take_damage"):
 			source.take_damage(amount * 1.35 * GameState.damage_multiplier(), -knockback, self)
 			HitFeel.punch()
+			HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(1.0, 0.85, 0.35), 1.4)
+			HitFeel.spark_at(source.global_position + Vector3.UP * 1.1, Color(1.0, 0.5, 0.2), 1.1)
 			GameState.show_toast("Espelho!")
 			_ability_cd = maxf(_ability_cd, 1.2)
 		return
