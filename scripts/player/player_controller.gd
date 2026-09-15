@@ -935,6 +935,8 @@ func _try_damage_target(target: Node) -> void:
 	_hit_targets.append(target)
 	var cfg := _light if state == State.ATTACK_LIGHT else _heavy
 	var dmg := float(cfg.get("dano", 12))
+	if state == State.ATTACK_LIGHT and _combo_step > 0:
+		dmg *= 1.0 + float(_combo_step) * 0.1
 	if state == State.ATTACK_HEAVY:
 		var base := float(_heavy.get("dano", 26))
 		var charged := float(_heavy.get("dano_carregado", 45))
