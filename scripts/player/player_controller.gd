@@ -833,9 +833,12 @@ func _spawn_roll_ghost() -> void:
 	var mat := StandardMaterial3D.new()
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	mat.albedo_color = Color(0.55, 0.85, 1.0, 0.5)
+	var virus := GameState.school == GameState.WeaponSchool.VIRUS
+	var base := Color(0.4, 1.0, 0.55, 0.5) if virus else Color(0.55, 0.85, 1.0, 0.5)
+	var emit := Color(0.3, 1.0, 0.45) if virus else Color(0.4, 0.75, 1.0)
+	mat.albedo_color = base
 	mat.emission_enabled = true
-	mat.emission = Color(0.4, 0.75, 1.0)
+	mat.emission = emit
 	mat.emission_energy_multiplier = 1.55
 	ghost.material_override = mat
 	var host := get_tree().current_scene

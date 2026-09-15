@@ -87,6 +87,8 @@ func _on_body(body: Node3D) -> void:
 			body.apply_mark(mark_duration, mark_speed)
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.spark_at(global_position, Color(0.95, 0.3, 0.9), 1.0)
+			HitFeel.shake(0.12)
+			HitFeel.kick_fov(2.2, 0.1)
 		queue_free()
 	elif body is StaticBody3D:
 		if typeof(HitFeel) != TYPE_NIL:
