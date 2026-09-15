@@ -1316,10 +1316,6 @@ func _resolve_eco() -> void:
 		HitFeel.spark_at(_eco_pos + Vector3.UP * 0.6, Color(0.5, 0.9, 1.0), 1.35)
 		HitFeel.punch()
 	_spawn_eco_burst()
-	for cam in get_tree().get_nodes_in_group("player_camera"):
-		if cam and cam.has_method("punch_fov"):
-			cam.punch_fov(4.0)
-			break
 
 
 func _spawn_eco_burst() -> void:
