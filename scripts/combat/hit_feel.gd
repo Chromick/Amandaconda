@@ -21,9 +21,10 @@ func punch(duration: float = -1.0) -> void:
 	_hitstop_token += 1
 	var token := _hitstop_token
 	Engine.time_scale = 0.12
+	for node in get_tree().get_nodes_in_group("player_camera"):
+		if node and node.has_method("punch_fov"):
+			node.punch_fov(5.0)
 	await get_tree().create_timer(duration, true, false, true).timeout
-	# Sempre volta a 1.0 no token vigente — evita ficar preso em 0.12
-	# se punches se sobrepõem (token antigo não restaura o scale antigo).
 	if token == _hitstop_token:
 		Engine.time_scale = 1.0
 
