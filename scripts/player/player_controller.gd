@@ -1027,6 +1027,9 @@ func _try_heal() -> void:
 	_set_mesh_color(Color(0.45, 1.0, 0.55))
 	drinks_changed.emit(GameState.heals, GameState.max_heals)
 	GameState.show_toast("Bebendo lata…")
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(global_position + Vector3.UP * 1.15, Color(0.5, 1.0, 0.6), 0.55)
+		HitFeel.shake(0.05)
 
 
 func _process_healing(delta: float) -> void:
