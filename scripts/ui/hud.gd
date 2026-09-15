@@ -22,7 +22,7 @@ const HINTS: PackedStringArray = [
 	"Entre na névoa · a porta fecha até o fim · 3 chefes abrem servidores",
 	"KB e pendrives puxam pra perto · turbo_sprint corta custo de corrida",
 	"coyote_extend alonga o salto · iframe_lite barateia o rolamento",
-	"magnet_boost puxa KB/pendrives mais longe · 5 slots de patch",
+	"magnet_boost puxa KB/pendrives mais longe · 6 slots de patch",
 	"jump_buffer_plus perdoa timing do pulo · coyote_extend também",
 	"impact_frame +12% dano · macro_combo ainda mais forte",
 	"stamina_siphon +25 vigor · hotfix_vigor ainda ajuda",
