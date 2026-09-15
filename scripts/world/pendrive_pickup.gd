@@ -12,6 +12,9 @@ var _spin: float = 0.0
 func _ready() -> void:
 	body_entered.connect(_on_body)
 	_refresh_visual()
+	if label:
+		label.outline_size = 6
+		label.outline_modulate = Color(0, 0, 0, 0.85)
 	var light := OmniLight3D.new()
 	light.light_color = Color(0.95, 0.8, 0.4) if kind != "especial" else Color(0.45, 1.0, 0.55)
 	light.light_energy = 1.5

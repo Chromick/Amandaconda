@@ -13,6 +13,9 @@ var _spin: float = 0.0
 func _ready() -> void:
 	body_entered.connect(_on_body)
 	label.text = "%d–%d KB" % [amount_min, amount_max]
+	if label:
+		label.outline_size = 6
+		label.outline_modulate = Color(0, 0, 0, 0.85)
 	if mesh:
 		var mat := StandardMaterial3D.new()
 		mat.albedo_color = Color(0.95, 0.85, 0.35)

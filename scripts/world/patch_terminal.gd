@@ -15,6 +15,9 @@ func _ready() -> void:
 	body_entered.connect(_on_enter)
 	body_exited.connect(_on_exit)
 	label.text = "SERVIDOR DE BACKUP\n[E] Patches"
+	if label:
+		label.outline_size = 8
+		label.outline_modulate = Color(0, 0, 0, 0.85)
 	if mesh:
 		var mat := StandardMaterial3D.new()
 		mat.albedo_color = Color(0.35, 0.55, 0.45)
