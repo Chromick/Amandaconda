@@ -9,6 +9,7 @@ signal died
 
 const VIRUS_SCENE := preload("res://scenes/virus_projectile.tscn")
 const PUDDLE_SCENE := preload("res://scenes/bosses/caramel_puddle.tscn")
+const POPUP_SCENE := preload("res://scenes/damage_popup.tscn")
 const CharacterVisualScript := preload("res://scripts/world/character_visual.gd")
 const AttackTelegraphScript := preload("res://scripts/combat/attack_telegraph.gd")
 const SceneUtil := preload("res://scripts/combat/scene_util.gd")
@@ -907,6 +908,7 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 		_heal_timer = 0.0
 	health = maxf(0.0, health - amount)
 	health_changed.emit(health, max_health)
+	_spawn_hurt_popup(amount)
 	var dmg_cfg: Dictionary = _cfg.get("dano_recebido", {})
 	invuln_timer = float(dmg_cfg.get("invencibilidade", 0.7))
 	heavy_charging = false
@@ -927,6 +929,17 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 	var hud := get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("flash_hurt"):
 		hud.flash_hurt()
+
+
+func _spawn_hurt_popup(amount: float) -> void:
+	var pop := POPUP_SCENE.instantiate()
+	pop.amount = amount
+	pop.color = Color(1.0, 0.35, 0.4)
+	SceneUtil.add_to_world(
+		pop,
+		self,
+		global_position + Vector3(randf_range(-0.15, 0.15), 1.7, randf_range(-0.15, 0.15))
+	)
 
 
 func is_invulnerable() -> bool:

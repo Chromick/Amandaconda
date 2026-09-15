@@ -130,3 +130,23 @@ Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil,
 
 ### Próxima tarefa
 - Continuar polish: damage popup no player ao tomar dano, ou telegraph do vírus
+
+## 2026-09-15 01:57 BRT
+
+### Alteração
+- Popup de dano vermelho quando o player toma hit.
+- Projétil vírus com luz omni + emission mais forte.
+
+### Arquivos modificados
+- scripts/player/player_controller.gd
+- scenes/virus_projectile.tscn
+- AUTONOMOUS_PROGRESS.md
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- (nenhum)
+
+### Próxima tarefa
+- Continuar: heal popup verde / streak de bytes pickup feedback
