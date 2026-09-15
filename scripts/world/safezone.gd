@@ -4,6 +4,7 @@ extends Area3D
 var _player_inside: Node = null
 var _pulse: float = 0.0
 var _ring: MeshInstance3D
+var _light: OmniLight3D
 
 
 func _ready() -> void:
@@ -12,6 +13,12 @@ func _ready() -> void:
 	body_exited.connect(_on_exit)
 	GameState.safezone_position = global_position + Vector3(0, 1, 0)
 	_ensure_ring()
+	_light = OmniLight3D.new()
+	_light.light_color = Color(0.4, 1.0, 0.65)
+	_light.light_energy = 0.6
+	_light.omni_range = 6.0
+	_light.position = Vector3(0, 1.2, 0)
+	add_child(_light)
 
 
 func _ensure_ring() -> void:
@@ -63,6 +70,10 @@ func _physics_process(delta: float) -> void:
 		mat.albedo_color.a = base_a + sin(_pulse * 3.5) * 0.06
 		mat.emission_energy_multiplier = (1.8 if active else 1.0) + sin(_pulse * 4.0) * 0.25
 		_ring.rotation.y = _pulse * 0.4
+	if _light:
+		var active_l := _player_inside != null and is_instance_valid(_player_inside)
+		var target_e := 1.8 if active_l else 0.55
+		_light.light_energy = lerpf(_light.light_energy, target_e + sin(_pulse * 4.0) * 0.15, clampf(4.0 * delta, 0.0, 1.0))
 	if _player_inside == null or not is_instance_valid(_player_inside):
 		return
 	if _player_inside.has_method("heal"):
