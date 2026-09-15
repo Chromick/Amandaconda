@@ -312,6 +312,7 @@ func _spawn_gameplay() -> void:
 	_spawn_enemy(CHATANA, Vector3(14, 1, -26), "modular/Punk.gltf", 1.04, Color(0.65, 0.95, 1, 1))
 	_spawn_enemy(PORTARA, Vector3(-20, 1, -16), "modular/King.gltf", 1.2, Color(0.72, 0.58, 0.45, 1))
 	_spawn_enemy(NET, Vector3(20, 1, -18), "modular/Spacesuit.gltf", 1.06, Color(0.78, 0.42, 0.95, 1))
+	_spawn_enemy(CHATANA, Vector3(6, 1, 16), "modular/Beach.gltf", 1.02, Color(0.48, 0.9, 0.95, 1))
 	_spawn(BYTES, Vector3(-3, 0.6, 18))
 	_spawn(BYTES, Vector3(4, 0.6, 8))
 	_spawn(BYTES, Vector3(0, 0.6, 14))
