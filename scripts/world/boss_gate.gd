@@ -21,7 +21,8 @@ func _refresh() -> void:
 	match gate_id:
 		"servers":
 			open = GameState.can_enter_servers()
-			label.text = "SERVIDORES\n%s" % ("ABERTO" if open else "precisa 3 chefes-base")
+			var n := GameState.base_bosses_cleared()
+			label.text = "SERVIDORES\n%s" % ("ABERTO" if open else "precisa 3 chefes-base (%d/3)" % n)
 		"door":
 			open = GameState.can_enter_door()
 			label.text = "A PORTA\n%s" % ("ABERTA" if open else "derrote o Marlombólico")
@@ -42,7 +43,10 @@ func _refresh() -> void:
 			mesh.visible = false
 	else:
 		mesh.visible = true
-		label.modulate = Color(1.0, 0.55, 0.45)
+		var progress := 0.0
+		if gate_id == "servers":
+			progress = float(GameState.base_bosses_cleared()) / 3.0
+		label.modulate = Color(1.0, 0.55, 0.45).lerp(Color(1.0, 0.85, 0.4), progress)
 		if mesh and mesh.material_override is StandardMaterial3D:
 			(mesh.material_override as StandardMaterial3D).albedo_color.a = 1.0
 
