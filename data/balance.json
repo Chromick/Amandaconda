@@ -36,9 +36,9 @@
     "coyote_time": 0.14,
     "jump_buffer": 0.16,
 
-    "buffer_de_acao": 0.15,
-    "turn_speed": 10.0,
-    "attack_move_mult": 0.08,
+    "buffer_de_acao": 0.16,
+    "turn_speed": 11.0,
+    "attack_move_mult": 0.1,
     "combo_janela": 0.55,
     "combo_max": 3,
     "sprint_attack_dash": 11.0,
