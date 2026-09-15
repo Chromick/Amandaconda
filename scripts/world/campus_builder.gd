@@ -408,6 +408,8 @@ func _dress_lab(root: Node3D) -> void:
 		_prop(root, "computerScreen.glb", center + Vector3(-3.0, 0.85, z), 90.0)
 		_prop(root, "desk.glb", center + Vector3(3.0, 0, z), -90.0)
 		_prop(root, "laptop.glb", center + Vector3(3.0, 0.78, z), -90.0)
+		_add_room_light(center + Vector3(-2.6, 1.1, z), Color(0.35, 0.85, 1.0), 1.4, 3.2)
+		_add_room_light(center + Vector3(2.6, 1.05, z), Color(0.4, 0.9, 0.7), 1.1, 2.8)
 	_prop(root, "bookcaseOpen.glb", center + Vector3(0, 0, -5.0), 0.0)
 	_emissive_box(center + Vector3(0, 0.08, 0), Vector3(0.4, 0.06, 3.5), Color(0.08, 0.1, 0.14), Color(0.4, 0.7, 1.0), 1.6)
 	_add_room_light(center + Vector3(-2, 2.5, 0), Color(0.45, 0.75, 1.0), 5.0, 10.0)
