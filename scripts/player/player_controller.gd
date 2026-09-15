@@ -74,6 +74,7 @@ var _roll_attack_queued: bool = false
 var _was_on_floor: bool = true
 var _land_dust_cd: float = 0.0
 var _stamina_toast_cd: float = 0.0
+var _air_vy: float = 0.0
 
 
 func _ready() -> void:
@@ -237,11 +238,18 @@ func _physics_process(delta: float) -> void:
 
 func _update_land_fx() -> void:
 	var on_floor := is_on_floor()
+	if not on_floor:
+		_air_vy = velocity.y
 	if on_floor and not _was_on_floor and _land_dust_cd <= 0.0:
 		_land_dust_cd = 0.2
 		_spawn_land_dust()
-		if typeof(HitFeel) != TYPE_NIL and absf(velocity.y) < 0.1:
-			HitFeel.shake(0.06)
+		var impact := absf(_air_vy)
+		if typeof(HitFeel) != TYPE_NIL and impact > 5.5:
+			HitFeel.shake(clampf(impact * 0.018, 0.06, 0.32))
+			for cam in get_tree().get_nodes_in_group("player_camera"):
+				if cam and cam.has_method("punch_fov"):
+					cam.punch_fov(clampf(impact * 0.28, 1.5, 5.0))
+					break
 	_was_on_floor = on_floor
 
 
