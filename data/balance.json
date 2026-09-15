@@ -22,8 +22,8 @@
     "stamina_regen": 90,
     "stamina_regen_delay": 0.2,
 
-    "walk_speed": 6.7,
-    "run_speed": 11.0,
+    "walk_speed": 6.85,
+    "run_speed": 11.2,
     "ground_accel": 34.0,
     "ground_friction": 40.0,
     "air_accel": 20.5,
@@ -134,12 +134,12 @@
   },
 
   "impacto": {
-    "pausa_no_acerto": 0.15,
-    "pausa_ao_matar": 0.48,
-    "empurrao_no_alvo": 7.0,
-    "shake_on_hit": 0.74,
-    "shake_amp": 0.62,
-    "shake_decay": 2.6
+    "pausa_no_acerto": 0.16,
+    "pausa_ao_matar": 0.5,
+    "empurrao_no_alvo": 7.2,
+    "shake_on_hit": 0.78,
+    "shake_amp": 0.66,
+    "shake_decay": 2.7
   },
 
   "boneco": {
@@ -385,11 +385,11 @@
 
   "chefes": {
     "luanevil": {
-      "vida": 300,
+      "vida": 310,
       "nome": "LUANEVIL",
       "local": "Bandejão",
-      "bytes": [160, 230],
-      "velocidade": 3.55,
+      "bytes": [165, 240],
+      "velocidade": 3.6,
       "dano_leve": 17,
       "dano_pesado": 30,
       "intervalo": 1.6,

@@ -44,8 +44,8 @@ func setup(cfg: Dictionary, dir: Vector3, from: Node) -> void:
 		mesh.material_override = mat
 	_light = OmniLight3D.new()
 	_light.light_color = Color(0.4, 1.0, 0.55)
-	_light.light_energy = 3.4
-	_light.omni_range = 5.0
+	_light.light_energy = 3.8
+	_light.omni_range = 5.4
 	add_child(_light)
 
 
