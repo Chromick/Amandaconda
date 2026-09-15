@@ -1548,12 +1548,12 @@ func _spawn_weapon_trail() -> void:
 	mat.albedo_color = col
 	mat.emission_enabled = true
 	mat.emission = Color(col.r, col.g, col.b)
-	mat.emission_energy_multiplier = 1.8 if state == State.ATTACK_HEAVY else 1.5
+	mat.emission_energy_multiplier = 2.0 if state == State.ATTACK_HEAVY else 1.65
 	p.material_override = mat
 	host.add_child(p)
 	p.global_position = weapon_visual.global_position
 	var tw := create_tween()
-	tw.tween_property(mat, "albedo_color:a", 0.0, 0.18 if state == State.ATTACK_HEAVY else 0.16)
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.22 if state == State.ATTACK_HEAVY else 0.18)
 	tw.parallel().tween_property(p, "scale", Vector3.ONE * 0.2, 0.18 if state == State.ATTACK_HEAVY else 0.16)
 	tw.tween_callback(p.queue_free)
 
