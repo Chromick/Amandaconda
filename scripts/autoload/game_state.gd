@@ -77,7 +77,10 @@ func add_bytes(amount: int) -> void:
 	bytes_changed.emit(bytes)
 	for milestone in [100, 250, 500, 1000]:
 		if before < milestone and bytes >= milestone:
-			show_toast("%d KB · carteira engordou" % milestone)
+			var msg := "%d KB · carteira engordou" % milestone
+			get_tree().create_timer(0.85).timeout.connect(func ():
+				show_toast(msg)
+			, CONNECT_ONE_SHOT)
 			break
 
 
