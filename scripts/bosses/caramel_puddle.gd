@@ -49,7 +49,14 @@ func _physics_process(delta: float) -> void:
 		for b in _bodies:
 			_clear_body(b)
 		_bodies.clear()
-		queue_free()
+		if _mesh and _mat:
+			var tw := create_tween()
+			tw.set_parallel(true)
+			tw.tween_property(_mat, "albedo_color:a", 0.0, 0.35)
+			tw.tween_property(_mesh, "scale", Vector3(0.2, 0.2, 0.2), 0.35)
+			tw.chain().tween_callback(queue_free)
+		else:
+			queue_free()
 
 
 func _on_enter(body: Node3D) -> void:
