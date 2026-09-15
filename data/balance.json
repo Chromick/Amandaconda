@@ -316,6 +316,13 @@
         "custo": 125,
         "texto": "+12% dano",
         "dano_mult": 0.12
+      },
+      {
+        "id": "stamina_siphon",
+        "nome": "stamina_siphon",
+        "custo": 105,
+        "texto": "+25 vigor max",
+        "vigor_max": 25
       }
     ]
   },

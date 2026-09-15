@@ -25,6 +25,7 @@ const HINTS: PackedStringArray = [
 	"magnet_boost puxa KB/pendrives mais longe · 5 slots de patch",
 	"jump_buffer_plus perdoa timing do pulo · coyote_extend também",
 	"impact_frame +12% dano · macro_combo ainda mais forte",
+	"stamina_siphon +25 vigor · hotfix_vigor ainda ajuda",
 	"Net marca e freia · role através · Espelho devolve o golpe",
 ]
 
