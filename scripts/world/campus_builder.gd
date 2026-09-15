@@ -494,6 +494,8 @@ func _dress_porta(root: Node3D) -> void:
 	_prop(root, "barricade-doorway-a.glb", center + Vector3(3, 0, -1.5), -12.0, 1.0)
 	_prop(root, "column.glb", center + Vector3(-4, 0, -3.5), 0.0)
 	_prop(root, "column.glb", center + Vector3(4, 0, -3.5), 0.0)
+	_prop(root, "trashcan.glb", center + Vector3(4.5, 0, 3.5), 20.0)
+	_prop(root, "pottedPlant.glb", center + Vector3(-4.5, 0, 2.5), 35.0)
 	_emissive_box(center + Vector3(0, 0.08, 1.0), Vector3(2.0, 0.06, 2.0), Color(0.15, 0.08, 0.1), Color(0.9, 0.25, 0.4), 1.8)
 	_add_room_light(center + Vector3(-2, 2.5, 0), Color(0.25, 0.7, 0.4), 5.0, 10.0)
 	_add_room_light(center + Vector3(2, 2.5, 0), Color(1.0, 0.3, 0.45), 5.5, 10.0)
