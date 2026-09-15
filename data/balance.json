@@ -167,7 +167,7 @@
     "dano": 8,
     "raio": 2.4,
     "renascer_em": 4.0,
-    "bytes": [32, 52]
+    "bytes": [36, 58]
   },
 
   "portara": {
@@ -184,7 +184,7 @@
     "alcance": 1.4,
     "altura": 1.6,
     "renascer_em": 5.0,
-    "bytes": [58, 86]
+    "bytes": [62, 92]
   },
 
   "net": {
@@ -203,7 +203,7 @@
     "mark_duration": 3.5,
     "mark_speed_mult": 0.72,
     "renascer_em": 5.5,
-    "bytes": [40, 68]
+    "bytes": [44, 74]
   },
 
   "cura": {

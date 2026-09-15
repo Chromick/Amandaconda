@@ -38,11 +38,13 @@ func _process(delta: float) -> void:
 	if mesh:
 		mesh.rotation.y = _spin * (1.6 if _player_near else 0.7)
 		mesh.position.y = 1.0 + sin(_spin * 2.4) * (0.08 if _player_near else 0.03)
+		var s := 1.08 if _player_near else 1.0
+		mesh.scale = mesh.scale.lerp(Vector3(s, s, s), clampf(5.0 * delta, 0.0, 1.0))
 	if label:
 		label.modulate = Color(0.55, 1.0, 0.7) if _player_near else Color.WHITE
 	if _light:
-		var target := 1.9 if _player_near else 0.65
-		_light.light_energy = lerpf(_light.light_energy, target + sin(_spin * 4.0) * 0.12, clampf(5.0 * delta, 0.0, 1.0))
+		var target := 2.2 if _player_near else 0.65
+		_light.light_energy = lerpf(_light.light_energy, target + sin(_spin * 4.0) * 0.15, clampf(5.0 * delta, 0.0, 1.0))
 
 
 func _on_enter(body: Node3D) -> void:
