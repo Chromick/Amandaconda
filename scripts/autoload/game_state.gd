@@ -80,6 +80,10 @@ func add_bytes(amount: int) -> void:
 			var msg := "%d KB · carteira engordou" % milestone
 			get_tree().create_timer(0.85).timeout.connect(func ():
 				show_toast(msg)
+				var player := get_tree().get_first_node_in_group("player")
+				if player and typeof(HitFeel) != TYPE_NIL:
+					HitFeel.spark_at(player.global_position + Vector3.UP * 1.2, Color(0.95, 0.85, 0.35), 1.0)
+					HitFeel.shake(0.1)
 			, CONNECT_ONE_SHOT)
 			break
 
