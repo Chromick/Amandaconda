@@ -106,22 +106,22 @@
           "carga_maxima": 0.55,
           "acerto": 0.08,
           "recuperacao": 0.4,
-          "dano": 26,
-          "dano_carregado": 52,
-          "vigor": 19,
+          "dano": 27,
+          "dano_carregado": 54,
+          "vigor": 18,
           "avanco": 0,
-          "velocidade": 13.5,
-          "tempo_de_vida": 2.25,
-          "raio": 0.58,
-          "quique": 0.74
+          "velocidade": 14.0,
+          "tempo_de_vida": 2.3,
+          "raio": 0.6,
+          "quique": 0.75
         }
       }
     }
   },
 
   "camera": {
-    "distance": 3.5,
-    "height": 2.1,
+    "distance": 3.4,
+    "height": 2.15,
     "fov": 85.0,
     "min_pitch": -49.0,
     "max_pitch": 67.0,
@@ -300,8 +300,8 @@
         "id": "magnet_boost",
         "nome": "magnet_boost",
         "custo": 95,
-        "texto": "+45% magnet",
-        "magnet_mult": 1.45
+        "texto": "+50% magnet",
+        "magnet_mult": 1.5
       },
       {
         "id": "jump_buffer_plus",
@@ -400,9 +400,9 @@
       "acerto_pesado": 0.16,
       "recuperacao_pesado": 0.7,
       "alcance": 2.0,
-      "caramelo_raio": 2.4,
-      "caramelo_duracao": 6.5,
-      "caramelo_slow": 0.42,
+      "caramelo_raio": 2.6,
+      "caramelo_duracao": 7.0,
+      "caramelo_slow": 0.4,
       "fase2_vida": 0.5
     },
     "renanligno": {
