@@ -36,9 +36,9 @@
     "coyote_time": 0.26,
     "jump_buffer": 0.32,
 
-    "turn_speed": 18.0,
-    "attack_move_mult": 0.24,
-    "buffer_de_acao": 0.28,
+    "turn_speed": 19.0,
+    "attack_move_mult": 0.26,
+    "buffer_de_acao": 0.3,
     "combo_janela": 0.95,
     "combo_max": 3,
     "sprint_attack_dash": 16.0,
@@ -155,8 +155,8 @@
   },
 
   "chatana": {
-    "vida": 34,
-    "velocidade": 3.6,
+    "vida": 36,
+    "velocidade": 3.65,
     "prefer_distance": 4.9,
     "aggro": 11.2,
     "leash": 16.5,
@@ -201,8 +201,8 @@
     "recuperacao": 0.65,
     "dano": 12,
     "proj_speed": 16.0,
-    "mark_duration": 4.4,
-    "mark_speed_mult": 0.62,
+    "mark_duration": 4.6,
+    "mark_speed_mult": 0.6,
     "renascer_em": 4.5,
     "bytes": [64, 96]
   },

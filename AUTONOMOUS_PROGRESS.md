@@ -21,6 +21,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Continuar até o usuário parar
 
 ---
+## 2026-09-15 ~loop v1.1.6
+
+### Alteração
+- Net mark; Chatana; turn; magnet 45%.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v1.1.5
 
 ### Alteração
