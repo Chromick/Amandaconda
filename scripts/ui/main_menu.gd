@@ -1,6 +1,8 @@
 extends Control
 ## Menu — escolha de escola e entrada no hub.
 
+var _title_pulse: float = 0.0
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -8,6 +10,15 @@ func _ready() -> void:
 		HitFeel.cancel()
 	_style_night()
 	_fill_version()
+	_style_buttons()
+
+
+func _process(delta: float) -> void:
+	_title_pulse += delta
+	var title := get_node_or_null("Center/Title") as Label
+	if title:
+		var a := 0.88 + sin(_title_pulse * 1.6) * 0.12
+		title.modulate = Color(a, a, 1.0)
 
 
 func _style_night() -> void:
@@ -22,6 +33,16 @@ func _style_night() -> void:
 		lab.add_theme_color_override("font_color", Color(0.92, 0.93, 0.96))
 		lab.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.85))
 		lab.add_theme_constant_override("outline_size", 6)
+
+
+func _style_buttons() -> void:
+	for path in ["Center/Fisico", "Center/Especial", "Center/Quit"]:
+		var btn := get_node_or_null(path) as Button
+		if btn == null:
+			continue
+		btn.add_theme_color_override("font_color", Color(0.9, 0.95, 0.92))
+		btn.add_theme_color_override("font_hover_color", Color(0.55, 1.0, 0.75))
+		btn.add_theme_color_override("font_pressed_color", Color(0.35, 0.85, 0.6))
 
 
 func _fill_version() -> void:

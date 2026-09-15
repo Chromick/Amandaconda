@@ -266,6 +266,34 @@ func _spawn_land_dust() -> void:
 		tw.tween_callback(p.queue_free)
 
 
+func _spawn_sprint_dust() -> void:
+	var host := get_tree().current_scene
+	if host == null:
+		return
+	var p := MeshInstance3D.new()
+	var sm := SphereMesh.new()
+	sm.radius = 0.05
+	sm.height = 0.1
+	p.mesh = sm
+	var mat := StandardMaterial3D.new()
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.albedo_color = Color(0.7, 0.68, 0.6, 0.4)
+	p.material_override = mat
+	host.add_child(p)
+	var back := -facing
+	back.y = 0.0
+	if back.length_squared() < 0.01:
+		back = Vector3.BACK
+	else:
+		back = back.normalized()
+	p.global_position = global_position + Vector3(0, 0.06, 0) + back * 0.25
+	var tw := create_tween()
+	tw.tween_property(p, "global_position", p.global_position + back * 0.4 + Vector3.UP * 0.15, 0.22)
+	tw.parallel().tween_property(mat, "albedo_color:a", 0.0, 0.22)
+	tw.tween_callback(p.queue_free)
+
+
 func _update_lock_marker(delta: float) -> void:
 	if _lock_marker == null:
 		return
@@ -305,6 +333,9 @@ func _tick_timers(delta: float) -> void:
 			_mark_mult = 1.0
 			if state == State.MOVE:
 				_set_mesh_color(_default_color)
+			GameState.show_toast("Marca dissipada")
+			if typeof(HitFeel) != TYPE_NIL:
+				HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.85, 0.55, 1.0), 0.6)
 	if stamina_regen_timer > 0.0:
 		stamina_regen_timer -= delta
 	elif state == State.MOVE:
@@ -373,6 +404,10 @@ func _process_move(delta: float) -> void:
 	target_speed *= speed_mult
 	var accel := float(_cfg.get("ground_accel", 22.0) if is_on_floor() else _cfg.get("air_accel", 14.0))
 	var friction := float(_cfg.get("ground_friction", 28.0) if is_on_floor() else _cfg.get("air_friction", 4.0))
+
+	if sprinting and is_on_floor() and dir.length_squared() > 0.01 and _land_dust_cd <= 0.0:
+		_land_dust_cd = 0.12
+		_spawn_sprint_dust()
 
 	var horizontal := Vector3(velocity.x, 0.0, velocity.z)
 	if dir.length_squared() > 0.01:

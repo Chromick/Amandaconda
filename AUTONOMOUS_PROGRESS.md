@@ -6,6 +6,29 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~08:02 BRT
+
+### Alteração
+- Toast + spark quando a marca da Net dissipar.
+- Poeira no sprint.
+- Menu: título pulsante e hover verde nos botões.
+
+### Arquivos modificados
+- `scripts/player/player_controller.gd`
+- `scripts/ui/main_menu.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub + menu headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar
+
+---
+
 ## 2026-09-15 ~07:58 BRT
 
 ### Alteração
