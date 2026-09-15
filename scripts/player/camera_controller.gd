@@ -41,6 +41,14 @@ func add_trauma(amount: float) -> void:
 	trauma = clampf(trauma + amount, 0.0, 1.0)
 
 
+func punch_fov(amount: float = 8.0) -> void:
+	## Kick breve no FOV (hit / impacto).
+	if camera == null:
+		return
+	camera.fov = _base_fov + amount
+	_fov_target = _base_fov
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

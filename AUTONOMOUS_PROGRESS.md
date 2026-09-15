@@ -6,6 +6,30 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~08:16 BRT
+
+### Alteração
+- Bytes pickup glow + luz.
+- Hit: kick de FOV na câmera.
+- Lock pulse, Balarrals roll tell, pause version, Renan spark (commits anteriores nesta sessão).
+
+### Arquivos modificados
+- `scripts/world/bytes_pickup.gd`
+- `scripts/player/camera_controller.gd`
+- `scripts/player/player_controller.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar
+
+---
+
 ## 2026-09-15 ~08:12 BRT
 
 ### Alteração

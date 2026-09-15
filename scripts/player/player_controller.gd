@@ -1156,6 +1156,9 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 	HitFeel.shake()
 	HitFeel.punch(0.045)
 	HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(1.0, 0.35, 0.3), 1.1)
+	var cam := get_tree().get_first_node_in_group("player_camera")
+	if cam and cam.has_method("punch_fov"):
+		cam.punch_fov(7.0)
 	var hud := get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("flash_hurt"):
 		hud.flash_hurt()
