@@ -89,6 +89,8 @@ func _build_white_fence() -> void:
 	lab.text = "UNIVASSOURAS\nCAMPUS MARICÁ"
 	lab.font_size = 48
 	lab.modulate = C_MAROON
+	lab.outline_size = 10
+	lab.outline_modulate = Color(0, 0, 0, 0.9)
 	lab.position = Vector3(0, 3.4, z + 0.2)
 	rooms_root.add_child(lab)
 
@@ -633,6 +635,8 @@ func _make_safezone(pos: Vector3, size: Vector3) -> void:
 	var lab := Label3D.new()
 	lab.text = "SAFEZONE · ENTRADA"
 	lab.font_size = 64
+	lab.outline_size = 10
+	lab.outline_modulate = Color(0, 0, 0, 0.85)
 	lab.position = Vector3(0, 1.2, 0)
 	area.add_child(lab)
 	rooms_root.add_child(area)
