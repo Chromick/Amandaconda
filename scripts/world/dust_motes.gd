@@ -26,6 +26,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var t := Time.get_ticks_msec() * 0.001
+	var player := get_tree().get_first_node_in_group("player") as Node3D
 	for p in _pts:
 		var n: MeshInstance3D = p.get("n")
 		if n == null or not is_instance_valid(n):
@@ -34,3 +35,7 @@ func _process(delta: float) -> void:
 		var ph: float = float(p.get("ph", 0.0))
 		n.position.y += sin(t * sp + ph) * delta * 0.25
 		n.position.x += cos(t * sp * 0.7 + ph) * delta * 0.12
+		# Mantém um pouco de poeira perto do jogador.
+		if player and is_instance_valid(player) and randf() < 0.002:
+			var around := player.global_position + Vector3(randf_range(-8.0, 8.0), randf_range(1.0, 4.0), randf_range(-8.0, 8.0))
+			n.global_position = around
