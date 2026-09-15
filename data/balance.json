@@ -33,8 +33,8 @@
     "max_fall_speed": 33.0,
     "jump_velocity": 10.85,
     "jump_cut_multiplier": 0.39,
-    "coyote_time": 0.34,
-    "jump_buffer": 0.4,
+    "coyote_time": 0.36,
+    "jump_buffer": 0.42,
 
     "turn_speed": 24.0,
     "attack_move_mult": 0.36,
@@ -125,12 +125,12 @@
     "fov": 90.0,
     "min_pitch": -51.0,
     "max_pitch": 69.0,
-    "sensitivity": 0.23,
-    "follow_speed": 36.0,
-    "lock_on_distance": 42.0,
-    "lock_on_height_bias": 1.6,
-    "idle_yaw_delay": 0.65,
-    "idle_yaw_speed": 7.0
+    "sensitivity": 0.24,
+    "follow_speed": 38.0,
+    "lock_on_distance": 44.0,
+    "lock_on_height_bias": 1.65,
+    "idle_yaw_delay": 0.6,
+    "idle_yaw_speed": 7.5
   },
 
   "impacto": {
@@ -221,12 +221,12 @@
 
   "pendrives": {
     "fisico": {
-      "dano_por_nivel": 0.12,
-      "vida_por_nivel": 26
+      "dano_por_nivel": 0.125,
+      "vida_por_nivel": 28
     },
     "especial": {
-      "dano_por_nivel": 0.19,
-      "vida_por_nivel": 15
+      "dano_por_nivel": 0.2,
+      "vida_por_nivel": 16
     }
   },
 
