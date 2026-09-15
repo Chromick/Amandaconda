@@ -120,6 +120,7 @@ func _on_area_entered(area: Area3D) -> void:
 		parent.take_damage(damage, velocity.normalized() * knock_strength, source)
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.spark_at(global_position, Color(0.45, 1.0, 0.55), 0.7)
+			HitFeel.punch(0.035)
 		queue_free()
 
 
