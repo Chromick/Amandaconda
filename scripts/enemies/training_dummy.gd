@@ -68,6 +68,9 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, _source: Node
 			_revive_timer = float(b.get("renascer_em", 2.0))
 		_set_color(Color(0.25, 0.25, 0.28))
 		label.text = "KO"
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(1.0, 0.7, 0.3), 1.0)
+			HitFeel.shake(0.2)
 
 
 func _spawn_popup(amount: float) -> void:

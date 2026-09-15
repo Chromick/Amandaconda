@@ -1049,12 +1049,15 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 		return
 	if state == State.HEALING:
 		_heal_timer = 0.0
+		GameState.show_toast("Cura interrompida")
 	health = maxf(0.0, health - amount)
 	health_changed.emit(health, max_health)
 	_spawn_hurt_popup(amount)
 	var dmg_cfg: Dictionary = _cfg.get("dano_recebido", {})
 	invuln_timer = float(dmg_cfg.get("invencibilidade", 0.7))
 	heavy_charging = false
+	_clear_virus_charge_telegraph()
+	_sync_atk_telegraph(false, false)
 	_clear_attack_meta()
 	attack_area.monitoring = false
 	if health <= 0.0:

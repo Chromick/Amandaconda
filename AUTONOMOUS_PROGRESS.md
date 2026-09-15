@@ -6,6 +6,28 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~07:42 BRT
+
+### Alteração
+- Toast **Cura interrompida** ao tomar dano bebendo lata; limpa telegraph de carga/vírus no hit.
+- Boneco de treino: spark + shake no KO.
+
+### Arquivos modificados
+- `scripts/player/player_controller.gd`
+- `scripts/enemies/training_dummy.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Loop: ground slow / caramelo feedback, ou polish de câmera
+
+---
+
 ## 2026-09-15 ~07:38 BRT
 
 ### Alteração
