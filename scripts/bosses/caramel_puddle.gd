@@ -82,6 +82,9 @@ func _on_enter(body: Node3D) -> void:
 		if body.is_in_group("player") and not _toasted_player:
 			_toasted_player = true
 			GameState.show_toast("Caramelo · movimento lento")
+			if typeof(HitFeel) != TYPE_NIL:
+				HitFeel.spark_at(global_position + Vector3.UP * 0.3, Color(1.0, 0.55, 0.15), 0.6)
+				HitFeel.kick_fov(1.8, 0.1)
 	elif body.is_in_group("enemy") or body.is_in_group("boss"):
 		body.set_meta("ground_slow", slow_mult)
 
