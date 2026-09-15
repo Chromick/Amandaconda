@@ -572,6 +572,8 @@ func _dress_patio(root: Node3D) -> void:
 	_prop(root, "chair.glb", center + Vector3(-3.5, 0, -1.2), 110.0)
 	_prop(root, "chair.glb", center + Vector3(3.2, 0, -3.8), -140.0)
 	_prop(root, "tableRound.glb", center + Vector3(-3.8, 0, 3.2), 25.0)
+	_prop(root, "chair.glb", center + Vector3(-4.2, 0, 2.0), 200.0)
+	_prop(root, "bench.glb", center + Vector3(4.5, 0, -4.0), 90.0)
 	# Brasa no chão / sombra do pátio
 	_emissive_box(center + Vector3(0, 0.08, 1.5), Vector3(1.4, 0.06, 1.4), Color(0.15, 0.08, 0.05), Color(1.0, 0.35, 0.1), 2.2)
 	_emissive_box(center + Vector3(-2.5, 0.06, -2.0), Vector3(0.9, 0.05, 0.9), Color(0.12, 0.06, 0.04), Color(0.95, 0.3, 0.08), 1.6)
