@@ -238,7 +238,7 @@ func _ai(delta: float) -> void:
 	_cooldown -= delta
 	if _cooldown <= 0.0 and dist <= float(_cfg.get("alcance", 1.8)) + 0.4:
 		_phase = Phase.WINDUP
-		_phase_t = float(_cfg.get("preparacao", 0.4))
+		_phase_t = float(_cfg.get("preparacao", 0.4)) * (0.72 if _enraged else 1.0)
 		velocity = Vector3.ZERO
 		AttackTelegraphScript.set_active(_telegraph, true, false)
 		if typeof(HitFeel) != TYPE_NIL:
@@ -247,7 +247,7 @@ func _ai(delta: float) -> void:
 
 func _cast_hack() -> void:
 	_phase = Phase.HACK
-	_phase_t = 0.55
+	_phase_t = 0.55 * (0.75 if _enraged else 1.0)
 	_hack_cd = float(_cfg.get("hack_cooldown", 4.5)) * (0.75 if _enraged else 1.0)
 	AttackTelegraphScript.set_active(_hack_fx, true, true)
 	HitFeel.shake(0.28)
