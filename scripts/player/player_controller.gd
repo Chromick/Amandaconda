@@ -461,7 +461,8 @@ func _process_move(delta: float) -> void:
 		jump_buffer_timer = 0.0
 		coyote_timer = 0.0
 		_spawn_jump_dust()
-		HitFeel.kick_fov(1.8, 0.08)
+		HitFeel.kick_fov(2.4, 0.1)
+		HitFeel.shake(0.04)
 
 	var dir := _input_dir()
 	var wants_sprint := Input.is_action_pressed("sprint") and dir.length_squared() > 0.01 and stamina > 1.0
@@ -815,7 +816,7 @@ func _tick_roll_ghosts(delta: float) -> void:
 		return
 	if _roll_ghost_timer > 0.0:
 		return
-	_roll_ghost_timer = 0.05
+	_roll_ghost_timer = 0.035
 	_spawn_roll_ghost()
 
 
