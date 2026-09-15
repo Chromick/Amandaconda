@@ -284,7 +284,8 @@ func _chase(delta: float) -> void:
 	if _cooldown <= 0.0 and dist <= float(_cfg.get("alcance", 2.2)) + 0.5:
 		_heavy = _phase2 or randf() > 0.5
 		_phase = Phase.WINDUP
-		_phase_t = float(_cfg.get("preparacao_pesado" if _heavy else "preparacao_leve", 0.4))
+		var prep := float(_cfg.get("preparacao_pesado" if _heavy else "preparacao_leve", 0.4))
+		_phase_t = prep * (0.75 if _phase2 else 1.0)
 		velocity = Vector3.ZERO
 		AttackTelegraphScript.set_active(_telegraph, true, false)
 		if typeof(HitFeel) != TYPE_NIL:
