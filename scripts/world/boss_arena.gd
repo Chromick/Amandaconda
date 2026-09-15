@@ -110,6 +110,7 @@ func try_start_fight() -> void:
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.shake(0.35)
 		HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.95, 0.25, 0.35), 1.1)
+		HitFeel.kick_fov(6.0, 0.2)
 
 
 func _boss_title() -> String:
@@ -188,6 +189,7 @@ func _on_boss_died() -> void:
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.55, 1.0, 0.65), 1.2)
 		HitFeel.shake(0.2)
+		HitFeel.kick_fov(5.0, 0.18)
 	for cam in get_tree().get_nodes_in_group("player_camera"):
 		if cam and cam.has_method("punch_fov"):
 			cam.punch_fov(5.0)
