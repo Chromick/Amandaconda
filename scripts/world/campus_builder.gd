@@ -266,6 +266,9 @@ func _build_interior_hub() -> void:
 	_street_lamp(Vector3(20, 0, 4))
 	_street_lamp(Vector3(-16, 0, 10))
 	_street_lamp(Vector3(16, 0, 8))
+	_street_lamp(Vector3(0, 0, -18))
+	_street_lamp(Vector3(-6, 0, -28))
+	_street_lamp(Vector3(6, 0, -28))
 
 	# Guarda gaps para spawn (via meta no builder)
 	set_meta("gaps_bandejao", gaps_bandejao)
