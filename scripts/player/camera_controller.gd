@@ -11,6 +11,8 @@ var yaw: float = 0.0
 var pitch: float = -12.0
 var _look_idle: float = 0.0
 var trauma: float = 0.0
+var _base_fov: float = 70.0
+var _fov_target: float = 70.0
 
 
 func _ready() -> void:
@@ -20,12 +22,19 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Balance.reloaded.connect(_apply_balance)
 	_apply_balance()
+	if camera:
+		_base_fov = camera.fov
+		_fov_target = _base_fov
 
 
 func _apply_balance() -> void:
 	var cam := Balance.camera()
 	spring.spring_length = float(cam.get("distance", 4.5))
 	pivot.position.y = float(cam.get("height", 1.6))
+	if camera and cam.has("fov"):
+		_base_fov = float(cam.get("fov", camera.fov))
+		_fov_target = _base_fov
+		camera.fov = _base_fov
 
 
 func add_trauma(amount: float) -> void:
@@ -86,6 +95,20 @@ func _physics_process(delta: float) -> void:
 
 	rotation.y = yaw
 	pivot.rotation.x = deg_to_rad(pitch)
+
+	# FOV: sprint abre um pouco; lock-on fecha levemente.
+	var sprinting := false
+	if _player is CharacterBody3D and Input.is_action_pressed("sprint"):
+		var v := (_player as CharacterBody3D).velocity
+		sprinting = Vector3(v.x, 0.0, v.z).length() > 1.0
+	if lock_target and is_instance_valid(lock_target):
+		_fov_target = _base_fov - 4.0
+	elif sprinting:
+		_fov_target = _base_fov + 6.0
+	else:
+		_fov_target = _base_fov
+	if camera:
+		camera.fov = lerpf(camera.fov, _fov_target, clampf(6.0 * delta, 0.0, 1.0))
 
 	if trauma > 0.0:
 		var decay := float(Balance.get_path_value("impacto.shake_decay", 1.7))

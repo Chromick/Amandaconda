@@ -6,6 +6,27 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~07:48 BRT
+
+### Alteração
+- Câmera: FOV dinâmico — +6 no sprint, −4 no lock-on (lerp suave).
+
+### Arquivos modificados
+- `scripts/player/camera_controller.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+- Sensação visual do FOV: não testada em PIE
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar polish (morte de trash fade, luzes, etc.)
+
+---
+
 ## 2026-09-15 ~07:45 BRT
 
 ### Alteração
