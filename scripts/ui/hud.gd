@@ -371,6 +371,8 @@ func _refresh_ability() -> void:
 			ability_label.text = base
 			GameState.show_toast("%s pronta" % GameState.ability_label())
 			_pulse_screen(Color(0.45, 1.0, 0.75, 0.18), 0.28)
+			if typeof(HitFeel) != TYPE_NIL:
+				HitFeel.kick_fov(2.0, 0.1)
 			return
 	ability_label.text = base
 	ability_label.modulate = Color.WHITE
