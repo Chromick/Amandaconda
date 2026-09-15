@@ -86,6 +86,11 @@ func _process(delta: float) -> void:
 		stamina_bar.modulate = Color(1.0, 0.35, 0.25).lerp(Color.WHITE, 1.0 - s)
 		if _stamina_flash <= 0.0:
 			stamina_bar.modulate = Color.WHITE
+	elif stamina_bar and stamina_bar.max_value > 0.0 and stamina_bar.value / stamina_bar.max_value < 0.28:
+		var sp := 0.55 + 0.45 * sin(Time.get_ticks_msec() * 0.011)
+		stamina_bar.modulate = Color(1.0, 0.55 + 0.35 * sp, 0.25)
+	elif stamina_bar:
+		stamina_bar.modulate = Color.WHITE
 	if _meta_flash > 0.0 and meta_label:
 		_meta_flash -= delta
 		var m := clampf(_meta_flash / 0.4, 0.0, 1.0)
