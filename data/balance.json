@@ -31,10 +31,10 @@
 
     "gravity": 23.0,
     "max_fall_speed": 30.0,
-    "jump_velocity": 9.0,
-    "jump_cut_multiplier": 0.5,
-    "coyote_time": 0.17,
-    "jump_buffer": 0.2,
+    "jump_velocity": 9.15,
+    "jump_cut_multiplier": 0.52,
+    "coyote_time": 0.18,
+    "jump_buffer": 0.22,
 
     "buffer_de_acao": 0.18,
     "turn_speed": 13.0,
