@@ -87,8 +87,8 @@ func _physics_process(delta: float) -> void:
 		var target_yaw := atan2(-to.x, -to.z)
 		var flat_len := Vector2(to.x, to.z).length()
 		var target_pitch := rad_to_deg(atan2(to.y, flat_len))
-		yaw = lerp_angle(yaw, target_yaw, clampf(8.0 * delta, 0.0, 1.0))
-		pitch = lerpf(pitch, clampf(target_pitch, -30.0, 40.0), clampf(8.0 * delta, 0.0, 1.0))
+		yaw = lerp_angle(yaw, target_yaw, clampf(10.5 * delta, 0.0, 1.0))
+		pitch = lerpf(pitch, clampf(target_pitch, -30.0, 40.0), clampf(10.5 * delta, 0.0, 1.0))
 	else:
 		if _look_idle > 0.0:
 			_look_idle -= delta
@@ -110,14 +110,14 @@ func _physics_process(delta: float) -> void:
 		var v := (_player as CharacterBody3D).velocity
 		sprinting = Vector3(v.x, 0.0, v.z).length() > 1.0
 	if lock_target and is_instance_valid(lock_target):
-		_fov_target = _base_fov - 4.0
+		_fov_target = _base_fov - 5.0
 		# Aproxima um pouco no lock
-		var lock_len := float(Balance.camera().get("distance", 4.5)) * 0.88
-		spring.spring_length = lerpf(spring.spring_length, lock_len, clampf(5.0 * delta, 0.0, 1.0))
+		var lock_len := float(Balance.camera().get("distance", 4.5)) * 0.86
+		spring.spring_length = lerpf(spring.spring_length, lock_len, clampf(6.0 * delta, 0.0, 1.0))
 	elif sprinting:
-		_fov_target = _base_fov + 6.0
-		var run_len := float(Balance.camera().get("distance", 4.5)) * 1.06
-		spring.spring_length = lerpf(spring.spring_length, run_len, clampf(4.0 * delta, 0.0, 1.0))
+		_fov_target = _base_fov + 7.0
+		var run_len := float(Balance.camera().get("distance", 4.5)) * 1.08
+		spring.spring_length = lerpf(spring.spring_length, run_len, clampf(4.5 * delta, 0.0, 1.0))
 	else:
 		_fov_target = _base_fov
 		var base_len := float(Balance.camera().get("distance", 4.5))
