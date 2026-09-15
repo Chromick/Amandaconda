@@ -120,15 +120,15 @@ func _physics_process(delta: float) -> void:
 func _check_enrage() -> void:
 	if _enraged or _dead:
 		return
-	if health <= max_health * 0.4:
+	if health <= max_health * 0.45:
 		_enraged = true
 		_base_color = Color(0.75, 0.35, 0.22)
 		_restore_color()
 		GameState.show_toast("PORTARA · tranca furiosa")
 		if typeof(HitFeel) != TYPE_NIL:
-			HitFeel.shake(0.25)
-			HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.9, 0.4, 0.2), 1.2)
-			HitFeel.kick_fov(4.5, 0.16)
+			HitFeel.shake(0.28)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.9, 0.4, 0.2), 1.3)
+			HitFeel.kick_fov(5.5, 0.18)
 		scale = Vector3(1.14, 0.92, 1.14)
 		var tw := create_tween()
 		tw.tween_property(self, "scale", Vector3.ONE, 0.16).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
