@@ -1,0 +1,237 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/hub_arena.gd" id="1_hub"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/training_dummy.tscn" id="3_dummy"]
+[ext_resource type="Script" path="res://scripts/player/camera_controller.gd" id="4_cam"]
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="5_hud"]
+[ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="6_pause"]
+[ext_resource type="Script" path="res://scripts/world/campus_builder.gd" id="7_campus"]
+[ext_resource type="PackedScene" path="res://scenes/ui/patch_shop.tscn" id="8_shop"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_floor"]
+size = Vector3(120, 1, 120)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
+albedo_color = Color(0.22, 0.23, 0.26, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(120, 1, 120)
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 1
+background_color = Color(0.04, 0.05, 0.09, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.28, 0.34, 0.48, 1)
+ambient_light_energy = 0.35
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+glow_intensity = 0.55
+glow_bloom = 0.15
+fog_enabled = true
+fog_light_color = Color(0.08, 0.1, 0.16, 1)
+fog_density = 0.0018
+
+[node name="HubArena" type="Node3D"]
+script = ExtResource("1_hub")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_main")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 18, 8)
+light_color = Color(0.55, 0.65, 0.95, 1)
+light_energy = 0.22
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_floor")
+surface_material_override/0 = SubResource("StandardMaterial3D_floor")
+
+[node name="Collision" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_floor")
+
+[node name="CampusBuilder" type="Node3D" parent="."]
+script = ExtResource("7_campus")
+
+[node name="Rooms" type="Node3D" parent="CampusBuilder"]
+
+[node name="Spawns" type="Node3D" parent="CampusBuilder"]
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 26)
+
+[node name="TrainingDummy" parent="." instance=ExtResource("3_dummy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 20)
+
+[node name="PlayerCamera" type="Node3D" parent="."]
+script = ExtResource("4_cam")
+player_path = NodePath("../Player")
+
+[node name="Pivot" type="Node3D" parent="PlayerCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="PlayerCamera/Pivot"]
+spring_length = 4.5
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="PlayerCamera/Pivot/SpringArm3D"]
+current = true
+fov = 70.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_hud")
+
+[node name="Margin" type="MarginContainer" parent="UI/HUD"]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 380.0
+offset_bottom = 170.0
+
+[node name="VBox" type="VBoxContainer" parent="UI/HUD/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="HealthBar" type="ProgressBar" parent="UI/HUD/Margin/VBox"]
+custom_minimum_size = Vector2(300, 22)
+layout_mode = 2
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="StaminaBar" type="ProgressBar" parent="UI/HUD/Margin/VBox"]
+custom_minimum_size = Vector2(300, 16)
+layout_mode = 2
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="WeaponLabel" type="Label" parent="UI/HUD/Margin/VBox"]
+layout_mode = 2
+text = "Físico · Teclado"
+
+[node name="MetaLabel" type="Label" parent="UI/HUD/Margin/VBox"]
+layout_mode = 2
+text = "Latas 3/3 · 0 KB"
+
+[node name="AbilityLabel" type="Label" parent="UI/HUD/Margin/VBox"]
+layout_mode = 2
+text = "Habilidade: —  [F] usa · [T] troca na safe"
+
+[node name="HintLabel" type="Label" parent="UI/HUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -80.0
+offset_right = 980.0
+offset_bottom = -24.0
+grow_vertical = 0
+text = "F habilidade · T troca (safe) · E servidor · R lata · 3 bases → Marlon → Porta"
+
+[node name="HackLabel" type="Label" parent="UI/HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 56.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.45, 1, 0.55, 1)
+text = ""
+horizontal_alignment = 2
+
+[node name="ToastLabel" type="Label" parent="UI/HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 72.0
+offset_right = 280.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="BossPanel" type="VBoxContainer" parent="UI/HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 70.0
+grow_horizontal = 2
+
+[node name="BossName" type="Label" parent="UI/HUD/BossPanel"]
+layout_mode = 2
+text = "BOSS"
+horizontal_alignment = 1
+
+[node name="BossBar" type="ProgressBar" parent="UI/HUD/BossPanel"]
+custom_minimum_size = Vector2(400, 18)
+layout_mode = 2
+show_percentage = false
+
+[node name="PatchShop" parent="." instance=ExtResource("8_shop")]
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("6_pause")
+
+[node name="Panel" type="ColorRect" parent="PauseMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.05, 0.07, 0.72)
+
+[node name="Center" type="VBoxContainer" parent="PauseMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -80.0
+offset_right = 120.0
+offset_bottom = 80.0
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="PauseMenu/Center"]
+layout_mode = 2
+text = "PAUSADO"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="PauseMenu/Center"]
+layout_mode = 2
+text = "Continuar"
+
+[node name="Menu" type="Button" parent="PauseMenu/Center"]
+layout_mode = 2
+text = "Menu principal"
+
+[connection signal="pressed" from="PauseMenu/Center/Resume" to="PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Center/Menu" to="PauseMenu" method="_on_menu_pressed"]

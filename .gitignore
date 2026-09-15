@@ -1,0 +1,25 @@
+# Godot 4+
+.godot/
+/android/
+*.translation
+
+# Raw dumps (curated copies live under assets/props and assets/characters)
+assets/_download/
+assets/kenney/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*~
+
+# Python leftovers if present
+.venv/
+__pycache__/
+
+# Local secrets / MCP scratch
+mcp_*.txt
+*.pem
+.env
+.cursor/mcp.json

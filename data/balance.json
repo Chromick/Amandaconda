@@ -1,0 +1,325 @@
+{
+  "_meta": {
+    "runtime": "Godot 4.7 Forward Plus + Jolt",
+    "fonte_2d": "Protótipo Pygame (arquivo morto) — tempos e custos de vigor reaproveitados; distâncias convertidas.",
+    "conversao": "Escala ~0.045 m/px (altura do jogador 40px ≈ 1.8 m). Tempos em segundos permanecem iguais."
+  },
+
+  "_unidades": {
+    "distancia": "metros",
+    "velocidade": "metros por segundo",
+    "aceleracao": "metros por segundo ao quadrado",
+    "tempo": "segundos",
+    "angulo": "graus"
+  },
+
+  "player": {
+    "capsule_radius": 0.35,
+    "capsule_height": 1.8,
+
+    "max_health": 100,
+    "max_stamina": 100,
+    "stamina_regen": 40,
+    "stamina_regen_delay": 0.7,
+
+    "walk_speed": 5.3,
+    "run_speed": 8.8,
+    "ground_accel": 22.0,
+    "ground_friction": 28.0,
+    "air_accel": 14.0,
+    "air_friction": 4.0,
+
+    "gravity": 22.0,
+    "max_fall_speed": 28.0,
+    "jump_velocity": 8.5,
+    "jump_cut_multiplier": 0.45,
+    "coyote_time": 0.1,
+    "jump_buffer": 0.12,
+
+    "buffer_de_acao": 0.15,
+    "turn_speed": 10.0,
+    "attack_move_mult": 0.08,
+    "combo_janela": 0.45,
+    "combo_max": 2,
+    "sprint_attack_dash": 10.5,
+
+    "arma_inicial": "teclado",
+    "virus_desbloqueado": true,
+
+    "rolamento": {
+      "duracao": 0.42,
+      "inv_inicio": 0.05,
+      "inv_duracao": 0.26,
+      "vigor": 25,
+      "velocidade": 11.7,
+      "atrito_final": 28.0
+    },
+
+    "dano_recebido": {
+      "invencibilidade": 0.7,
+      "travado": 0.28,
+      "empurrao": 4.0
+    },
+
+    "armas": {
+      "teclado": {
+        "ataque_leve": {
+          "preparacao": 0.09,
+          "acerto": 0.07,
+          "recuperacao": 0.2,
+          "dano": 12,
+          "vigor": 16,
+          "alcance": 1.3,
+          "altura": 1.1,
+          "avanco": 2.5,
+          "golpes_no_combo": 3
+        },
+        "ataque_pesado": {
+          "preparacao": 0.26,
+          "carga_maxima": 0.7,
+          "acerto": 0.1,
+          "recuperacao": 0.38,
+          "dano": 26,
+          "dano_carregado": 45,
+          "vigor": 32,
+          "alcance": 1.6,
+          "altura": 1.3,
+          "avanco": 4.0
+        }
+      },
+      "virus": {
+        "ataque_leve": {
+          "preparacao": 0.1,
+          "acerto": 0.06,
+          "recuperacao": 0.22,
+          "dano": 9,
+          "vigor": 14,
+          "avanco": 0,
+          "velocidade": 12.0,
+          "tempo_de_vida": 1.1,
+          "raio": 0.25,
+          "quique": 0.35
+        },
+        "ataque_pesado": {
+          "preparacao": 0.28,
+          "carga_maxima": 0.55,
+          "acerto": 0.08,
+          "recuperacao": 0.4,
+          "dano": 18,
+          "dano_carregado": 32,
+          "vigor": 28,
+          "avanco": 0,
+          "velocidade": 9.0,
+          "tempo_de_vida": 1.6,
+          "raio": 0.4,
+          "quique": 0.55
+        }
+      }
+    }
+  },
+
+  "camera": {
+    "distance": 5.0,
+    "height": 1.65,
+    "min_pitch": -40.0,
+    "max_pitch": 55.0,
+    "sensitivity": 0.12,
+    "follow_speed": 10.0,
+    "lock_on_distance": 18.0,
+    "lock_on_height_bias": 1.2,
+    "idle_yaw_delay": 1.2,
+    "idle_yaw_speed": 2.8
+  },
+
+  "impacto": {
+    "pausa_no_acerto": 0.09,
+    "pausa_ao_matar": 0.28,
+    "empurrao_no_alvo": 4.2,
+    "shake_on_hit": 0.42,
+    "shake_amp": 0.3,
+    "shake_decay": 1.8
+  },
+
+  "boneco": {
+    "vida": 200,
+    "revida": true,
+    "renascer_em": 2.0,
+    "dano": 18,
+    "intervalo_do_golpe": 2.6,
+    "preparacao": 0.55,
+    "acerto": 0.12,
+    "recuperacao": 0.6,
+    "alcance": 1.6
+  },
+
+  "chatana": {
+    "vida": 28,
+    "velocidade": 3.2,
+    "prefer_distance": 5.5,
+    "aggro": 9.5,
+    "leash": 15.0,
+    "deaggro": 20.0,
+    "intervalo": 2.0,
+    "preparacao": 0.4,
+    "acerto": 0.35,
+    "recuperacao": 0.5,
+    "dano": 8,
+    "raio": 2.4,
+    "renascer_em": 4.0,
+    "bytes": [24, 40]
+  },
+
+  "portara": {
+    "vida": 70,
+    "velocidade": 2.0,
+    "aggro": 8.5,
+    "leash": 14.0,
+    "deaggro": 18.0,
+    "intervalo": 1.8,
+    "preparacao": 0.5,
+    "acerto": 0.14,
+    "recuperacao": 0.7,
+    "dano": 16,
+    "alcance": 1.4,
+    "altura": 1.6,
+    "renascer_em": 5.0,
+    "bytes": [48, 72]
+  },
+
+  "net": {
+    "vida": 40,
+    "velocidade": 1.4,
+    "prefer_distance": 9.0,
+    "aggro": 11.0,
+    "leash": 17.0,
+    "deaggro": 22.0,
+    "intervalo": 2.4,
+    "preparacao": 0.55,
+    "acerto": 0.1,
+    "recuperacao": 0.7,
+    "dano": 11,
+    "proj_speed": 14.0,
+    "mark_duration": 3.5,
+    "mark_speed_mult": 0.72,
+    "renascer_em": 5.5,
+    "bytes": [32, 56]
+  },
+
+  "cura": {
+    "latas": 3,
+    "cura": 45,
+    "tempo_uso": 1.15,
+    "safezone_regen": 18.0,
+    "safezone_latas": true
+  },
+
+  "bytes": {
+    "hud_unidade": "KB"
+  },
+
+  "pendrives": {
+    "fisico": {
+      "dano_por_nivel": 0.08,
+      "vida_por_nivel": 18
+    },
+    "especial": {
+      "dano_por_nivel": 0.15,
+      "vida_por_nivel": 8
+    }
+  },
+
+  "patches": {
+    "slots": 3,
+    "catalogo": [
+      {
+        "id": "hotfix_vigor",
+        "nome": "hotfix_vigor",
+        "custo": 80,
+        "texto": "+20 vigor max",
+        "vigor_max": 20
+      },
+      {
+        "id": "daemon_safe",
+        "nome": "daemon_safe",
+        "custo": 120,
+        "texto": "+15 vida max",
+        "vida_max": 15
+      },
+      {
+        "id": "macro_dano",
+        "nome": "macro_dano",
+        "custo": 160,
+        "texto": "+8% dano",
+        "dano_mult": 0.08
+      }
+    ]
+  },
+
+  "chefes": {
+    "luanevil": {
+      "vida": 280,
+      "nome": "LUANEVIL",
+      "local": "Bandejão",
+      "velocidade": 3.4,
+      "dano_leve": 16,
+      "dano_pesado": 28,
+      "intervalo": 1.6,
+      "preparacao_leve": 0.35,
+      "acerto_leve": 0.12,
+      "recuperacao_leve": 0.45,
+      "preparacao_pesado": 0.7,
+      "acerto_pesado": 0.16,
+      "recuperacao_pesado": 0.7,
+      "alcance": 2.0,
+      "caramelo_raio": 2.2,
+      "caramelo_duracao": 6.0,
+      "caramelo_slow": 0.45,
+      "fase2_vida": 0.5
+    },
+    "renanligno": {
+      "vida": 240,
+      "nome": "RENANLIGNO",
+      "local": "Laboratório"
+    },
+    "balarrals": {
+      "vida": 220,
+      "nome": "BALARRALS",
+      "local": "Pátio",
+      "dano_leve": 14,
+      "dano_pesado": 28,
+      "velocidade": 5.8
+    },
+    "marlombolico": {
+      "vida": 300,
+      "nome": "MARLOMBÓLICO",
+      "local": "Servidores",
+      "velocidade": 3.8,
+      "dano": 15,
+      "intervalo": 1.5,
+      "preparacao": 0.4,
+      "acerto": 0.12,
+      "recuperacao": 0.55,
+      "alcance": 1.8,
+      "hack_cooldown": 4.5,
+      "hack_duration": 5.0
+    },
+    "amandaconda": {
+      "vida": 450,
+      "nome": "AMANDACONDA",
+      "local": "A porta",
+      "velocidade": 3.6,
+      "dano_leve": 18,
+      "dano_pesado": 32,
+      "intervalo": 1.4,
+      "preparacao_leve": 0.4,
+      "acerto_leve": 0.12,
+      "recuperacao_leve": 0.4,
+      "preparacao_pesado": 0.75,
+      "acerto_pesado": 0.16,
+      "recuperacao_pesado": 0.65,
+      "alcance": 2.2,
+      "fase2_vida": 0.5,
+      "fase2_speed_mult": 1.25
+    }
+  }
+}

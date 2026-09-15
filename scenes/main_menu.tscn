@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dfjdx78b3j0yb"]
+
+[ext_resource type="Script" uid="uid://8hyuo2oqgxg1" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+
+[node name="MainMenu" type="Control" unique_id=1944645500]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Bg" type="ColorRect" parent="." unique_id=1833602265]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.09, 0.11, 1)
+
+[node name="Center" type="VBoxContainer" parent="." unique_id=1089469083]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -190.0
+offset_right = 260.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Center" unique_id=368883408]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "AMANDACONDA"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center" unique_id=234676662]
+layout_mode = 2
+text = "Campus soulslike 3D · Godot 4.7"
+horizontal_alignment = 1
+
+[node name="SchoolPrompt" type="Label" parent="Center" unique_id=1222282783]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Você pega uma coisa no laboratório:"
+horizontal_alignment = 1
+
+[node name="Fisico" type="Button" parent="Center" unique_id=1510077564]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Físico — Teclado (perto, combo)"
+
+[node name="Especial" type="Button" parent="Center" unique_id=1660084431]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Especial — Vírus (longe, projétil)"
+
+[node name="Quit" type="Button" parent="Center" unique_id=1582058987]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "Sair"
+
+[node name="Footer" type="Label" parent="." unique_id=356199409]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -48.0
+offset_right = 320.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Runtime oficial: Godot. Pygame e Unreal são referência / arquivo morto."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Center/Fisico" to="." method="_on_fisico_pressed"]
+[connection signal="pressed" from="Center/Especial" to="." method="_on_especial_pressed"]
+[connection signal="pressed" from="Center/Quit" to="." method="_on_quit_pressed"]

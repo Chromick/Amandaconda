@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/bosses/balarrals.gd" id="1_bal"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b"]
+radius = 0.4
+height = 1.9
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b"]
+radius = 0.4
+height = 1.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b"]
+albedo_color = Color(0.7, 0.75, 0.85, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hit"]
+size = Vector3(1.2, 1.5, 1.7)
+
+[node name="Balarrals" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_bal")
+visual_gltf = "modular/Beach.gltf"
+visual_scale = 1.14
+visual_tint = Color(0.28, 0.28, 0.3, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
+shape = SubResource("CapsuleShape3D_b")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
+mesh = SubResource("CapsuleMesh_b")
+surface_material_override/0 = SubResource("StandardMaterial3D_b")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+text = "BALARRALS"
+font_size = 64
+outline_size = 8
+
+[node name="AttackHitbox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+
+[node name="Shape" type="CollisionShape3D" parent="AttackHitbox"]
+shape = SubResource("BoxShape3D_hit")

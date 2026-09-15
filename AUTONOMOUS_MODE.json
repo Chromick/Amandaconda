@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "repo": "https://github.com/Chromick/Amandaconda",
+  "branch": "godot-4",
+  "project_path_hint": "Godot 4.7 runtime — pasta com project.godot",
+  "godot_exe_hint": "Godot_v4.7.2-stable_win64.exe",
+  "notes": "Ligue/desligue o agente só mudando enabled. true = modo autônomo; false = só responde pedidos explícitos."
+}

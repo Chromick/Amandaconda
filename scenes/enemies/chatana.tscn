@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/chatana.gd" id="1_chat"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
+radius = 0.38
+height = 1.7
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_body"]
+radius = 0.38
+height = 1.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_body"]
+albedo_color = Color(0.35, 0.85, 0.95, 1)
+emission_enabled = true
+emission = Color(0.2, 0.6, 0.75, 1)
+emission_energy_multiplier = 0.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pulse"]
+radius = 2.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_pulse"]
+radius = 2.4
+height = 4.8
+
+[node name="Chatana" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_chat")
+visual_gltf = "modular/Casual_2.gltf"
+visual_scale = 1.05
+visual_tint = Color(0.45, 0.95, 1, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
+shape = SubResource("CapsuleShape3D_body")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
+mesh = SubResource("CapsuleMesh_body")
+surface_material_override/0 = SubResource("StandardMaterial3D_body")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
+text = "Chatana"
+font_size = 48
+outline_size = 8
+
+[node name="Pulse" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="Shape" type="CollisionShape3D" parent="Pulse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0, 0)
+shape = SubResource("SphereShape3D_pulse")
+
+[node name="Mesh" type="MeshInstance3D" parent="Pulse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0, 0)
+visible = false
+mesh = SubResource("SphereMesh_pulse")
+transparency = 0.65

@@ -1,0 +1,39 @@
+---
+description: Agente de desenvolvimento autônomo do Amandaconda (Godot). Respeita AUTONOMOUS_MODE.json.
+alwaysApply: true
+---
+
+# Agente autônomo — Amandaconda (Godot)
+
+## Toggle (ligar / desligar)
+
+1. Abra `AUTONOMOUS_MODE.json` na raiz do projeto Godot.
+2. `"enabled": true` → modo autônomo ligado.
+3. `"enabled": false` → modo autônomo **desligado**.
+
+No início de **cada** turno, leia `AUTONOMOUS_MODE.json`.
+
+- Se `enabled` for `false` (ou o arquivo não existir): **não** inicie o loop autônomo. Só implemente o que o usuário pediu explicitamente.
+- Se `enabled` for `true`: siga o loop abaixo sem pedir “o que fazer depois” a cada ciclo.
+
+Atalhos de frase do usuário:
+
+- “liga o autônomo” / “enable autonomous” → setar `enabled: true` e continuar.
+- “desliga o autônomo” / “disable autonomous” → setar `enabled: false` e parar o loop.
+
+## Repo
+
+- Remoto canônico: https://github.com/Chromick/Amandaconda
+- Branch do runtime Godot: `godot-4` (não sobrescrever `master` Pygame sem pedido explícito).
+- Progresso: `AUTONOMOUS_PROGRESS.md`
+
+## Loop (quando enabled)
+
+ANALISAR → escolher 1 tarefa (bugs > gameplay > sistemas > UI > polish) → implementar pequeno → testar (Godot headless quando possível) → documentar em `AUTONOMOUS_PROGRESS.md` → commit pequeno se git estiver ok → repetir.
+
+## Segurança
+
+- Não apagar assets / não mudanças em massa / não trocar engine.
+- Não force-push em `master`.
+- Arriscado demais → registrar `AGUARDANDO DECISÃO` e seguir outra tarefa segura.
+- Não inventar testes: só declare o que realmente rodou.

@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/patch_shop.gd" id="1_shop"]
+
+[node name="PatchShop" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_shop")
+
+[node name="Panel" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.06, 0.07, 0.82)
+
+[node name="Center" type="VBoxContainer" parent="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -180.0
+offset_right = 260.0
+offset_bottom = 180.0
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel/Center"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "SERVIDOR DE BACKUP"
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="Panel/Center"]
+layout_mode = 2
+text = "0 KB"
+horizontal_alignment = 1
+
+[node name="List" type="VBoxContainer" parent="Panel/Center"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Close" type="Button" parent="Panel/Center"]
+layout_mode = 2
+text = "Fechar [Esc]"
+
+[connection signal="pressed" from="Panel/Center/Close" to="." method="_on_close_pressed"]
