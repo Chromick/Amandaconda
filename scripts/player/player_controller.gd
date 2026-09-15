@@ -1283,10 +1283,38 @@ func _resolve_eco() -> void:
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(_eco_pos + Vector3.UP * 0.6, Color(0.5, 0.9, 1.0), 1.35)
 		HitFeel.punch()
+	_spawn_eco_burst()
 	for cam in get_tree().get_nodes_in_group("player_camera"):
 		if cam and cam.has_method("punch_fov"):
 			cam.punch_fov(4.0)
 			break
+
+
+func _spawn_eco_burst() -> void:
+	var host := get_tree().current_scene
+	if host == null:
+		return
+	var ring := MeshInstance3D.new()
+	var torus := TorusMesh.new()
+	torus.inner_radius = 0.35
+	torus.outer_radius = 0.55
+	ring.mesh = torus
+	var mat := StandardMaterial3D.new()
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.albedo_color = Color(0.45, 0.9, 1.0, 0.75)
+	mat.emission_enabled = true
+	mat.emission = Color(0.4, 0.85, 1.0)
+	mat.emission_energy_multiplier = 2.2
+	ring.material_override = mat
+	host.add_child(ring)
+	ring.global_position = _eco_pos + Vector3.UP * 0.35
+	ring.rotation_degrees.x = 90.0
+	var tw := create_tween()
+	tw.set_parallel(true)
+	tw.tween_property(ring, "scale", Vector3(4.2, 4.2, 4.2), 0.32)
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.32)
+	tw.chain().tween_callback(ring.queue_free)
 
 
 func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node = null) -> void:
