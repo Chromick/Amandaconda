@@ -35,6 +35,9 @@ func _ready() -> void:
 	add_to_group("enemy")
 	add_to_group("lockable")
 	_spawn_pos = global_position
+	if label:
+		label.outline_size = 8
+		label.outline_modulate = Color(0, 0, 0, 0.85)
 	Balance.reloaded.connect(_apply_balance)
 	_attach_visual()
 	_apply_balance()
