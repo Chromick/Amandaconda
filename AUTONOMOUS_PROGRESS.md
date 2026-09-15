@@ -6,6 +6,32 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~07:58 BRT
+
+### Alteração
+- Vírus: glow, luz, trail e spark no quique.
+- Net shot: glow magenta, luz, look_at, spark no impacto.
+- Safezone: anel torus pulsante + spark ao entrar.
+- Player: poeira ao pousar após salto.
+
+### Arquivos modificados
+- `scripts/combat/virus_projectile.gd`
+- `scripts/enemies/net_shot.gd`
+- `scripts/world/safezone.gd`
+- `scripts/player/player_controller.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar sem parar
+
+---
+
 ## 2026-09-15 ~07:55 BRT
 
 ### Alteração

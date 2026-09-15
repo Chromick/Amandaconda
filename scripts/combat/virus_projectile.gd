@@ -9,6 +9,8 @@ var knock_strength: float = 2.0
 var source: Node = null
 
 var _bounces_left: int = 2
+var _trail_cd: float = 0.0
+var _light: OmniLight3D
 
 
 func _ready() -> void:
@@ -27,10 +29,23 @@ func setup(cfg: Dictionary, dir: Vector3, from: Node) -> void:
 	var shape := $CollisionShape3D.shape as SphereShape3D
 	if shape:
 		shape.radius = r
-	var mesh := $Mesh
+	var mesh := $Mesh as MeshInstance3D
 	if mesh and mesh.mesh is SphereMesh:
 		(mesh.mesh as SphereMesh).radius = r
 		(mesh.mesh as SphereMesh).height = r * 2.0
+	var mat := StandardMaterial3D.new()
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.albedo_color = Color(0.35, 1.0, 0.55)
+	mat.emission_enabled = true
+	mat.emission = Color(0.3, 1.0, 0.5)
+	mat.emission_energy_multiplier = 2.8
+	if mesh:
+		mesh.material_override = mat
+	_light = OmniLight3D.new()
+	_light.light_color = Color(0.4, 1.0, 0.55)
+	_light.light_energy = 2.2
+	_light.omni_range = 3.5
+	add_child(_light)
 
 
 func _physics_process(delta: float) -> void:
@@ -41,9 +56,37 @@ func _physics_process(delta: float) -> void:
 	global_position += velocity * delta
 	if velocity.length_squared() > 0.01:
 		var tip := global_position + velocity.normalized()
-		# Evita look_at inválido se velocity ~ paralelo a UP
 		if absf(velocity.normalized().dot(Vector3.UP)) < 0.98:
 			look_at(tip, Vector3.UP)
+	_trail_cd -= delta
+	if _trail_cd <= 0.0:
+		_trail_cd = 0.04
+		_spawn_trail()
+
+
+func _spawn_trail() -> void:
+	var host := get_tree().current_scene
+	if host == null:
+		return
+	var p := MeshInstance3D.new()
+	var sm := SphereMesh.new()
+	sm.radius = 0.08
+	sm.height = 0.16
+	p.mesh = sm
+	var mat := StandardMaterial3D.new()
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.albedo_color = Color(0.4, 1.0, 0.55, 0.55)
+	mat.emission_enabled = true
+	mat.emission = Color(0.35, 1.0, 0.5)
+	mat.emission_energy_multiplier = 1.6
+	p.material_override = mat
+	host.add_child(p)
+	p.global_position = global_position
+	var tw := create_tween()
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.22)
+	tw.parallel().tween_property(p, "scale", Vector3.ONE * 0.2, 0.22)
+	tw.tween_callback(p.queue_free)
 
 
 func _on_body_entered(body: Node3D) -> void:
@@ -65,6 +108,8 @@ func _on_area_entered(area: Area3D) -> void:
 	var parent := area.get_parent()
 	if parent and parent.has_method("take_damage") and parent != source:
 		parent.take_damage(damage, velocity.normalized() * knock_strength, source)
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.spark_at(global_position, Color(0.45, 1.0, 0.55), 0.7)
 		queue_free()
 
 
@@ -73,9 +118,10 @@ func _try_bounce(_body: Node3D) -> void:
 		queue_free()
 		return
 	_bounces_left -= 1
-	# Reflexão simples no eixo dominante (bom o bastante pra arena).
 	if absf(velocity.x) > absf(velocity.z):
 		velocity.x = -velocity.x * bounce
 	else:
 		velocity.z = -velocity.z * bounce
 	velocity.y = absf(velocity.y) * 0.2
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(global_position, Color(0.5, 1.0, 0.6), 0.45)

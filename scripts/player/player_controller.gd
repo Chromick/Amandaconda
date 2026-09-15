@@ -71,6 +71,8 @@ var _queued_combo: bool = false
 var _sprint_attack: bool = false
 var _was_sprinting: bool = false
 var _roll_attack_queued: bool = false
+var _was_on_floor: bool = true
+var _land_dust_cd: float = 0.0
 
 
 func _ready() -> void:
@@ -219,11 +221,49 @@ func _physics_process(delta: float) -> void:
 			_process_healing(delta)
 
 	move_and_slide()
+	_update_land_fx()
 	_update_mesh_facing(delta)
 	_update_roll_visual()
 	_update_lock_marker(delta)
 	_update_character_anim()
 	_tick_roll_ghosts(delta)
+	if _land_dust_cd > 0.0:
+		_land_dust_cd -= delta
+
+
+func _update_land_fx() -> void:
+	var on_floor := is_on_floor()
+	if on_floor and not _was_on_floor and _land_dust_cd <= 0.0:
+		_land_dust_cd = 0.2
+		_spawn_land_dust()
+		if typeof(HitFeel) != TYPE_NIL and absf(velocity.y) < 0.1:
+			HitFeel.shake(0.06)
+	_was_on_floor = on_floor
+
+
+func _spawn_land_dust() -> void:
+	var host := get_tree().current_scene
+	if host == null:
+		return
+	for i in 4:
+		var p := MeshInstance3D.new()
+		var sm := SphereMesh.new()
+		sm.radius = 0.06
+		sm.height = 0.12
+		p.mesh = sm
+		var mat := StandardMaterial3D.new()
+		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		mat.albedo_color = Color(0.75, 0.72, 0.65, 0.5)
+		p.material_override = mat
+		host.add_child(p)
+		var ang := TAU * float(i) / 4.0 + randf() * 0.4
+		var dir := Vector3(cos(ang), 0.15, sin(ang))
+		p.global_position = global_position + Vector3(0, 0.08, 0) + dir * 0.15
+		var tw := create_tween()
+		tw.tween_property(p, "global_position", p.global_position + dir * 0.55 + Vector3.UP * 0.2, 0.28)
+		tw.parallel().tween_property(mat, "albedo_color:a", 0.0, 0.28)
+		tw.tween_callback(p.queue_free)
 
 
 func _update_lock_marker(delta: float) -> void:
