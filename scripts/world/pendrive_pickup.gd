@@ -56,6 +56,7 @@ func _set_color(c: Color) -> void:
 func _on_body(body: Node3D) -> void:
 	if body == null or not body.is_in_group("player"):
 		return
+	set_deferred("monitoring", false)
 	GameState.add_pendrive(kind)
 	if body.has_method("refresh_progression"):
 		body.refresh_progression()

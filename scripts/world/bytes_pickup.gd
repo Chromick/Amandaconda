@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 func _on_body(body: Node3D) -> void:
 	if body == null or not body.is_in_group("player"):
 		return
+	set_deferred("monitoring", false)
 	var got := randi_range(amount_min, amount_max)
 	GameState.add_bytes(got)
 	GameState.show_toast("+%d KB" % got)
