@@ -226,7 +226,7 @@ func flash_stamina() -> void:
 
 
 func flash_hurt() -> void:
-	_pulse_screen(Color(0.85, 0.12, 0.15, 0.38), 0.28)
+	_pulse_screen(Color(0.9, 0.1, 0.12, 0.42), 0.32)
 
 
 func flash_danger() -> void:
