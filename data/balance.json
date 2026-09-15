@@ -302,6 +302,13 @@
         "custo": 95,
         "texto": "+25% magnet",
         "magnet_mult": 1.25
+      },
+      {
+        "id": "jump_buffer_plus",
+        "nome": "jump_buffer_plus",
+        "custo": 85,
+        "texto": "+0.08 jump buffer",
+        "jump_buffer_bonus": 0.08
       }
     ]
   },

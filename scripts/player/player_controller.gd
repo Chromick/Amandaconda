@@ -448,7 +448,7 @@ func _aim_dir() -> Vector3:
 
 func _process_move(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
-		jump_buffer_timer = float(_cfg.get("jump_buffer", 0.12))
+		jump_buffer_timer = float(_cfg.get("jump_buffer", 0.12)) + GameState.jump_buffer_bonus()
 	if Input.is_action_just_released("jump") and velocity.y > 0.0:
 		velocity.y *= float(_cfg.get("jump_cut_multiplier", 0.45))
 
