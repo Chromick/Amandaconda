@@ -44,6 +44,12 @@ func shake(amount: float = -1.0) -> void:
 			node.add_trauma(amount)
 
 
+func kick_fov(degrees: float = 5.0, _duration: float = 0.12) -> void:
+	for node in get_tree().get_nodes_in_group("player_camera"):
+		if node and node.has_method("punch_fov"):
+			node.punch_fov(degrees)
+
+
 func spark_at(pos: Vector3, color: Color = Color(1.0, 0.85, 0.35), scale_u: float = 1.0) -> void:
 	var spark := Node3D.new()
 	spark.set_script(SPARK_SCRIPT)

@@ -871,6 +871,8 @@ func _spawn_virus(cfg: Dictionary) -> void:
 	shot_cfg["dano"] = float(shot_cfg.get("dano", cfg.get("dano", 9))) * GameState.damage_multiplier()
 	proj.setup(shot_cfg, dir, self)
 	HitFeel.punch(0.03)
+	if state == State.ATTACK_HEAVY and _charge_ratio > 0.55:
+		HitFeel.kick_fov(3.0 + 4.0 * _charge_ratio, 0.14)
 
 
 func _process_hit(delta: float) -> void:
