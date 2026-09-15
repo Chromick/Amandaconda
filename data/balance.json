@@ -19,8 +19,8 @@
 
     "max_health": 175,
     "max_stamina": 175,
-    "stamina_regen": 95,
-    "stamina_regen_delay": 0.18,
+    "stamina_regen": 100,
+    "stamina_regen_delay": 0.16,
 
     "walk_speed": 7.0,
     "run_speed": 11.5,
@@ -31,10 +31,10 @@
 
     "gravity": 23.5,
     "max_fall_speed": 32.0,
-    "jump_velocity": 10.0,
-    "jump_cut_multiplier": 0.46,
-    "coyote_time": 0.25,
-    "jump_buffer": 0.3,
+    "jump_velocity": 10.1,
+    "jump_cut_multiplier": 0.45,
+    "coyote_time": 0.26,
+    "jump_buffer": 0.32,
 
     "turn_speed": 18.0,
     "attack_move_mult": 0.24,
