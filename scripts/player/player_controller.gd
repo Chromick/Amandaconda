@@ -964,6 +964,7 @@ func _process_healing(delta: float) -> void:
 
 func _on_died() -> void:
 	HitFeel.shake(0.7)
+	HitFeel.spark_at(global_position + Vector3.UP * 1.0, Color(0.7, 0.15, 0.2), 1.6)
 	GameState.show_toast("Você caiu… voltando à entrada")
 	var hud := get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("play_death_fade"):
@@ -983,6 +984,8 @@ func _respawn() -> void:
 	_ground_slow = 1.0
 	_eco_pending = false
 	_clear_eco_telegraph()
+	_clear_virus_charge_telegraph()
+	_sync_atk_telegraph(false, false)
 	_clear_attack_meta()
 	attack_area.monitoring = false
 	heavy_charging = false
@@ -997,6 +1000,8 @@ func _respawn() -> void:
 	GameState.clear_hacks()
 	drinks_changed.emit(GameState.heals, GameState.max_heals)
 	GameState.show_toast("Safezone · latas restauradas")
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(global_position + Vector3.UP * 0.8, Color(0.45, 1.0, 0.6), 1.0)
 
 
 func _tick_ability(delta: float) -> void:
