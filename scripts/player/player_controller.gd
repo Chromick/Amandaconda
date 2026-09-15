@@ -1215,6 +1215,10 @@ func _resolve_eco() -> void:
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(_eco_pos + Vector3.UP * 0.6, Color(0.5, 0.9, 1.0), 1.35)
 		HitFeel.punch()
+	for cam in get_tree().get_nodes_in_group("player_camera"):
+		if cam and cam.has_method("punch_fov"):
+			cam.punch_fov(4.0)
+			break
 
 
 func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node = null) -> void:
