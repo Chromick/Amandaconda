@@ -31,18 +31,18 @@
 
     "gravity": 23.0,
     "max_fall_speed": 30.0,
-    "jump_velocity": 9.3,
-    "jump_cut_multiplier": 0.54,
+    "jump_velocity": 9.45,
+    "jump_cut_multiplier": 0.52,
     "coyote_time": 0.2,
     "jump_buffer": 0.25,
 
     "turn_speed": 14.0,
     "attack_move_mult": 0.16,
     "buffer_de_acao": 0.2,
-    "combo_janela": 0.7,
+    "combo_janela": 0.75,
     "combo_max": 3,
-    "sprint_attack_dash": 13.5,
-    "sprint_stamina_drain": 5.0,
+    "sprint_attack_dash": 14.0,
+    "sprint_stamina_drain": 4.8,
 
     "arma_inicial": "teclado",
     "virus_desbloqueado": true,
@@ -57,9 +57,9 @@
     },
 
     "dano_recebido": {
-      "invencibilidade": 0.82,
-      "travado": 0.2,
-      "empurrao": 3.6
+      "invencibilidade": 0.86,
+      "travado": 0.18,
+      "empurrao": 3.4
     },
 
     "armas": {
@@ -374,8 +374,8 @@
       "vida": 280,
       "nome": "LUANEVIL",
       "local": "Bandejão",
-      "bytes": [140, 200],
-      "velocidade": 3.4,
+      "bytes": [150, 210],
+      "velocidade": 3.45,
       "dano_leve": 16,
       "dano_pesado": 28,
       "intervalo": 1.6,
