@@ -636,6 +636,10 @@ func _dress_entry(root: Node3D) -> void:
 	_street_lamp(Vector3(4, 0, -32))
 	_street_lamp(Vector3(-8, 0, -30))
 	_street_lamp(Vector3(8, 0, -30))
+	_street_lamp(Vector3(-16, 0, -18))
+	_street_lamp(Vector3(16, 0, -18))
+	_street_lamp(Vector3(-20, 0, -24))
+	_street_lamp(Vector3(20, 0, -22))
 
 
 func _dress_bandejao(root: Node3D) -> void:
