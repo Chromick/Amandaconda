@@ -17,10 +17,10 @@
     "capsule_radius": 0.35,
     "capsule_height": 1.8,
 
-    "max_health": 120,
-    "max_stamina": 120,
-    "stamina_regen": 62,
-    "stamina_regen_delay": 0.38,
+    "max_health": 125,
+    "max_stamina": 125,
+    "stamina_regen": 64,
+    "stamina_regen_delay": 0.36,
 
     "walk_speed": 5.85,
     "run_speed": 9.6,
