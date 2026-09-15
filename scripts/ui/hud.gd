@@ -45,6 +45,8 @@ func _ready() -> void:
 	GameState.abilities_changed.connect(_refresh_ability)
 	GameState.toast.connect(_show_toast)
 	GameState.ending_reached.connect(_on_ending)
+	if GameState.has_signal("gates_changed"):
+		GameState.gates_changed.connect(_on_gates)
 	if boss_panel:
 		boss_panel.visible = false
 	if toast_label:
@@ -301,6 +303,11 @@ func _on_weapon(_weapon_id: String) -> void:
 func _on_bytes(_total: int = 0) -> void:
 	_refresh_meta()
 	_meta_flash = 0.4
+
+
+func _on_gates() -> void:
+	_refresh_meta()
+	_meta_flash = 0.55
 
 
 func _on_heals(_c: int = 0, _m: int = 0) -> void:
