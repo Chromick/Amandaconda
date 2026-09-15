@@ -228,6 +228,7 @@ func _check_enrage() -> void:
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.shake(0.3)
 			HitFeel.spark_at(global_position + Vector3.UP * 1.3, Color(0.55, 0.9, 1.0), 1.2)
+			HitFeel.kick_fov(5.5, 0.18)
 		var hud := get_tree().get_first_node_in_group("hud")
 		if hud and hud.has_method("flash_danger"):
 			hud.flash_danger()
