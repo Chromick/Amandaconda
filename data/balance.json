@@ -33,8 +33,8 @@
     "max_fall_speed": 32.0,
     "jump_velocity": 9.55,
     "jump_cut_multiplier": 0.52,
-    "coyote_time": 0.2,
-    "jump_buffer": 0.25,
+    "coyote_time": 0.21,
+    "jump_buffer": 0.26,
 
     "turn_speed": 15.0,
     "attack_move_mult": 0.18,
@@ -106,14 +106,14 @@
           "carga_maxima": 0.55,
           "acerto": 0.08,
           "recuperacao": 0.4,
-          "dano": 22,
-          "dano_carregado": 44,
-          "vigor": 23,
+          "dano": 23,
+          "dano_carregado": 46,
+          "vigor": 22,
           "avanco": 0,
-          "velocidade": 11.5,
-          "tempo_de_vida": 2.0,
-          "raio": 0.5,
-          "quique": 0.65
+          "velocidade": 12.0,
+          "tempo_de_vida": 2.1,
+          "raio": 0.52,
+          "quique": 0.68
         }
       }
     }
@@ -306,9 +306,9 @@
       {
         "id": "jump_buffer_plus",
         "nome": "jump_buffer_plus",
-        "custo": 85,
-        "texto": "+0.08 jump buffer",
-        "jump_buffer_bonus": 0.08
+        "custo": 80,
+        "texto": "+0.1 jump buffer",
+        "jump_buffer_bonus": 0.1
       },
       {
         "id": "impact_frame",
