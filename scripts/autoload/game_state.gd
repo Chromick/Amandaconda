@@ -252,7 +252,10 @@ func mark_boss_defeated(boss_id: String) -> void:
 			ending_reached.emit()
 	gates_changed.emit()
 	if boss_id in BASE_BOSSES and base_bosses_cleared() >= 3:
-		show_toast("3/3 · portão dos servidores liberado")
+		# Adia pra não sobrescrever o toast da habilidade no mesmo frame.
+		get_tree().create_timer(1.4).timeout.connect(func ():
+			show_toast("3/3 · portão dos servidores liberado")
+		, CONNECT_ONE_SHOT)
 
 
 func show_toast(message: String) -> void:
