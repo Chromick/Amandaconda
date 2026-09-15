@@ -123,8 +123,11 @@ func _check_enrage() -> void:
 		GameState.show_toast("CHATANA · feedback alto")
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.shake(0.22)
-			HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(1.0, 0.85, 0.35), 1.05)
-			HitFeel.kick_fov(4.0, 0.15)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(1.0, 0.85, 0.35), 1.15)
+			HitFeel.kick_fov(4.5, 0.16)
+		scale = Vector3(1.14, 0.92, 1.14)
+		var tw := create_tween()
+		tw.tween_property(self, "scale", Vector3.ONE, 0.16).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func _update_pulse_telegraph(active: bool, flash: bool) -> void:
