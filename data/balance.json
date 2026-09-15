@@ -65,9 +65,9 @@
     "armas": {
       "teclado": {
         "ataque_leve": {
-          "preparacao": 0.09,
-          "acerto": 0.07,
-          "recuperacao": 0.18,
+          "preparacao": 0.08,
+          "acerto": 0.06,
+          "recuperacao": 0.16,
           "dano": 13,
           "vigor": 14,
           "alcance": 1.4,
