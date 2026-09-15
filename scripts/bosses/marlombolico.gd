@@ -231,7 +231,9 @@ func _cast_hack() -> void:
 	HitFeel.shake(0.28)
 	HitFeel.spark_at(global_position + Vector3.UP * 1.4, Color(0.25, 1.0, 0.4), 1.3)
 	var hud := get_tree().get_first_node_in_group("hud")
-	if hud and hud.has_method("flash_danger"):
+	if hud and hud.has_method("flash_hack"):
+		hud.flash_hack()
+	elif hud and hud.has_method("flash_danger"):
 		hud.flash_danger()
 	var duration := float(_cfg.get("hack_duration", 5.0))
 	if randf() > 0.5:
