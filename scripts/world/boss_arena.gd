@@ -9,6 +9,7 @@ var _center: Vector3 = Vector3.ZERO
 var _half: Vector3 = Vector3.ONE
 var _seals: Array[StaticBody3D] = []
 var _fog_label: Label3D
+var _seal_pulse: float = 0.0
 
 
 func configure(
@@ -54,6 +55,22 @@ func configure(
 
 func is_engaged() -> bool:
 	return _engaged
+
+
+func _process(delta: float) -> void:
+	if not _engaged:
+		return
+	_seal_pulse += delta
+	var e := 2.0 + sin(_seal_pulse * 4.5) * 0.55
+	for seal in _seals:
+		if not is_instance_valid(seal) or not seal.visible:
+			continue
+		for c in seal.get_children():
+			if c is MeshInstance3D:
+				var mat := (c as MeshInstance3D).material_override as StandardMaterial3D
+				if mat:
+					mat.emission_energy_multiplier = e
+				break
 
 
 func clamp_xz(pos: Vector3) -> Vector3:
