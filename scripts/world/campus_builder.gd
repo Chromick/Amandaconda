@@ -387,6 +387,9 @@ func _dress_entry(root: Node3D) -> void:
 	_prop(root, "televisionModern.glb", Vector3(0, 0, 9.5), 0.0)
 	_prop(root, "pottedPlant.glb", Vector3(-3.5, 0, 4), 25.0)
 	_prop(root, "pottedPlant.glb", Vector3(3.5, 0, 4), -25.0)
+	_prop(root, "bench.glb", Vector3(-5.5, 0, 8), 90.0)
+	_prop(root, "bench.glb", Vector3(5.5, 0, 8), -90.0)
+	_prop(root, "trashcan.glb", Vector3(0, 0, 14.5), 0.0)
 	_prop(root, "bench.glb", Vector3(0, 0, -6), 0.0)
 
 
