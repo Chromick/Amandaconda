@@ -75,6 +75,7 @@ var _was_on_floor: bool = true
 var _land_dust_cd: float = 0.0
 var _stamina_toast_cd: float = 0.0
 var _air_vy: float = 0.0
+var _sprint_empty_toasted: bool = false
 
 
 func _ready() -> void:
@@ -447,6 +448,12 @@ func _process_move(delta: float) -> void:
 		stamina_regen_timer = maxf(stamina_regen_timer, 0.35)
 		if stamina <= 0.5:
 			sprinting = false
+			if not _sprint_empty_toasted and _stamina_toast_cd <= 0.0:
+				_sprint_empty_toasted = true
+				GameState.show_toast("Vigor baixo · caminhando")
+				_stamina_toast_cd = 1.2
+	elif stamina > 15.0:
+		_sprint_empty_toasted = false
 	_was_sprinting = sprinting
 	var target_speed := float(_cfg.get("run_speed", 8.8) if sprinting else _cfg.get("walk_speed", 5.3))
 	target_speed *= speed_mult
