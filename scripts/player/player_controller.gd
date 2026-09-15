@@ -940,7 +940,9 @@ func _try_damage_target(target: Node) -> void:
 		HitFeel.spark_at(target.global_position + Vector3.UP * 1.2, Color(1.0, 0.55, 0.2), 1.35)
 	else:
 		HitFeel.punch()
-		HitFeel.spark_at(target.global_position + Vector3.UP * 1.1, Color(1.0, 0.9, 0.4), 1.0)
+		var spark_c := Color(1.0, 0.55, 0.25) if state == State.ATTACK_HEAVY else Color(1.0, 0.9, 0.4)
+		var spark_s := 1.2 if state == State.ATTACK_HEAVY else 1.0
+		HitFeel.spark_at(target.global_position + Vector3.UP * 1.1, spark_c, spark_s)
 	_pulse_weapon(Color(1.0, 1.0, 0.7))
 
 
