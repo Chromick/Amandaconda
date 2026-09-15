@@ -187,6 +187,8 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, _source: Node
 	_update_label()
 	if health <= 0.0:
 		_die()
+	elif typeof(HitFeel) != TYPE_NIL and amount >= 20.0:
+		HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(1.0, 0.7, 0.3), 0.55)
 
 
 func _die() -> void:
@@ -257,7 +259,13 @@ func _get_player() -> Node3D:
 func _spawn_popup(amount: float) -> void:
 	var pop := POPUP_SCENE.instantiate()
 	pop.amount = amount
-	if not SceneUtil.add_to_world(pop, self, global_position + Vector3(0, 1.6, 0)):
+	if amount >= 28.0:
+		pop.color = Color(1.0, 0.45, 0.2)
+	elif amount >= 16.0:
+		pop.color = Color(1.0, 0.85, 0.35)
+	else:
+		pop.color = Color(1.0, 0.95, 0.7)
+	if not SceneUtil.add_to_world(pop, self, global_position + Vector3(randf_range(-0.2, 0.2), 1.6, randf_range(-0.1, 0.1))):
 		return
 
 
