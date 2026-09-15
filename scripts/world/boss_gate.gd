@@ -7,11 +7,18 @@ extends StaticBody3D
 @onready var label: Label3D = $Label3D
 @onready var mesh: MeshInstance3D = $Mesh
 @onready var col: CollisionShape3D = $CollisionShape3D
+var _open_light: OmniLight3D
 
 
 func _ready() -> void:
 	add_to_group("boss_gate")
 	GameState.gates_changed.connect(_refresh)
+	_open_light = OmniLight3D.new()
+	_open_light.light_color = Color(0.45, 1.0, 0.65)
+	_open_light.light_energy = 0.0
+	_open_light.omni_range = 5.0
+	_open_light.position = Vector3(0, 2.0, 0)
+	add_child(_open_light)
 	_refresh()
 
 
@@ -33,6 +40,8 @@ func _refresh() -> void:
 	if open:
 		label.modulate = Color(0.5, 1.0, 0.6)
 		label.text = label.text.split("\n")[0] + "\npassagem livre"
+		if _open_light:
+			_open_light.light_energy = 2.2
 		if not was_open:
 			GameState.show_toast("%s · liberado" % (label.text.split("\n")[0]))
 			if typeof(HitFeel) != TYPE_NIL:
@@ -43,6 +52,8 @@ func _refresh() -> void:
 			mesh.visible = false
 	else:
 		mesh.visible = true
+		if _open_light:
+			_open_light.light_energy = 0.0
 		var progress := 0.0
 		if gate_id == "servers":
 			progress = float(GameState.base_bosses_cleared()) / 3.0
