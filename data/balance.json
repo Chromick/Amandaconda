@@ -33,8 +33,8 @@
     "max_fall_speed": 28.0,
     "jump_velocity": 8.5,
     "jump_cut_multiplier": 0.45,
-    "coyote_time": 0.12,
-    "jump_buffer": 0.14,
+    "coyote_time": 0.14,
+    "jump_buffer": 0.16,
 
     "buffer_de_acao": 0.15,
     "turn_speed": 10.0,
