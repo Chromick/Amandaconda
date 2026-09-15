@@ -208,7 +208,6 @@ func _check_enrage() -> void:
 		var hud := get_tree().get_first_node_in_group("hud")
 		if hud and hud.has_method("flash_hack"):
 			hud.flash_hack()
-				break
 
 
 func _ai(delta: float) -> void:

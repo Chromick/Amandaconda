@@ -242,7 +242,6 @@ func _check_enrage() -> void:
 		var hud := get_tree().get_first_node_in_group("hud")
 		if hud and hud.has_method("flash_danger"):
 			hud.flash_danger()
-				break
 
 
 func _pulse_aura(delta: float) -> void:
