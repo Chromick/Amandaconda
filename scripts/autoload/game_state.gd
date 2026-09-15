@@ -212,6 +212,9 @@ func cycle_ability() -> void:
 	equipped_ability = unlocked_abilities[idx]
 	abilities_changed.emit()
 	show_toast("Equipado: %s" % ability_label())
+	var player := get_tree().get_first_node_in_group("player")
+	if player and typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(player.global_position + Vector3.UP * 1.2, Color(0.55, 0.95, 1.0), 0.65)
 
 
 func set_controls_inverted(v: bool) -> void:
