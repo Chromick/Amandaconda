@@ -39,10 +39,10 @@
     "turn_speed": 22.0,
     "attack_move_mult": 0.32,
     "buffer_de_acao": 0.36,
-    "combo_janela": 1.05,
+    "combo_janela": 1.1,
     "combo_max": 3,
-    "sprint_attack_dash": 17.0,
-    "sprint_stamina_drain": 3.2,
+    "sprint_attack_dash": 17.8,
+    "sprint_stamina_drain": 3.0,
 
     "arma_inicial": "teclado",
     "virus_desbloqueado": true,
@@ -446,23 +446,23 @@
       "hack_duration": 5.5
     },
     "amandaconda": {
-      "vida": 620,
+      "vida": 640,
       "nome": "AMANDACONDA",
       "local": "A porta",
-      "bytes": [470, 620],
-      "velocidade": 4.5,
-      "dano_leve": 26,
-      "dano_pesado": 46,
-      "intervalo": 1.0,
-      "preparacao_leve": 0.4,
-      "acerto_leve": 0.12,
-      "recuperacao_leve": 0.4,
-      "preparacao_pesado": 0.75,
-      "acerto_pesado": 0.16,
-      "recuperacao_pesado": 0.65,
-      "alcance": 2.2,
+      "bytes": [480, 640],
+      "velocidade": 4.65,
+      "dano_leve": 27,
+      "dano_pesado": 48,
+      "intervalo": 0.95,
+      "preparacao_leve": 0.38,
+      "acerto_leve": 0.11,
+      "recuperacao_leve": 0.38,
+      "preparacao_pesado": 0.72,
+      "acerto_pesado": 0.15,
+      "recuperacao_pesado": 0.62,
+      "alcance": 2.25,
       "fase2_vida": 0.5,
-      "fase2_speed_mult": 1.45
+      "fase2_speed_mult": 1.5
     }
   }
 }
