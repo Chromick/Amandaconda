@@ -19,8 +19,8 @@
 
     "max_health": 140,
     "max_stamina": 140,
-    "stamina_regen": 74,
-    "stamina_regen_delay": 0.28,
+    "stamina_regen": 78,
+    "stamina_regen_delay": 0.26,
 
     "walk_speed": 6.35,
     "run_speed": 10.4,
@@ -210,8 +210,8 @@
   "cura": {
     "latas": 7,
     "cura": 72,
-    "tempo_uso": 0.48,
-    "safezone_regen": 62.0,
+    "tempo_uso": 0.45,
+    "safezone_regen": 66.0,
     "safezone_latas": true
   },
 
