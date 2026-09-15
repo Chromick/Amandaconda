@@ -29,6 +29,7 @@ const HINTS: PackedStringArray = [
 	"vida_extra +20 HP · daemon_safe também soma",
 	"lata_plus +1 lata · heal_cache/cache_latas empilham",
 	"roll_cheap + iframe_lite barateiam o rolamento",
+	"sprint_siphon + turbo_sprint cortam custo de corrida",
 	"Net marca e freia · role através · Espelho devolve o golpe",
 ]
 
