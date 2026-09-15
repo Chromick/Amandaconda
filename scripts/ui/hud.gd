@@ -373,3 +373,9 @@ func _update_boss_bar() -> void:
 	if boss_bar and "health" in target and "max_health" in target:
 		boss_bar.max_value = target.max_health
 		boss_bar.value = target.health
+		var mh := float(target.max_health)
+		if mh > 0.0 and float(target.health) / mh < 0.3:
+			var pulse := 0.55 + 0.45 * sin(Time.get_ticks_msec() * 0.01)
+			boss_bar.modulate = Color(1.0, pulse * 0.5, pulse * 0.45)
+		else:
+			boss_bar.modulate = Color.WHITE

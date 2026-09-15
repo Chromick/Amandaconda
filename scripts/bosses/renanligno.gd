@@ -13,6 +13,7 @@ var _cables: Node3D
 var _tablet: MeshInstance3D
 var _ghost_glow: StandardMaterial3D
 var _pulse_t: float = 0.0
+var _enraged: bool = false
 
 
 func _ready() -> void:
@@ -210,9 +211,23 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector3.ZERO
 			if _phase_t <= 0.0:
 				_phase = Phase.IDLE
-				_cooldown = float(_cfg.get("intervalo", 1.7))
+				_cooldown = float(_cfg.get("intervalo", 1.7)) * (0.72 if _enraged else 1.0)
 	move_and_slide()
 	_clamp_to_arena()
+	_check_enrage()
+
+
+func _check_enrage() -> void:
+	if _enraged or _dead:
+		return
+	if health <= max_health * 0.4:
+		_enraged = true
+		_base_color = Color(0.45, 0.55, 0.75)
+		_restore_color()
+		GameState.show_toast("RENANLIGNO · latência zero")
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.3)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.3, Color(0.55, 0.9, 1.0), 1.2)
 
 
 func _chase(delta: float) -> void:
@@ -225,6 +240,8 @@ func _chase(delta: float) -> void:
 	to.y = 0.0
 	var dist := to.length()
 	var spd := float(_cfg.get("velocidade", 4.2)) * move_scale()
+	if _enraged:
+		spd *= 1.18
 	if dist > 0.05:
 		var dir := to.normalized()
 		_face_flat(dir)

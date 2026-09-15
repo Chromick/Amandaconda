@@ -18,6 +18,7 @@ var _slam_ring: MeshInstance3D
 var _aura: Node3D
 var _chair: Node3D
 var _aura_pulse: float = 0.0
+var _enraged: bool = false
 
 
 func _ready() -> void:
@@ -220,9 +221,23 @@ func _physics_process(delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0.0, 14.0 * delta)
 			if _phase_t <= 0.0:
 				_phase = Phase.IDLE
-				_cooldown = float(_cfg.get("intervalo", 1.3))
+				_cooldown = float(_cfg.get("intervalo", 1.3)) * (0.7 if _enraged else 1.0)
 	move_and_slide()
 	_clamp_to_arena()
+	_check_enrage()
+
+
+func _check_enrage() -> void:
+	if _enraged or _dead:
+		return
+	if health <= max_health * 0.4:
+		_enraged = true
+		_base_color = Color(0.45, 0.2, 0.18)
+		_restore_color()
+		GameState.show_toast("BALARRALS · espelho rachado")
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.32)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(1.0, 0.4, 0.2), 1.25)
 
 
 func _pulse_aura(delta: float) -> void:
