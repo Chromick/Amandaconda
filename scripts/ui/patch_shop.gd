@@ -70,6 +70,9 @@ func _refresh(_a: Variant = null) -> void:
 			btn.tooltip_text = "Slots cheios"
 		elif not can_afford and not owned:
 			btn.tooltip_text = "KB insuficiente"
+		btn.add_theme_color_override("font_hover_color", Color(0.55, 1.0, 0.7))
+		if owned:
+			btn.add_theme_color_override("font_color", Color(0.55, 0.9, 0.65))
 		btn.pressed.connect(_buy.bind(pid))
 		list.add_child(btn)
 
