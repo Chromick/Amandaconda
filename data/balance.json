@@ -24,8 +24,8 @@
 
     "walk_speed": 7.45,
     "run_speed": 12.2,
-    "ground_accel": 38.0,
-    "ground_friction": 44.0,
+    "ground_accel": 40.0,
+    "ground_friction": 46.0,
     "air_accel": 22.5,
     "air_friction": 7.5,
 
@@ -204,7 +204,7 @@
     "mark_duration": 4.6,
     "mark_speed_mult": 0.6,
     "renascer_em": 4.5,
-    "bytes": [64, 96]
+    "bytes": [68, 100]
   },
 
   "cura": {
