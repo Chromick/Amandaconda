@@ -1388,6 +1388,8 @@ func _try_auto_relock() -> void:
 	var next := _find_lock_target()
 	if next:
 		lock_target = next
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.spark_at(next.global_position + Vector3.UP * 1.5, Color(0.55, 0.95, 1.0), 0.4)
 
 
 func _toggle_lock_on() -> void:
