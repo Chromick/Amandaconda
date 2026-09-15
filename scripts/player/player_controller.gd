@@ -585,7 +585,9 @@ func _try_sprint_attack(dir: Vector3) -> void:
 	_set_mesh_color(Color(1.0, 0.4, 0.2))
 	GameState.show_toast("Investida!")
 	_pulse_weapon(Color(1.0, 0.35, 0.15))
-	HitFeel.kick_fov(4.0, 0.12)
+	HitFeel.kick_fov(5.0, 0.14)
+	HitFeel.shake(0.08)
+	_spawn_sprint_dust()
 
 
 func _try_roll(dir: Vector3) -> void:
