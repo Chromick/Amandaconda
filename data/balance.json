@@ -172,8 +172,8 @@
   },
 
   "portara": {
-    "vida": 82,
-    "velocidade": 2.4,
+    "vida": 86,
+    "velocidade": 2.45,
     "aggro": 9.8,
     "leash": 16.0,
     "deaggro": 20.0,
@@ -208,8 +208,8 @@
   },
 
   "cura": {
-    "latas": 10,
-    "cura": 92,
+    "latas": 11,
+    "cura": 95,
     "tempo_uso": 0.34,
     "safezone_regen": 90.0,
     "safezone_latas": true
