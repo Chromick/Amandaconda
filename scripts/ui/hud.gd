@@ -24,6 +24,7 @@ const HINTS: PackedStringArray = [
 	"coyote_extend alonga o salto · iframe_lite barateia o rolamento",
 	"magnet_boost puxa KB/pendrives mais longe · 4 slots de patch",
 	"jump_buffer_plus perdoa timing do pulo · coyote_extend também",
+	"impact_frame +12% dano · macro_combo ainda mais forte",
 	"Net marca e freia · role através · Espelho devolve o golpe",
 ]
 
