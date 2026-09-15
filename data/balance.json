@@ -209,7 +209,7 @@
   "cura": {
     "latas": 3,
     "cura": 45,
-    "tempo_uso": 1.15,
+    "tempo_uso": 1.0,
     "safezone_regen": 18.0,
     "safezone_latas": true
   },
