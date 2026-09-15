@@ -165,6 +165,8 @@ func _ai_chase(delta: float) -> void:
 		_phase_t = float(_cfg.get("preparacao", 0.5))
 		velocity = Vector3.ZERO
 		AttackTelegraphScript.set_active(_telegraph, true, false)
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.08)
 
 
 func _on_hit_body(body: Node3D) -> void:
