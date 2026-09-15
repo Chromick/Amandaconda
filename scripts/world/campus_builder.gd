@@ -473,6 +473,9 @@ func _dress_entry(root: Node3D) -> void:
 	_emissive_box(Vector3(0, 0.05, 6), Vector3(1.8, 0.03, 0.7), Color(0.1, 0.14, 0.12), Color(0.3, 0.9, 0.45), 0.75)
 	_emissive_box(Vector3(0, 0.05, 0), Vector3(1.5, 0.03, 0.6), Color(0.1, 0.12, 0.12), Color(0.28, 0.85, 0.4), 0.65)
 	_emissive_box(Vector3(0, 0.05, -6), Vector3(1.4, 0.03, 0.55), Color(0.1, 0.1, 0.12), Color(0.25, 0.8, 0.4), 0.55)
+	_emissive_box(Vector3(0, 0.05, -12), Vector3(1.3, 0.03, 0.5), Color(0.1, 0.08, 0.12), Color(0.9, 0.35, 0.45), 0.7)
+	_emissive_box(Vector3(0, 0.05, -18), Vector3(1.2, 0.03, 0.45), Color(0.12, 0.06, 0.1), Color(1.0, 0.3, 0.4), 0.85)
+	_emissive_box(Vector3(0, 0.05, -24), Vector3(1.4, 0.03, 0.5), Color(0.14, 0.05, 0.08), Color(1.0, 0.25, 0.35), 1.0)
 
 
 func _dress_bandejao(root: Node3D) -> void:
