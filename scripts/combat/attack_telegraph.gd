@@ -52,8 +52,9 @@ static func set_active(mi: MeshInstance3D, active: bool, flash: bool = false) ->
 	if mat == null:
 		return
 	if flash:
-		mat.albedo_color.a = 0.55
-		mat.emission_energy_multiplier = 2.4
+		mat.albedo_color.a = 0.62
+		mat.emission_energy_multiplier = 2.8
 	elif active:
-		mat.albedo_color.a = 0.28
-		mat.emission_energy_multiplier = 1.4
+		var pulse := 0.22 + 0.12 * absf(sin(Time.get_ticks_msec() * 0.012))
+		mat.albedo_color.a = pulse
+		mat.emission_energy_multiplier = 1.3 + pulse
