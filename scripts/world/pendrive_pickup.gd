@@ -65,8 +65,5 @@ func _on_body(body: Node3D) -> void:
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * 0.5, Color(0.45, 1.0, 0.55) if kind == "especial" else Color(1.0, 0.8, 0.35), 1.1)
 		HitFeel.shake(0.12)
-	for cam in get_tree().get_nodes_in_group("player_camera"):
-		if cam and cam.has_method("punch_fov"):
-			cam.punch_fov(3.0)
-			break
+		HitFeel.kick_fov(3.0, 0.12)
 	queue_free()
