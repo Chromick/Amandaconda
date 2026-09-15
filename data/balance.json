@@ -106,14 +106,14 @@
           "carga_maxima": 0.55,
           "acerto": 0.08,
           "recuperacao": 0.4,
-          "dano": 23,
-          "dano_carregado": 46,
-          "vigor": 22,
+          "dano": 24,
+          "dano_carregado": 48,
+          "vigor": 21,
           "avanco": 0,
-          "velocidade": 12.0,
-          "tempo_de_vida": 2.1,
-          "raio": 0.52,
-          "quique": 0.68
+          "velocidade": 12.5,
+          "tempo_de_vida": 2.15,
+          "raio": 0.54,
+          "quique": 0.7
         }
       }
     }
@@ -385,11 +385,11 @@
 
   "chefes": {
     "luanevil": {
-      "vida": 290,
+      "vida": 300,
       "nome": "LUANEVIL",
       "local": "Bandejão",
-      "bytes": [155, 220],
-      "velocidade": 3.5,
+      "bytes": [160, 230],
+      "velocidade": 3.55,
       "dano_leve": 17,
       "dano_pesado": 30,
       "intervalo": 1.6,
