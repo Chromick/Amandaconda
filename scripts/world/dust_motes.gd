@@ -5,19 +5,19 @@ var _pts: Array = []
 
 
 func _ready() -> void:
-	for i in 36:
+	for i in 48:
 		var m := MeshInstance3D.new()
 		var s := SphereMesh.new()
-		s.radius = 0.03
-		s.height = 0.06
+		s.radius = randf_range(0.025, 0.045)
+		s.height = s.radius * 2.0
 		m.mesh = s
 		var mat := StandardMaterial3D.new()
 		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 		mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-		mat.albedo_color = Color(0.85, 0.9, 1.0, 0.35)
+		mat.albedo_color = Color(0.85, 0.9, 1.0, randf_range(0.28, 0.42))
 		mat.emission_enabled = true
 		mat.emission = Color(0.7, 0.8, 1.0)
-		mat.emission_energy_multiplier = 0.8
+		mat.emission_energy_multiplier = randf_range(0.6, 1.1)
 		m.material_override = mat
 		add_child(m)
 		m.position = Vector3(randf_range(-35.0, 35.0), randf_range(1.2, 8.0), randf_range(-40.0, 25.0))

@@ -55,6 +55,9 @@ func _toggle() -> void:
 		HitFeel.cancel()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if visible else Input.MOUSE_MODE_CAPTURED
 	if visible and center:
+		var ver := center.get_node_or_null("VersionHint") as Label
+		if ver:
+			ver.text = "v%s · godot-4" % str(ProjectSettings.get_setting("application/config/version", "0.4"))
 		center.modulate.a = 0.0
 		var tw := create_tween()
 		tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
