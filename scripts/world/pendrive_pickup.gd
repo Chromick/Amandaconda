@@ -2,11 +2,14 @@ extends Area3D
 ## Pendrive no chão — escolha Físico (+vida) ou Especial (+dano).
 
 @export var kind: String = "fisico" # fisico | especial
+@export var magnet_radius: float = 4.2
+@export var magnet_speed: float = 8.0
 
 @onready var label: Label3D = $Label3D
 @onready var mesh: MeshInstance3D = $Mesh
 
 var _spin: float = 0.0
+var _magnet_on: bool = false
 
 
 func _ready() -> void:
@@ -26,7 +29,22 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_spin += delta
 	rotation.y = _spin * 2.2
-	if mesh:
+	var player := get_tree().get_first_node_in_group("player") as Node3D
+	if player != null and is_instance_valid(player):
+		var to_p := player.global_position - global_position
+		to_p.y = 0.0
+		var dist := to_p.length()
+		if dist <= magnet_radius:
+			_magnet_on = true
+		if _magnet_on and dist > 0.08:
+			var step := minf(magnet_speed * delta * (1.0 + (magnet_radius - dist) * 0.12), dist)
+			global_position += to_p.normalized() * step
+			global_position.y = player.global_position.y + 0.95 + sin(_spin * 5.0) * 0.05
+			if mesh:
+				mesh.position.y = 0.15
+		elif mesh:
+			mesh.position.y = 0.15 + sin(_spin * 3.5) * 0.06
+	elif mesh:
 		mesh.position.y = 0.15 + sin(_spin * 3.5) * 0.06
 	var light := get_node_or_null("OmniLight3D") as OmniLight3D
 	if light == null:
