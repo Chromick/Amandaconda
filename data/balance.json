@@ -24,10 +24,10 @@
 
     "walk_speed": 6.85,
     "run_speed": 11.2,
-    "ground_accel": 34.0,
-    "ground_friction": 40.0,
-    "air_accel": 20.5,
-    "air_friction": 6.5,
+    "ground_accel": 36.0,
+    "ground_friction": 42.0,
+    "air_accel": 21.5,
+    "air_friction": 7.0,
 
     "gravity": 23.5,
     "max_fall_speed": 32.0,
@@ -155,8 +155,8 @@
   },
 
   "chatana": {
-    "vida": 32,
-    "velocidade": 3.55,
+    "vida": 34,
+    "velocidade": 3.6,
     "prefer_distance": 4.9,
     "aggro": 11.2,
     "leash": 16.5,
@@ -189,8 +189,8 @@
   },
 
   "net": {
-    "vida": 44,
-    "velocidade": 1.45,
+    "vida": 46,
+    "velocidade": 1.5,
     "prefer_distance": 9.2,
     "aggro": 12.0,
     "leash": 18.0,
