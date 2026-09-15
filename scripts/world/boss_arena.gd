@@ -71,6 +71,9 @@ func _process(delta: float) -> void:
 				if mat:
 					mat.emission_energy_multiplier = e
 				break
+	if _fog_label and not _fog_label.text.is_empty():
+		var a := 0.7 + 0.3 * absf(sin(_seal_pulse * 3.2))
+		_fog_label.modulate = Color(1.0, 0.4 + 0.15 * a, 0.35, a)
 
 
 func clamp_xz(pos: Vector3) -> Vector3:
