@@ -30,7 +30,7 @@ const HINTS: PackedStringArray = [
 	"impact_frame +12% dano · macro_combo ainda mais forte",
 	"stamina_siphon +25 vigor · hotfix_vigor ainda ajuda",
 	"vida_extra +20 HP · daemon_safe também soma",
-	"lata_plus +1 lata · heal_cache/cache_latas empilham · base agora 11",
+	"lata_plus +1 lata · heal_cache/cache_latas empilham · base agora 12",
 	"roll_cheap + iframe_lite barateiam o rolamento",
 	"sprint_siphon + turbo_sprint cortam custo de corrida",
 	"dano_core + impact_frame / macro_combo empilham dano",

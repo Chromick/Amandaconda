@@ -17,8 +17,8 @@
     "capsule_radius": 0.35,
     "capsule_height": 1.8,
 
-    "max_health": 190,
-    "max_stamina": 190,
+    "max_health": 195,
+    "max_stamina": 195,
     "stamina_regen": 105,
     "stamina_regen_delay": 0.15,
 
@@ -48,12 +48,12 @@
     "virus_desbloqueado": true,
 
     "rolamento": {
-      "duracao": 0.29,
+      "duracao": 0.28,
       "inv_inicio": 0.0,
-      "inv_duracao": 0.56,
-      "vigor": 11,
-      "velocidade": 16.8,
-      "atrito_final": 48.0
+      "inv_duracao": 0.58,
+      "vigor": 10,
+      "velocidade": 17.0,
+      "atrito_final": 50.0
     },
 
     "dano_recebido": {
@@ -208,8 +208,8 @@
   },
 
   "cura": {
-    "latas": 11,
-    "cura": 95,
+    "latas": 12,
+    "cura": 98,
     "tempo_uso": 0.34,
     "safezone_regen": 95.0,
     "safezone_latas": true
