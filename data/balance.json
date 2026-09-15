@@ -156,9 +156,9 @@
 
   "chatana": {
     "vida": 28,
-    "velocidade": 3.2,
-    "prefer_distance": 5.5,
-    "aggro": 10.0,
+    "velocidade": 3.35,
+    "prefer_distance": 5.2,
+    "aggro": 10.5,
     "leash": 16.0,
     "deaggro": 21.0,
     "intervalo": 1.85,
