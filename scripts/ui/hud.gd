@@ -223,6 +223,9 @@ func _rotate_hint(reset: bool) -> void:
 		_hint_index = (_hint_index + 1) % HINTS.size()
 	hint_label.text = HINTS[_hint_index]
 	_hint_timer = 7.5 if reset else 9.0
+	hint_label.modulate.a = 0.0
+	var tw := create_tween()
+	tw.tween_property(hint_label, "modulate:a", 0.85, 0.35)
 
 
 func flash_stamina() -> void:
