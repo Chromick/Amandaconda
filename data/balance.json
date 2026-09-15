@@ -36,9 +36,9 @@
     "coyote_time": 0.29,
     "jump_buffer": 0.35,
 
-    "turn_speed": 20.0,
-    "attack_move_mult": 0.28,
-    "buffer_de_acao": 0.32,
+    "turn_speed": 21.0,
+    "attack_move_mult": 0.3,
+    "buffer_de_acao": 0.34,
     "combo_janela": 1.05,
     "combo_max": 3,
     "sprint_attack_dash": 17.0,
@@ -48,12 +48,12 @@
     "virus_desbloqueado": true,
 
     "rolamento": {
-      "duracao": 0.28,
+      "duracao": 0.27,
       "inv_inicio": 0.0,
-      "inv_duracao": 0.58,
-      "vigor": 10,
-      "velocidade": 17.0,
-      "atrito_final": 50.0
+      "inv_duracao": 0.6,
+      "vigor": 9,
+      "velocidade": 17.2,
+      "atrito_final": 52.0
     },
 
     "dano_recebido": {
