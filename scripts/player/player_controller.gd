@@ -709,6 +709,11 @@ func _process_attack(delta: float) -> void:
 				state = State.MOVE
 				if _combo_step >= 1:
 					GameState.show_toast("Combo %d!" % (_combo_step + 1))
+					HitFeel.spark_at(global_position + Vector3.UP * 1.1 + facing * 0.6, Color(1.0, 0.85, 0.4), 0.7)
+					for cam in get_tree().get_nodes_in_group("player_camera"):
+						if cam and cam.has_method("punch_fov"):
+							cam.punch_fov(2.5)
+							break
 				_try_light()
 			else:
 				if state == State.ATTACK_LIGHT:
