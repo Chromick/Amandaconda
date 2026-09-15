@@ -155,10 +155,10 @@
   },
 
   "chatana": {
-    "vida": 30,
-    "velocidade": 3.5,
-    "prefer_distance": 5.0,
-    "aggro": 11.0,
+    "vida": 32,
+    "velocidade": 3.55,
+    "prefer_distance": 4.9,
+    "aggro": 11.2,
     "leash": 16.5,
     "deaggro": 21.5,
     "intervalo": 1.75,
@@ -189,10 +189,10 @@
   },
 
   "net": {
-    "vida": 42,
-    "velocidade": 1.4,
-    "prefer_distance": 9.0,
-    "aggro": 11.5,
+    "vida": 44,
+    "velocidade": 1.45,
+    "prefer_distance": 9.2,
+    "aggro": 12.0,
     "leash": 18.0,
     "deaggro": 23.0,
     "intervalo": 2.05,
