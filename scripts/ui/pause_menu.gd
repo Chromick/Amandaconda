@@ -54,6 +54,11 @@ func _toggle() -> void:
 	if typeof(HitFeel) != TYPE_NIL and HitFeel.has_method("cancel"):
 		HitFeel.cancel()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if visible else Input.MOUSE_MODE_CAPTURED
+	if visible and center:
+		center.modulate.a = 0.0
+		var tw := create_tween()
+		tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tw.tween_property(center, "modulate:a", 1.0, 0.18)
 
 
 func _on_resume_pressed() -> void:
