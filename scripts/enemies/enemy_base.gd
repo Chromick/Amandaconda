@@ -248,6 +248,9 @@ func _revive() -> void:
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * 1.0, Color(0.55, 0.85, 1.0), 0.7)
 		HitFeel.shake(0.1)
+	scale = Vector3(0.55, 0.55, 0.55)
+	var tw := create_tween()
+	tw.tween_property(self, "scale", Vector3.ONE, 0.28).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func is_alive() -> bool:
