@@ -609,6 +609,13 @@ func _try_heavy(held: float) -> void:
 		_update_attack_shape(float(_heavy.get("alcance", 1.6)), float(_heavy.get("altura", 1.3)))
 	_set_mesh_color(Color(1.0, 0.45, 0.25))
 	_pulse_weapon(Color(1.0, 0.4, 0.2))
+	if _charge_ratio >= 0.7:
+		for cam in get_tree().get_nodes_in_group("player_camera"):
+			if cam and cam.has_method("punch_fov"):
+				cam.punch_fov(3.0 + _charge_ratio * 4.0)
+				break
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.08 + _charge_ratio * 0.12)
 
 
 func _process_attack(delta: float) -> void:
