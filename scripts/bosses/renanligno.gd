@@ -276,7 +276,11 @@ func _ghost_hit() -> void:
 				away = Vector3.FORWARD
 			player.take_damage(float(_cfg.get("dano", 18)), away.normalized() * 4.0, self)
 			HitFeel.punch(0.04)
+			HitFeel.shake(0.2)
 			HitFeel.spark_at(_strike_pos + Vector3.UP * 1.1, Color(0.7, 0.45, 1.0), 1.2)
+	elif typeof(HitFeel) != TYPE_NIL:
+		# Fantasma errou — spark fraco no ponto do delay-hit.
+		HitFeel.spark_at(_strike_pos + Vector3.UP * 0.8, Color(0.45, 0.7, 1.0), 0.45)
 
 
 func _do_strike() -> void:
