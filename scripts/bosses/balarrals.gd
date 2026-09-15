@@ -297,6 +297,7 @@ func _ai(delta: float) -> void:
 		GameState.show_toast("BALARRALS · espelho")
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.spark_at(global_position + Vector3.UP * 0.8, Color(1.0, 0.45, 0.15), 0.85)
+			HitFeel.shake(0.12)
 		return
 	if dist <= float(_cfg.get("alcance", 1.7)) + 0.4:
 		_heavy = randf() > 0.55
