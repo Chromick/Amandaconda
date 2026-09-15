@@ -17,13 +17,13 @@
     "capsule_radius": 0.35,
     "capsule_height": 1.8,
 
-    "max_health": 170,
-    "max_stamina": 170,
+    "max_health": 175,
+    "max_stamina": 175,
     "stamina_regen": 95,
     "stamina_regen_delay": 0.18,
 
-    "walk_speed": 6.85,
-    "run_speed": 11.2,
+    "walk_speed": 7.0,
+    "run_speed": 11.5,
     "ground_accel": 36.0,
     "ground_friction": 42.0,
     "air_accel": 21.5,
@@ -127,10 +127,10 @@
     "max_pitch": 66.0,
     "sensitivity": 0.205,
     "follow_speed": 30.0,
-    "lock_on_distance": 34.0,
-    "lock_on_height_bias": 1.4,
-    "idle_yaw_delay": 0.85,
-    "idle_yaw_speed": 5.0
+    "lock_on_distance": 36.0,
+    "lock_on_height_bias": 1.45,
+    "idle_yaw_delay": 0.8,
+    "idle_yaw_speed": 5.5
   },
 
   "impacto": {

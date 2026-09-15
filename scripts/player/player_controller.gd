@@ -1200,12 +1200,12 @@ func _cast_caramelo() -> void:
 	if not _require_stamina(20.0):
 		return
 	_spend_stamina(20.0)
-	_ability_cd = 4.8
+	_ability_cd = 4.5
 	var puddle := PUDDLE_SCENE.instantiate()
 	var pos := global_position + facing * 1.2 + Vector3(0, 0.05, 0)
 	if not SceneUtil.add_to_world(puddle, self, pos):
 		return
-	puddle.setup(2.7, 6.0, 0.4)
+	puddle.setup(2.8, 6.2, 0.4)
 	_set_mesh_color(Color(0.85, 0.55, 0.2))
 	HitFeel.spark_at(pos + Vector3(0, 0.4, 0), Color(1.0, 0.7, 0.25))
 	HitFeel.kick_fov(4.5, 0.14)
