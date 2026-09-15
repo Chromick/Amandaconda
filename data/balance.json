@@ -30,7 +30,7 @@
     "air_friction": 5.5,
 
     "gravity": 23.0,
-    "max_fall_speed": 30.0,
+    "max_fall_speed": 32.0,
     "jump_velocity": 9.45,
     "jump_cut_multiplier": 0.52,
     "coyote_time": 0.2,
@@ -53,11 +53,11 @@
       "inv_duracao": 0.46,
       "vigor": 16,
       "velocidade": 15.0,
-      "atrito_final": 36.0
+      "atrito_final": 38.0
     },
 
     "dano_recebido": {
-      "invencibilidade": 0.86,
+      "invencibilidade": 0.88,
       "travado": 0.18,
       "empurrao": 3.4
     },
