@@ -48,12 +48,12 @@
     "virus_desbloqueado": true,
 
     "rolamento": {
-      "duracao": 0.34,
-      "inv_inicio": 0.01,
-      "inv_duracao": 0.46,
-      "vigor": 16,
-      "velocidade": 15.0,
-      "atrito_final": 38.0
+      "duracao": 0.33,
+      "inv_inicio": 0.0,
+      "inv_duracao": 0.48,
+      "vigor": 15,
+      "velocidade": 15.4,
+      "atrito_final": 40.0
     },
 
     "dano_recebido": {
@@ -76,16 +76,16 @@
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
-          "preparacao": 0.24,
-          "carga_maxima": 0.65,
-          "acerto": 0.09,
-          "recuperacao": 0.32,
-          "dano": 33,
-          "dano_carregado": 58,
-          "vigor": 24,
-          "alcance": 1.95,
-          "altura": 1.42,
-          "avanco": 5.2
+          "preparacao": 0.22,
+          "carga_maxima": 0.62,
+          "acerto": 0.085,
+          "recuperacao": 0.3,
+          "dano": 34,
+          "dano_carregado": 60,
+          "vigor": 23,
+          "alcance": 2.0,
+          "altura": 1.45,
+          "avanco": 5.4
         }
       },
       "virus": {

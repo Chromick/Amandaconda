@@ -6,6 +6,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.7.83
+
+### Alteração
+- Teclado heavy snappier; roll iframes/speed; dust motes+.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.7.82
 
 ### Alteração
