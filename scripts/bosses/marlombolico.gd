@@ -16,6 +16,7 @@ var _telegraph: MeshInstance3D
 var _hack_fx: MeshInstance3D
 var _eyes: Node3D
 var _eye_pulse: float = 0.0
+var _enraged: bool = false
 
 
 func _ready() -> void:
@@ -186,9 +187,26 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector3.ZERO
 			if _phase_t <= 0.0:
 				_phase = Phase.IDLE
-				_cooldown = float(_cfg.get("intervalo", 1.5))
+				_cooldown = float(_cfg.get("intervalo", 1.5)) * (0.7 if _enraged else 1.0)
 	move_and_slide()
 	_clamp_to_arena()
+	_check_enrage()
+
+
+func _check_enrage() -> void:
+	if _enraged or _dead:
+		return
+	if health <= max_health * 0.4:
+		_enraged = true
+		_base_color = Color(0.25, 1.0, 0.4)
+		_restore_color()
+		GameState.show_toast("MARLOMBÓLICO · root access")
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.35)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.3, Color(0.3, 1.0, 0.45), 1.3)
+		var hud := get_tree().get_first_node_in_group("hud")
+		if hud and hud.has_method("flash_hack"):
+			hud.flash_hack()
 
 
 func _ai(delta: float) -> void:
@@ -226,7 +244,7 @@ func _ai(delta: float) -> void:
 func _cast_hack() -> void:
 	_phase = Phase.HACK
 	_phase_t = 0.55
-	_hack_cd = float(_cfg.get("hack_cooldown", 4.5))
+	_hack_cd = float(_cfg.get("hack_cooldown", 4.5)) * (0.75 if _enraged else 1.0)
 	AttackTelegraphScript.set_active(_hack_fx, true, true)
 	HitFeel.shake(0.28)
 	HitFeel.spark_at(global_position + Vector3.UP * 1.4, Color(0.25, 1.0, 0.4), 1.3)
