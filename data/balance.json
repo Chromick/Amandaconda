@@ -24,9 +24,9 @@
 
     "walk_speed": 5.45,
     "run_speed": 9.0,
-    "ground_accel": 22.0,
-    "ground_friction": 28.0,
-    "air_accel": 14.0,
+    "ground_accel": 24.0,
+    "ground_friction": 30.0,
+    "air_accel": 15.0,
     "air_friction": 4.0,
 
     "gravity": 22.0,
