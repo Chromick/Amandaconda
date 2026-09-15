@@ -387,6 +387,8 @@ func _on_ending() -> void:
 	_toast_timer = 6.0
 	flash_danger()
 	_pulse_screen(Color(0.95, 0.35, 0.55, 0.35), 0.9)
+	await get_tree().create_timer(0.5).timeout
+	_pulse_screen(Color(0.45, 1.0, 0.65, 0.28), 1.2)
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.kill_punch(0.35)
 
