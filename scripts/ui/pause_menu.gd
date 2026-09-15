@@ -22,7 +22,7 @@ func _ensure_controls_hint() -> void:
 		return
 	var hint := Label.new()
 	hint.name = "ControlsHint"
-	hint.text = "Ctrl/C rola · Shift corre (vigor) · Q/MMB lock · R lata · F skill · Esc fecha"
+	hint.text = "Ctrl/C rola · Shift corre · Q/MMB lock · R lata · F skill · E patches · Esc fecha"
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	hint.add_theme_font_size_override("font_size", 14)
