@@ -228,8 +228,11 @@ func _check_enrage() -> void:
 		GameState.show_toast("RENANLIGNO · latência zero")
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.shake(0.3)
-			HitFeel.spark_at(global_position + Vector3.UP * 1.3, Color(0.55, 0.9, 1.0), 1.2)
-			HitFeel.kick_fov(5.5, 0.18)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.3, Color(0.55, 0.9, 1.0), 1.3)
+			HitFeel.kick_fov(6.0, 0.2)
+		scale = Vector3(1.16, 0.9, 1.16)
+		var tw := create_tween()
+		tw.tween_property(self, "scale", Vector3.ONE, 0.18).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		var hud := get_tree().get_first_node_in_group("hud")
 		if hud and hud.has_method("flash_danger"):
 			hud.flash_danger()
