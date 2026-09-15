@@ -318,7 +318,11 @@ func _on_hit(body: Node3D) -> void:
 	if body.has_method("take_damage"):
 		_hit_done = true
 		var dmg := float(_cfg.get("dano_pesado" if _heavy else "dano_leve", 14))
+		if _enraged:
+			dmg *= 1.12
 		var kb := 7.0 if _heavy else 5.0
+		if _enraged:
+			kb *= 1.1
 		body.take_damage(dmg, -global_transform.basis.z * kb, self)
 		HitFeel.punch(0.05 if _heavy else 0.03)
 		HitFeel.shake(0.42 if _heavy else 0.25)

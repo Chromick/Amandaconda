@@ -285,6 +285,7 @@ func _on_hit(body: Node3D) -> void:
 		return
 	if body.has_method("take_damage"):
 		_hit_done = true
-		body.take_damage(float(_cfg.get("dano", 15)), -global_transform.basis.z * 4.5, self)
+		var dmg := float(_cfg.get("dano", 15)) * (1.12 if _enraged else 1.0)
+		body.take_damage(dmg, -global_transform.basis.z * (5.0 if _enraged else 4.5), self)
 		HitFeel.punch(0.035)
 		HitFeel.spark_at(body.global_position + Vector3.UP * 1.1, Color(0.35, 1.0, 0.45), 1.05)
