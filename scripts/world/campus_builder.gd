@@ -551,6 +551,12 @@ func _way_sign(pos: Vector3, text: String, color: Color) -> void:
 	lab.modulate = color
 	lab.position = pos + Vector3(0, 0, 0.08)
 	rooms_root.add_child(lab)
+	var light := OmniLight3D.new()
+	light.light_color = color
+	light.light_energy = 0.85
+	light.omni_range = 3.5
+	light.position = pos + Vector3(0, 0.2, 0.3)
+	rooms_root.add_child(light)
 
 
 func _emissive_box(pos: Vector3, size: Vector3, albedo: Color, emission: Color, energy: float) -> void:
