@@ -391,7 +391,9 @@ func _dress_bandejao(root: Node3D) -> void:
 			_prop(root, "chair.glb", tpos + Vector3(0, 0, -1.0), 0.0)
 	_prop(root, "kitchenCoffeeMachine.glb", center + Vector3(-4.5, 0, -4.0), 90.0)
 	_prop(root, "trashcan.glb", center + Vector3(4.5, 0, -4.5), 0.0)
-	_prop(root, "ceilingFan.glb", center + Vector3(0, 3.1, 0), 0.0)
+	var fan := _prop(root, "ceilingFan.glb", center + Vector3(0, 3.1, 0), 0.0)
+	if fan:
+		fan.set_script(preload("res://scripts/world/spin_y.gd"))
 	_emissive_box(center + Vector3(-1.5, 0.05, 2.0), Vector3(1.2, 0.05, 1.0), Color(0.45, 0.22, 0.08), Color(1.0, 0.4, 0.1), 1.8)
 	_emissive_box(center + Vector3(2.2, 0.05, -1.5), Vector3(0.9, 0.05, 0.8), Color(0.4, 0.2, 0.08), Color(0.95, 0.35, 0.08), 1.4)
 	_add_room_light(center + Vector3(0, 2.2, 2.5), Color(1.0, 0.5, 0.2), 5.5, 9.0)
@@ -481,8 +483,9 @@ func _city(parent: Node3D, file_name: String, pos: Vector3, rot_y: float = 0.0, 
 	PropLibrary.instance_at(parent, PropLibrary.city(file_name), pos, rot_y, scale_u)
 
 
-func _prop(parent: Node3D, file_name: String, pos: Vector3, rot_y: float = 0.0, scale_u: float = 1.0) -> void:
-	PropLibrary.instance_at(parent, PropLibrary.prop(file_name), pos, rot_y, scale_u)
+func _prop(parent: Node3D, file_name: String, pos: Vector3, rot_y: float = 0.0, scale_u: float = 1.0) -> Node3D:
+	var n := PropLibrary.instance_at(parent, PropLibrary.prop(file_name), pos, rot_y, scale_u)
+	return n as Node3D
 
 
 func _add_room_light(pos: Vector3, color: Color, energy: float, omni_range: float = 14.0) -> void:
