@@ -57,9 +57,9 @@
     },
 
     "dano_recebido": {
-      "invencibilidade": 0.75,
-      "travado": 0.26,
-      "empurrao": 4.2
+      "invencibilidade": 0.78,
+      "travado": 0.24,
+      "empurrao": 4.0
     },
 
     "armas": {
