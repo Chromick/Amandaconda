@@ -31,10 +31,10 @@
 
     "gravity": 23.5,
     "max_fall_speed": 32.0,
-    "jump_velocity": 9.85,
-    "jump_cut_multiplier": 0.47,
-    "coyote_time": 0.24,
-    "jump_buffer": 0.29,
+    "jump_velocity": 10.0,
+    "jump_cut_multiplier": 0.46,
+    "coyote_time": 0.25,
+    "jump_buffer": 0.3,
 
     "turn_speed": 17.0,
     "attack_move_mult": 0.22,
@@ -106,14 +106,14 @@
           "carga_maxima": 0.55,
           "acerto": 0.08,
           "recuperacao": 0.4,
-          "dano": 24,
-          "dano_carregado": 48,
-          "vigor": 21,
+          "dano": 25,
+          "dano_carregado": 50,
+          "vigor": 20,
           "avanco": 0,
-          "velocidade": 12.5,
-          "tempo_de_vida": 2.15,
-          "raio": 0.54,
-          "quique": 0.7
+          "velocidade": 13.0,
+          "tempo_de_vida": 2.2,
+          "raio": 0.56,
+          "quique": 0.72
         }
       }
     }
@@ -172,8 +172,8 @@
   },
 
   "portara": {
-    "vida": 78,
-    "velocidade": 2.35,
+    "vida": 82,
+    "velocidade": 2.4,
     "aggro": 9.8,
     "leash": 16.0,
     "deaggro": 20.0,
