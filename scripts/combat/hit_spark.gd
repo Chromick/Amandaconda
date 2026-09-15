@@ -18,8 +18,8 @@ func setup(color: Color = Color(1.0, 0.85, 0.35), scale_u: float = 1.0) -> void:
 	add_child(mesh)
 	var light := OmniLight3D.new()
 	light.light_color = color
-	light.light_energy = 3.2 * scale_u
-	light.omni_range = 3.2 * scale_u
+	light.light_energy = 3.6 * scale_u
+	light.omni_range = 3.6 * scale_u
 	add_child(light)
 	var tw := create_tween()
 	tw.set_parallel(true)
