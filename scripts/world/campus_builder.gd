@@ -272,6 +272,8 @@ func _build_interior_hub() -> void:
 	_way_sign(Vector3(0, 2.2, -30), "A PORTA\núltima sala", Color(1.0, 0.35, 0.5))
 	_way_sign(Vector3(-20, 2.0, -20), "OESTE PROFUNDO\nKB · fringe", Color(0.7, 0.95, 1.0))
 	_way_sign(Vector3(20, 2.0, -18), "LESTE PROFUNDO\nNet · KB", Color(0.9, 0.6, 1.0))
+	_way_sign(Vector3(-18, 2.0, 14), "NOROESTE\nChatana approach", Color(0.55, 0.95, 1.0))
+	_way_sign(Vector3(18, 2.0, 12), "NORDESTE\nNet approach", Color(0.9, 0.55, 1.0))
 	_street_lamp(Vector3(-20, 0, 6))
 	_street_lamp(Vector3(20, 0, 4))
 	_street_lamp(Vector3(-16, 0, 10))

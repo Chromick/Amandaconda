@@ -123,9 +123,9 @@ func _physics_process(delta: float) -> void:
 		var base_len := float(Balance.camera().get("distance", 4.5))
 		spring.spring_length = lerpf(spring.spring_length, base_len, clampf(4.0 * delta, 0.0, 1.0))
 	if _fov_punch != 0.0:
-		_fov_punch = move_toward(_fov_punch, 0.0, 55.0 * delta)
+		_fov_punch = move_toward(_fov_punch, 0.0, 48.0 * delta)
 	if camera:
-		camera.fov = lerpf(camera.fov, _fov_target + _fov_punch, clampf(7.5 * delta, 0.0, 1.0))
+		camera.fov = lerpf(camera.fov, _fov_target + _fov_punch, clampf(8.5 * delta, 0.0, 1.0))
 
 	if trauma > 0.0:
 		var decay := float(Balance.get_path_value("impacto.shake_decay", 1.7))

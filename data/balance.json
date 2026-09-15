@@ -292,9 +292,9 @@
       {
         "id": "coyote_extend",
         "nome": "coyote_extend",
-        "custo": 90,
-        "texto": "+0.06 coyote",
-        "coyote_bonus": 0.06
+        "custo": 85,
+        "texto": "+0.08 coyote",
+        "coyote_bonus": 0.08
       },
       {
         "id": "magnet_boost",
