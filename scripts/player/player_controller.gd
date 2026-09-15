@@ -1122,11 +1122,14 @@ func _respawn() -> void:
 	GameState.refill_heals()
 	GameState.clear_hacks()
 	drinks_changed.emit(GameState.heals, GameState.max_heals)
-	GameState.show_toast("Safezone · latas restauradas")
+	GameState.show_toast("De novo · safezone · latas cheias")
 	if typeof(HitFeel) != TYPE_NIL:
-		HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(0.5, 1.0, 0.65), 0.9)
-	if typeof(HitFeel) != TYPE_NIL:
-		HitFeel.spark_at(global_position + Vector3.UP * 0.8, Color(0.45, 1.0, 0.6), 1.0)
+		HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(0.5, 1.0, 0.65), 1.0)
+		HitFeel.shake(0.12)
+	for cam in get_tree().get_nodes_in_group("player_camera"):
+		if cam and cam.has_method("punch_fov"):
+			cam.punch_fov(3.0)
+			break
 
 
 func _tick_ability(delta: float) -> void:
