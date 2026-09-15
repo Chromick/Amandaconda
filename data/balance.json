@@ -122,7 +122,7 @@
   "camera": {
     "distance": 3.5,
     "height": 2.1,
-    "fov": 84.0,
+    "fov": 85.0,
     "min_pitch": -49.0,
     "max_pitch": 67.0,
     "sensitivity": 0.21,
@@ -406,29 +406,29 @@
       "fase2_vida": 0.5
     },
     "renanligno": {
-      "vida": 280,
+      "vida": 290,
       "nome": "RENANLIGNO",
       "local": "Laboratório",
-      "bytes": [170, 240],
-      "velocidade": 4.55,
-      "intervalo": 1.45,
-      "telegraph": 0.44,
-      "delay_hit": 0.23,
-      "acerto": 0.095,
-      "recuperacao": 0.42,
-      "dano": 22,
-      "alcance": 2.0
+      "bytes": [175, 250],
+      "velocidade": 4.6,
+      "intervalo": 1.4,
+      "telegraph": 0.42,
+      "delay_hit": 0.22,
+      "acerto": 0.09,
+      "recuperacao": 0.4,
+      "dano": 23,
+      "alcance": 2.05
     },
     "balarrals": {
-      "vida": 250,
+      "vida": 260,
       "nome": "BALARRALS",
       "local": "Pátio",
-      "bytes": [145, 210],
-      "dano_leve": 16,
-      "dano_pesado": 32,
-      "velocidade": 6.3,
-      "intervalo": 1.05,
-      "alcance": 1.9
+      "bytes": [150, 220],
+      "dano_leve": 17,
+      "dano_pesado": 33,
+      "velocidade": 6.4,
+      "intervalo": 1.0,
+      "alcance": 1.95
     },
     "marlombolico": {
       "vida": 370,
