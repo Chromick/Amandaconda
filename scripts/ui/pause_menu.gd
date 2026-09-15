@@ -27,11 +27,17 @@ func _ensure_controls_hint() -> void:
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	hint.add_theme_font_size_override("font_size", 14)
 	hint.add_theme_color_override("font_color", Color(0.75, 0.85, 0.8))
-	# Insert after title if present.
 	var title := center.get_node_or_null("Title")
 	var idx := 1 if title else 0
 	center.add_child(hint)
 	center.move_child(hint, idx)
+	var ver := Label.new()
+	ver.name = "VersionHint"
+	ver.text = "v%s · godot-4" % str(ProjectSettings.get_setting("application/config/version", "0.4"))
+	ver.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	ver.add_theme_font_size_override("font_size", 12)
+	ver.add_theme_color_override("font_color", Color(0.55, 0.65, 0.6))
+	center.add_child(ver)
 
 
 func _unhandled_input(event: InputEvent) -> void:

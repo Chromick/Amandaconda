@@ -242,6 +242,7 @@ func _chase(delta: float) -> void:
 		get_tree().create_timer(float(_cfg.get("delay_hit", 0.28))).timeout.connect(_ghost_hit, CONNECT_ONE_SHOT)
 		velocity = Vector3.ZERO
 		HitFeel.shake(0.12)
+		HitFeel.spark_at(_strike_pos + Vector3.UP * 1.0, Color(0.5, 0.85, 1.0), 0.7)
 
 
 func _ghost_hit() -> void:
