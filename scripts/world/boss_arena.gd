@@ -87,6 +87,9 @@ func try_start_fight() -> void:
 	var hud := get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("flash_danger"):
 		hud.flash_danger()
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.shake(0.35)
+		HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.95, 0.25, 0.35), 1.1)
 
 
 func _boss_title() -> String:
@@ -161,6 +164,9 @@ func _on_boss_died() -> void:
 	_fog_label.text = "arena liberada"
 	if typeof(GameState) != TYPE_NIL:
 		GameState.show_toast("%s · névoa dissipada" % _boss_title())
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.55, 1.0, 0.65), 1.2)
+		HitFeel.shake(0.2)
 
 
 func _on_player_died() -> void:
