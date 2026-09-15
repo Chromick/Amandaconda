@@ -27,6 +27,7 @@ var _real_max: float = 100.0
 var _toast_timer: float = 0.0
 var _fade: ColorRect
 var _flash: ColorRect
+var _vignette: ColorRect
 var _heal_pulse: float = 0.0
 var _stamina_flash: float = 0.0
 var _meta_flash: float = 0.0
@@ -50,6 +51,7 @@ func _ready() -> void:
 	_style_for_night()
 	_ensure_fade()
 	_ensure_flash()
+	_ensure_vignette()
 	_refresh_meta()
 	_refresh_ability()
 	_on_hacks()
@@ -86,12 +88,17 @@ func _process(delta: float) -> void:
 		meta_label.modulate = Color(1.0, 0.92, 0.45).lerp(Color.WHITE, 1.0 - m)
 		if _meta_flash <= 0.0:
 			meta_label.modulate = Color.WHITE
-	# Vida crítica: pulso vermelho na barra
+	# Vida crítica: pulso vermelho na barra + vinheta
 	if health_bar and _heal_pulse <= 0.0 and _real_max > 0.0 and _real_hp / _real_max < 0.3 and _real_hp > 0.0:
 		var pulse := 0.55 + 0.45 * sin(Time.get_ticks_msec() * 0.008)
 		health_bar.modulate = Color(1.0, pulse * 0.45, pulse * 0.4)
+		if _vignette:
+			var ratio := clampf(1.0 - (_real_hp / (_real_max * 0.3)), 0.0, 1.0)
+			_vignette.color.a = (0.08 + 0.14 * pulse) * (0.45 + 0.55 * ratio)
 	elif health_bar and _heal_pulse <= 0.0:
 		health_bar.modulate = Color.WHITE
+		if _vignette:
+			_vignette.color.a = lerpf(_vignette.color.a, 0.0, clampf(6.0 * delta, 0.0, 1.0))
 	_hint_timer -= delta
 	if _hint_timer <= 0.0:
 		_rotate_hint(false)
@@ -171,6 +178,16 @@ func _ensure_flash() -> void:
 	_flash.set_anchors_preset(Control.PRESET_FULL_RECT)
 	_flash.z_index = 70
 	add_child(_flash)
+
+
+func _ensure_vignette() -> void:
+	_vignette = ColorRect.new()
+	_vignette.name = "LowHpVignette"
+	_vignette.color = Color(0.55, 0.05, 0.08, 0)
+	_vignette.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_vignette.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_vignette.z_index = 60
+	add_child(_vignette)
 
 
 func _welcome() -> void:
