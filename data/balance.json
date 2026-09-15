@@ -17,10 +17,10 @@
     "capsule_radius": 0.35,
     "capsule_height": 1.8,
 
-    "max_health": 195,
-    "max_stamina": 195,
-    "stamina_regen": 105,
-    "stamina_regen_delay": 0.15,
+    "max_health": 200,
+    "max_stamina": 200,
+    "stamina_regen": 110,
+    "stamina_regen_delay": 0.14,
 
     "walk_speed": 7.45,
     "run_speed": 12.2,
@@ -231,7 +231,7 @@
   },
 
   "patches": {
-    "slots": 14,
+    "slots": 16,
     "catalogo": [
       {
         "id": "hotfix_vigor",
@@ -446,14 +446,14 @@
       "hack_duration": 5.4
     },
     "amandaconda": {
-      "vida": 580,
+      "vida": 600,
       "nome": "AMANDACONDA",
       "local": "A porta",
-      "bytes": [420, 560],
-      "velocidade": 4.3,
-      "dano_leve": 24,
-      "dano_pesado": 42,
-      "intervalo": 1.1,
+      "bytes": [450, 600],
+      "velocidade": 4.4,
+      "dano_leve": 25,
+      "dano_pesado": 44,
+      "intervalo": 1.05,
       "preparacao_leve": 0.4,
       "acerto_leve": 0.12,
       "recuperacao_leve": 0.4,
