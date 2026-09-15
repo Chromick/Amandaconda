@@ -40,8 +40,10 @@ func configure(
 
 	_fog_label = Label3D.new()
 	_fog_label.text = ""
-	_fog_label.font_size = 48
+	_fog_label.font_size = 52
 	_fog_label.modulate = Color(1.0, 0.45, 0.4)
+	_fog_label.outline_size = 10
+	_fog_label.outline_modulate = Color(0, 0, 0, 0.9)
 	_fog_label.position = Vector3(0, 2.4, 0)
 	add_child(_fog_label)
 
@@ -108,9 +110,10 @@ func try_start_fight() -> void:
 	if hud and hud.has_method("flash_danger"):
 		hud.flash_danger()
 	if typeof(HitFeel) != TYPE_NIL:
-		HitFeel.shake(0.35)
-		HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.95, 0.25, 0.35), 1.1)
-		HitFeel.kick_fov(6.0, 0.2)
+		HitFeel.shake(0.4)
+		HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.95, 0.25, 0.35), 1.25)
+		HitFeel.spark_at(global_position + Vector3.UP * 0.4, Color(0.8, 0.15, 0.25), 0.85)
+		HitFeel.kick_fov(7.0, 0.22)
 
 
 func _boss_title() -> String:
