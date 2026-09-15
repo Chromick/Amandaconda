@@ -57,9 +57,9 @@
     },
 
     "dano_recebido": {
-      "invencibilidade": 0.88,
-      "travado": 0.18,
-      "empurrao": 3.4
+      "invencibilidade": 0.9,
+      "travado": 0.16,
+      "empurrao": 3.2
     },
 
     "armas": {
@@ -341,9 +341,9 @@
       {
         "id": "roll_cheap",
         "nome": "roll_cheap",
-        "custo": 100,
-        "texto": "-20% custo rolamento",
-        "roll_cost_mult": 0.8
+        "custo": 95,
+        "texto": "-22% custo rolamento",
+        "roll_cost_mult": 0.78
       },
       {
         "id": "sprint_siphon",
