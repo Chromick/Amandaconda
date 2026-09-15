@@ -360,6 +360,10 @@ func _update_lock_marker(delta: float) -> void:
 		if mat:
 			mat.emission_energy_multiplier = 1.8 + sin(Time.get_ticks_msec() * 0.01) * 0.9
 			mat.albedo_color.a = 0.55 + sin(Time.get_ticks_msec() * 0.008) * 0.25
+			var boss := lock_target.is_in_group("boss")
+			var tint := Color(1.0, 0.45, 0.4) if boss else Color(0.45, 0.9, 1.0)
+			mat.albedo_color = Color(tint.r, tint.g, tint.b, mat.albedo_color.a)
+			mat.emission = tint
 	else:
 		if lock_target != null and not is_instance_valid(lock_target):
 			lock_target = null
