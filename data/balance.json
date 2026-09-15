@@ -201,8 +201,8 @@
     "recuperacao": 0.7,
     "dano": 11,
     "proj_speed": 14.0,
-    "mark_duration": 3.5,
-    "mark_speed_mult": 0.72,
+    "mark_duration": 3.8,
+    "mark_speed_mult": 0.7,
     "renascer_em": 4.8,
     "bytes": [48, 80]
   },
