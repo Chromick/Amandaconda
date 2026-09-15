@@ -385,11 +385,11 @@
 
   "chefes": {
     "luanevil": {
-      "vida": 310,
+      "vida": 320,
       "nome": "LUANEVIL",
       "local": "Bandejão",
-      "bytes": [165, 240],
-      "velocidade": 3.6,
+      "bytes": [170, 250],
+      "velocidade": 3.65,
       "dano_leve": 17,
       "dano_pesado": 30,
       "intervalo": 1.6,
@@ -420,15 +420,15 @@
       "alcance": 1.95
     },
     "balarrals": {
-      "vida": 240,
+      "vida": 250,
       "nome": "BALARRALS",
       "local": "Pátio",
-      "bytes": [140, 200],
+      "bytes": [145, 210],
       "dano_leve": 16,
-      "dano_pesado": 31,
-      "velocidade": 6.2,
-      "intervalo": 1.1,
-      "alcance": 1.85
+      "dano_pesado": 32,
+      "velocidade": 6.3,
+      "intervalo": 1.05,
+      "alcance": 1.9
     },
     "marlombolico": {
       "vida": 360,
