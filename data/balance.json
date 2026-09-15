@@ -155,8 +155,8 @@
   },
 
   "chatana": {
-    "vida": 28,
-    "velocidade": 3.45,
+    "vida": 30,
+    "velocidade": 3.5,
     "prefer_distance": 5.0,
     "aggro": 11.0,
     "leash": 16.5,
@@ -172,8 +172,8 @@
   },
 
   "portara": {
-    "vida": 70,
-    "velocidade": 2.25,
+    "vida": 74,
+    "velocidade": 2.3,
     "aggro": 9.8,
     "leash": 16.0,
     "deaggro": 20.0,
@@ -184,12 +184,12 @@
     "dano": 18,
     "alcance": 1.5,
     "altura": 1.6,
-    "renascer_em": 4.2,
-    "bytes": [76, 108]
+    "renascer_em": 4.0,
+    "bytes": [80, 112]
   },
 
   "net": {
-    "vida": 40,
+    "vida": 42,
     "velocidade": 1.4,
     "prefer_distance": 9.0,
     "aggro": 11.5,
