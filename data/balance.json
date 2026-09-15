@@ -17,8 +17,8 @@
     "capsule_radius": 0.35,
     "capsule_height": 1.8,
 
-    "max_health": 140,
-    "max_stamina": 140,
+    "max_health": 145,
+    "max_stamina": 145,
     "stamina_regen": 78,
     "stamina_regen_delay": 0.26,
 

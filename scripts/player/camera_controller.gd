@@ -110,7 +110,7 @@ func _physics_process(delta: float) -> void:
 		var v := (_player as CharacterBody3D).velocity
 		sprinting = Vector3(v.x, 0.0, v.z).length() > 1.0
 	if lock_target and is_instance_valid(lock_target):
-		_fov_target = _base_fov - 5.0
+		_fov_target = _base_fov - 6.0
 		# Aproxima um pouco no lock
 		var lock_len := float(Balance.camera().get("distance", 4.5)) * 0.86
 		spring.spring_length = lerpf(spring.spring_length, lock_len, clampf(6.0 * delta, 0.0, 1.0))
