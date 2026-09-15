@@ -496,6 +496,11 @@ func _dress_servers(root: Node3D) -> void:
 	_prop(root, "box-long.glb", center + Vector3(2.5, 0, 3.8), 90.0, 0.95)
 	_prop(root, "pipe-large.glb", center + Vector3(3.8, 1.0, -3.5), 0.0, 0.85)
 	_prop(root, "box-long.glb", center + Vector3(-2.0, 0, 3.2), 45.0, 0.9)
+	_emissive_box(center + Vector3(-2.5, 0.08, -1.5), Vector3(1.2, 0.05, 1.0), Color(0.04, 0.1, 0.08), Color(0.15, 1.0, 0.4), 1.5)
+	_emissive_box(center + Vector3(2.2, 0.08, 1.8), Vector3(1.0, 0.05, 1.1), Color(0.04, 0.08, 0.12), Color(0.2, 0.7, 1.0), 1.4)
+	var fan := _prop(root, "ceilingFan.glb", center + Vector3(0, 3.1, 0), 0.0)
+	if fan:
+		fan.set_script(preload("res://scripts/world/spin_y.gd"))
 
 
 func _dress_patio(root: Node3D) -> void:
