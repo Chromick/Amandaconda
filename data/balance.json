@@ -319,7 +319,7 @@
       "vida": 450,
       "nome": "AMANDACONDA",
       "local": "A porta",
-      "bytes": [220, 320],
+      "bytes": [260, 360],
       "velocidade": 3.6,
       "dano_leve": 18,
       "dano_pesado": 32,
