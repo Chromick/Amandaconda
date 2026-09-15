@@ -387,6 +387,12 @@ func _show_toast(message: String) -> void:
 		toast_label.modulate = Color(0.55, 1.0, 0.7)
 	elif message.find("Vigor") >= 0 or message.find("recarga") >= 0:
 		toast_label.modulate = Color(1.0, 0.75, 0.4)
+	elif message.find("Combo") >= 0 or message.find("Investida") >= 0:
+		toast_label.modulate = Color(1.0, 0.7, 0.35)
+	elif message.find("Caramelo") >= 0 or message.find("Espelho") >= 0:
+		toast_label.modulate = Color(1.0, 0.85, 0.45)
+	elif message.find(" · ") >= 0 and (message.find("saturado") >= 0 or message.find("furiosa") >= 0 or message.find("alto") >= 0 or message.find("root") >= 0 or message.find("latência") >= 0 or message.find("espelho rachado") >= 0 or message.find("derrete") >= 0):
+		toast_label.modulate = Color(1.0, 0.4, 0.35)
 	toast_label.modulate.a = 1.0
 	toast_label.scale = Vector2(1.08, 1.08)
 	_toast_timer = 3.2
