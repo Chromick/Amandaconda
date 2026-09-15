@@ -15,6 +15,7 @@ var _pulse_mat: StandardMaterial3D
 var _base_color := Color(0.55, 0.58, 0.62)
 var _pulse_radius: float = 2.4
 var _wave_ring: MeshInstance3D
+var _enraged: bool = false
 
 
 func _ready() -> void:
@@ -106,8 +107,23 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector3.ZERO
 			if _phase_t <= 0.0:
 				_phase = Phase.IDLE
-				_cooldown = float(_cfg.get("intervalo", 2.0))
+				_cooldown = float(_cfg.get("intervalo", 2.0)) * (0.7 if _enraged else 1.0)
 	move_and_slide()
+	_check_enrage()
+
+
+func _check_enrage() -> void:
+	if _enraged or _dead:
+		return
+	if health <= max_health * 0.4:
+		_enraged = true
+		_base_color = Color(0.85, 0.55, 0.25)
+		_restore_color()
+		_pulse_radius *= 1.12
+		GameState.show_toast("CHATANA · feedback alto")
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.22)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(1.0, 0.85, 0.35), 1.05)
 
 
 func _update_pulse_telegraph(active: bool, flash: bool) -> void:
@@ -147,6 +163,8 @@ func _ai_idle(delta: float) -> void:
 	var dist := to.length()
 	var prefer := float(_cfg.get("prefer_distance", 5.5))
 	var spd := float(_cfg.get("velocidade", 3.2)) * move_scale()
+	if _enraged:
+		spd *= 1.2
 	if dist > 0.01:
 		var dir := to.normalized()
 		_face_flat(dir)

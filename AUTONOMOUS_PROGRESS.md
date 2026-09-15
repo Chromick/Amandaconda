@@ -6,6 +6,28 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~08:10 BRT
+
+### Alteração
+- Enrage ≤40% HP: Portara, Chatana, Net (mais rápidos/agressivos + toast + spark).
+
+### Arquivos modificados
+- `scripts/enemies/portara.gd`
+- `scripts/enemies/chatana.gd`
+- `scripts/enemies/net.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar
+
+---
+
 ## 2026-09-15 ~08:06 BRT
 
 ### Alteração

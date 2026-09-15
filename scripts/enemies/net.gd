@@ -13,6 +13,7 @@ var _cooldown: float = 1.2
 var _base_color := Color(0.55, 0.4, 0.95)
 var _beam: MeshInstance3D
 var _aim_dir: Vector3 = Vector3.FORWARD
+var _enraged: bool = false
 
 
 func _ready() -> void:
@@ -77,8 +78,22 @@ func _physics_process(delta: float) -> void:
 			_phase_t -= delta
 			if _phase_t <= 0.0:
 				_phase = Phase.IDLE
-				_cooldown = float(_cfg.get("intervalo", 2.4))
+				_cooldown = float(_cfg.get("intervalo", 2.4)) * (0.7 if _enraged else 1.0)
 	move_and_slide()
+	_check_enrage()
+
+
+func _check_enrage() -> void:
+	if _enraged or _dead:
+		return
+	if health <= max_health * 0.4:
+		_enraged = true
+		_base_color = Color(0.75, 0.25, 0.95)
+		_restore_color()
+		GameState.show_toast("NET · sinal saturado")
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.2)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.4, Color(0.95, 0.3, 0.9), 1.0)
 
 
 func _update_beam_telegraph(active: bool, flash: bool) -> void:

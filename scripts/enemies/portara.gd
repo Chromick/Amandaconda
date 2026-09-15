@@ -12,6 +12,7 @@ var _hitbox: Area3D
 var _hit_done: bool = false
 var _base_color := Color(0.55, 0.48, 0.42)
 var _telegraph: MeshInstance3D
+var _enraged: bool = false
 
 
 func _ready() -> void:
@@ -109,8 +110,22 @@ func _physics_process(delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0.0, 12.0 * delta)
 			if _phase_t <= 0.0:
 				_phase = Phase.IDLE
-				_cooldown = float(_cfg.get("intervalo", 1.8))
+				_cooldown = float(_cfg.get("intervalo", 1.8)) * (0.65 if _enraged else 1.0)
 	move_and_slide()
+	_check_enrage()
+
+
+func _check_enrage() -> void:
+	if _enraged or _dead:
+		return
+	if health <= max_health * 0.4:
+		_enraged = true
+		_base_color = Color(0.75, 0.35, 0.22)
+		_restore_color()
+		GameState.show_toast("PORTARA · tranca furiosa")
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.25)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.9, 0.4, 0.2), 1.1)
 
 
 func _ai_chase(delta: float) -> void:
@@ -123,6 +138,8 @@ func _ai_chase(delta: float) -> void:
 	var dist := to.length()
 	var alcance := float(_cfg.get("alcance", 1.4))
 	var spd := float(_cfg.get("velocidade", 2.0)) * move_scale()
+	if _enraged:
+		spd *= 1.25
 	if dist > 0.05:
 		var dir := to.normalized()
 		_face_flat(dir)
