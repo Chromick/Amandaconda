@@ -216,8 +216,10 @@ func _physics_process(delta: float) -> void:
 				AttackTelegraphScript.set_active(_telegraph, true, true)
 				AttackTelegraphScript.set_active(_slam_ring, _heavy and _phase2, true)
 				if _heavy:
-					HitFeel.shake(0.25)
-					HitFeel.spark_at(global_position + Vector3(0, 0.2, 0.7), Color(0.3, 0.85, 0.45), 1.2)
+					HitFeel.shake(0.28 if _phase2 else 0.25)
+					HitFeel.spark_at(global_position + Vector3(0, 0.2, 0.7), Color(0.3, 0.85, 0.45) if _phase2 else Color(1.0, 0.45, 0.35), 1.2)
+					if _phase2 and typeof(HitFeel) != TYPE_NIL:
+						HitFeel.spark_at(global_position + Vector3.UP * 0.4, Color(0.95, 0.25, 0.45), 0.9)
 		Phase.ACTIVE:
 			_phase_t -= delta
 			var forward := -global_transform.basis.z
