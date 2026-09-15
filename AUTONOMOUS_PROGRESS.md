@@ -6,6 +6,23 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.6.11
+
+### Alteração
+- Mais dust motes (72) e estrelas (110).
+- Mark clear/FOV feedback.
+- Servidores/porta denser.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.6.9
 
 ### Alteração
