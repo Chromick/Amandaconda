@@ -309,6 +309,13 @@
         "custo": 85,
         "texto": "+0.08 jump buffer",
         "jump_buffer_bonus": 0.08
+      },
+      {
+        "id": "impact_frame",
+        "nome": "impact_frame",
+        "custo": 125,
+        "texto": "+12% dano",
+        "dano_mult": 0.12
       }
     ]
   },
