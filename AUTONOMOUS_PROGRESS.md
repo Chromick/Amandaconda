@@ -90,3 +90,21 @@ Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil,
 ### Próxima tarefa
 - Migrar look_at dos bosses/trash para \_face_flat\ onde fizer sentido
 - Continuar polish de combate / UI
+
+## 2026-09-15 01:54 BRT
+
+### Alteração
+- Trash/bosses passam a usar \_face_flat\ no chase (8 scripts).
+
+### Arquivos modificados
+- scripts/enemies/chatana.gd, portara.gd, net.gd
+- scripts/bosses/luanevil.gd, renanligno.gd, marlombolico.gd, amandaconda.gd, balarrals.gd
+
+### Testes
+- Hub headless EXIT 0; push \godot-4\ OK
+
+### Problemas encontrados
+- (nenhum)
+
+### Próxima tarefa
+- UI menu/version ou polish de lock-on distance feedback
