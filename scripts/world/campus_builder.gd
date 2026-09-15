@@ -280,6 +280,7 @@ func _spawn_gameplay() -> void:
 	_spawn_enemy(NET, Vector3(8, 1, -22), "modular/Casual_Hoodie.gltf", 1.08, Color(0.8, 0.5, 1, 1))
 	_spawn(BYTES, Vector3(-3, 0.6, 18))
 	_spawn(BYTES, Vector3(4, 0.6, 8))
+	_spawn(BYTES, Vector3(0, 0.6, 14))
 	_spawn(BYTES, Vector3(-20, 0.6, -8))
 	_spawn(BYTES, Vector3(8, 0.6, -16))
 	_spawn(BYTES, Vector3(-26, 0.6, -20))
