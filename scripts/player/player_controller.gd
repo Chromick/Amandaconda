@@ -593,7 +593,7 @@ func _try_sprint_attack(dir: Vector3) -> void:
 
 
 func _try_roll(dir: Vector3) -> void:
-	var cost := float(_roll.get("vigor", 25))
+	var cost := float(_roll.get("vigor", 25)) * GameState.roll_cost_mult()
 	if not _require_stamina(cost):
 		return
 	_spend_stamina(cost)

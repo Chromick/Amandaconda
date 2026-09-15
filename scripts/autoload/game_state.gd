@@ -167,6 +167,14 @@ func sprint_drain_mult() -> float:
 	return maxf(0.35, mult)
 
 
+func roll_cost_mult() -> float:
+	var mult := 1.0
+	for pid in active_patches:
+		var patch := _find_patch(pid)
+		mult *= float(patch.get("roll_cost_mult", 1.0))
+	return maxf(0.4, mult)
+
+
 func refresh_heal_slots() -> void:
 	var cura: Dictionary = Balance.data.get("cura", {})
 	var base := int(cura.get("latas", 3))

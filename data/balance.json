@@ -266,6 +266,13 @@
         "custo": 110,
         "texto": "-30% custo sprint",
         "sprint_drain_mult": 0.7
+      },
+      {
+        "id": "iframe_lite",
+        "nome": "iframe_lite",
+        "custo": 130,
+        "texto": "-25% custo rolamento",
+        "roll_cost_mult": 0.75
       }
     ]
   },
