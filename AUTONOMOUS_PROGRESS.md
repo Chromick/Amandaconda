@@ -6,6 +6,26 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~07:50 BRT
+
+### Alteração
+- Inimigos sem respawn: KO fica ~0.45s visível antes de `queue_free` (menos “pop” seco).
+
+### Arquivos modificados
+- `scripts/enemies/enemy_base.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar loop seguro
+
+---
+
 ## 2026-09-15 ~07:48 BRT
 
 ### Alteração

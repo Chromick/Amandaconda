@@ -203,7 +203,10 @@ func _die() -> void:
 	if delay > 0.0:
 		_revive_timer = delay
 	else:
-		queue_free()
+		# Breve permanência do KO antes de sumir.
+		var tw := create_tween()
+		tw.tween_interval(0.45)
+		tw.tween_callback(queue_free)
 
 
 func _drop_bytes(announce: bool = true) -> void:
