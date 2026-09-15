@@ -129,7 +129,7 @@
     "lock_on_distance": 20.0,
     "lock_on_height_bias": 1.2,
     "idle_yaw_delay": 1.2,
-    "idle_yaw_speed": 2.8
+    "idle_yaw_speed": 3.2
   },
 
   "impacto": {

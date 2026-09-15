@@ -9,7 +9,7 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 ## 2026-09-15 ~continuação loop
 
 ### Alteração
-- v0.5.5: 3-hit combo; elite/boss enrage bite+snap; campus props/lamps; combat feel weight; stamina/coyote; patch shop colors; Net/Chatana telegraphs.
+- v0.5.6: Eco double-hit fix; virus single-hit; 3-hit combo; enrage telegraphs; arena clear juice; mark vignette; gate milestone sparks.
 
 ### Testes
 - Hub headless EXIT 0 (cada ciclo)
