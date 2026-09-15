@@ -277,7 +277,7 @@ func _spawn_land_dust() -> void:
 	if host == null:
 		return
 	var impact := clampf(absf(_air_vy) / 14.0, 0.55, 1.6)
-	var count := 4 if impact < 1.1 else 7
+	var count := 6 if impact < 1.1 else 9
 	for i in count:
 		var p := MeshInstance3D.new()
 		var sm := SphereMesh.new()
@@ -306,31 +306,33 @@ func _spawn_sprint_dust() -> void:
 	var host := get_tree().current_scene
 	if host == null:
 		return
-	var p := MeshInstance3D.new()
-	var sm := SphereMesh.new()
-	sm.radius = 0.05
-	sm.height = 0.1
-	p.mesh = sm
-	var mat := StandardMaterial3D.new()
-	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	mat.albedo_color = Color(0.7, 0.68, 0.6, 0.4)
-	mat.emission_enabled = true
-	mat.emission = Color(0.55, 0.5, 0.4)
-	mat.emission_energy_multiplier = 0.4
-	p.material_override = mat
-	host.add_child(p)
-	var back := -facing
-	back.y = 0.0
-	if back.length_squared() < 0.01:
-		back = Vector3.BACK
-	else:
-		back = back.normalized()
-	p.global_position = global_position + Vector3(0, 0.06, 0) + back * 0.25
-	var tw := create_tween()
-	tw.tween_property(p, "global_position", p.global_position + back * 0.4 + Vector3.UP * 0.15, 0.22)
-	tw.parallel().tween_property(mat, "albedo_color:a", 0.0, 0.22)
-	tw.tween_callback(p.queue_free)
+	for i in 2:
+		var p := MeshInstance3D.new()
+		var sm := SphereMesh.new()
+		sm.radius = 0.05
+		sm.height = 0.1
+		p.mesh = sm
+		var mat := StandardMaterial3D.new()
+		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		mat.albedo_color = Color(0.7, 0.68, 0.6, 0.4)
+		mat.emission_enabled = true
+		mat.emission = Color(0.55, 0.5, 0.4)
+		mat.emission_energy_multiplier = 0.4
+		p.material_override = mat
+		host.add_child(p)
+		var back := -facing
+		back.y = 0.0
+		if back.length_squared() < 0.01:
+			back = Vector3.BACK
+		else:
+			back = back.normalized()
+		var side := Vector3(-back.z, 0.0, back.x) * (0.18 if i == 0 else -0.18)
+		p.global_position = global_position + Vector3(0, 0.06, 0) + back * 0.25 + side
+		var tw := create_tween()
+		tw.tween_property(p, "global_position", p.global_position + back * 0.4 + Vector3.UP * 0.15, 0.22)
+		tw.parallel().tween_property(mat, "albedo_color:a", 0.0, 0.22)
+		tw.tween_callback(p.queue_free)
 
 
 func _spawn_jump_dust() -> void:
