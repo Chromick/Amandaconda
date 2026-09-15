@@ -65,14 +65,14 @@
     "armas": {
       "teclado": {
         "ataque_leve": {
-          "preparacao": 0.065,
-          "acerto": 0.048,
-          "recuperacao": 0.13,
-          "dano": 20,
-          "vigor": 8,
-          "alcance": 1.68,
-          "altura": 1.2,
-          "avanco": 3.45,
+          "preparacao": 0.06,
+          "acerto": 0.045,
+          "recuperacao": 0.12,
+          "dano": 21,
+          "vigor": 7,
+          "alcance": 1.7,
+          "altura": 1.22,
+          "avanco": 3.55,
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
@@ -120,13 +120,13 @@
   },
 
   "camera": {
-    "distance": 3.6,
-    "height": 2.05,
+    "distance": 3.5,
+    "height": 2.1,
     "fov": 83.0,
-    "min_pitch": -48.0,
-    "max_pitch": 66.0,
-    "sensitivity": 0.205,
-    "follow_speed": 30.0,
+    "min_pitch": -49.0,
+    "max_pitch": 67.0,
+    "sensitivity": 0.21,
+    "follow_speed": 32.0,
     "lock_on_distance": 36.0,
     "lock_on_height_bias": 1.45,
     "idle_yaw_delay": 0.8,
@@ -168,7 +168,7 @@
     "dano": 12,
     "raio": 2.6,
     "renascer_em": 3.2,
-    "bytes": [55, 82]
+    "bytes": [58, 86]
   },
 
   "portara": {
