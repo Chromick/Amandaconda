@@ -351,6 +351,13 @@
         "custo": 95,
         "texto": "-25% custo sprint",
         "sprint_drain_mult": 0.75
+      },
+      {
+        "id": "dano_core",
+        "nome": "dano_core",
+        "custo": 140,
+        "texto": "+10% dano",
+        "dano_mult": 0.1
       }
     ]
   },
