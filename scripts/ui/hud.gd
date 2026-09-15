@@ -399,10 +399,13 @@ func _on_ending() -> void:
 	_toast_timer = 6.0
 	flash_danger()
 	_pulse_screen(Color(0.95, 0.35, 0.55, 0.35), 0.9)
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.kick_fov(7.0, 0.3)
 	await get_tree().create_timer(0.5).timeout
 	_pulse_screen(Color(0.45, 1.0, 0.65, 0.28), 1.2)
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.kill_punch(0.35)
+		HitFeel.kick_fov(4.0, 0.2)
 
 
 func _update_boss_bar() -> void:
