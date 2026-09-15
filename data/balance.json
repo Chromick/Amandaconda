@@ -76,16 +76,16 @@
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
-          "preparacao": 0.16,
-          "carga_maxima": 0.55,
-          "acerto": 0.07,
-          "recuperacao": 0.24,
-          "dano": 37,
-          "dano_carregado": 66,
-          "vigor": 20,
-          "alcance": 2.15,
-          "altura": 1.52,
-          "avanco": 6.0
+          "preparacao": 0.15,
+          "carga_maxima": 0.52,
+          "acerto": 0.065,
+          "recuperacao": 0.22,
+          "dano": 38,
+          "dano_carregado": 68,
+          "vigor": 19,
+          "alcance": 2.2,
+          "altura": 1.55,
+          "avanco": 6.2
         }
       },
       "virus": {
@@ -385,11 +385,11 @@
 
   "chefes": {
     "luanevil": {
-      "vida": 330,
+      "vida": 340,
       "nome": "LUANEVIL",
       "local": "Bandejão",
-      "bytes": [175, 260],
-      "velocidade": 3.7,
+      "bytes": [180, 270],
+      "velocidade": 3.75,
       "dano_leve": 17,
       "dano_pesado": 30,
       "intervalo": 1.6,
@@ -420,15 +420,15 @@
       "alcance": 2.05
     },
     "balarrals": {
-      "vida": 260,
+      "vida": 270,
       "nome": "BALARRALS",
       "local": "Pátio",
-      "bytes": [150, 220],
+      "bytes": [155, 230],
       "dano_leve": 17,
-      "dano_pesado": 33,
-      "velocidade": 6.4,
-      "intervalo": 1.0,
-      "alcance": 1.95
+      "dano_pesado": 34,
+      "velocidade": 6.5,
+      "intervalo": 0.95,
+      "alcance": 2.0
     },
     "marlombolico": {
       "vida": 390,
