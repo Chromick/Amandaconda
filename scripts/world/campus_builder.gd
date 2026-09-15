@@ -262,6 +262,7 @@ func _build_interior_hub() -> void:
 	_way_sign(Vector3(-14, 2.0, 6), "← ALA OESTE\nChatana · Portara", Color(0.75, 0.9, 1.0))
 	_way_sign(Vector3(14, 2.0, 4), "ALA LESTE →\nNet · KB", Color(0.85, 0.7, 1.0))
 	_way_sign(Vector3(0, 2.1, -8), "CORREDOR CENTRAL\n↑ A Porta · ↓ Safe", Color(0.9, 0.9, 0.75))
+	_way_sign(Vector3(-8, 2.0, -26), "GATE · A PORTA\nNet à frente", Color(1.0, 0.4, 0.5))
 	_street_lamp(Vector3(-20, 0, 6))
 	_street_lamp(Vector3(20, 0, 4))
 	_street_lamp(Vector3(-16, 0, 10))
