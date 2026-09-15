@@ -27,7 +27,7 @@ const HINTS: PackedStringArray = [
 	"heal_burst +8 cura por lata · air_grip no ar",
 	"air_grip melhora controle no ar · ótimo pra kiting",
 	"jump_buffer_plus perdoa timing do pulo · buffer_plus também",
-	"impact_frame +12% dano · macro_combo ainda mais forte",
+	"impact_frame +12% dano · impact_plus / macro_combo ainda mais forte",
 	"stamina_siphon +25 vigor · hotfix_vigor ainda ajuda",
 	"vida_extra +20 HP · daemon_safe também soma",
 	"lata_plus +1 lata · heal_cache/cache_latas empilham · base agora 15",

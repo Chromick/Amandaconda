@@ -29,10 +29,10 @@
     "air_accel": 26.0,
     "air_friction": 6.8,
 
-    "gravity": 24.0,
-    "max_fall_speed": 33.0,
-    "jump_velocity": 10.85,
-    "jump_cut_multiplier": 0.39,
+    "gravity": 24.5,
+    "max_fall_speed": 34.0,
+    "jump_velocity": 11.0,
+    "jump_cut_multiplier": 0.38,
     "coyote_time": 0.36,
     "jump_buffer": 0.42,
 
@@ -48,12 +48,12 @@
     "virus_desbloqueado": true,
 
     "rolamento": {
-      "duracao": 0.24,
+      "duracao": 0.23,
       "inv_inicio": 0.0,
-      "inv_duracao": 0.66,
-      "vigor": 7,
-      "velocidade": 18.5,
-      "atrito_final": 58.0
+      "inv_duracao": 0.68,
+      "vigor": 6,
+      "velocidade": 19.0,
+      "atrito_final": 60.0
     },
 
     "dano_recebido": {
@@ -122,9 +122,9 @@
   "camera": {
     "distance": 3.3,
     "height": 2.2,
-    "fov": 90.0,
-    "min_pitch": -51.0,
-    "max_pitch": 69.0,
+    "fov": 91.0,
+    "min_pitch": -52.0,
+    "max_pitch": 70.0,
     "sensitivity": 0.24,
     "follow_speed": 38.0,
     "lock_on_distance": 44.0,
@@ -378,7 +378,7 @@
         "nome": "air_grip",
         "custo": 92,
         "texto": "+air control",
-        "air_accel_bonus": 4.5
+        "air_accel_bonus": 5.0
       },
       {
         "id": "buffer_plus",
@@ -386,6 +386,13 @@
         "custo": 88,
         "texto": "+0.08 jump buffer",
         "jump_buffer_bonus": 0.08
+      },
+      {
+        "id": "impact_plus",
+        "nome": "impact_plus",
+        "custo": 135,
+        "texto": "+14% dano",
+        "dano_mult": 0.14
       }
     ]
   },
