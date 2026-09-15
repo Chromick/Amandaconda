@@ -283,8 +283,13 @@ func _spawn_popup(amount: float) -> void:
 
 
 func _update_label() -> void:
-	if label:
-		label.text = "%s %d/%d" % [balance_key.capitalize(), int(health), int(max_health)]
+	if label == null:
+		return
+	label.text = "%s %d/%d" % [balance_key.capitalize(), int(health), int(max_health)]
+	if max_health > 0.0 and health > 0.0 and health / max_health < 0.35:
+		label.modulate = Color(1.0, 0.45, 0.4)
+	else:
+		label.modulate = Color.WHITE
 
 
 func _set_color(c: Color) -> void:
