@@ -430,6 +430,10 @@ func _process_move(delta: float) -> void:
 		jump_buffer_timer = 0.0
 		coyote_timer = 0.0
 		_spawn_jump_dust()
+		for cam in get_tree().get_nodes_in_group("player_camera"):
+			if cam and cam.has_method("punch_fov"):
+				cam.punch_fov(1.8)
+				break
 
 	var dir := _input_dir()
 	var sprinting := Input.is_action_pressed("sprint") and dir.length_squared() > 0.01
