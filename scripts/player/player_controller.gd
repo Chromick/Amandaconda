@@ -480,6 +480,7 @@ func _process_move(delta: float) -> void:
 	elif stamina > 15.0:
 		_sprint_empty_toasted = false
 	if sprinting and not _was_sprinting and is_on_floor():
+		_spawn_sprint_dust()
 		for cam in get_tree().get_nodes_in_group("player_camera"):
 			if cam and cam.has_method("punch_fov"):
 				cam.punch_fov(2.2)
