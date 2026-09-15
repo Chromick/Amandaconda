@@ -8,6 +8,8 @@ extends StaticBody3D
 @onready var mesh: MeshInstance3D = $Mesh
 @onready var col: CollisionShape3D = $CollisionShape3D
 var _open_light: OmniLight3D
+var _progress: float = 0.0
+var _is_open: bool = false
 
 
 func _ready() -> void:
@@ -20,6 +22,17 @@ func _ready() -> void:
 	_open_light.position = Vector3(0, 2.0, 0)
 	add_child(_open_light)
 	_refresh()
+
+
+func _process(_delta: float) -> void:
+	if _open_light == null or _is_open:
+		return
+	if _progress <= 0.0:
+		_open_light.light_energy = 0.0
+		return
+	var pulse := 0.55 + 0.45 * absf(sin(Time.get_ticks_msec() * 0.004))
+	_open_light.light_color = Color(1.0, 0.7, 0.35).lerp(Color(0.55, 1.0, 0.6), _progress)
+	_open_light.light_energy = (0.35 + _progress * 1.4) * pulse
 
 
 func _refresh() -> void:
@@ -36,11 +49,13 @@ func _refresh() -> void:
 		_:
 			label.text = title
 	col.disabled = open
+	_is_open = open
 	# Mantém o label visível mesmo aberto, sumido o bloqueio.
 	if open:
 		label.modulate = Color(0.5, 1.0, 0.6)
 		label.text = label.text.split("\n")[0] + "\npassagem livre"
 		if _open_light:
+			_open_light.light_color = Color(0.45, 1.0, 0.65)
 			_open_light.light_energy = 2.2
 		if not was_open:
 			GameState.show_toast("%s · liberado" % (label.text.split("\n")[0]))
@@ -52,12 +67,14 @@ func _refresh() -> void:
 			mesh.visible = false
 	else:
 		mesh.visible = true
-		if _open_light:
-			_open_light.light_energy = 0.0
-		var progress := 0.0
+		_progress = 0.0
 		if gate_id == "servers":
-			progress = float(GameState.base_bosses_cleared()) / 3.0
-		label.modulate = Color(1.0, 0.55, 0.45).lerp(Color(1.0, 0.85, 0.4), progress)
+			_progress = float(GameState.base_bosses_cleared()) / 3.0
+		elif gate_id == "door":
+			_progress = 1.0 if GameState.can_enter_door() else 0.0
+		if _open_light and _progress <= 0.0:
+			_open_light.light_energy = 0.0
+		label.modulate = Color(1.0, 0.55, 0.45).lerp(Color(1.0, 0.85, 0.4), _progress)
 		if mesh and mesh.material_override is StandardMaterial3D:
 			(mesh.material_override as StandardMaterial3D).albedo_color.a = 1.0
 
