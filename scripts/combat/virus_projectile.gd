@@ -44,8 +44,8 @@ func setup(cfg: Dictionary, dir: Vector3, from: Node) -> void:
 		mesh.material_override = mat
 	_light = OmniLight3D.new()
 	_light.light_color = Color(0.4, 1.0, 0.55)
-	_light.light_energy = 2.6
-	_light.omni_range = 4.0
+	_light.light_energy = 3.0
+	_light.omni_range = 4.6
 	add_child(_light)
 
 
@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 		_trail_cd = 0.022
 		_spawn_trail()
 	if _light:
-		_light.light_energy = lerpf(_light.light_energy, 2.8, clampf(6.0 * delta, 0.0, 1.0))
+		_light.light_energy = lerpf(_light.light_energy, 3.2, clampf(6.0 * delta, 0.0, 1.0))
 
 
 func _spawn_trail() -> void:
