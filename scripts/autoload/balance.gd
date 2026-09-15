@@ -31,6 +31,8 @@ func reload() -> void:
 	data = parsed
 	reloaded.emit()
 	print("Balance: recarregado (%s)" % PATH)
+	if typeof(GameState) != TYPE_NIL and GameState.has_method("show_toast"):
+		GameState.show_toast("Balance F5 · recarregado")
 
 
 func player() -> Dictionary:

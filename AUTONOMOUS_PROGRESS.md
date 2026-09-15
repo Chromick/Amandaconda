@@ -30,9 +30,33 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Push ainda não validado nesta entrada (próximo passo)
 - PIE visual da marca: não testado
 
+## 2026-09-15 ~01:55 BRT
+
+### Alteração
+- Push da branch `godot-4` para https://github.com/Chromick/Amandaconda/tree/godot-4 (master Pygame intacto).
+- HUD: indicador `MARCADO Xs` enquanto mark da Net ativa.
+- F5 balance: toast “Balance F5 · recarregado”.
+- Agente toggle documentado e ativo (`AUTONOMOUS_MODE.json`).
+
+### Arquivos modificados
+- `scripts/ui/hud.gd`
+- `scripts/player/player_controller.gd`
+- `scripts/autoload/balance.gd`
+- `AUTONOMOUS_MODE.json`
+- `.cursor/rules/autonomous-dev.mdc`
+- `docs/AGENTE_AUTONOMO.md`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+- `git push origin godot-4` → branch criada no GitHub
+
+### Problemas encontrados
+- PowerShell reporta exit 1 no push por mensagens `remote:` no stderr; branch foi criada com sucesso
+
 ### Próxima tarefa
-- `git push -u origin godot-4`
-- Continuar bugs/gameplay no loop (Joãosias ainda AGUARDANDO DECISÃO de spawn)
+- Continuar loop: polish pause/menu ou elite Joãosias (ainda AGUARDANDO DECISÃO de sala)
+- Opcional: abrir PR `godot-4` → não mergear em master sem pedido
 
 ---
 
