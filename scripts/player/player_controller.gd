@@ -1245,6 +1245,8 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 	if state == State.HEALING:
 		_heal_timer = 0.0
 		GameState.show_toast("Cura interrompida")
+		HitFeel.shake(0.12)
+		HitFeel.spark_at(global_position + Vector3.UP * 1.0, Color(0.9, 0.35, 0.35), 0.7)
 	health = maxf(0.0, health - amount)
 	health_changed.emit(health, max_health)
 	_spawn_hurt_popup(amount)
