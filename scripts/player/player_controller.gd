@@ -315,6 +315,9 @@ func _spawn_sprint_dust() -> void:
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	mat.albedo_color = Color(0.7, 0.68, 0.6, 0.4)
+	mat.emission_enabled = true
+	mat.emission = Color(0.55, 0.5, 0.4)
+	mat.emission_energy_multiplier = 0.4
 	p.material_override = mat
 	host.add_child(p)
 	var back := -facing
