@@ -9,7 +9,7 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 ## 2026-09-15 ~continuação loop
 
 ### Alteração
-- v0.5.6: Eco double-hit fix; virus single-hit; 3-hit combo; enrage telegraphs; arena clear juice; mark vignette; gate milestone sparks.
+- v0.5.7: Eco/virus double-hit fixes; roll i-frames; enrage FOV; investida toast; camera blends; caramel toast dedupe; phase2 juice.
 
 ### Testes
 - Hub headless EXIT 0 (cada ciclo)
