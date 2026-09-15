@@ -26,7 +26,7 @@ func setup(color: Color = Color(1.0, 0.85, 0.35), scale_u: float = 1.0) -> void:
 	tw.tween_property(mesh, "scale", Vector3.ONE * 2.4, 0.11)
 	tw.tween_property(light, "light_energy", 0.0, 0.2)
 	# Fragmentos voando pra fora
-	for i in 8:
+	for i in 10:
 		var shard := MeshInstance3D.new()
 		var box := BoxMesh.new()
 		box.size = Vector3(0.05, 0.05, 0.22) * scale_u
@@ -42,6 +42,6 @@ func setup(color: Color = Color(1.0, 0.85, 0.35), scale_u: float = 1.0) -> void:
 		shard.position = dir * 0.08
 		# Basis local — evita look_at com nó fora da árvore / coords erradas
 		shard.basis = Basis.looking_at(dir, Vector3.UP)
-		tw.tween_property(shard, "position", dir * randf_range(0.5, 1.05) * scale_u, 0.2)
-		tw.tween_property(shard, "scale", Vector3.ZERO, 0.2)
+		tw.tween_property(shard, "position", dir * randf_range(0.55, 1.2) * scale_u, 0.22)
+		tw.tween_property(shard, "scale", Vector3.ZERO, 0.22)
 	tw.chain().tween_callback(queue_free)
