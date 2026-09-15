@@ -1538,19 +1538,19 @@ func _spawn_weapon_trail() -> void:
 		return
 	var p := MeshInstance3D.new()
 	var sm := SphereMesh.new()
-	sm.radius = 0.085 if state == State.ATTACK_HEAVY else 0.065
+	sm.radius = 0.1 if state == State.ATTACK_HEAVY else 0.075
 	sm.height = sm.radius * 2.0
 	p.mesh = sm
 	var mat := StandardMaterial3D.new()
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	var col := Color(1.0, 0.55, 0.25, 0.68) if state == State.ATTACK_HEAVY else Color(1.0, 0.9, 0.45, 0.62)
+	var col := Color(1.0, 0.55, 0.25, 0.75) if state == State.ATTACK_HEAVY else Color(1.0, 0.9, 0.45, 0.7)
 	if state == State.ATTACK_LIGHT and _combo_step >= 1:
-		col = Color(1.0, 0.7, 0.3, 0.65).lerp(Color(1.0, 0.45, 0.2, 0.75), clampf(float(_combo_step) / 2.0, 0.0, 1.0))
+		col = Color(1.0, 0.7, 0.3, 0.72).lerp(Color(1.0, 0.45, 0.2, 0.8), clampf(float(_combo_step) / 2.0, 0.0, 1.0))
 	mat.albedo_color = col
 	mat.emission_enabled = true
 	mat.emission = Color(col.r, col.g, col.b)
-	mat.emission_energy_multiplier = 2.4 if state == State.ATTACK_HEAVY else 1.9
+	mat.emission_energy_multiplier = 3.0 if state == State.ATTACK_HEAVY else 2.3
 	p.material_override = mat
 	host.add_child(p)
 	p.global_position = weapon_visual.global_position

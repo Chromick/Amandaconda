@@ -392,10 +392,10 @@
 
   "chefes": {
     "luanevil": {
-      "vida": 340,
+      "vida": 350,
       "nome": "LUANEVIL",
       "local": "Bandejão",
-      "bytes": [180, 270],
+      "bytes": [190, 280],
       "velocidade": 3.85,
       "dano_leve": 17,
       "dano_pesado": 31,
