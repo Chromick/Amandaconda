@@ -62,6 +62,7 @@ func _refresh() -> void:
 			if typeof(HitFeel) != TYPE_NIL:
 				HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.45, 1.0, 0.6), 1.2)
 				HitFeel.shake(0.15)
+				HitFeel.kick_fov(4.0, 0.18)
 			_fade_mesh_out()
 		else:
 			mesh.visible = false
@@ -91,8 +92,11 @@ func _fade_mesh_out() -> void:
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.albedo_color.a = 1.0
 	var tw := create_tween()
+	tw.set_parallel(true)
 	tw.tween_property(mat, "albedo_color:a", 0.0, 0.55)
-	tw.tween_callback(func():
+	tw.tween_property(mesh, "scale", Vector3(1.05, 0.05, 1.05), 0.55)
+	tw.chain().tween_callback(func():
 		if is_instance_valid(mesh):
 			mesh.visible = false
+			mesh.scale = Vector3.ONE
 	)
