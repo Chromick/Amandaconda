@@ -6,6 +6,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.6.0+
+
+### Alteração
+- FOV dedupe/fixes; toast colors; snappier lights; campus props; always-spark hits; emissive flash; ending kicks.
+
+### Testes
+- Hub headless EXIT 0 (cada ciclo; parse fix verify)
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.6.0
 
 ### Alteração

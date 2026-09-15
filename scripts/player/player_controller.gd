@@ -1248,9 +1248,7 @@ func _cast_eco() -> void:
 	_set_mesh_color(Color(0.55, 0.85, 1.0))
 	_spawn_eco_telegraph()
 	HitFeel.spark_at(_eco_pos + Vector3(0, 0.5, 0), Color(0.5, 0.9, 1.0))
-	for cam in get_tree().get_nodes_in_group("player_camera"):
-		if cam and cam.has_method("punch_fov"):
-			cam.punch_fov(3.5)
+	HitFeel.kick_fov(3.5, 0.12)
 	GameState.show_toast("Eco…")
 
 
