@@ -1053,6 +1053,9 @@ func _process_healing(delta: float) -> void:
 	_heal_timer -= delta
 	velocity.x = 0.0
 	velocity.z = 0.0
+	# Ping visual enquanto bebe.
+	if fmod(_heal_timer, 0.28) < delta and typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(global_position + Vector3.UP * (1.0 + randf() * 0.4), Color(0.45, 1.0, 0.55), 0.35)
 	if _heal_timer <= 0.0:
 		var amount := float(Balance.data.get("cura", {}).get("cura", 45))
 		heal(amount)
