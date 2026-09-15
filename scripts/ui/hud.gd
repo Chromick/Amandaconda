@@ -343,10 +343,12 @@ func _on_hacks() -> void:
 
 func _refresh_meta(_a: Variant = null) -> void:
 	if meta_label:
-		meta_label.text = "Latas %d/%d · %d KB · Fis%d Esp%d · Base %d/3" % [
+		meta_label.text = "Latas %d/%d · %d KB · Fis%d Esp%d · Base %d/3 · Patch %d/%d" % [
 			GameState.heals, GameState.max_heals, GameState.bytes,
 			GameState.fisico_level, GameState.especial_level,
 			GameState.base_bosses_cleared(),
+			GameState.active_patches.size(),
+			int(Balance.data.get("patches", {}).get("slots", 4)),
 		]
 
 
