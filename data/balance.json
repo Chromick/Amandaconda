@@ -122,9 +122,9 @@
   "camera": {
     "distance": 4.0,
     "height": 1.85,
-    "fov": 78.0,
-    "min_pitch": -45.0,
-    "max_pitch": 62.0,
+    "fov": 79.0,
+    "min_pitch": -46.0,
+    "max_pitch": 64.0,
     "sensitivity": 0.185,
     "follow_speed": 22.0,
     "lock_on_distance": 32.0,
@@ -173,11 +173,11 @@
 
   "portara": {
     "vida": 70,
-    "velocidade": 2.15,
-    "aggro": 9.5,
-    "leash": 15.5,
-    "deaggro": 19.5,
-    "intervalo": 1.55,
+    "velocidade": 2.25,
+    "aggro": 9.8,
+    "leash": 16.0,
+    "deaggro": 20.0,
+    "intervalo": 1.5,
     "preparacao": 0.5,
     "acerto": 0.14,
     "recuperacao": 0.7,
@@ -204,12 +204,12 @@
     "mark_duration": 4.2,
     "mark_speed_mult": 0.64,
     "renascer_em": 4.5,
-    "bytes": [52, 84]
+    "bytes": [56, 88]
   },
 
   "cura": {
-    "latas": 6,
-    "cura": 70,
+    "latas": 7,
+    "cura": 72,
     "tempo_uso": 0.48,
     "safezone_regen": 62.0,
     "safezone_latas": true
