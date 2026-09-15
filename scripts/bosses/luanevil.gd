@@ -166,6 +166,10 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 		var hud := get_tree().get_first_node_in_group("hud")
 		if hud and hud.has_method("flash_danger"):
 			hud.flash_danger()
+		for cam in get_tree().get_nodes_in_group("player_camera"):
+			if cam and cam.has_method("punch_fov"):
+				cam.punch_fov(5.0)
+				break
 
 
 func _physics_process(delta: float) -> void:
