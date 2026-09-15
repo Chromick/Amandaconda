@@ -1231,8 +1231,13 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 			HitFeel.punch()
 			HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(1.0, 0.85, 0.35), 1.4)
 			HitFeel.spark_at(source.global_position + Vector3.UP * 1.1, Color(1.0, 0.5, 0.2), 1.1)
+			HitFeel.shake(0.22)
 			GameState.show_toast("Espelho!")
 			_ability_cd = maxf(_ability_cd, 1.2)
+			for cam in get_tree().get_nodes_in_group("player_camera"):
+				if cam and cam.has_method("punch_fov"):
+					cam.punch_fov(5.0)
+					break
 		return
 	if is_invulnerable():
 		return
