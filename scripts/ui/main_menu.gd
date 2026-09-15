@@ -57,10 +57,12 @@ func _fill_version() -> void:
 
 
 func _on_fisico_pressed() -> void:
+	GameState.show_toast("Escola Físico · Teclado")
 	GameState.start_run(GameState.WeaponSchool.TECLADO)
 
 
 func _on_especial_pressed() -> void:
+	GameState.show_toast("Escola Especial · Vírus")
 	GameState.start_run(GameState.WeaponSchool.VIRUS)
 
 
