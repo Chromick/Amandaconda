@@ -310,13 +310,13 @@
       "vida": 240,
       "nome": "RENANLIGNO",
       "local": "Laboratório",
-      "bytes": [120, 180]
+      "bytes": [140, 200]
     },
     "balarrals": {
       "vida": 220,
       "nome": "BALARRALS",
       "local": "Pátio",
-      "bytes": [100, 160],
+      "bytes": [120, 180],
       "dano_leve": 14,
       "dano_pesado": 28,
       "velocidade": 5.8
