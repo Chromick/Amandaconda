@@ -208,7 +208,7 @@ func _ensure_vignette() -> void:
 
 
 func _welcome() -> void:
-	_show_toast("Univassouras · noite no campus · siga as luzes")
+	_show_toast("Univassouras · %s · siga as luzes" % GameState.school_label())
 
 
 func _rotate_hint(reset: bool) -> void:
