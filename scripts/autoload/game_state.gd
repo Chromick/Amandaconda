@@ -202,6 +202,10 @@ func unlock_ability(ability_id: String, toast_msg: String = "") -> void:
 	if player and typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(player.global_position + Vector3.UP * 1.3, Color(0.55, 1.0, 0.75), 1.2)
 		HitFeel.shake(0.18)
+		HitFeel.kick_fov(4.5, 0.16)
+	var hud := get_tree().get_first_node_in_group("hud")
+	if hud and hud.has_method("pulse_heal"):
+		hud.pulse_heal()
 
 
 func cycle_ability() -> void:

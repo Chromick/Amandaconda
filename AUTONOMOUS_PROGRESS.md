@@ -6,6 +6,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.6.1
+
+### Alteração
+- v0.6.1: HitFeel FOV routing; fan spin; lab monitor glow; safezone sign; roll/camera/hitstop balance; low-HP labels; FOV dedupe fixes.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.6.0+
 
 ### Alteração
