@@ -22,19 +22,19 @@
     "stamina_regen": 125,
     "stamina_regen_delay": 0.09,
 
-    "walk_speed": 7.9,
-    "run_speed": 13.0,
-    "ground_accel": 44.0,
-    "ground_friction": 50.0,
-    "air_accel": 24.0,
-    "air_friction": 7.2,
+    "walk_speed": 8.05,
+    "run_speed": 13.25,
+    "ground_accel": 46.0,
+    "ground_friction": 52.0,
+    "air_accel": 25.0,
+    "air_friction": 7.0,
 
     "gravity": 24.0,
     "max_fall_speed": 33.0,
     "jump_velocity": 10.7,
     "jump_cut_multiplier": 0.4,
-    "coyote_time": 0.32,
-    "jump_buffer": 0.38,
+    "coyote_time": 0.34,
+    "jump_buffer": 0.4,
 
     "turn_speed": 23.0,
     "attack_move_mult": 0.34,
@@ -209,9 +209,9 @@
 
   "cura": {
     "latas": 14,
-    "cura": 110,
-    "tempo_uso": 0.3,
-    "safezone_regen": 110.0,
+    "cura": 115,
+    "tempo_uso": 0.28,
+    "safezone_regen": 120.0,
     "safezone_latas": true
   },
 

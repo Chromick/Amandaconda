@@ -119,13 +119,13 @@ func _process(delta: float) -> void:
 		if _vignette:
 			var ratio := clampf(1.0 - (_real_hp / (_real_max * 0.35)), 0.0, 1.0)
 			_vignette.color = Color(0.55, 0.05, 0.08, 1.0)
-			_vignette.color.a = (0.16 + 0.24 * pulse) * (0.55 + 0.45 * ratio)
+			_vignette.color.a = (0.2 + 0.28 * pulse) * (0.55 + 0.45 * ratio)
 	elif _player and is_instance_valid(_player) and _player.has_method("is_marked") and _player.is_marked():
 		if health_bar and _heal_pulse <= 0.0:
 			health_bar.modulate = Color.WHITE
 		if _vignette:
 			var mp := 0.6 + 0.4 * sin(Time.get_ticks_msec() * 0.009)
-			_vignette.color = Color(0.45, 0.15, 0.7, (0.1 + 0.14 * mp))
+			_vignette.color = Color(0.45, 0.15, 0.7, (0.12 + 0.16 * mp))
 	elif health_bar and _heal_pulse <= 0.0:
 		health_bar.modulate = Color.WHITE
 		if _vignette:

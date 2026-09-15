@@ -73,16 +73,16 @@ func _spawn_trail() -> void:
 		return
 	var p := MeshInstance3D.new()
 	var sm := SphereMesh.new()
-	sm.radius = 0.095
-	sm.height = 0.19
+	sm.radius = 0.11
+	sm.height = 0.22
 	p.mesh = sm
 	var mat := StandardMaterial3D.new()
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	mat.albedo_color = Color(0.4, 1.0, 0.55, 0.7)
+	mat.albedo_color = Color(0.4, 1.0, 0.55, 0.78)
 	mat.emission_enabled = true
 	mat.emission = Color(0.35, 1.0, 0.5)
-	mat.emission_energy_multiplier = 2.8
+	mat.emission_energy_multiplier = 3.4
 	p.material_override = mat
 	host.add_child(p)
 	p.global_position = global_position
