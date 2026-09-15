@@ -1456,22 +1456,23 @@ func _spawn_weapon_trail() -> void:
 		return
 	var p := MeshInstance3D.new()
 	var sm := SphereMesh.new()
-	sm.radius = 0.06
-	sm.height = 0.12
+	sm.radius = 0.07 if state == State.ATTACK_HEAVY else 0.055
+	sm.height = sm.radius * 2.0
 	p.mesh = sm
 	var mat := StandardMaterial3D.new()
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	mat.albedo_color = Color(1.0, 0.9, 0.45, 0.55)
+	var col := Color(1.0, 0.55, 0.25, 0.6) if state == State.ATTACK_HEAVY else Color(1.0, 0.9, 0.45, 0.55)
+	mat.albedo_color = col
 	mat.emission_enabled = true
-	mat.emission = Color(1.0, 0.85, 0.3)
-	mat.emission_energy_multiplier = 1.5
+	mat.emission = Color(col.r, col.g, col.b)
+	mat.emission_energy_multiplier = 1.8 if state == State.ATTACK_HEAVY else 1.5
 	p.material_override = mat
 	host.add_child(p)
 	p.global_position = weapon_visual.global_position
 	var tw := create_tween()
-	tw.tween_property(mat, "albedo_color:a", 0.0, 0.16)
-	tw.parallel().tween_property(p, "scale", Vector3.ONE * 0.2, 0.16)
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.18 if state == State.ATTACK_HEAVY else 0.16)
+	tw.parallel().tween_property(p, "scale", Vector3.ONE * 0.2, 0.18 if state == State.ATTACK_HEAVY else 0.16)
 	tw.tween_callback(p.queue_free)
 
 
