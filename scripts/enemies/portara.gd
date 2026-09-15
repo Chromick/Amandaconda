@@ -86,12 +86,14 @@ func _physics_process(delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0.0, 10.0 * delta)
 			_set_color(Color(0.95, 0.55, 0.25))
 			AttackTelegraphScript.set_active(_telegraph, true, false)
+			_tint_telegraph(false)
 			if _phase_t <= 0.0:
 				_phase = Phase.ACTIVE
 				_phase_t = float(_cfg.get("acerto", 0.14))
 				_hit_done = false
 				_hitbox.monitoring = true
 				AttackTelegraphScript.set_active(_telegraph, true, true)
+				_tint_telegraph(true)
 		Phase.ACTIVE:
 			_phase_t -= delta
 			velocity = Vector3.ZERO
@@ -165,8 +167,20 @@ func _ai_chase(delta: float) -> void:
 		_phase_t = float(_cfg.get("preparacao", 0.5)) * (0.7 if _enraged else 1.0)
 		velocity = Vector3.ZERO
 		AttackTelegraphScript.set_active(_telegraph, true, false)
+		_tint_telegraph(false)
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.shake(0.08)
+
+
+func _tint_telegraph(flash: bool) -> void:
+	if _telegraph == null or not _enraged:
+		return
+	var mat := _telegraph.material_override as StandardMaterial3D
+	if mat == null:
+		return
+	mat.albedo_color = Color(1.0, 0.25, 0.15, 0.6 if flash else 0.4)
+	mat.emission = Color(1.0, 0.3, 0.1)
+	mat.emission_energy_multiplier = 3.0 if flash else 2.0
 
 
 func _on_hit_body(body: Node3D) -> void:
