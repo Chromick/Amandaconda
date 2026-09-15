@@ -24,6 +24,7 @@ enum State { MOVE, ROLL, ATTACK_LIGHT, ATTACK_HEAVY, HIT, HEALING, DEAD }
 
 var _visual = null
 var _atk_telegraph: MeshInstance3D
+var _virus_charge_fx: MeshInstance3D
 var _lock_marker: MeshInstance3D
 var _roll_ghost_timer: float = 0.0
 
@@ -59,6 +60,7 @@ var _mark_mult: float = 1.0
 var _heal_timer: float = 0.0
 var _spawn_pos: Vector3
 var _ability_cd: float = 0.0
+var _ability_cd_toast_cd: float = 0.0
 var _eco_pending: bool = false
 var _eco_pos: Vector3 = Vector3.ZERO
 var _eco_timer: float = 0.0
@@ -377,11 +379,14 @@ func _process_move(delta: float) -> void:
 			var max_c := float(_heavy.get("carga_maxima", 0.7))
 			var t := clampf(heavy_held / max_c, 0.0, 1.0)
 			_set_mesh_color(Color(1.0, 0.7 - t * 0.35, 0.35 - t * 0.2))
-			if not _is_ranged():
+			if _is_ranged():
+				_sync_virus_charge_telegraph(t)
+			else:
 				_sync_charge_telegraph(t)
 		else:
 			heavy_charging = false
 			_sync_atk_telegraph(false, false)
+			_clear_virus_charge_telegraph()
 			_try_heavy(heavy_held)
 			return
 
@@ -419,6 +424,7 @@ func _try_roll(dir: Vector3) -> void:
 	_spend_stamina(cost)
 	heavy_charging = false
 	_sync_atk_telegraph(false, false)
+	_clear_virus_charge_telegraph()
 	_clear_attack_meta()
 	attack_area.monitoring = false
 	state = State.ROLL
@@ -476,6 +482,7 @@ func _try_heavy(held: float) -> void:
 	if not _require_stamina(cost):
 		_set_mesh_color(_default_color)
 		_sync_atk_telegraph(false, false)
+		_clear_virus_charge_telegraph()
 		return
 	_spend_stamina(cost)
 	_sprint_attack = false
@@ -486,6 +493,7 @@ func _try_heavy(held: float) -> void:
 	_hit_targets.clear()
 	attack_area.monitoring = false
 	_clear_attack_meta()
+	_clear_virus_charge_telegraph()
 	if not _is_ranged():
 		_update_attack_shape(float(_heavy.get("alcance", 1.6)), float(_heavy.get("altura", 1.3)))
 	_set_mesh_color(Color(1.0, 0.45, 0.25))
@@ -567,6 +575,8 @@ func _process_attack(delta: float) -> void:
 				_combo_step += 1
 				_combo_window = float(_cfg.get("combo_janela", 0.45))
 				state = State.MOVE
+				if _combo_step >= 1:
+					GameState.show_toast("Combo %d!" % (_combo_step + 1))
 				_try_light()
 			else:
 				if state == State.ATTACK_LIGHT:
@@ -709,6 +719,24 @@ func _sync_charge_telegraph(charge_t: float) -> void:
 		(_atk_telegraph.mesh as BoxMesh).size = Vector3(0.7, altura, maxf(alcance, 0.3))
 	_atk_telegraph.position = Vector3(0.0, 0.9, 0.0) + facing * (alcance * 0.55)
 	AttackTelegraphScript.set_active(_atk_telegraph, true, charge_t >= 0.85)
+
+
+func _sync_virus_charge_telegraph(charge_t: float) -> void:
+	facing = _aim_dir()
+	if _virus_charge_fx == null:
+		_virus_charge_fx = AttackTelegraphScript.make_sphere(
+			self, 0.35, Vector3(0, 1.15, 0.55), Color(0.4, 1.0, 0.55, 0.4)
+		)
+	var r := lerpf(0.28, 0.55, charge_t)
+	if _virus_charge_fx.mesh is SphereMesh:
+		(_virus_charge_fx.mesh as SphereMesh).radius = r
+		(_virus_charge_fx.mesh as SphereMesh).height = r * 2.0
+	_virus_charge_fx.position = Vector3(0, 1.15, 0) + facing * 0.7
+	AttackTelegraphScript.set_active(_virus_charge_fx, true, charge_t >= 0.85)
+
+
+func _clear_virus_charge_telegraph() -> void:
+	AttackTelegraphScript.set_active(_virus_charge_fx, false)
 
 
 func _update_attack_shape(alcance: float, altura: float) -> void:
@@ -886,6 +914,8 @@ func _respawn() -> void:
 func _tick_ability(delta: float) -> void:
 	if _ability_cd > 0.0:
 		_ability_cd -= delta
+	if _ability_cd_toast_cd > 0.0:
+		_ability_cd_toast_cd -= delta
 	if _eco_pending:
 		_eco_timer -= delta
 		if _eco_telegraph != null and is_instance_valid(_eco_telegraph):
@@ -902,7 +932,9 @@ func _try_ability() -> void:
 		GameState.show_toast("Sem habilidade equipada")
 		return
 	if _ability_cd > 0.0:
-		GameState.show_toast("%s em recarga · %.1fs" % [GameState.ability_label(), _ability_cd])
+		if _ability_cd_toast_cd <= 0.0:
+			GameState.show_toast("%s em recarga · %.1fs" % [GameState.ability_label(), _ability_cd])
+			_ability_cd_toast_cd = 0.85
 		return
 	match GameState.equipped_ability:
 		GameState.ABILITY_CARAMELO:

@@ -29,6 +29,7 @@ var _fade: ColorRect
 var _flash: ColorRect
 var _heal_pulse: float = 0.0
 var _stamina_flash: float = 0.0
+var _meta_flash: float = 0.0
 var _hint_timer: float = 0.0
 var _hint_index: int = 0
 
@@ -73,6 +74,12 @@ func _process(delta: float) -> void:
 		stamina_bar.modulate = Color(1.0, 0.35, 0.25).lerp(Color.WHITE, 1.0 - s)
 		if _stamina_flash <= 0.0:
 			stamina_bar.modulate = Color.WHITE
+	if _meta_flash > 0.0 and meta_label:
+		_meta_flash -= delta
+		var m := clampf(_meta_flash / 0.4, 0.0, 1.0)
+		meta_label.modulate = Color(1.0, 0.92, 0.45).lerp(Color.WHITE, 1.0 - m)
+		if _meta_flash <= 0.0:
+			meta_label.modulate = Color.WHITE
 	_hint_timer -= delta
 	if _hint_timer <= 0.0:
 		_rotate_hint(false)
@@ -248,6 +255,7 @@ func _on_weapon(_weapon_id: String) -> void:
 
 func _on_bytes(_total: int = 0) -> void:
 	_refresh_meta()
+	_meta_flash = 0.4
 
 
 func _on_heals(_c: int = 0, _m: int = 0) -> void:

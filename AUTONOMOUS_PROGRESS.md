@@ -6,6 +6,32 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~07:38 BRT
+
+### Alteração
+- HUD: flash dourado na linha de meta ao ganhar KB.
+- Toast `Combo N!` ao encadear leve.
+- Carga vírus: esfera-telegraph que cresce (escola Especial).
+- Toast de CD de habilidade com debounce 0.85s (anti-spam).
+- Versão do projeto → **0.4.1**.
+
+### Arquivos modificados
+- `scripts/ui/hud.gd`
+- `scripts/player/player_controller.gd`
+- `project.godot`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Menu + hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar polish combate / revisar avisos restantes
+
+---
+
 ## 2026-09-15 ~07:30 BRT
 
 ### Alteração
