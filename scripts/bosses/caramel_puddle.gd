@@ -8,6 +8,7 @@ var _mesh: MeshInstance3D
 var _mat: StandardMaterial3D
 var _pulse: float = 0.0
 var _expiring: bool = false
+var _toasted_player: bool = false
 
 
 func setup(radius: float, duration: float, slow: float) -> void:
@@ -78,7 +79,8 @@ func _on_enter(body: Node3D) -> void:
 		_bodies.append(body)
 	if body.has_method("set_ground_slow"):
 		body.set_ground_slow(slow_mult)
-		if body.is_in_group("player"):
+		if body.is_in_group("player") and not _toasted_player:
+			_toasted_player = true
 			GameState.show_toast("Caramelo · movimento lento")
 	elif body.is_in_group("enemy") or body.is_in_group("boss"):
 		body.set_meta("ground_slow", slow_mult)
