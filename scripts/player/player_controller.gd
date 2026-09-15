@@ -590,15 +590,8 @@ func _try_sprint_attack(dir: Vector3) -> void:
 		_update_attack_shape(float(_heavy.get("alcance", 1.6)), float(_heavy.get("altura", 1.3)))
 	_set_mesh_color(Color(1.0, 0.4, 0.2))
 	GameState.show_toast("Investida!")
-	for cam in get_tree().get_nodes_in_group("player_camera"):
-		if cam and cam.has_method("punch_fov"):
-			cam.punch_fov(3.5)
-			break
 	_pulse_weapon(Color(1.0, 0.35, 0.15))
-	for cam in get_tree().get_nodes_in_group("player_camera"):
-		if cam and cam.has_method("punch_fov"):
-			cam.punch_fov(4.0)
-			break
+	HitFeel.kick_fov(4.0, 0.12)
 
 
 func _try_roll(dir: Vector3) -> void:
@@ -785,10 +778,8 @@ func _process_attack(delta: float) -> void:
 						var hud := get_tree().get_first_node_in_group("hud")
 						if hud and hud.has_method("pulse_combo_finisher"):
 							hud.pulse_combo_finisher()
-					for cam in get_tree().get_nodes_in_group("player_camera"):
-						if cam and cam.has_method("punch_fov"):
-							cam.punch_fov(4.0 if finisher else 2.5)
-							break
+					elif typeof(HitFeel) != TYPE_NIL:
+						HitFeel.kick_fov(2.5, 0.1)
 				_try_light()
 			else:
 				if state == State.ATTACK_LIGHT:
@@ -1235,9 +1226,6 @@ func _cast_caramelo() -> void:
 	HitFeel.spark_at(pos + Vector3(0, 0.4, 0), Color(1.0, 0.7, 0.25))
 	HitFeel.kick_fov(4.5, 0.14)
 	HitFeel.shake(0.1)
-	for cam in get_tree().get_nodes_in_group("player_camera"):
-		if cam and cam.has_method("punch_fov"):
-			cam.punch_fov(4.0)
 	GameState.show_toast("Caramelo!")
 	var tw := create_tween()
 	tw.tween_interval(0.25)
