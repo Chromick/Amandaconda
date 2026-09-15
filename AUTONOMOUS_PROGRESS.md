@@ -21,6 +21,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Continuar até o usuário parar
 
 ---
+## 2026-09-15 ~loop v1.0.0
+
+### Alteração
+- Milestone 1.0.0: HP170; 12 slots; Marlon/Amanda finales.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.9.9
 
 ### Alteração
