@@ -186,6 +186,10 @@ func unlock_ability(ability_id: String, toast_msg: String = "") -> void:
 		show_toast(toast_msg)
 	else:
 		show_toast("Habilidade desbloqueada: %s" % ability_label(ability_id))
+	var player := get_tree().get_first_node_in_group("player")
+	if player and typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(player.global_position + Vector3.UP * 1.3, Color(0.55, 1.0, 0.75), 1.2)
+		HitFeel.shake(0.18)
 
 
 func cycle_ability() -> void:
