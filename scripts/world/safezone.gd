@@ -70,6 +70,8 @@ func _physics_process(delta: float) -> void:
 		mat.albedo_color.a = base_a + sin(_pulse * 3.5) * 0.06
 		mat.emission_energy_multiplier = (1.8 if active else 1.0) + sin(_pulse * 4.0) * 0.25
 		_ring.rotation.y = _pulse * 0.4
+		var s := 1.08 if active else 1.0
+		_ring.scale = _ring.scale.lerp(Vector3(s, 1.0, s), clampf(3.0 * delta, 0.0, 1.0))
 	if _light:
 		var active_l := _player_inside != null and is_instance_valid(_player_inside)
 		var target_e := 1.8 if active_l else 0.55
