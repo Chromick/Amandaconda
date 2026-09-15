@@ -391,6 +391,9 @@ func _spawn_gameplay() -> void:
 	_spawn(BYTES, Vector3(0, 0.6, 22))
 	_spawn(BYTES, Vector3(-4, 0.6, 20))
 	_spawn(BYTES, Vector3(4, 0.6, 20))
+	_spawn(BYTES, Vector3(-24, 0.6, 10))
+	_spawn(BYTES, Vector3(14, 0.6, -30))
+	_spawn(BYTES, Vector3(-14, 0.6, -30))
 	_spawn(BYTES, Vector3(-18, 0.6, 14))
 	_spawn(BYTES, Vector3(18, 0.6, 12))
 	_spawn(BYTES, Vector3(-10, 0.6, -4))
@@ -883,7 +886,7 @@ func _spawn_night_stars() -> void:
 	stars.name = "NightStars"
 	stars.set_script(preload("res://scripts/world/star_field.gd"))
 	rooms_root.add_child(stars)
-	for i in 190:
+	for i in 210:
 		var star := MeshInstance3D.new()
 		var sm := SphereMesh.new()
 		sm.radius = randf_range(0.08, 0.22)
