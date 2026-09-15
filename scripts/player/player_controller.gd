@@ -1202,7 +1202,7 @@ func _cast_caramelo() -> void:
 	if not _require_stamina(20.0):
 		return
 	_spend_stamina(20.0)
-	_ability_cd = 6.0
+	_ability_cd = 5.5
 	var puddle := PUDDLE_SCENE.instantiate()
 	var pos := global_position + facing * 1.2 + Vector3(0, 0.05, 0)
 	if not SceneUtil.add_to_world(puddle, self, pos):
@@ -1225,7 +1225,7 @@ func _cast_eco() -> void:
 	if not _require_stamina(22.0):
 		return
 	_spend_stamina(22.0)
-	_ability_cd = 5.0
+	_ability_cd = 4.5
 	_eco_pending = true
 	_eco_timer = 0.42
 	_eco_pos = global_position + facing * 2.2

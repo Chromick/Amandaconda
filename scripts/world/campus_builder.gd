@@ -93,6 +93,7 @@ func _build_white_fence() -> void:
 	lab.outline_modulate = Color(0, 0, 0, 0.9)
 	lab.position = Vector3(0, 3.4, z + 0.2)
 	rooms_root.add_child(lab)
+	_add_room_light(Vector3(0, 3.2, z + 0.5), Color(0.85, 0.35, 0.4), 2.2, 6.0)
 
 
 func _build_facade_univassouras() -> void:
