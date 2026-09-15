@@ -362,6 +362,8 @@ func _show_toast(message: String) -> void:
 		toast_label.modulate = Color(0.85, 0.55, 1.0)
 	elif message.find("liberado") >= 0 or message.find("3/3") >= 0 or message.find("SESSION") >= 0:
 		toast_label.modulate = Color(0.55, 1.0, 0.7)
+	elif message.find("Cura") >= 0 or message.find("lata") >= 0 or message.find("Safezone") >= 0:
+		toast_label.modulate = Color(0.55, 1.0, 0.7)
 	elif message.find("Vigor") >= 0 or message.find("recarga") >= 0:
 		toast_label.modulate = Color(1.0, 0.75, 0.4)
 	toast_label.modulate.a = 1.0
