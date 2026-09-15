@@ -575,6 +575,8 @@ func _way_sign(pos: Vector3, text: String, color: Color) -> void:
 	lab.text = text
 	lab.font_size = 36
 	lab.modulate = color
+	lab.outline_size = 8
+	lab.outline_modulate = Color(0, 0, 0, 0.85)
 	lab.position = pos + Vector3(0, 0, 0.08)
 	rooms_root.add_child(lab)
 	var light := OmniLight3D.new()
