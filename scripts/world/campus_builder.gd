@@ -490,10 +490,10 @@ func _spawn_night_stars() -> void:
 	stars.name = "NightStars"
 	stars.set_script(preload("res://scripts/world/star_field.gd"))
 	rooms_root.add_child(stars)
-	for i in 55:
+	for i in 75:
 		var star := MeshInstance3D.new()
 		var sm := SphereMesh.new()
-		sm.radius = randf_range(0.08, 0.2)
+		sm.radius = randf_range(0.08, 0.22)
 		sm.height = sm.radius * 2.0
 		star.mesh = sm
 		var mat := StandardMaterial3D.new()
@@ -561,6 +561,7 @@ func _way_sign(pos: Vector3, text: String, color: Color) -> void:
 	lab.position = pos + Vector3(0, 0, 0.08)
 	rooms_root.add_child(lab)
 	var light := OmniLight3D.new()
+	light.set_script(preload("res://scripts/world/light_flicker.gd"))
 	light.light_color = color
 	light.light_energy = 0.85
 	light.omni_range = 3.5
