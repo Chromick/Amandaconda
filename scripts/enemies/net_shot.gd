@@ -25,12 +25,12 @@ func setup(cfg: Dictionary, dir: Vector3, from: Node) -> void:
 		mat.albedo_color = Color(0.95, 0.3, 0.9)
 		mat.emission_enabled = true
 		mat.emission = Color(0.9, 0.2, 0.85)
-		mat.emission_energy_multiplier = 2.6
+		mat.emission_energy_multiplier = 3.2
 		mesh.material_override = mat
 	var light := OmniLight3D.new()
 	light.light_color = Color(0.95, 0.35, 0.9)
-	light.light_energy = 2.4
-	light.omni_range = 3.8
+	light.light_energy = 2.8
+	light.omni_range = 4.2
 	add_child(light)
 
 

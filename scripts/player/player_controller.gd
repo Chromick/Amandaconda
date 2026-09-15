@@ -277,7 +277,7 @@ func _spawn_land_dust() -> void:
 	if host == null:
 		return
 	var impact := clampf(absf(_air_vy) / 14.0, 0.55, 1.6)
-	var count := 7 if impact < 1.1 else 11
+	var count := 9 if impact < 1.1 else 14
 	for i in count:
 		var p := MeshInstance3D.new()
 		var sm := SphereMesh.new()
@@ -306,7 +306,7 @@ func _spawn_sprint_dust() -> void:
 	var host := get_tree().current_scene
 	if host == null:
 		return
-	for i in 3:
+	for i in 4:
 		var p := MeshInstance3D.new()
 		var sm := SphereMesh.new()
 		sm.radius = 0.055
@@ -327,7 +327,7 @@ func _spawn_sprint_dust() -> void:
 			back = Vector3.BACK
 		else:
 			back = back.normalized()
-		var side := Vector3(-back.z, 0.0, back.x) * (0.18 if i == 0 else -0.18)
+		var side := Vector3(-back.z, 0.0, back.x) * (0.14 + 0.1 * float(i)) * (1.0 if i % 2 == 0 else -1.0)
 		p.global_position = global_position + Vector3(0, 0.06, 0) + back * 0.25 + side
 		var tw := create_tween()
 		tw.tween_property(p, "global_position", p.global_position + back * 0.4 + Vector3.UP * 0.15, 0.22)

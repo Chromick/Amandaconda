@@ -314,6 +314,9 @@ func _build_interior_hub() -> void:
 	_street_lamp(Vector3(28, 0, -4))
 	_street_lamp(Vector3(-22, 0, 16))
 	_street_lamp(Vector3(22, 0, 14))
+	_street_lamp(Vector3(-30, 0, 4))
+	_street_lamp(Vector3(30, 0, 4))
+	_street_lamp(Vector3(0, 0, -34))
 
 	# Guarda gaps para spawn (via meta no builder)
 	set_meta("gaps_bandejao", gaps_bandejao)
@@ -902,7 +905,7 @@ func _spawn_night_stars() -> void:
 	stars.name = "NightStars"
 	stars.set_script(preload("res://scripts/world/star_field.gd"))
 	rooms_root.add_child(stars)
-	for i in 350:
+	for i in 370:
 		var star := MeshInstance3D.new()
 		var sm := SphereMesh.new()
 		sm.radius = randf_range(0.08, 0.22)

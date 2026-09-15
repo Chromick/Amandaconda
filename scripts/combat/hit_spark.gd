@@ -13,20 +13,20 @@ func setup(color: Color = Color(1.0, 0.85, 0.35), scale_u: float = 1.0) -> void:
 	mat.albedo_color = color
 	mat.emission_enabled = true
 	mat.emission = color
-	mat.emission_energy_multiplier = 5.0
+	mat.emission_energy_multiplier = 5.8
 	mesh.material_override = mat
 	add_child(mesh)
 	var light := OmniLight3D.new()
 	light.light_color = color
-	light.light_energy = 3.6 * scale_u
-	light.omni_range = 3.6 * scale_u
+	light.light_energy = 4.0 * scale_u
+	light.omni_range = 4.0 * scale_u
 	add_child(light)
 	var tw := create_tween()
 	tw.set_parallel(true)
-	tw.tween_property(mesh, "scale", Vector3.ONE * 2.8, 0.12)
-	tw.tween_property(light, "light_energy", 0.0, 0.22)
+	tw.tween_property(mesh, "scale", Vector3.ONE * 3.1, 0.11)
+	tw.tween_property(light, "light_energy", 0.0, 0.24)
 	# Fragmentos voando pra fora
-	for i in 16:
+	for i in 20:
 		var shard := MeshInstance3D.new()
 		var box := BoxMesh.new()
 		box.size = Vector3(0.05, 0.05, 0.22) * scale_u
