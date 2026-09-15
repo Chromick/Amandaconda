@@ -251,7 +251,7 @@ func _update_land_fx() -> void:
 		_land_dust_cd = 0.2
 		_spawn_land_dust()
 		var impact := absf(_air_vy)
-		if typeof(HitFeel) != TYPE_NIL and impact > 5.5:
+		if typeof(HitFeel) != TYPE_NIL and impact > 4.5:
 			HitFeel.shake(clampf(impact * 0.018, 0.06, 0.32))
 			for cam in get_tree().get_nodes_in_group("player_camera"):
 				if cam and cam.has_method("punch_fov"):
