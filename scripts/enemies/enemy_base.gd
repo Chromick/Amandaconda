@@ -202,14 +202,16 @@ func _die() -> void:
 	_set_color(Color(0.2, 0.2, 0.22))
 	if label:
 		label.text = "KO"
+		label.modulate = Color(1.0, 0.55, 0.35)
 	visible = true
 	# Desliga colisão enquanto morto.
 	$CollisionShape3D.disabled = true
 	if typeof(HitFeel) != TYPE_NIL:
-		HitFeel.spark_at(global_position + Vector3.UP * 1.0, Color(1.0, 0.45, 0.3), 1.15)
-		HitFeel.spark_at(global_position + Vector3.UP * 0.4, Color(1.0, 0.7, 0.25), 0.75)
-		HitFeel.shake(0.22)
-		HitFeel.kick_fov(3.2, 0.12)
+		HitFeel.spark_at(global_position + Vector3.UP * 1.0, Color(1.0, 0.45, 0.3), 1.35)
+		HitFeel.spark_at(global_position + Vector3.UP * 0.4, Color(1.0, 0.7, 0.25), 0.9)
+		HitFeel.shake(0.28)
+		HitFeel.kick_fov(4.2, 0.14)
+		HitFeel.kill_punch(0.12)
 	var delay := float(_cfg.get("renascer_em", 0.0))
 	if delay > 0.0:
 		_revive_timer = delay
