@@ -19,6 +19,9 @@ func _process(delta: float) -> void:
 	if title:
 		var a := 0.88 + sin(_title_pulse * 1.6) * 0.12
 		title.modulate = Color(a, a, 1.0)
+	var sub := get_node_or_null("Center/Subtitle") as Label
+	if sub:
+		sub.modulate.a = 0.75 + sin(_title_pulse * 1.1) * 0.15
 
 
 func _style_night() -> void:
