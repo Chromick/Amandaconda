@@ -76,16 +76,16 @@
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
-          "preparacao": 0.18,
-          "carga_maxima": 0.58,
-          "acerto": 0.075,
-          "recuperacao": 0.26,
-          "dano": 36,
-          "dano_carregado": 64,
-          "vigor": 21,
-          "alcance": 2.1,
-          "altura": 1.5,
-          "avanco": 5.8
+          "preparacao": 0.16,
+          "carga_maxima": 0.55,
+          "acerto": 0.07,
+          "recuperacao": 0.24,
+          "dano": 37,
+          "dano_carregado": 66,
+          "vigor": 20,
+          "alcance": 2.15,
+          "altura": 1.52,
+          "avanco": 6.0
         }
       },
       "virus": {
@@ -134,12 +134,12 @@
   },
 
   "impacto": {
-    "pausa_no_acerto": 0.17,
-    "pausa_ao_matar": 0.52,
-    "empurrao_no_alvo": 7.5,
-    "shake_on_hit": 0.82,
-    "shake_amp": 0.7,
-    "shake_decay": 2.8
+    "pausa_no_acerto": 0.18,
+    "pausa_ao_matar": 0.55,
+    "empurrao_no_alvo": 7.8,
+    "shake_on_hit": 0.86,
+    "shake_amp": 0.74,
+    "shake_decay": 2.9
   },
 
   "boneco": {
@@ -385,11 +385,11 @@
 
   "chefes": {
     "luanevil": {
-      "vida": 320,
+      "vida": 330,
       "nome": "LUANEVIL",
       "local": "Bandejão",
-      "bytes": [170, 250],
-      "velocidade": 3.65,
+      "bytes": [175, 260],
+      "velocidade": 3.7,
       "dano_leve": 17,
       "dano_pesado": 30,
       "intervalo": 1.6,
