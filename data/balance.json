@@ -17,10 +17,10 @@
     "capsule_radius": 0.35,
     "capsule_height": 1.8,
 
-    "max_health": 210,
-    "max_stamina": 210,
-    "stamina_regen": 120,
-    "stamina_regen_delay": 0.1,
+    "max_health": 215,
+    "max_stamina": 215,
+    "stamina_regen": 125,
+    "stamina_regen_delay": 0.09,
 
     "walk_speed": 7.9,
     "run_speed": 13.0,
@@ -29,8 +29,8 @@
     "air_accel": 24.0,
     "air_friction": 7.2,
 
-    "gravity": 23.5,
-    "max_fall_speed": 32.0,
+    "gravity": 24.0,
+    "max_fall_speed": 33.0,
     "jump_velocity": 10.7,
     "jump_cut_multiplier": 0.4,
     "coyote_time": 0.32,
@@ -221,12 +221,12 @@
 
   "pendrives": {
     "fisico": {
-      "dano_por_nivel": 0.11,
-      "vida_por_nivel": 24
+      "dano_por_nivel": 0.12,
+      "vida_por_nivel": 26
     },
     "especial": {
-      "dano_por_nivel": 0.18,
-      "vida_por_nivel": 14
+      "dano_por_nivel": 0.19,
+      "vida_por_nivel": 15
     }
   },
 
@@ -378,7 +378,14 @@
         "nome": "air_grip",
         "custo": 92,
         "texto": "+air control",
-        "air_accel_bonus": 4.0
+        "air_accel_bonus": 4.5
+      },
+      {
+        "id": "buffer_plus",
+        "nome": "buffer_plus",
+        "custo": 88,
+        "texto": "+0.08 jump buffer",
+        "jump_buffer_bonus": 0.08
       }
     ]
   },

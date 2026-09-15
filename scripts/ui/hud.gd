@@ -26,7 +26,7 @@ const HINTS: PackedStringArray = [
 	"turn_snap deixa o giro mais ágil · bom pra kiting",
 	"heal_burst +8 cura por lata · air_grip no ar",
 	"air_grip melhora controle no ar · ótimo pra kiting",
-	"jump_buffer_plus perdoa timing do pulo · coyote_extend também",
+	"jump_buffer_plus perdoa timing do pulo · buffer_plus também",
 	"impact_frame +12% dano · macro_combo ainda mais forte",
 	"stamina_siphon +25 vigor · hotfix_vigor ainda ajuda",
 	"vida_extra +20 HP · daemon_safe também soma",

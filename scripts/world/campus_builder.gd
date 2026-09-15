@@ -500,6 +500,10 @@ func _spawn_gameplay() -> void:
 	_spawn(BYTES, Vector3(-8, 0.6, 18))
 	_spawn(BYTES, Vector3(8, 0.6, 18))
 	_spawn(BYTES, Vector3(0, 0.6, -2))
+	_spawn(BYTES, Vector3(-26, 0.6, -12))
+	_spawn(BYTES, Vector3(26, 0.6, -14))
+	_spawn(BYTES, Vector3(-30, 0.6, 0))
+	_spawn(BYTES, Vector3(30, 0.6, 0))
 
 	var luan := _spawn_node(LUAN, ROOM_BANDEJAO + Vector3(0, 1, 0))
 	var renan := _spawn_node(RENAN, ROOM_LAB + Vector3(0, 1, 0))
@@ -560,6 +564,14 @@ func _spawn_gameplay() -> void:
 	pen_e6.kind = "especial"
 	spawns_root.add_child(pen_e6)
 	pen_e6.global_position = Vector3(8, 0.5, 18)
+	var pen_f7 := PENDRIVE.instantiate()
+	pen_f7.kind = "fisico"
+	spawns_root.add_child(pen_f7)
+	pen_f7.global_position = Vector3(-26, 0.5, -12)
+	var pen_e7 := PENDRIVE.instantiate()
+	pen_e7.kind = "especial"
+	spawns_root.add_child(pen_e7)
+	pen_e7.global_position = Vector3(26, 0.5, -14)
 	_spawn(TERMINAL, Vector3(0, 0, 20))
 
 	var g_serv := GATE.instantiate()
