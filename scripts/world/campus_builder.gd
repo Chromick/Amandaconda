@@ -233,6 +233,7 @@ func _build_interior_hub() -> void:
 	_make_safezone(Vector3(0, 0.55, 22), Vector3(12, 0.12, 10))
 	_street_lamp(Vector3(-7, 0, 20))
 	_street_lamp(Vector3(7, 0, 20))
+	_street_lamp(Vector3(0, 0, 16))
 	_street_lamp(Vector3(-5, 0, 12))
 	_street_lamp(Vector3(5, 0, 12))
 	_street_lamp(Vector3(-12, 0, -2))
