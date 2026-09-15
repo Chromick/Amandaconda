@@ -120,11 +120,12 @@
   },
 
   "camera": {
-    "distance": 4.6,
-    "height": 1.7,
+    "distance": 4.5,
+    "height": 1.72,
+    "fov": 72.0,
     "min_pitch": -40.0,
     "max_pitch": 55.0,
-    "sensitivity": 0.14,
+    "sensitivity": 0.15,
     "follow_speed": 16.5,
     "lock_on_distance": 26.0,
     "lock_on_height_bias": 1.3,
