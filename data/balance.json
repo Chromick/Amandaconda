@@ -106,14 +106,14 @@
           "carga_maxima": 0.55,
           "acerto": 0.08,
           "recuperacao": 0.4,
-          "dano": 25,
-          "dano_carregado": 50,
-          "vigor": 20,
+          "dano": 26,
+          "dano_carregado": 52,
+          "vigor": 19,
           "avanco": 0,
-          "velocidade": 13.0,
-          "tempo_de_vida": 2.2,
-          "raio": 0.56,
-          "quique": 0.72
+          "velocidade": 13.5,
+          "tempo_de_vida": 2.25,
+          "raio": 0.58,
+          "quique": 0.74
         }
       }
     }
@@ -189,8 +189,8 @@
   },
 
   "net": {
-    "vida": 46,
-    "velocidade": 1.5,
+    "vida": 48,
+    "velocidade": 1.55,
     "prefer_distance": 9.2,
     "aggro": 12.0,
     "leash": 18.0,
@@ -462,7 +462,7 @@
       "recuperacao_pesado": 0.65,
       "alcance": 2.2,
       "fase2_vida": 0.5,
-      "fase2_speed_mult": 1.4
+      "fase2_speed_mult": 1.45
     }
   }
 }

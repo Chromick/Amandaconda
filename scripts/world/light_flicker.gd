@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 	var base := float(get_meta("base_energy", light_energy))
 	var base_col: Color = get_meta("base_color", light_color)
 	var t := Time.get_ticks_msec() * 0.001 + global_position.x * 0.17
-	var flicker := 0.86 + 0.14 * sin(t * 3.1) + 0.05 * sin(t * 11.0)
+	var flicker := 0.84 + 0.16 * sin(t * 3.1) + 0.06 * sin(t * 11.0)
 	# Pico raro tipo lâmpada instável
 	if fmod(t * 0.37 + global_position.z * 0.05, 1.0) > 0.985:
 		flicker *= 0.55
