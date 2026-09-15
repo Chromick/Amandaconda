@@ -24,8 +24,8 @@
 
     "walk_speed": 6.55,
     "run_speed": 10.8,
-    "ground_accel": 32.0,
-    "ground_friction": 38.0,
+    "ground_accel": 34.0,
+    "ground_friction": 40.0,
     "air_accel": 19.5,
     "air_friction": 6.0,
 
@@ -172,8 +172,8 @@
   },
 
   "portara": {
-    "vida": 74,
-    "velocidade": 2.3,
+    "vida": 78,
+    "velocidade": 2.35,
     "aggro": 9.8,
     "leash": 16.0,
     "deaggro": 20.0,
