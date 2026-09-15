@@ -609,11 +609,8 @@ func _try_roll(dir: Vector3) -> void:
 	roll_dir = dir.normalized() if dir.length_squared() > 0.01 else facing
 	facing = roll_dir
 	_set_mesh_color(Color(0.55, 0.75, 1.0))
-	for cam in get_tree().get_nodes_in_group("player_camera"):
-		if cam and cam.has_method("punch_fov"):
-			cam.punch_fov(2.2)
-			break
 	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.kick_fov(2.2, 0.1)
 		HitFeel.shake(0.05)
 
 
