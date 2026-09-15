@@ -230,7 +230,7 @@
   },
 
   "patches": {
-    "slots": 3,
+    "slots": 4,
     "catalogo": [
       {
         "id": "hotfix_vigor",
