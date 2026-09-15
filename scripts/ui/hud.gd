@@ -316,6 +316,9 @@ func _show_toast(message: String) -> void:
 
 func _on_ending() -> void:
 	_show_toast("FIM · Amandaconda derrotada · SESSION_CLOSED")
+	_toast_timer = 6.0
+	flash_danger()
+	_pulse_screen(Color(0.95, 0.35, 0.55, 0.35), 0.9)
 
 
 func _update_boss_bar() -> void:

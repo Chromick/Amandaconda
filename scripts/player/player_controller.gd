@@ -294,6 +294,10 @@ func _spawn_sprint_dust() -> void:
 	tw.tween_callback(p.queue_free)
 
 
+func _spawn_jump_dust() -> void:
+	_spawn_land_dust()
+
+
 func _update_lock_marker(delta: float) -> void:
 	if _lock_marker == null:
 		return
@@ -396,6 +400,7 @@ func _process_move(delta: float) -> void:
 		velocity.y = float(_cfg.get("jump_velocity", 8.5))
 		jump_buffer_timer = 0.0
 		coyote_timer = 0.0
+		_spawn_jump_dust()
 
 	var dir := _input_dir()
 	var sprinting := Input.is_action_pressed("sprint") and dir.length_squared() > 0.01
