@@ -27,7 +27,10 @@ func _ready() -> void:
 	_refresh()
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if mesh and not _is_open and _progress > 0.0:
+		var breathe := 1.0 + _progress * 0.04 * sin(Time.get_ticks_msec() * 0.005)
+		mesh.scale = mesh.scale.lerp(Vector3(breathe, 1.0, breathe), clampf(4.0 * delta, 0.0, 1.0))
 	if _open_light == null or _is_open:
 		return
 	if _progress <= 0.0:
