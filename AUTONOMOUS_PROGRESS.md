@@ -6,6 +6,22 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.6.9
+
+### Alteração
+- Eco: cast mais rápido + FOV/shake/sparks no impacto.
+- Net trail + gate breath (0.6.8+).
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.6.8
 
 ### Alteração

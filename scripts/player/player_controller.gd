@@ -1217,7 +1217,7 @@ func _cast_eco() -> void:
 	_spend_stamina(22.0)
 	_ability_cd = 5.0
 	_eco_pending = true
-	_eco_timer = 0.55
+	_eco_timer = 0.42
 	_eco_pos = global_position + facing * 2.2
 	if lock_target and is_instance_valid(lock_target):
 		_eco_pos = lock_target.global_position
@@ -1287,8 +1287,11 @@ func _resolve_eco() -> void:
 			away_b = facing
 		node.take_damage(dmg, away_b.normalized() * 4.0, self)
 	if typeof(HitFeel) != TYPE_NIL:
-		HitFeel.spark_at(_eco_pos + Vector3.UP * 0.6, Color(0.5, 0.9, 1.0), 1.35)
+		HitFeel.spark_at(_eco_pos + Vector3.UP * 0.6, Color(0.5, 0.9, 1.0), 1.45)
+		HitFeel.spark_at(_eco_pos + Vector3.UP * 0.2, Color(0.7, 1.0, 1.0), 0.85)
 		HitFeel.punch()
+		HitFeel.kick_fov(5.0, 0.14)
+		HitFeel.shake(0.14)
 	_spawn_eco_burst()
 
 
