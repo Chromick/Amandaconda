@@ -90,10 +90,16 @@ func set_flash(active: bool, color: Color = Color(1.0, 0.3, 0.25)) -> void:
 			_overlay = StandardMaterial3D.new()
 			_overlay.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 			_overlay.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-		_overlay.albedo_color = Color(color.r, color.g, color.b, 0.4)
+		_overlay.albedo_color = Color(color.r, color.g, color.b, 0.45)
+		_overlay.emission_enabled = true
+		_overlay.emission = color
+		_overlay.emission_energy_multiplier = 2.4
 		for mi in meshes:
 			mi.material_overlay = _overlay
 	else:
+		if _overlay:
+			_overlay.emission_enabled = false
+			_overlay.emission_energy_multiplier = 1.0
 		if _tint.r < 0.98 or _tint.g < 0.98 or _tint.b < 0.98:
 			apply_tint(_tint)
 		else:
