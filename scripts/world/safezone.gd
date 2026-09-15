@@ -26,8 +26,8 @@ func _ensure_ring() -> void:
 	_ring = MeshInstance3D.new()
 	_ring.name = "SafeRing"
 	var tor := TorusMesh.new()
-	tor.inner_radius = 2.6
-	tor.outer_radius = 2.85
+	tor.inner_radius = 2.7
+	tor.outer_radius = 2.95
 	_ring.mesh = tor
 	var mat := StandardMaterial3D.new()
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
@@ -35,7 +35,7 @@ func _ensure_ring() -> void:
 	mat.albedo_color = Color(0.35, 0.95, 0.65, 0.22)
 	mat.emission_enabled = true
 	mat.emission = Color(0.3, 1.0, 0.55)
-	mat.emission_energy_multiplier = 1.6
+	mat.emission_energy_multiplier = 1.9
 	_ring.material_override = mat
 	_ring.position = Vector3(0, 0.08, 0)
 	add_child(_ring)
