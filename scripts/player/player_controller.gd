@@ -442,6 +442,7 @@ func _process_move(delta: float) -> void:
 		var drain := float(_cfg.get("sprint_stamina_drain", 7.5))
 		stamina = maxf(0.0, stamina - drain * delta)
 		stamina_changed.emit(stamina, max_stamina)
+		stamina_regen_timer = maxf(stamina_regen_timer, 0.35)
 		if stamina <= 0.5:
 			sprinting = false
 	_was_sprinting = sprinting
