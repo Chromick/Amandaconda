@@ -23,6 +23,7 @@ const HINTS: PackedStringArray = [
 	"KB e pendrives puxam pra perto · turbo_sprint corta custo de corrida",
 	"coyote_extend alonga o salto · iframe_lite barateia o rolamento",
 	"magnet_boost puxa KB/pendrives mais longe · 7 slots de patch",
+	"turn_snap deixa o giro mais ágil · bom pra kiting",
 	"jump_buffer_plus perdoa timing do pulo · coyote_extend também",
 	"impact_frame +12% dano · macro_combo ainda mais forte",
 	"stamina_siphon +25 vigor · hotfix_vigor ainda ajuda",

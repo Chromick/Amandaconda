@@ -1479,7 +1479,7 @@ func _update_mesh_facing(delta: float) -> void:
 	# Godot: -Z é a frente do CharacterBody3D. atan2(x, z) fica 180° errado e
 	# com auto-yaw da câmera vira giro no lugar ao andar pra frente.
 	var target_yaw := atan2(-facing.x, -facing.z)
-	var turn := float(_cfg.get("turn_speed", 12.0))
+	var turn := float(_cfg.get("turn_speed", 12.0)) + GameState.turn_bonus()
 	rotation.y = lerp_angle(rotation.y, target_yaw, clampf(turn * delta, 0.0, 1.0))
 
 
