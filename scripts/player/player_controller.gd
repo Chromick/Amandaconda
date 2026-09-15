@@ -484,6 +484,8 @@ func _process_move(delta: float) -> void:
 	if Input.is_action_just_pressed("attack_heavy"):
 		heavy_charging = true
 		heavy_held = 0.0
+		if has_meta("_charge_ready_fx"):
+			remove_meta("_charge_ready_fx")
 		_set_mesh_color(Color(1.0, 0.7, 0.35))
 		return
 	if heavy_charging:
