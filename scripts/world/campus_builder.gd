@@ -869,7 +869,7 @@ func _spawn_night_stars() -> void:
 	stars.name = "NightStars"
 	stars.set_script(preload("res://scripts/world/star_field.gd"))
 	rooms_root.add_child(stars)
-	for i in 145:
+	for i in 160:
 		var star := MeshInstance3D.new()
 		var sm := SphereMesh.new()
 		sm.radius = randf_range(0.08, 0.22)

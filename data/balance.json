@@ -22,8 +22,8 @@
     "stamina_regen": 82,
     "stamina_regen_delay": 0.24,
 
-    "walk_speed": 6.45,
-    "run_speed": 10.6,
+    "walk_speed": 6.55,
+    "run_speed": 10.8,
     "ground_accel": 32.0,
     "ground_friction": 38.0,
     "air_accel": 19.5,
@@ -431,29 +431,29 @@
       "alcance": 1.8
     },
     "marlombolico": {
-      "vida": 310,
+      "vida": 320,
       "nome": "MARLOMBÓLICO",
       "local": "Servidores",
-      "bytes": [195, 275],
-      "velocidade": 3.9,
+      "bytes": [200, 285],
+      "velocidade": 4.0,
       "dano": 16,
-      "intervalo": 1.45,
-      "preparacao": 0.38,
-      "acerto": 0.12,
-      "recuperacao": 0.52,
-      "alcance": 1.85,
-      "hack_cooldown": 4.2,
-      "hack_duration": 5.2
+      "intervalo": 1.4,
+      "preparacao": 0.36,
+      "acerto": 0.11,
+      "recuperacao": 0.5,
+      "alcance": 1.9,
+      "hack_cooldown": 4.0,
+      "hack_duration": 5.4
     },
     "amandaconda": {
-      "vida": 470,
+      "vida": 480,
       "nome": "AMANDACONDA",
       "local": "A porta",
-      "bytes": [310, 440],
-      "velocidade": 3.75,
-      "dano_leve": 19,
-      "dano_pesado": 34,
-      "intervalo": 1.35,
+      "bytes": [320, 450],
+      "velocidade": 3.8,
+      "dano_leve": 20,
+      "dano_pesado": 35,
+      "intervalo": 1.3,
       "preparacao_leve": 0.4,
       "acerto_leve": 0.12,
       "recuperacao_leve": 0.4,
@@ -462,7 +462,7 @@
       "recuperacao_pesado": 0.65,
       "alcance": 2.2,
       "fase2_vida": 0.5,
-      "fase2_speed_mult": 1.3
+      "fase2_speed_mult": 1.35
     }
   }
 }
