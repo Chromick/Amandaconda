@@ -31,10 +31,10 @@
 
     "gravity": 23.5,
     "max_fall_speed": 32.0,
-    "jump_velocity": 9.65,
-    "jump_cut_multiplier": 0.5,
-    "coyote_time": 0.22,
-    "jump_buffer": 0.27,
+    "jump_velocity": 9.75,
+    "jump_cut_multiplier": 0.48,
+    "coyote_time": 0.23,
+    "jump_buffer": 0.28,
 
     "turn_speed": 16.0,
     "attack_move_mult": 0.2,
@@ -48,12 +48,12 @@
     "virus_desbloqueado": true,
 
     "rolamento": {
-      "duracao": 0.33,
+      "duracao": 0.32,
       "inv_inicio": 0.0,
-      "inv_duracao": 0.48,
-      "vigor": 15,
-      "velocidade": 15.4,
-      "atrito_final": 40.0
+      "inv_duracao": 0.5,
+      "vigor": 14,
+      "velocidade": 15.8,
+      "atrito_final": 42.0
     },
 
     "dano_recebido": {
@@ -221,12 +221,12 @@
 
   "pendrives": {
     "fisico": {
-      "dano_por_nivel": 0.09,
-      "vida_por_nivel": 20
+      "dano_por_nivel": 0.1,
+      "vida_por_nivel": 22
     },
     "especial": {
-      "dano_por_nivel": 0.16,
-      "vida_por_nivel": 10
+      "dano_por_nivel": 0.17,
+      "vida_por_nivel": 12
     }
   },
 
