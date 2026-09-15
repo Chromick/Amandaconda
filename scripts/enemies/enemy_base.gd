@@ -246,6 +246,7 @@ func _revive() -> void:
 	health_changed.emit(health, max_health)
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * 1.0, Color(0.55, 0.85, 1.0), 0.7)
+		HitFeel.shake(0.1)
 
 
 func is_alive() -> bool:
