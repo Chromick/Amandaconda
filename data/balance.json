@@ -289,7 +289,7 @@
       "vida": 280,
       "nome": "LUANEVIL",
       "local": "Bandejão",
-      "bytes": [120, 180],
+      "bytes": [140, 200],
       "velocidade": 3.4,
       "dano_leve": 16,
       "dano_pesado": 28,
