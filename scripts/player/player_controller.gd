@@ -1066,7 +1066,7 @@ func _cast_caramelo() -> void:
 		return
 	puddle.setup(2.4, 5.5, 0.4)
 	_set_mesh_color(Color(0.85, 0.55, 0.2))
-	HitFeel.spark(pos + Vector3(0, 0.4, 0), Color(1.0, 0.7, 0.25))
+	HitFeel.spark_at(pos + Vector3(0, 0.4, 0), Color(1.0, 0.7, 0.25))
 	for cam in get_tree().get_nodes_in_group("player_camera"):
 		if cam and cam.has_method("punch_fov"):
 			cam.punch_fov(4.0)
@@ -1085,7 +1085,7 @@ func _cast_eco() -> void:
 		_eco_pos = lock_target.global_position
 	_set_mesh_color(Color(0.55, 0.85, 1.0))
 	_spawn_eco_telegraph()
-	HitFeel.spark(_eco_pos + Vector3(0, 0.5, 0), Color(0.5, 0.9, 1.0))
+	HitFeel.spark_at(_eco_pos + Vector3(0, 0.5, 0), Color(0.5, 0.9, 1.0))
 	for cam in get_tree().get_nodes_in_group("player_camera"):
 		if cam and cam.has_method("punch_fov"):
 			cam.punch_fov(3.5)
