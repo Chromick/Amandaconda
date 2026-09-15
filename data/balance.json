@@ -69,10 +69,10 @@
           "acerto": 0.06,
           "recuperacao": 0.16,
           "dano": 14,
-          "vigor": 13,
-          "alcance": 1.45,
-          "altura": 1.1,
-          "avanco": 2.7,
+          "vigor": 12,
+          "alcance": 1.48,
+          "altura": 1.12,
+          "avanco": 2.85,
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
