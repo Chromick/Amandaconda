@@ -254,10 +254,7 @@ func _update_land_fx() -> void:
 		var impact := absf(_air_vy)
 		if typeof(HitFeel) != TYPE_NIL and impact > 4.5:
 			HitFeel.shake(clampf(impact * 0.018, 0.06, 0.32))
-			for cam in get_tree().get_nodes_in_group("player_camera"):
-				if cam and cam.has_method("punch_fov"):
-					cam.punch_fov(clampf(impact * 0.28, 1.5, 5.0))
-					break
+			HitFeel.kick_fov(clampf(impact * 0.28, 1.5, 5.0), 0.12)
 	_was_on_floor = on_floor
 
 
@@ -393,10 +390,7 @@ func _tick_timers(delta: float) -> void:
 			GameState.show_toast("Marca dissipada")
 			if typeof(HitFeel) != TYPE_NIL:
 				HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(0.85, 0.55, 1.0), 0.6)
-			for cam in get_tree().get_nodes_in_group("player_camera"):
-				if cam and cam.has_method("punch_fov"):
-					cam.punch_fov(-2.0)
-					break
+				HitFeel.kick_fov(-2.0, 0.1)
 	if stamina_regen_timer > 0.0:
 		stamina_regen_timer -= delta
 	elif state == State.MOVE:
@@ -458,10 +452,7 @@ func _process_move(delta: float) -> void:
 		jump_buffer_timer = 0.0
 		coyote_timer = 0.0
 		_spawn_jump_dust()
-		for cam in get_tree().get_nodes_in_group("player_camera"):
-			if cam and cam.has_method("punch_fov"):
-				cam.punch_fov(1.8)
-				break
+		HitFeel.kick_fov(1.8, 0.08)
 
 	var dir := _input_dir()
 	var wants_sprint := Input.is_action_pressed("sprint") and dir.length_squared() > 0.01 and stamina > 1.0
@@ -481,10 +472,7 @@ func _process_move(delta: float) -> void:
 		_sprint_empty_toasted = false
 	if sprinting and not _was_sprinting and is_on_floor():
 		_spawn_sprint_dust()
-		for cam in get_tree().get_nodes_in_group("player_camera"):
-			if cam and cam.has_method("punch_fov"):
-				cam.punch_fov(2.2)
-				break
+		HitFeel.kick_fov(2.2, 0.1)
 	_was_sprinting = sprinting
 	var target_speed := float(_cfg.get("run_speed", 8.8) if sprinting else _cfg.get("walk_speed", 5.3))
 	target_speed *= speed_mult
@@ -679,10 +667,7 @@ func _try_heavy(held: float) -> void:
 	_set_mesh_color(Color(1.0, 0.45, 0.25))
 	_pulse_weapon(Color(1.0, 0.4, 0.2))
 	if _charge_ratio >= 0.7:
-		for cam in get_tree().get_nodes_in_group("player_camera"):
-			if cam and cam.has_method("punch_fov"):
-				cam.punch_fov(3.0 + _charge_ratio * 4.0)
-				break
+		HitFeel.kick_fov(3.0 + _charge_ratio * 4.0, 0.12)
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.shake(0.08 + _charge_ratio * 0.12)
 
@@ -1100,10 +1085,7 @@ func _process_healing(delta: float) -> void:
 			hud.pulse_heal()
 		HitFeel.shake(0.18)
 		HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(0.45, 1.0, 0.55), 1.0)
-		for cam in get_tree().get_nodes_in_group("player_camera"):
-			if cam and cam.has_method("punch_fov"):
-				cam.punch_fov(2.5)
-				break
+		HitFeel.kick_fov(2.5, 0.1)
 
 
 func _ensure_heal_light(on: bool) -> void:
@@ -1124,10 +1106,7 @@ func _ensure_heal_light(on: bool) -> void:
 func _on_died() -> void:
 	HitFeel.shake(0.7)
 	HitFeel.spark_at(global_position + Vector3.UP * 1.0, Color(0.7, 0.15, 0.2), 1.6)
-	for cam in get_tree().get_nodes_in_group("player_camera"):
-		if cam and cam.has_method("punch_fov"):
-			cam.punch_fov(8.0)
-			break
+	HitFeel.kick_fov(8.0, 0.2)
 	GameState.show_toast("Você caiu… voltando à entrada")
 	var hud := get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("play_death_fade"):
@@ -1166,10 +1145,7 @@ func _respawn() -> void:
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(0.5, 1.0, 0.65), 1.0)
 		HitFeel.shake(0.12)
-	for cam in get_tree().get_nodes_in_group("player_camera"):
-		if cam and cam.has_method("punch_fov"):
-			cam.punch_fov(3.0)
-			break
+		HitFeel.kick_fov(3.0, 0.12)
 
 
 func _tick_ability(delta: float) -> void:
@@ -1353,10 +1329,7 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 			HitFeel.shake(0.22)
 			GameState.show_toast("Espelho!")
 			_ability_cd = maxf(_ability_cd, 1.2)
-			for cam in get_tree().get_nodes_in_group("player_camera"):
-				if cam and cam.has_method("punch_fov"):
-					cam.punch_fov(5.0)
-					break
+			HitFeel.kick_fov(5.0, 0.14)
 		return
 	if is_invulnerable():
 		return
@@ -1477,9 +1450,7 @@ func _toggle_lock_on() -> void:
 	if lock_target:
 		GameState.show_toast("Lock on")
 		HitFeel.spark_at(lock_target.global_position + Vector3.UP * 1.5, Color(0.55, 0.95, 1.0), 0.55)
-		for cam in get_tree().get_nodes_in_group("player_camera"):
-			if cam and cam.has_method("punch_fov"):
-				cam.punch_fov(-3.0)
+		HitFeel.kick_fov(-3.0, 0.1)
 	else:
 		GameState.show_toast("Sem alvo no alcance")
 		var hud := get_tree().get_first_node_in_group("hud")
