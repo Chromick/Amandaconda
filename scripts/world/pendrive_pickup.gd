@@ -25,6 +25,14 @@ func _process(delta: float) -> void:
 	rotation.y = _spin * 2.2
 	if mesh:
 		mesh.position.y = 0.15 + sin(_spin * 3.5) * 0.06
+	var light := get_node_or_null("OmniLight3D") as OmniLight3D
+	if light == null:
+		for c in get_children():
+			if c is OmniLight3D:
+				light = c
+				break
+	if light:
+		light.light_energy = 1.35 + sin(_spin * 4.0) * 0.35
 
 
 func _refresh_visual() -> void:
@@ -56,4 +64,8 @@ func _on_body(body: Node3D) -> void:
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * 0.5, Color(0.45, 1.0, 0.55) if kind == "especial" else Color(1.0, 0.8, 0.35), 1.1)
 		HitFeel.shake(0.12)
+	for cam in get_tree().get_nodes_in_group("player_camera"):
+		if cam and cam.has_method("punch_fov"):
+			cam.punch_fov(3.0)
+			break
 	queue_free()
