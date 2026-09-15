@@ -298,8 +298,14 @@ func _update_label() -> void:
 func _tint_label_by_hp() -> void:
 	if label == null:
 		return
-	if max_health > 0.0 and health > 0.0 and health / max_health < 0.35:
+	if max_health <= 0.0 or health <= 0.0:
+		label.modulate = Color(0.7, 0.7, 0.72)
+		return
+	var ratio := health / max_health
+	if ratio < 0.35:
 		label.modulate = Color(1.0, 0.45, 0.4)
+	elif ratio < 0.65:
+		label.modulate = Color(1.0, 0.85, 0.45)
 	else:
 		label.modulate = Color.WHITE
 
