@@ -26,7 +26,7 @@ func setup(color: Color = Color(1.0, 0.85, 0.35), scale_u: float = 1.0) -> void:
 	tw.tween_property(mesh, "scale", Vector3.ONE * 2.8, 0.12)
 	tw.tween_property(light, "light_energy", 0.0, 0.22)
 	# Fragmentos voando pra fora
-	for i in 14:
+	for i in 16:
 		var shard := MeshInstance3D.new()
 		var box := BoxMesh.new()
 		box.size = Vector3(0.05, 0.05, 0.22) * scale_u
