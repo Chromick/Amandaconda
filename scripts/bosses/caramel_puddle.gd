@@ -28,6 +28,12 @@ func setup(radius: float, duration: float, slow: float) -> void:
 	_mat.emission_energy_multiplier = 1.4
 	if _mesh:
 		_mesh.material_override = _mat
+	var light := OmniLight3D.new()
+	light.light_color = Color(1.0, 0.55, 0.15)
+	light.light_energy = 1.6
+	light.omni_range = 4.0
+	light.position = Vector3(0, 0.4, 0)
+	add_child(light)
 	if not body_entered.is_connected(_on_enter):
 		body_entered.connect(_on_enter)
 	if not body_exited.is_connected(_on_exit):
@@ -42,6 +48,10 @@ func _physics_process(delta: float) -> void:
 	if _mat:
 		_mat.emission_energy_multiplier = 1.2 + sin(_pulse * 5.0) * 0.35
 		_mat.albedo_color.a = 0.4 + sin(_pulse * 3.0) * 0.12
+	for c in get_children():
+		if c is OmniLight3D:
+			(c as OmniLight3D).light_energy = 1.35 + sin(_pulse * 4.5) * 0.4
+			break
 	# Limpa refs mortas pra não acumular / crash ao sair
 	for i in range(_bodies.size() - 1, -1, -1):
 		if _bodies[i] == null or not is_instance_valid(_bodies[i]):
