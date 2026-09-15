@@ -53,6 +53,7 @@ func _on_enter(body: Node3D) -> void:
 			GameState.show_toast("Safezone · em segurança")
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.spark_at(global_position + Vector3.UP * 0.5, Color(0.4, 1.0, 0.6), 0.8)
+			HitFeel.kick_fov(2.5, 0.12)
 
 
 func _on_exit(body: Node3D) -> void:
