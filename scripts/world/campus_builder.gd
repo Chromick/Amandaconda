@@ -506,11 +506,18 @@ func _dress_patio(root: Node3D) -> void:
 	_prop(root, "pottedPlant.glb", center + Vector3(-5.2, 0, 1.5), 70.0)
 	_prop(root, "pottedPlant.glb", center + Vector3(5.0, 0, -2.8), -25.0)
 	_prop(root, "chair.glb", center + Vector3(0.8, 0, 3.6), -20.0)
+	_prop(root, "chair.glb", center + Vector3(-3.5, 0, -1.2), 110.0)
+	_prop(root, "chair.glb", center + Vector3(3.2, 0, -3.8), -140.0)
+	_prop(root, "tableRound.glb", center + Vector3(-3.8, 0, 3.2), 25.0)
 	# Brasa no chão / sombra do pátio
 	_emissive_box(center + Vector3(0, 0.08, 1.5), Vector3(1.4, 0.06, 1.4), Color(0.15, 0.08, 0.05), Color(1.0, 0.35, 0.1), 2.2)
+	_emissive_box(center + Vector3(-2.5, 0.06, -2.0), Vector3(0.9, 0.05, 0.9), Color(0.12, 0.06, 0.04), Color(0.95, 0.3, 0.08), 1.6)
 	_add_room_light(center + Vector3(-2.5, 2.4, 2.0), Color(1.0, 0.4, 0.18), 6.0, 10.0)
 	_add_room_light(center + Vector3(2.5, 2.2, -1.5), Color(0.35, 0.4, 0.55), 4.5, 9.0)
 	_add_room_light(center + Vector3(0, 2.6, 0), Color(1.0, 0.55, 0.3), 3.5, 8.0)
+	var fan := _prop(root, "ceilingFan.glb", center + Vector3(0, 3.1, 0), 0.0)
+	if fan:
+		fan.set_script(preload("res://scripts/world/spin_y.gd"))
 
 
 func _dress_porta(root: Node3D) -> void:
