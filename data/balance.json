@@ -36,9 +36,9 @@
     "coyote_time": 0.23,
     "jump_buffer": 0.28,
 
-    "turn_speed": 16.0,
-    "attack_move_mult": 0.2,
-    "buffer_de_acao": 0.24,
+    "turn_speed": 17.0,
+    "attack_move_mult": 0.22,
+    "buffer_de_acao": 0.26,
     "combo_janela": 0.85,
     "combo_max": 3,
     "sprint_attack_dash": 15.0,
@@ -211,7 +211,7 @@
     "latas": 9,
     "cura": 82,
     "tempo_uso": 0.4,
-    "safezone_regen": 74.0,
+    "safezone_regen": 78.0,
     "safezone_latas": true
   },
 
