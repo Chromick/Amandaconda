@@ -6,6 +6,26 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~08:22 BRT
+
+### Alteração
+- Loop contínuo: trails de vírus/net, safezone ring, dust, enrage elites, FOV kicks, telegraphs pulsantes, weapon trail melee, etc. (vários commits desde ~07:55).
+
+### Arquivos modificados
+- ver `git log` em `godot-4` desde `4de3a86`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0 em cada ciclo
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
+
 ## 2026-09-15 ~08:16 BRT
 
 ### Alteração

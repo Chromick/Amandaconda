@@ -136,9 +136,11 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 		_cooldown = 0.2
 		_update_label()
 		HitFeel.shake(0.45)
-		GameState.show_toast("AMANDACONDA · a cobra acorda")
+		GameState.show_toast("AMANDACONDA · fase 2 · coil saturado")
 		if _coil:
 			_coil.scale = Vector3.ONE * 1.35
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.95, 0.25, 0.45), 1.5)
 
 
 func _awaken() -> void:
@@ -148,6 +150,8 @@ func _awaken() -> void:
 	_set_color(Color(1.0, 0.55, 0.35))
 	HitFeel.shake(0.3)
 	GameState.show_toast("AMANDACONDA · sessão aberta")
+	if typeof(HitFeel) != TYPE_NIL:
+		HitFeel.spark_at(global_position + Vector3.UP * 1.3, Color(0.95, 0.4, 0.5), 1.2)
 
 
 func _die() -> void:
