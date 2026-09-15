@@ -6,6 +6,26 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~07:45 BRT
+
+### Alteração
+- Poça de caramelo: material emissivo pulsante, spark no spawn, toast ao pisar (“Caramelo · movimento lento”).
+
+### Arquivos modificados
+- `scripts/bosses/caramel_puddle.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar: FOV sprint / lock-on polish / revisar enemies restantes
+
+---
+
 ## 2026-09-15 ~07:42 BRT
 
 ### Alteração
