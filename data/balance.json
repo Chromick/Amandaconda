@@ -22,8 +22,8 @@
     "stamina_regen": 110,
     "stamina_regen_delay": 0.14,
 
-    "walk_speed": 7.45,
-    "run_speed": 12.2,
+    "walk_speed": 7.6,
+    "run_speed": 12.5,
     "ground_accel": 40.0,
     "ground_friction": 46.0,
     "air_accel": 22.5,
@@ -31,10 +31,10 @@
 
     "gravity": 23.5,
     "max_fall_speed": 32.0,
-    "jump_velocity": 10.3,
-    "jump_cut_multiplier": 0.43,
-    "coyote_time": 0.28,
-    "jump_buffer": 0.34,
+    "jump_velocity": 10.4,
+    "jump_cut_multiplier": 0.42,
+    "coyote_time": 0.29,
+    "jump_buffer": 0.35,
 
     "turn_speed": 20.0,
     "attack_move_mult": 0.28,
@@ -122,7 +122,7 @@
   "camera": {
     "distance": 3.4,
     "height": 2.15,
-    "fov": 85.0,
+    "fov": 86.0,
     "min_pitch": -49.0,
     "max_pitch": 67.0,
     "sensitivity": 0.21,
@@ -134,12 +134,12 @@
   },
 
   "impacto": {
-    "pausa_no_acerto": 0.18,
-    "pausa_ao_matar": 0.55,
-    "empurrao_no_alvo": 7.8,
-    "shake_on_hit": 0.86,
-    "shake_amp": 0.74,
-    "shake_decay": 2.9
+    "pausa_no_acerto": 0.19,
+    "pausa_ao_matar": 0.58,
+    "empurrao_no_alvo": 8.0,
+    "shake_on_hit": 0.9,
+    "shake_amp": 0.78,
+    "shake_decay": 3.0
   },
 
   "boneco": {
