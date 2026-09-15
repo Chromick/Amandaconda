@@ -1,15 +1,15 @@
-# AUTONOMOUS_PROGRESS
+﻿# AUTONOMOUS_PROGRESS
 
-Registro de desenvolvimento autônomo do runtime **Godot 4.7**  
-Repo: [Chromick/Amandaconda](https://github.com/Chromick/Amandaconda) · branch `godot-4`  
+Registro de desenvolvimento autÃ´nomo do runtime **Godot 4.7**  
+Repo: [Chromick/Amandaconda](https://github.com/Chromick/Amandaconda) Â· branch `godot-4`  
 Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
-## 2026-09-15 ~07:45 BRT
+## 2026-09-15 ~08:10 BRT
 
 ### Alteração
-- v0.4.4: camera spring lock/sprint; stamina toast; ability cast juice; Chatana Beach; trash KO shrink; lock marker bob + FOV punch.
+- v0.4.5+: hard landing; ability ready flash; Net trail; arena juice; charged heavy FOV; patch shop spark; KB pickups; pendrive light; hack flash.
 
 ### Testes
 - Hub headless EXIT 0 (vários ciclos)
@@ -18,30 +18,45 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Joãosias AGUARDANDO DECISÃO
 
 ### Próxima tarefa
+- Continuar
+
+---
+## 2026-09-15 ~07:45 BRT
+
+### AlteraÃ§Ã£o
+- v0.4.4: camera spring lock/sprint; stamina toast; ability cast juice; Chatana Beach; trash KO shrink; lock marker bob + FOV punch.
+
+### Testes
+- Hub headless EXIT 0 (vÃ¡rios ciclos)
+
+### Problemas encontrados
+- JoÃ£osias AGUARDANDO DECISÃƒO
+
+### PrÃ³xima tarefa
 - Continuar loop
 
 ---
 
 ## 2026-09-15 ~08:28 BRT
 
-### Alteração
-- Loop contínuo ativo; v0.4.3; invuln blink; Espelho sparks; gate fade fix; weapon trail; etc.
+### AlteraÃ§Ã£o
+- Loop contÃ­nuo ativo; v0.4.3; invuln blink; Espelho sparks; gate fade fix; weapon trail; etc.
 
 ### Testes
 - Hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar
 
 ---
 
 ## 2026-09-15 ~08:22 BRT
 
-### Alteração
-- Loop contínuo: trails de vírus/net, safezone ring, dust, enrage elites, FOV kicks, telegraphs pulsantes, weapon trail melee, etc. (vários commits desde ~07:55).
+### AlteraÃ§Ã£o
+- Loop contÃ­nuo: trails de vÃ­rus/net, safezone ring, dust, enrage elites, FOV kicks, telegraphs pulsantes, weapon trail melee, etc. (vÃ¡rios commits desde ~07:55).
 
 ### Arquivos modificados
 - ver `git log` em `godot-4` desde `4de3a86`
@@ -51,19 +66,19 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub headless EXIT 0 em cada ciclo
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
-- Continuar até o usuário parar
+### PrÃ³xima tarefa
+- Continuar atÃ© o usuÃ¡rio parar
 
 ---
 
 ## 2026-09-15 ~08:16 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - Bytes pickup glow + luz.
-- Hit: kick de FOV na câmera.
-- Lock pulse, Balarrals roll tell, pause version, Renan spark (commits anteriores nesta sessão).
+- Hit: kick de FOV na cÃ¢mera.
+- Lock pulse, Balarrals roll tell, pause version, Renan spark (commits anteriores nesta sessÃ£o).
 
 ### Arquivos modificados
 - `scripts/world/bytes_pickup.gd`
@@ -75,16 +90,16 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar
 
 ---
 
 ## 2026-09-15 ~08:12 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - Poeira no jump; ending com flash rosa e toast mais longo.
 - v0.4.2 + enrage elites (commit anterior).
 
@@ -97,17 +112,17 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar
 
 ---
 
 ## 2026-09-15 ~08:10 BRT
 
-### Alteração
-- Enrage ≤40% HP: Portara, Chatana, Net (mais rápidos/agressivos + toast + spark).
+### AlteraÃ§Ã£o
+- Enrage â‰¤40% HP: Portara, Chatana, Net (mais rÃ¡pidos/agressivos + toast + spark).
 
 ### Arquivos modificados
 - `scripts/enemies/portara.gd`
@@ -119,16 +134,16 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar
 
 ---
 
 ## 2026-09-15 ~08:06 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - Toast HUD com punch de escala + fade-out.
 - Dust motes flutuando no campus (`dust_motes.gd`).
 
@@ -142,19 +157,19 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar
 
 ---
 
 ## 2026-09-15 ~08:02 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - Toast + spark quando a marca da Net dissipar.
 - Poeira no sprint.
-- Menu: título pulsante e hover verde nos botões.
+- Menu: tÃ­tulo pulsante e hover verde nos botÃµes.
 
 ### Arquivos modificados
 - `scripts/player/player_controller.gd`
@@ -165,20 +180,20 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub + menu headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar
 
 ---
 
 ## 2026-09-15 ~07:58 BRT
 
-### Alteração
-- Vírus: glow, luz, trail e spark no quique.
+### AlteraÃ§Ã£o
+- VÃ­rus: glow, luz, trail e spark no quique.
 - Net shot: glow magenta, luz, look_at, spark no impacto.
 - Safezone: anel torus pulsante + spark ao entrar.
-- Player: poeira ao pousar após salto.
+- Player: poeira ao pousar apÃ³s salto.
 
 ### Arquivos modificados
 - `scripts/combat/virus_projectile.gd`
@@ -191,17 +206,17 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar sem parar
 
 ---
 
 ## 2026-09-15 ~07:55 BRT
 
-### Alteração
-- Luzes noturnas: flicker com variação de cor quente.
+### AlteraÃ§Ã£o
+- Luzes noturnas: flicker com variaÃ§Ã£o de cor quente.
 - Damage popup: punch de escala + drift lateral.
 - HUD: barra de vida pulsa vermelho abaixo de 30% HP.
 
@@ -215,17 +230,17 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
-- Continuar loop (próximo turno / próximo pedido)
+### PrÃ³xima tarefa
+- Continuar loop (prÃ³ximo turno / prÃ³ximo pedido)
 
 ---
 
 ## 2026-09-15 ~07:50 BRT
 
-### Alteração
-- Inimigos sem respawn: KO fica ~0.45s visível antes de `queue_free` (menos “pop” seco).
+### AlteraÃ§Ã£o
+- Inimigos sem respawn: KO fica ~0.45s visÃ­vel antes de `queue_free` (menos â€œpopâ€ seco).
 
 ### Arquivos modificados
 - `scripts/enemies/enemy_base.gd`
@@ -235,17 +250,17 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar loop seguro
 
 ---
 
 ## 2026-09-15 ~07:48 BRT
 
-### Alteração
-- Câmera: FOV dinâmico — +6 no sprint, −4 no lock-on (lerp suave).
+### AlteraÃ§Ã£o
+- CÃ¢mera: FOV dinÃ¢mico â€” +6 no sprint, âˆ’4 no lock-on (lerp suave).
 
 ### Arquivos modificados
 - `scripts/player/camera_controller.gd`
@@ -253,20 +268,35 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ### Testes
 - Hub headless EXIT 0
-- Sensação visual do FOV: não testada em PIE
+- SensaÃ§Ã£o visual do FOV: nÃ£o testada em PIE
+
+### Problemas encontrados
+- JoÃ£osias AGUARDANDO DECISÃƒO
+
+### PrÃ³xima tarefa
+- Continuar polish (morte de trash fade, luzes, etc.)
+
+---
+
+## 2026-09-15 ~08:10 BRT
+
+### Alteração
+- v0.4.5+: hard landing; ability ready flash; Net trail; arena juice; charged heavy FOV; patch shop spark; KB pickups; pendrive light; hack flash.
+
+### Testes
+- Hub headless EXIT 0 (vários ciclos)
 
 ### Problemas encontrados
 - Joãosias AGUARDANDO DECISÃO
 
 ### Próxima tarefa
-- Continuar polish (morte de trash fade, luzes, etc.)
+- Continuar
 
 ---
-
 ## 2026-09-15 ~07:45 BRT
 
-### Alteração
-- Poça de caramelo: material emissivo pulsante, spark no spawn, toast ao pisar (“Caramelo · movimento lento”).
+### AlteraÃ§Ã£o
+- PoÃ§a de caramelo: material emissivo pulsante, spark no spawn, toast ao pisar (â€œCaramelo Â· movimento lentoâ€).
 
 ### Arquivos modificados
 - `scripts/bosses/caramel_puddle.gd`
@@ -276,17 +306,17 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar: FOV sprint / lock-on polish / revisar enemies restantes
 
 ---
 
 ## 2026-09-15 ~07:42 BRT
 
-### Alteração
-- Toast **Cura interrompida** ao tomar dano bebendo lata; limpa telegraph de carga/vírus no hit.
+### AlteraÃ§Ã£o
+- Toast **Cura interrompida** ao tomar dano bebendo lata; limpa telegraph de carga/vÃ­rus no hit.
 - Boneco de treino: spark + shake no KO.
 
 ### Arquivos modificados
@@ -298,21 +328,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
-- Loop: ground slow / caramelo feedback, ou polish de câmera
+### PrÃ³xima tarefa
+- Loop: ground slow / caramelo feedback, ou polish de cÃ¢mera
 
 ---
 
 ## 2026-09-15 ~07:38 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - HUD: flash dourado na linha de meta ao ganhar KB.
 - Toast `Combo N!` ao encadear leve.
-- Carga vírus: esfera-telegraph que cresce (escola Especial).
+- Carga vÃ­rus: esfera-telegraph que cresce (escola Especial).
 - Toast de CD de habilidade com debounce 0.85s (anti-spam).
-- Versão do projeto → **0.4.1**.
+- VersÃ£o do projeto â†’ **0.4.1**.
 
 ### Arquivos modificados
 - `scripts/ui/hud.gd`
@@ -324,21 +354,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Menu + hub headless EXIT 0
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar polish combate / revisar avisos restantes
 
 ---
 
 ## 2026-09-15 ~07:30 BRT
 
-### Alteração
-- **Bosses**: recompensa KB no `balance.json` + `_drop_bytes(false)` na morte (spark; toast de habilidade/progressão permanece).
+### AlteraÃ§Ã£o
+- **Bosses**: recompensa KB no `balance.json` + `_drop_bytes(false)` na morte (spark; toast de habilidade/progressÃ£o permanece).
 - Renanligno passa a carregar `bytes` no `_cfg`.
 - **Roll**: afterimages cianos na janela de i-frame (timer morto agora spawna ghosts).
-- **Portões**: toast + spark ao liberar.
-- **Arena**: névoa do chefe dissolve com fade ao fim da luta (restaura alpha no re-lock).
+- **PortÃµes**: toast + spark ao liberar.
+- **Arena**: nÃ©voa do chefe dissolve com fade ao fim da luta (restaura alpha no re-lock).
 
 ### Arquivos modificados
 - `data/balance.json`
@@ -350,20 +380,20 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - `AUTONOMOUS_PROGRESS.md`
 
 ### Testes
-- Hub headless EXIT 0 (várias vezes neste ciclo)
-- PIE: roll ghosts / boss drop / seal fade — não testados visualmente
+- Hub headless EXIT 0 (vÃ¡rias vezes neste ciclo)
+- PIE: roll ghosts / boss drop / seal fade â€” nÃ£o testados visualmente
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Combo toast / virus charge telegraph / polish HUD bytes flash
 
 ---
 
 ## 2026-09-15 ~02:28 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - Pause: dica de controles corretos (Ctrl/C, Shift, Q/MMB, etc.) + painel um pouco mais largo.
 
 ### Arquivos modificados
@@ -372,21 +402,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ### Testes
 - Hub headless EXIT 0
-- Overlay Esc em PIE: não testado
+- Overlay Esc em PIE: nÃ£o testado
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar loop: polimento de combate / feedback de boss reward / revisar TODOs restantes
 
 ---
 
 ## 2026-09-15 ~02:25 BRT
 
-### Alteração
-- Telegraph de **carga do ataque pesado** (cresce com a carga, flash perto do máx.); limpa no roll / vigor insuficiente.
-- Terminal de patches: bob/rotação, glow próximo, toast `[E]`.
+### AlteraÃ§Ã£o
+- Telegraph de **carga do ataque pesado** (cresce com a carga, flash perto do mÃ¡x.); limpa no roll / vigor insuficiente.
+- Terminal de patches: bob/rotaÃ§Ã£o, glow prÃ³ximo, toast `[E]`.
 
 ### Arquivos modificados
 - `scripts/player/player_controller.gd`
@@ -395,12 +425,12 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ### Testes
 - Hub headless EXIT 0
-- Charge telegraph / terminal em PIE: não testado
+- Charge telegraph / terminal em PIE: nÃ£o testado
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Revisar pause overlay com lista de controles corretos
 - Ou juice de morte de boss (KB/bytes no balance se faltar)
 
@@ -408,8 +438,8 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ## 2026-09-15 ~02:18 BRT
 
-### Alteração
-- **Bug UI**: hints diziam “Q troca arma” / “Shift rola”, mas Q é lock-on e Shift é sprint; roll é Ctrl/C.
+### AlteraÃ§Ã£o
+- **Bug UI**: hints diziam â€œQ troca armaâ€ / â€œShift rolaâ€, mas Q Ã© lock-on e Shift Ã© sprint; roll Ã© Ctrl/C.
 - Hints corrigidos; **MMB** adicionado ao action `lock_on`.
 
 ### Arquivos modificados
@@ -419,19 +449,19 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ### Testes
 - Hub headless EXIT 0
-- MMB/hints em PIE: não testado visualmente
+- MMB/hints em PIE: nÃ£o testado visualmente
 
 ### Problemas encontrados
-- Joãosias AGUARDANDO DECISÃO
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar juice seguro (pause help, boss reward toast) ou polish terminal
 
 ---
 
 ## 2026-09-15 ~02:12 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - Drop de KB dos inimigos (Chatana/Net/Portara) unificado em `enemy_base._drop_bytes()` com toast `+N KB`, spark e shake leve (antes era silencioso).
 
 ### Arquivos modificados
@@ -443,13 +473,13 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ### Testes
 - Hub headless EXIT 0
-- Drop em combate: não testado em PIE
+- Drop em combate: nÃ£o testado em PIE
 
 ### Problemas encontrados
-- Bosses sobrescrevem `_die` sem `super` (intencional); recompensa de boss continua só via `mark_boss_defeated`
-- Joãosias AGUARDANDO DECISÃO
+- Bosses sobrescrevem `_die` sem `super` (intencional); recompensa de boss continua sÃ³ via `mark_boss_defeated`
+- JoÃ£osias AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Toast ao trocar arma (Q) / polish do terminal de patches
 - Revisar feedback de boss reward se houver bytes no balance
 
@@ -457,12 +487,12 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ## 2026-09-15 ~02:05 BRT
 
-### Alteração
-- **Pendrive pickup**: spin/bob, cor emissiva por tipo, toast com nível Fis/Esp, spark + shake ao coletar.
+### AlteraÃ§Ã£o
+- **Pendrive pickup**: spin/bob, cor emissiva por tipo, toast com nÃ­vel Fis/Esp, spark + shake ao coletar.
 - **Patch shop**: HitFeel.cancel ao abrir; toast de abertura; slots cheios / KB insuficiente (tooltip + disable); toast com nome do patch ao comprar.
-- **Habilidades**: toast de CD (`Eco em recarga · Xs`), vigor insuficiente, Caramelo confirmado; telegraph esférico do Eco com flash no impacto + spark.
+- **Habilidades**: toast de CD (`Eco em recarga Â· Xs`), vigor insuficiente, Caramelo confirmado; telegraph esfÃ©rico do Eco com flash no impacto + spark.
 - **HUD**: label de habilidade mostra `CD Xs` em tempo real.
-- **Cura**: feedback “Vida cheia” / “Sem latas” / “Bebendo lata…”.
+- **Cura**: feedback â€œVida cheiaâ€ / â€œSem latasâ€ / â€œBebendo lataâ€¦â€.
 
 ### Arquivos modificados
 - `scripts/world/pendrive_pickup.gd`
@@ -473,24 +503,24 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ### Testes
 - Hub headless `--quit-after 3` EXIT 0 (Balance OK)
-- PIE visual (pendrive/shop/eco telegraph): **não** executado
+- PIE visual (pendrive/shop/eco telegraph): **nÃ£o** executado
 
 ### Problemas encontrados
-- Elite Joãosias ainda **AGUARDANDO DECISÃO** (sala de spawn)
-- Feedback visual fino depende de PIE do usuário
+- Elite JoÃ£osias ainda **AGUARDANDO DECISÃƒO** (sala de spawn)
+- Feedback visual fino depende de PIE do usuÃ¡rio
 
-### Próxima tarefa
-- Feedback de roll/ataque sem vigor (toast leve ou só flash já existente)
-- Revisar terminal/interações E próximos juice de combate
+### PrÃ³xima tarefa
+- Feedback de roll/ataque sem vigor (toast leve ou sÃ³ flash jÃ¡ existente)
+- Revisar terminal/interaÃ§Ãµes E prÃ³ximos juice de combate
 
 ---
 
 ## 2026-09-15 ~01:50 BRT
 
-### Alteração
-- Agente autônomo com **toggle fácil**: `AUTONOMOUS_MODE.json` + rule `.cursor/rules/autonomous-dev.mdc` + doc `docs/AGENTE_AUTONOMO.md`.
+### AlteraÃ§Ã£o
+- Agente autÃ´nomo com **toggle fÃ¡cil**: `AUTONOMOUS_MODE.json` + rule `.cursor/rules/autonomous-dev.mdc` + doc `docs/AGENTE_AUTONOMO.md`.
 - Git do runtime Godot inicializado na branch `godot-4`, remote = Chromick/Amandaconda (sem tocar em `master` Pygame).
-- UI: HUD mostra `MARCADO Xs` (magenta) enquanto a mark da Net está ativa.
+- UI: HUD mostra `MARCADO Xs` (magenta) enquanto a mark da Net estÃ¡ ativa.
 
 ### Arquivos modificados
 - `AUTONOMOUS_MODE.json` (novo)
@@ -502,19 +532,19 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - `AUTONOMOUS_PROGRESS.md`
 
 ### Testes
-- Hub headless EXIT 0 após indicador MARCADO
+- Hub headless EXIT 0 apÃ³s indicador MARCADO
 - `git fetch origin master` OK
 
 ### Problemas encontrados
-- Push ainda não validado nesta entrada (próximo passo)
-- PIE visual da marca: não testado
+- Push ainda nÃ£o validado nesta entrada (prÃ³ximo passo)
+- PIE visual da marca: nÃ£o testado
 
 ## 2026-09-15 ~01:55 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - Push da branch `godot-4` para https://github.com/Chromick/Amandaconda/tree/godot-4 (master Pygame intacto).
 - HUD: indicador `MARCADO Xs` enquanto mark da Net ativa.
-- F5 balance: toast “Balance F5 · recarregado”.
+- F5 balance: toast â€œBalance F5 Â· recarregadoâ€.
 - Agente toggle documentado e ativo (`AUTONOMOUS_MODE.json`).
 
 ### Arquivos modificados
@@ -528,26 +558,26 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ### Testes
 - Hub headless EXIT 0
-- `git push origin godot-4` → branch criada no GitHub
+- `git push origin godot-4` â†’ branch criada no GitHub
 
 ### Problemas encontrados
 - PowerShell reporta exit 1 no push por mensagens `remote:` no stderr; branch foi criada com sucesso
 
-### Próxima tarefa
-- Continuar loop: polish pause/menu ou elite Joãosias (ainda AGUARDANDO DECISÃO de sala)
-- Opcional: abrir PR `godot-4` → não mergear em master sem pedido
+### PrÃ³xima tarefa
+- Continuar loop: polish pause/menu ou elite JoÃ£osias (ainda AGUARDANDO DECISÃƒO de sala)
+- Opcional: abrir PR `godot-4` â†’ nÃ£o mergear em master sem pedido
 
 ---
 
-## Histórico anterior (bugs SessionUtil / HitFeel / Portara / etc.)
+## HistÃ³rico anterior (bugs SessionUtil / HitFeel / Portara / etc.)
 
-Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil, restore/balance, hitstop, mark toast, arena toast, net shot magenta.
+Ver entradas ~01:40â€“01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil, restore/balance, hitstop, mark toast, arena toast, net shot magenta.
 
 ## 2026-09-15 01:53 BRT
 
-### Alteração
-- Autônomo confirmado ligado (enabled: true).
-- \HitFeel.cancel()\: pause/menu/respawn não deixam \	ime_scale\ preso.
+### AlteraÃ§Ã£o
+- AutÃ´nomo confirmado ligado (enabled: true).
+- \HitFeel.cancel()\: pause/menu/respawn nÃ£o deixam \	ime_scale\ preso.
 - Respawn limpa mark, slow, eco e hacks.
 - \enemy_base._face_flat()\: look_at XZ seguro no retorno ao spawn.
 
@@ -561,18 +591,18 @@ Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil,
 
 ### Testes
 - Hub headless EXIT 0
-- PIE pause-durante-hitstop: não testado visualmente
+- PIE pause-durante-hitstop: nÃ£o testado visualmente
 
 ### Problemas encontrados
-- Joãosias spawn ainda AGUARDANDO DECISÃO
+- JoÃ£osias spawn ainda AGUARDANDO DECISÃƒO
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Migrar look_at dos bosses/trash para \_face_flat\ onde fizer sentido
 - Continuar polish de combate / UI
 
 ## 2026-09-15 01:54 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - Trash/bosses passam a usar \_face_flat\ no chase (8 scripts).
 
 ### Arquivos modificados
@@ -585,13 +615,13 @@ Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil,
 ### Problemas encontrados
 - (nenhum)
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - UI menu/version ou polish de lock-on distance feedback
 
 ## 2026-09-15 01:56 BRT
 
-### Alteração
-- Loop contínuo: vírus look_at seguro + spark no hit; feedback de lock-on; menu noturno + versão; toast na safezone; HitFeel cancel ao iniciar run; lock limpa alvo morto.
+### AlteraÃ§Ã£o
+- Loop contÃ­nuo: vÃ­rus look_at seguro + spark no hit; feedback de lock-on; menu noturno + versÃ£o; toast na safezone; HitFeel cancel ao iniciar run; lock limpa alvo morto.
 
 ### Arquivos modificados
 - scripts/combat/virus_projectile.gd
@@ -607,14 +637,14 @@ Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil,
 ### Problemas encontrados
 - (nenhum novo)
 
-### Próxima tarefa
-- Continuar polish: damage popup no player ao tomar dano, ou telegraph do vírus
+### PrÃ³xima tarefa
+- Continuar polish: damage popup no player ao tomar dano, ou telegraph do vÃ­rus
 
 ## 2026-09-15 01:57 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - Popup de dano vermelho quando o player toma hit.
-- Projétil vírus com luz omni + emission mais forte.
+- ProjÃ©til vÃ­rus com luz omni + emission mais forte.
 
 ### Arquivos modificados
 - scripts/player/player_controller.gd
@@ -627,12 +657,12 @@ Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil,
 ### Problemas encontrados
 - (nenhum)
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar: heal popup verde / streak de bytes pickup feedback
 
 ## 2026-09-15 01:57 BRT
 
-### Alteração
+### AlteraÃ§Ã£o
 - Cura de lata: popup verde + spark (safezone drip sem spam).
 - Bytes pickup: spin/bob, toast \+N KB\, spark dourado.
 
@@ -647,5 +677,5 @@ Ver entradas ~01:40–01:48 abaixo no arquivo legado; resumo: sparks, SceneUtil,
 ### Problemas encontrados
 - (nenhum)
 
-### Próxima tarefa
+### PrÃ³xima tarefa
 - Continuar no loop (pendrive pickup / patch shop UX)
