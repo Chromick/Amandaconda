@@ -7,6 +7,7 @@ var _bodies: Array[Node] = []
 var _mesh: MeshInstance3D
 var _mat: StandardMaterial3D
 var _pulse: float = 0.0
+var _expiring: bool = false
 
 
 func setup(radius: float, duration: float, slow: float) -> void:
@@ -45,7 +46,8 @@ func _physics_process(delta: float) -> void:
 	for i in range(_bodies.size() - 1, -1, -1):
 		if _bodies[i] == null or not is_instance_valid(_bodies[i]):
 			_bodies.remove_at(i)
-	if lifetime <= 0.0:
+	if lifetime <= 0.0 and not _expiring:
+		_expiring = true
 		for b in _bodies:
 			_clear_body(b)
 		_bodies.clear()
