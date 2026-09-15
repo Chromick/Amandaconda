@@ -17,10 +17,10 @@
     "capsule_radius": 0.35,
     "capsule_height": 1.8,
 
-    "max_health": 155,
-    "max_stamina": 155,
-    "stamina_regen": 86,
-    "stamina_regen_delay": 0.22,
+    "max_health": 160,
+    "max_stamina": 160,
+    "stamina_regen": 90,
+    "stamina_regen_delay": 0.2,
 
     "walk_speed": 6.7,
     "run_speed": 11.0,
@@ -39,21 +39,21 @@
     "turn_speed": 17.0,
     "attack_move_mult": 0.22,
     "buffer_de_acao": 0.26,
-    "combo_janela": 0.85,
+    "combo_janela": 0.9,
     "combo_max": 3,
-    "sprint_attack_dash": 15.0,
-    "sprint_stamina_drain": 4.2,
+    "sprint_attack_dash": 15.5,
+    "sprint_stamina_drain": 4.0,
 
     "arma_inicial": "teclado",
     "virus_desbloqueado": true,
 
     "rolamento": {
-      "duracao": 0.32,
+      "duracao": 0.31,
       "inv_inicio": 0.0,
-      "inv_duracao": 0.5,
-      "vigor": 14,
-      "velocidade": 15.8,
-      "atrito_final": 42.0
+      "inv_duracao": 0.52,
+      "vigor": 13,
+      "velocidade": 16.2,
+      "atrito_final": 44.0
     },
 
     "dano_recebido": {
