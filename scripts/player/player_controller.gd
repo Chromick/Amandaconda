@@ -326,8 +326,10 @@ func _update_lock_marker(delta: float) -> void:
 	if lock_target and is_instance_valid(lock_target):
 		if lock_target.has_method("is_alive") and not lock_target.is_alive():
 			lock_target = null
+			_try_auto_relock()
 		elif "health" in lock_target and float(lock_target.health) <= 0.0:
 			lock_target = null
+			_try_auto_relock()
 	if lock_target and is_instance_valid(lock_target):
 		# top_level evita o marker herdar yaw do player e "orbita" errado
 		_lock_marker.top_level = true
@@ -1287,16 +1289,18 @@ func _require_stamina(cost: float) -> bool:
 	return false
 
 
-func _toggle_lock_on() -> void:
-	if lock_target and is_instance_valid(lock_target):
-		lock_target = null
-		GameState.show_toast("Lock off")
-		return
+func _find_lock_target() -> Node3D:
 	var best: Node3D = null
 	var best_score := INF
 	var max_d := float(Balance.camera().get("lock_on_distance", 18.0))
+	if lock_sensor == null:
+		return null
 	for body in lock_sensor.get_overlapping_bodies():
 		if body == self or not body.is_in_group("lockable"):
+			continue
+		if body.has_method("is_alive") and not body.is_alive():
+			continue
+		if "health" in body and float(body.health) <= 0.0:
 			continue
 		var to := body.global_position - global_position
 		var d := to.length()
@@ -1306,12 +1310,25 @@ func _toggle_lock_on() -> void:
 		var front := facing.dot(dir)
 		if front < -0.15:
 			continue
-		# Distância ponderada: alvos à frente ganham prioridade.
 		var score := d / maxf(0.25 + front, 0.2)
 		if score < best_score:
 			best_score = score
 			best = body
-	lock_target = best
+	return best
+
+
+func _try_auto_relock() -> void:
+	var next := _find_lock_target()
+	if next:
+		lock_target = next
+
+
+func _toggle_lock_on() -> void:
+	if lock_target and is_instance_valid(lock_target):
+		lock_target = null
+		GameState.show_toast("Lock off")
+		return
+	lock_target = _find_lock_target()
 	if lock_target:
 		GameState.show_toast("Lock on")
 		HitFeel.spark_at(lock_target.global_position + Vector3.UP * 1.5, Color(0.55, 0.95, 1.0), 0.55)
