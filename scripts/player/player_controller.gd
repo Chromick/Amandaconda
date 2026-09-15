@@ -324,8 +324,11 @@ func _update_lock_marker(delta: float) -> void:
 		# top_level evita o marker herdar yaw do player e "orbita" errado
 		_lock_marker.top_level = true
 		_lock_marker.visible = true
-		_lock_marker.global_position = lock_target.global_position + Vector3.UP * 2.35
+		var bob := sin(Time.get_ticks_msec() * 0.006) * 0.12
+		_lock_marker.global_position = lock_target.global_position + Vector3.UP * (2.35 + bob)
 		_lock_marker.rotate_y(delta * 2.8)
+		var pulse := 1.0 + sin(Time.get_ticks_msec() * 0.01) * 0.12
+		_lock_marker.scale = Vector3(pulse, pulse, pulse)
 		var mat := _lock_marker.material_override as StandardMaterial3D
 		if mat:
 			mat.emission_energy_multiplier = 1.8 + sin(Time.get_ticks_msec() * 0.01) * 0.9
@@ -1247,6 +1250,10 @@ func _toggle_lock_on() -> void:
 	lock_target = best
 	if lock_target:
 		GameState.show_toast("Lock on")
+		HitFeel.spark_at(lock_target.global_position + Vector3.UP * 1.5, Color(0.55, 0.95, 1.0), 0.55)
+		for cam in get_tree().get_nodes_in_group("player_camera"):
+			if cam and cam.has_method("punch_fov"):
+				cam.punch_fov(-3.0)
 	else:
 		GameState.show_toast("Sem alvo no alcance")
 		var hud := get_tree().get_first_node_in_group("hud")

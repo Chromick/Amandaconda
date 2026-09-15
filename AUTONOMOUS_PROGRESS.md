@@ -6,6 +6,22 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~07:45 BRT
+
+### Alteração
+- v0.4.4: camera spring lock/sprint; stamina toast; ability cast juice; Chatana Beach; trash KO shrink; lock marker bob + FOV punch.
+
+### Testes
+- Hub headless EXIT 0 (vários ciclos)
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar loop
+
+---
+
 ## 2026-09-15 ~08:28 BRT
 
 ### Alteração
