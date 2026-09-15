@@ -206,7 +206,7 @@ func _die() -> void:
 		queue_free()
 
 
-func _drop_bytes() -> void:
+func _drop_bytes(announce: bool = true) -> void:
 	var rng: Variant = _cfg.get("bytes", null)
 	if typeof(rng) != TYPE_ARRAY or rng.size() < 2:
 		return
@@ -214,7 +214,8 @@ func _drop_bytes() -> void:
 	if got <= 0:
 		return
 	GameState.add_bytes(got)
-	GameState.show_toast("+%d KB" % got)
+	if announce:
+		GameState.show_toast("+%d KB" % got)
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position + Vector3.UP * 0.85, Color(0.95, 0.85, 0.35), 1.05)
 		HitFeel.shake(0.08)

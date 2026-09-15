@@ -221,8 +221,7 @@ func _physics_process(delta: float) -> void:
 	_update_roll_visual()
 	_update_lock_marker(delta)
 	_update_character_anim()
-	if _roll_ghost_timer > 0.0:
-		_roll_ghost_timer -= delta
+	_tick_roll_ghosts(delta)
 
 
 func _update_lock_marker(delta: float) -> void:
@@ -597,13 +596,54 @@ func _update_roll_visual() -> void:
 	# Feedback visual só durante a janela real de i-frame.
 	if _roll_invulnerable():
 		_set_mesh_color(Color(0.75, 0.95, 1.0))
-		_roll_ghost_timer = 0.12
 		if _visual and _visual.root:
 			_visual.root.scale = Vector3(1.08, 0.92, 1.08)
 	else:
 		_set_mesh_color(Color(0.45, 0.55, 0.75))
 		if _visual and _visual.root:
 			_visual.root.scale = Vector3.ONE
+
+
+func _tick_roll_ghosts(delta: float) -> void:
+	if _roll_ghost_timer > 0.0:
+		_roll_ghost_timer -= delta
+	if state != State.ROLL or not _roll_invulnerable():
+		return
+	if _roll_ghost_timer > 0.0:
+		return
+	_roll_ghost_timer = 0.07
+	_spawn_roll_ghost()
+
+
+func _spawn_roll_ghost() -> void:
+	var ghost := MeshInstance3D.new()
+	ghost.top_level = true
+	if mesh and mesh.mesh:
+		ghost.mesh = mesh.mesh.duplicate()
+	else:
+		var cap := CapsuleMesh.new()
+		cap.radius = 0.35
+		cap.height = 1.5
+		ghost.mesh = cap
+	var mat := StandardMaterial3D.new()
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.albedo_color = Color(0.55, 0.85, 1.0, 0.45)
+	mat.emission_enabled = true
+	mat.emission = Color(0.4, 0.75, 1.0)
+	mat.emission_energy_multiplier = 1.3
+	ghost.material_override = mat
+	var host := get_tree().current_scene
+	if host == null:
+		host = self
+	host.add_child(ghost)
+	ghost.global_transform = global_transform
+	ghost.global_position = global_position + Vector3.UP * 0.05
+	var tw := create_tween()
+	tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.28)
+	tw.parallel().tween_property(mat, "emission_energy_multiplier", 0.2, 0.28)
+	tw.tween_callback(ghost.queue_free)
 
 
 

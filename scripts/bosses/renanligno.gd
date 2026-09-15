@@ -32,6 +32,7 @@ func _ready() -> void:
 		"recuperacao": 0.5,
 		"dano": 18,
 		"alcance": 1.8,
+		"bytes": Balance.data.get("chefes", {}).get("renanligno", {}).get("bytes", [120, 180]),
 	}
 	max_health = float(_cfg.get("vida", 240))
 	health = max_health
@@ -110,6 +111,8 @@ func _apply_balance() -> void:
 	var boss: Dictionary = Balance.data.get("chefes", {}).get("renanligno", {})
 	_cfg["vida"] = float(boss.get("vida", 240))
 	_cfg["nome"] = str(boss.get("nome", "RENANLIGNO"))
+	if boss.has("bytes"):
+		_cfg["bytes"] = boss.get("bytes")
 	max_health = float(_cfg["vida"])
 	if not _dead:
 		health = minf(health, max_health)
@@ -141,6 +144,7 @@ func _update_label() -> void:
 func _die() -> void:
 	_dead = true
 	died.emit()
+	_drop_bytes(false)
 	GameState.mark_boss_defeated("renanligno")
 	_set_color(Color(0.2, 0.22, 0.25))
 	if label:

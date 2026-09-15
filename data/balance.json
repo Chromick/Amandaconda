@@ -260,6 +260,7 @@
       "vida": 280,
       "nome": "LUANEVIL",
       "local": "Bandejão",
+      "bytes": [120, 180],
       "velocidade": 3.4,
       "dano_leve": 16,
       "dano_pesado": 28,
@@ -279,12 +280,14 @@
     "renanligno": {
       "vida": 240,
       "nome": "RENANLIGNO",
-      "local": "Laboratório"
+      "local": "Laboratório",
+      "bytes": [120, 180]
     },
     "balarrals": {
       "vida": 220,
       "nome": "BALARRALS",
       "local": "Pátio",
+      "bytes": [100, 160],
       "dano_leve": 14,
       "dano_pesado": 28,
       "velocidade": 5.8
@@ -293,6 +296,7 @@
       "vida": 300,
       "nome": "MARLOMBÓLICO",
       "local": "Servidores",
+      "bytes": [160, 240],
       "velocidade": 3.8,
       "dano": 15,
       "intervalo": 1.5,
@@ -307,6 +311,7 @@
       "vida": 450,
       "nome": "AMANDACONDA",
       "local": "A porta",
+      "bytes": [220, 320],
       "velocidade": 3.6,
       "dano_leve": 18,
       "dano_pesado": 32,

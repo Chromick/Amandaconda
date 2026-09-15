@@ -110,8 +110,36 @@ func end_fight() -> void:
 		_set_seals(false)
 		return
 	_engaged = false
-	_set_seals(false)
+	_dissolve_seals()
 	_fog_label.text = ""
+
+
+func _dissolve_seals() -> void:
+	for seal in _seals:
+		if not is_instance_valid(seal):
+			continue
+		var col := seal.get_node_or_null("CollisionShape3D") as CollisionShape3D
+		if col:
+			col.disabled = true
+		var mesh := seal.get_node_or_null("MeshInstance3D") as MeshInstance3D
+		if mesh == null:
+			# First MeshInstance3D child
+			for c in seal.get_children():
+				if c is MeshInstance3D:
+					mesh = c
+					break
+		var mat := mesh.material_override as StandardMaterial3D if mesh else null
+		if mat == null:
+			seal.visible = false
+			continue
+		var tw := create_tween()
+		tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tw.tween_property(mat, "albedo_color:a", 0.0, 0.55)
+		tw.parallel().tween_property(mat, "emission_energy_multiplier", 0.1, 0.55)
+		tw.tween_callback(func():
+			if is_instance_valid(seal):
+				seal.visible = false
+		)
 
 
 func _hook_player() -> void:
@@ -149,6 +177,14 @@ func _set_seals(locked: bool) -> void:
 		var col := seal.get_node_or_null("CollisionShape3D") as CollisionShape3D
 		if col:
 			col.disabled = not locked
+		if locked:
+			for c in seal.get_children():
+				if c is MeshInstance3D:
+					var mat := (c as MeshInstance3D).material_override as StandardMaterial3D
+					if mat:
+						mat.albedo_color.a = 0.62
+						mat.emission_energy_multiplier = 2.4
+					break
 
 
 func _make_seal(pos: Vector3, size: Vector3) -> StaticBody3D:

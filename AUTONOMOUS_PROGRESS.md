@@ -6,6 +6,36 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~07:30 BRT
+
+### Alteração
+- **Bosses**: recompensa KB no `balance.json` + `_drop_bytes(false)` na morte (spark; toast de habilidade/progressão permanece).
+- Renanligno passa a carregar `bytes` no `_cfg`.
+- **Roll**: afterimages cianos na janela de i-frame (timer morto agora spawna ghosts).
+- **Portões**: toast + spark ao liberar.
+- **Arena**: névoa do chefe dissolve com fade ao fim da luta (restaura alpha no re-lock).
+
+### Arquivos modificados
+- `data/balance.json`
+- `scripts/enemies/enemy_base.gd`
+- `scripts/bosses/*.gd` (5 chefs)
+- `scripts/player/player_controller.gd`
+- `scripts/world/boss_gate.gd`
+- `scripts/world/boss_arena.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0 (várias vezes neste ciclo)
+- PIE: roll ghosts / boss drop / seal fade — não testados visualmente
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Combo toast / virus charge telegraph / polish HUD bytes flash
+
+---
+
 ## 2026-09-15 ~02:28 BRT
 
 ### Alteração

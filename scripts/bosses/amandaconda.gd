@@ -153,6 +153,7 @@ func _awaken() -> void:
 func _die() -> void:
 	_dead = true
 	died.emit()
+	_drop_bytes(false)
 	GameState.mark_boss_defeated("amandaconda")
 	_set_color(Color(0.25, 0.25, 0.28))
 	if label:
