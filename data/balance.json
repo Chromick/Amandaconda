@@ -134,12 +134,12 @@
   },
 
   "impacto": {
-    "pausa_no_acerto": 0.105,
-    "pausa_ao_matar": 0.34,
-    "empurrao_no_alvo": 5.6,
-    "shake_on_hit": 0.52,
-    "shake_amp": 0.4,
-    "shake_decay": 2.05
+    "pausa_no_acerto": 0.11,
+    "pausa_ao_matar": 0.35,
+    "empurrao_no_alvo": 5.8,
+    "shake_on_hit": 0.54,
+    "shake_amp": 0.42,
+    "shake_decay": 2.1
   },
 
   "boneco": {
