@@ -255,7 +255,7 @@ func _chase(delta: float) -> void:
 	if _cooldown <= 0.0 and dist < 8.0:
 		_strike_pos = player.global_position
 		_phase = Phase.TELEGRAPH
-		_phase_t = float(_cfg.get("telegraph", 0.55))
+		_phase_t = float(_cfg.get("telegraph", 0.55)) * (0.72 if _enraged else 1.0)
 		get_tree().create_timer(float(_cfg.get("delay_hit", 0.28))).timeout.connect(_ghost_hit, CONNECT_ONE_SHOT)
 		velocity = Vector3.ZERO
 		HitFeel.shake(0.12)

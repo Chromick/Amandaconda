@@ -302,7 +302,7 @@ func _ai(delta: float) -> void:
 	if dist <= float(_cfg.get("alcance", 1.7)) + 0.4:
 		_heavy = randf() > 0.55
 		_phase = Phase.WINDUP
-		_phase_t = float(_cfg.get("preparacao_pesado" if _heavy else "preparacao_leve", 0.2))
+		_phase_t = float(_cfg.get("preparacao_pesado" if _heavy else "preparacao_leve", 0.2)) * (0.72 if _enraged else 1.0)
 		velocity = Vector3.ZERO
 		AttackTelegraphScript.set_active(_telegraph, true, false)
 		AttackTelegraphScript.set_active(_slam_ring, _heavy, false)
