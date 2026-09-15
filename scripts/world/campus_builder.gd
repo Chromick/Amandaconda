@@ -488,6 +488,7 @@ func _add_room_light(pos: Vector3, color: Color, energy: float, omni_range: floa
 func _spawn_night_stars() -> void:
 	var stars := Node3D.new()
 	stars.name = "NightStars"
+	stars.set_script(preload("res://scripts/world/star_field.gd"))
 	rooms_root.add_child(stars)
 	for i in 55:
 		var star := MeshInstance3D.new()
