@@ -300,8 +300,8 @@
         "id": "magnet_boost",
         "nome": "magnet_boost",
         "custo": 95,
-        "texto": "+35% magnet",
-        "magnet_mult": 1.35
+        "texto": "+40% magnet",
+        "magnet_mult": 1.4
       },
       {
         "id": "jump_buffer_plus",
@@ -406,29 +406,29 @@
       "fase2_vida": 0.5
     },
     "renanligno": {
-      "vida": 260,
+      "vida": 270,
       "nome": "RENANLIGNO",
       "local": "Laboratório",
-      "bytes": [160, 220],
-      "velocidade": 4.4,
-      "intervalo": 1.55,
-      "telegraph": 0.48,
-      "delay_hit": 0.25,
+      "bytes": [165, 230],
+      "velocidade": 4.5,
+      "intervalo": 1.5,
+      "telegraph": 0.46,
+      "delay_hit": 0.24,
       "acerto": 0.1,
-      "recuperacao": 0.46,
-      "dano": 20,
-      "alcance": 1.9
+      "recuperacao": 0.44,
+      "dano": 21,
+      "alcance": 1.95
     },
     "balarrals": {
-      "vida": 230,
+      "vida": 240,
       "nome": "BALARRALS",
       "local": "Pátio",
-      "bytes": [135, 195],
-      "dano_leve": 15,
-      "dano_pesado": 30,
-      "velocidade": 6.1,
-      "intervalo": 1.15,
-      "alcance": 1.8
+      "bytes": [140, 200],
+      "dano_leve": 16,
+      "dano_pesado": 31,
+      "velocidade": 6.2,
+      "intervalo": 1.1,
+      "alcance": 1.85
     },
     "marlombolico": {
       "vida": 330,
