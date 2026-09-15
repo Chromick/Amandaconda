@@ -105,7 +105,7 @@ func _process(delta: float) -> void:
 			health_bar.modulate = Color.WHITE
 		if _vignette:
 			var mp := 0.6 + 0.4 * sin(Time.get_ticks_msec() * 0.009)
-			_vignette.color = Color(0.45, 0.15, 0.7, (0.06 + 0.08 * mp))
+			_vignette.color = Color(0.45, 0.15, 0.7, (0.08 + 0.12 * mp))
 	elif health_bar and _heal_pulse <= 0.0:
 		health_bar.modulate = Color.WHITE
 		if _vignette:
