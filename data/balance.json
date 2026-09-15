@@ -36,9 +36,9 @@
     "coyote_time": 0.21,
     "jump_buffer": 0.26,
 
-    "turn_speed": 15.0,
-    "attack_move_mult": 0.18,
-    "buffer_de_acao": 0.22,
+    "turn_speed": 16.0,
+    "attack_move_mult": 0.2,
+    "buffer_de_acao": 0.24,
     "combo_janela": 0.8,
     "combo_max": 3,
     "sprint_attack_dash": 14.8,
@@ -209,9 +209,9 @@
 
   "cura": {
     "latas": 7,
-    "cura": 72,
-    "tempo_uso": 0.45,
-    "safezone_regen": 66.0,
+    "cura": 75,
+    "tempo_uso": 0.42,
+    "safezone_regen": 70.0,
     "safezone_latas": true
   },
 
@@ -378,13 +378,13 @@
 
   "chefes": {
     "luanevil": {
-      "vida": 280,
+      "vida": 290,
       "nome": "LUANEVIL",
       "local": "Bandejão",
-      "bytes": [150, 210],
-      "velocidade": 3.45,
-      "dano_leve": 16,
-      "dano_pesado": 28,
+      "bytes": [155, 220],
+      "velocidade": 3.5,
+      "dano_leve": 17,
+      "dano_pesado": 30,
       "intervalo": 1.6,
       "preparacao_leve": 0.35,
       "acerto_leve": 0.12,
