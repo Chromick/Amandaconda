@@ -50,7 +50,7 @@ func reset_run() -> void:
 	in_safezone = false
 	clear_hacks()
 	var cura: Dictionary = Balance.data.get("cura", {})
-	max_heals = int(cura.get("latas", 3))
+	max_heals = int(cura.get("latas", 3)) + bonus_max_heals()
 	heals = max_heals
 	bytes_changed.emit(bytes)
 	heals_changed.emit(heals, max_heals)
@@ -150,6 +150,22 @@ func bonus_max_stamina() -> float:
 	return bonus
 
 
+func bonus_max_heals() -> int:
+	var bonus := 0
+	for pid in active_patches:
+		var patch := _find_patch(pid)
+		bonus += int(patch.get("latas_max", 0))
+	return bonus
+
+
+func refresh_heal_slots() -> void:
+	var cura: Dictionary = Balance.data.get("cura", {})
+	var base := int(cura.get("latas", 3))
+	max_heals = base + bonus_max_heals()
+	heals = mini(heals, max_heals)
+	heals_changed.emit(heals, max_heals)
+
+
 func _find_patch(pid: String) -> Dictionary:
 	var catalog: Array = Balance.data.get("patches", {}).get("catalogo", [])
 	for item in catalog:
@@ -170,6 +186,7 @@ func buy_patch(pid: String) -> bool:
 	if not spend_bytes(int(patch.get("custo", 0))):
 		return false
 	active_patches.append(pid)
+	refresh_heal_slots()
 	patches_changed.emit()
 	return true
 
