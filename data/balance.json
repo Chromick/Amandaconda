@@ -122,7 +122,7 @@
   "camera": {
     "distance": 3.7,
     "height": 2.0,
-    "fov": 81.0,
+    "fov": 82.0,
     "min_pitch": -48.0,
     "max_pitch": 66.0,
     "sensitivity": 0.2,

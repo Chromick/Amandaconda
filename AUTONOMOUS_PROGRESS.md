@@ -21,6 +21,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Continuar até o usuário parar
 
 ---
+## 2026-09-15 ~loop v0.9.4
+
+### Alteração
+- FOV82; dust+; gate Chatana + NW Net.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.9.3
 
 ### Alteração
