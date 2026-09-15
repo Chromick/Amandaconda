@@ -13,6 +13,8 @@ func _ready() -> void:
 	if hud and player and hud.has_method("bind_player"):
 		hud.bind_player(player)
 	GameState.safezone_position = Vector3(0, 1, 22)
+	await get_tree().create_timer(0.35).timeout
+	GameState.show_toast("Univassouras · %s" % GameState.school_label())
 	# Liga terminal(s) ao shop.
 	await get_tree().process_frame
 	for t in get_tree().get_nodes_in_group("patch_terminal"):
