@@ -46,6 +46,24 @@ func _style_buttons() -> void:
 		btn.add_theme_color_override("font_color", Color(0.9, 0.95, 0.92))
 		btn.add_theme_color_override("font_hover_color", Color(0.55, 1.0, 0.75))
 		btn.add_theme_color_override("font_pressed_color", Color(0.35, 0.85, 0.6))
+		if not btn.mouse_entered.is_connected(_on_btn_hover.bind(btn)):
+			btn.mouse_entered.connect(_on_btn_hover.bind(btn))
+		if not btn.mouse_exited.is_connected(_on_btn_unhover.bind(btn)):
+			btn.mouse_exited.connect(_on_btn_unhover.bind(btn))
+
+
+func _on_btn_hover(btn: Button) -> void:
+	if btn == null:
+		return
+	var tw := create_tween()
+	tw.tween_property(btn, "scale", Vector2(1.04, 1.04), 0.12).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+
+func _on_btn_unhover(btn: Button) -> void:
+	if btn == null:
+		return
+	var tw := create_tween()
+	tw.tween_property(btn, "scale", Vector2.ONE, 0.1)
 
 
 func _fill_version() -> void:
