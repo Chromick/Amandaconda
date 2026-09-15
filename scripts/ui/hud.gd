@@ -27,6 +27,7 @@ const HINTS: PackedStringArray = [
 	"impact_frame +12% dano · macro_combo ainda mais forte",
 	"stamina_siphon +25 vigor · hotfix_vigor ainda ajuda",
 	"vida_extra +20 HP · daemon_safe também soma",
+	"lata_plus +1 lata · heal_cache/cache_latas empilham",
 	"Net marca e freia · role através · Espelho devolve o golpe",
 ]
 

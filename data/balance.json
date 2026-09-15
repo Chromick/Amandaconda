@@ -330,6 +330,13 @@
         "custo": 115,
         "texto": "+20 vida max",
         "vida_max": 20
+      },
+      {
+        "id": "lata_plus",
+        "nome": "lata_plus",
+        "custo": 90,
+        "texto": "+1 lata max",
+        "latas_max": 1
       }
     ]
   },
