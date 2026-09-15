@@ -306,11 +306,11 @@ func _spawn_sprint_dust() -> void:
 	var host := get_tree().current_scene
 	if host == null:
 		return
-	for i in 2:
+	for i in 3:
 		var p := MeshInstance3D.new()
 		var sm := SphereMesh.new()
-		sm.radius = 0.05
-		sm.height = 0.1
+		sm.radius = 0.055
+		sm.height = 0.11
 		p.mesh = sm
 		var mat := StandardMaterial3D.new()
 		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
