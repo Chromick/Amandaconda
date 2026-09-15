@@ -106,14 +106,14 @@
           "carga_maxima": 0.55,
           "acerto": 0.08,
           "recuperacao": 0.4,
-          "dano": 20,
-          "dano_carregado": 40,
-          "vigor": 25,
+          "dano": 21,
+          "dano_carregado": 42,
+          "vigor": 24,
           "avanco": 0,
-          "velocidade": 10.5,
-          "tempo_de_vida": 1.85,
-          "raio": 0.46,
-          "quique": 0.62
+          "velocidade": 11.0,
+          "tempo_de_vida": 1.9,
+          "raio": 0.48,
+          "quique": 0.65
         }
       }
     }
