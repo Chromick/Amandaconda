@@ -268,11 +268,12 @@ func _spawn_land_dust() -> void:
 	var host := get_tree().current_scene
 	if host == null:
 		return
+	var impact := clampf(absf(_air_vy) / 14.0, 0.55, 1.6)
 	for i in 4:
 		var p := MeshInstance3D.new()
 		var sm := SphereMesh.new()
-		sm.radius = 0.06
-		sm.height = 0.12
+		sm.radius = 0.06 * impact
+		sm.height = 0.12 * impact
 		p.mesh = sm
 		var mat := StandardMaterial3D.new()
 		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
@@ -284,7 +285,7 @@ func _spawn_land_dust() -> void:
 		var dir := Vector3(cos(ang), 0.15, sin(ang))
 		p.global_position = global_position + Vector3(0, 0.08, 0) + dir * 0.15
 		var tw := create_tween()
-		tw.tween_property(p, "global_position", p.global_position + dir * 0.55 + Vector3.UP * 0.2, 0.28)
+		tw.tween_property(p, "global_position", p.global_position + dir * (0.55 * impact) + Vector3.UP * 0.2, 0.28)
 		tw.parallel().tween_property(mat, "albedo_color:a", 0.0, 0.28)
 		tw.tween_callback(p.queue_free)
 
