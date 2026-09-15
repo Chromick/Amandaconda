@@ -73,6 +73,7 @@ var _was_sprinting: bool = false
 var _roll_attack_queued: bool = false
 var _was_on_floor: bool = true
 var _land_dust_cd: float = 0.0
+var _stamina_toast_cd: float = 0.0
 
 
 func _ready() -> void:
@@ -230,6 +231,8 @@ func _physics_process(delta: float) -> void:
 	_tick_roll_ghosts(delta)
 	if _land_dust_cd > 0.0:
 		_land_dust_cd -= delta
+	if _stamina_toast_cd > 0.0:
+		_stamina_toast_cd -= delta
 
 
 func _update_land_fx() -> void:
@@ -1217,6 +1220,9 @@ func _require_stamina(cost: float) -> bool:
 	var hud := get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("flash_stamina"):
 		hud.flash_stamina()
+	if _stamina_toast_cd <= 0.0:
+		GameState.show_toast("Vigor insuficiente")
+		_stamina_toast_cd = 0.9
 	return false
 
 
