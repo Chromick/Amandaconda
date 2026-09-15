@@ -56,8 +56,8 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, _source: Node
 		return
 	health = maxf(0.0, health - amount)
 	health_changed.emit(health, max_health)
-	_flash_timer = 0.14
-	_stagger_timer = 0.18
+	_flash_timer = 0.16
+	_stagger_timer = 0.2
 	_set_color(Color(1.0, 0.25, 0.2))
 	velocity += knockback
 	_spawn_popup(amount)
@@ -71,6 +71,8 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, _source: Node
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(1.0, 0.7, 0.3), 1.0)
 			HitFeel.shake(0.2)
+	elif typeof(HitFeel) != TYPE_NIL and amount >= 10.0:
+		HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(1.0, 0.75, 0.35), 0.4 + minf(amount / 40.0, 0.45))
 
 
 func _spawn_popup(amount: float) -> void:
