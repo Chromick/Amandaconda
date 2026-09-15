@@ -38,5 +38,17 @@ func _refresh() -> void:
 			if typeof(HitFeel) != TYPE_NIL:
 				HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.45, 1.0, 0.6), 1.2)
 				HitFeel.shake(0.15)
+			if mesh and mesh.material_override is StandardMaterial3D:
+				var mat := mesh.material_override as StandardMaterial3D
+				var tw := create_tween()
+				tw.tween_property(mat, "albedo_color:a", 0.0, 0.5)
+			elif mesh:
+				var mat2 := StandardMaterial3D.new()
+				mat2.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+				mat2.albedo_color = Color(0.4, 0.4, 0.45, 1.0)
+				mesh.material_override = mat2
+				var tw2 := create_tween()
+				tw2.tween_property(mat2, "albedo_color:a", 0.0, 0.5)
+				tw2.tween_callback(func(): mesh.visible = false)
 	else:
 		label.modulate = Color(1.0, 0.55, 0.45)
