@@ -36,9 +36,9 @@
     "coyote_time": 0.25,
     "jump_buffer": 0.3,
 
-    "turn_speed": 17.0,
-    "attack_move_mult": 0.22,
-    "buffer_de_acao": 0.26,
+    "turn_speed": 18.0,
+    "attack_move_mult": 0.24,
+    "buffer_de_acao": 0.28,
     "combo_janela": 0.9,
     "combo_max": 3,
     "sprint_attack_dash": 15.5,
@@ -204,7 +204,7 @@
     "mark_duration": 4.4,
     "mark_speed_mult": 0.62,
     "renascer_em": 4.5,
-    "bytes": [60, 92]
+    "bytes": [64, 96]
   },
 
   "cura": {
