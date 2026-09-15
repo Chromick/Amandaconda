@@ -17,10 +17,10 @@
     "capsule_radius": 0.35,
     "capsule_height": 1.8,
 
-    "max_health": 220,
-    "max_stamina": 220,
-    "stamina_regen": 128,
-    "stamina_regen_delay": 0.08,
+    "max_health": 225,
+    "max_stamina": 225,
+    "stamina_regen": 132,
+    "stamina_regen_delay": 0.07,
 
     "walk_speed": 8.2,
     "run_speed": 13.5,
@@ -68,11 +68,11 @@
           "preparacao": 0.05,
           "acerto": 0.038,
           "recuperacao": 0.1,
-          "dano": 23,
+          "dano": 24,
           "vigor": 6,
-          "alcance": 1.82,
-          "altura": 1.3,
-          "avanco": 3.95,
+          "alcance": 1.88,
+          "altura": 1.32,
+          "avanco": 4.1,
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
@@ -392,14 +392,14 @@
 
   "chefes": {
     "luanevil": {
-      "vida": 350,
+      "vida": 360,
       "nome": "LUANEVIL",
       "local": "Bandejão",
-      "bytes": [190, 280],
-      "velocidade": 3.85,
-      "dano_leve": 17,
-      "dano_pesado": 31,
-      "intervalo": 1.55,
+      "bytes": [200, 290],
+      "velocidade": 3.95,
+      "dano_leve": 18,
+      "dano_pesado": 32,
+      "intervalo": 1.5,
       "preparacao_leve": 0.35,
       "acerto_leve": 0.12,
       "recuperacao_leve": 0.45,

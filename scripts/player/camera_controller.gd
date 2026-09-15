@@ -115,9 +115,9 @@ func _physics_process(delta: float) -> void:
 		var lock_len := float(Balance.camera().get("distance", 4.5)) * 0.84
 		spring.spring_length = lerpf(spring.spring_length, lock_len, clampf(7.0 * delta, 0.0, 1.0))
 	elif sprinting:
-		_fov_target = _base_fov + 14.0
-		var run_len := float(Balance.camera().get("distance", 4.5)) * 1.1
-		spring.spring_length = lerpf(spring.spring_length, run_len, clampf(5.0 * delta, 0.0, 1.0))
+		_fov_target = _base_fov + 15.0
+		var run_len := float(Balance.camera().get("distance", 4.5)) * 1.12
+		spring.spring_length = lerpf(spring.spring_length, run_len, clampf(5.5 * delta, 0.0, 1.0))
 	else:
 		_fov_target = _base_fov
 		var base_len := float(Balance.camera().get("distance", 4.5))
