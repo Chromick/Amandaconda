@@ -1056,11 +1056,9 @@ func _try_ability() -> void:
 
 
 func _cast_caramelo() -> void:
-	var cost := 20.0
-	if stamina < cost:
-		GameState.show_toast("Vigor insuficiente")
+	if not _require_stamina(20.0):
 		return
-	_spend_stamina(cost)
+	_spend_stamina(20.0)
 	_ability_cd = 6.0
 	var puddle := PUDDLE_SCENE.instantiate()
 	var pos := global_position + facing * 1.2 + Vector3(0, 0.05, 0)
@@ -1068,15 +1066,17 @@ func _cast_caramelo() -> void:
 		return
 	puddle.setup(2.4, 5.5, 0.4)
 	_set_mesh_color(Color(0.85, 0.55, 0.2))
+	HitFeel.spark(pos + Vector3(0, 0.4, 0), Color(1.0, 0.7, 0.25))
+	for cam in get_tree().get_nodes_in_group("player_camera"):
+		if cam and cam.has_method("punch_fov"):
+			cam.punch_fov(4.0)
 	GameState.show_toast("Caramelo!")
 
 
 func _cast_eco() -> void:
-	var cost := 22.0
-	if stamina < cost:
-		GameState.show_toast("Vigor insuficiente")
+	if not _require_stamina(22.0):
 		return
-	_spend_stamina(cost)
+	_spend_stamina(22.0)
 	_ability_cd = 5.0
 	_eco_pending = true
 	_eco_timer = 0.55
@@ -1085,6 +1085,10 @@ func _cast_eco() -> void:
 		_eco_pos = lock_target.global_position
 	_set_mesh_color(Color(0.55, 0.85, 1.0))
 	_spawn_eco_telegraph()
+	HitFeel.spark(_eco_pos + Vector3(0, 0.5, 0), Color(0.5, 0.9, 1.0))
+	for cam in get_tree().get_nodes_in_group("player_camera"):
+		if cam and cam.has_method("punch_fov"):
+			cam.punch_fov(3.5)
 	GameState.show_toast("Eco…")
 
 
