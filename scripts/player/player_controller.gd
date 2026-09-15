@@ -1244,13 +1244,23 @@ func _toggle_lock_on() -> void:
 		GameState.show_toast("Lock off")
 		return
 	var best: Node3D = null
-	var best_d := float(Balance.camera().get("lock_on_distance", 18.0))
+	var best_score := INF
+	var max_d := float(Balance.camera().get("lock_on_distance", 18.0))
 	for body in lock_sensor.get_overlapping_bodies():
 		if body == self or not body.is_in_group("lockable"):
 			continue
-		var d := global_position.distance_to(body.global_position)
-		if d < best_d:
-			best_d = d
+		var to := body.global_position - global_position
+		var d := to.length()
+		if d > max_d or d < 0.01:
+			continue
+		var dir := to / d
+		var front := facing.dot(dir)
+		if front < -0.15:
+			continue
+		# Distância ponderada: alvos à frente ganham prioridade.
+		var score := d / maxf(0.25 + front, 0.2)
+		if score < best_score:
+			best_score = score
 			best = body
 	lock_target = best
 	if lock_target:
