@@ -431,13 +431,13 @@
       "alcance": 2.0
     },
     "marlombolico": {
-      "vida": 390,
+      "vida": 400,
       "nome": "MARLOMBÓLICO",
       "local": "Servidores",
-      "bytes": [260, 360],
-      "velocidade": 4.55,
-      "dano": 18,
-      "intervalo": 1.25,
+      "bytes": [270, 370],
+      "velocidade": 4.6,
+      "dano": 19,
+      "intervalo": 1.2,
       "preparacao": 0.36,
       "acerto": 0.11,
       "recuperacao": 0.5,

@@ -1223,9 +1223,9 @@ func _cast_eco() -> void:
 	if not _require_stamina(22.0):
 		return
 	_spend_stamina(22.0)
-	_ability_cd = 3.6
+	_ability_cd = 3.4
 	_eco_pending = true
-	_eco_timer = 0.34
+	_eco_timer = 0.32
 	_eco_pos = global_position + facing * 2.2
 	if lock_target and is_instance_valid(lock_target):
 		_eco_pos = lock_target.global_position
