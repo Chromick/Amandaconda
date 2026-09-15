@@ -11,6 +11,7 @@ var source: Node = null
 var _bounces_left: int = 2
 var _trail_cd: float = 0.0
 var _light: OmniLight3D
+var _spent: bool = false
 
 
 func _ready() -> void:
@@ -92,11 +93,12 @@ func _spawn_trail() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body == source:
+	if _spent or body == source:
 		return
 	if body.is_in_group("player"):
 		return
 	if body.has_method("take_damage"):
+		_spent = true
 		var knock := velocity.normalized() * knock_strength
 		body.take_damage(damage, knock, source)
 		if typeof(HitFeel) != TYPE_NIL:
@@ -107,8 +109,11 @@ func _on_body_entered(body: Node3D) -> void:
 
 
 func _on_area_entered(area: Area3D) -> void:
+	if _spent:
+		return
 	var parent := area.get_parent()
 	if parent and parent.has_method("take_damage") and parent != source:
+		_spent = true
 		parent.take_damage(damage, velocity.normalized() * knock_strength, source)
 		if typeof(HitFeel) != TYPE_NIL:
 			HitFeel.spark_at(global_position, Color(0.45, 1.0, 0.55), 0.7)
