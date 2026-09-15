@@ -68,11 +68,11 @@
           "preparacao": 0.08,
           "acerto": 0.06,
           "recuperacao": 0.16,
-          "dano": 16,
-          "vigor": 11,
-          "alcance": 1.52,
-          "altura": 1.15,
-          "avanco": 3.05,
+          "dano": 17,
+          "vigor": 10,
+          "alcance": 1.55,
+          "altura": 1.16,
+          "avanco": 3.15,
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
