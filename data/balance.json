@@ -17,8 +17,8 @@
     "capsule_radius": 0.35,
     "capsule_height": 1.8,
 
-    "max_health": 185,
-    "max_stamina": 185,
+    "max_health": 190,
+    "max_stamina": 190,
     "stamina_regen": 105,
     "stamina_regen_delay": 0.15,
 
@@ -57,9 +57,9 @@
     },
 
     "dano_recebido": {
-      "invencibilidade": 0.95,
-      "travado": 0.14,
-      "empurrao": 2.8
+      "invencibilidade": 0.98,
+      "travado": 0.12,
+      "empurrao": 2.6
     },
 
     "armas": {
