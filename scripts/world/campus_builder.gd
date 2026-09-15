@@ -688,6 +688,8 @@ func _build_room(center: Vector3, size: Vector3, color: Color, title: String) ->
 	lab.text = title
 	lab.font_size = 56
 	lab.modulate = color.lightened(0.25)
+	lab.outline_size = 10
+	lab.outline_modulate = Color(0, 0, 0, 0.85)
 	rooms_root.add_child(lab)
 	lab.global_position = center + Vector3(0, 3.2, 0)
 	return _door_gaps(center, size)
