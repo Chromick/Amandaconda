@@ -3,8 +3,8 @@ extends Area3D
 
 @export var amount_min: int = 16
 @export var amount_max: int = 32
-@export var magnet_radius: float = 4.8
-@export var magnet_speed: float = 11.5
+@export var magnet_radius: float = 5.1
+@export var magnet_speed: float = 12.0
 
 @onready var label: Label3D = $Label3D
 @onready var mesh: MeshInstance3D = get_node_or_null("Mesh")

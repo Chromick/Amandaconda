@@ -2,8 +2,8 @@ extends Area3D
 ## Pendrive no chão — escolha Físico (+vida) ou Especial (+dano).
 
 @export var kind: String = "fisico" # fisico | especial
-@export var magnet_radius: float = 5.2
-@export var magnet_speed: float = 11.0
+@export var magnet_radius: float = 5.5
+@export var magnet_speed: float = 12.0
 
 @onready var label: Label3D = $Label3D
 @onready var mesh: MeshInstance3D = $Mesh
