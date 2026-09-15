@@ -187,8 +187,9 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, _source: Node
 	_update_label()
 	if health <= 0.0:
 		_die()
-	elif typeof(HitFeel) != TYPE_NIL and amount >= 10.0:
-		HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(1.0, 0.7, 0.3), 0.4 + minf(amount / 40.0, 0.45))
+	elif typeof(HitFeel) != TYPE_NIL:
+		var s := 0.28 + minf(amount / 35.0, 0.55)
+		HitFeel.spark_at(global_position + Vector3.UP * 1.2, Color(1.0, 0.7, 0.3), s)
 
 
 func _die() -> void:
