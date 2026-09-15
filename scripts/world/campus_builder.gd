@@ -437,6 +437,10 @@ func _dress_servers(root: Node3D) -> void:
 	_prop(root, "column.glb", center + Vector3(4.5, 0, 4.0), 0.0)
 	_emissive_box(center + Vector3(0, 0.1, 0), Vector3(2.5, 0.08, 2.5), Color(0.05, 0.12, 0.06), Color(0.2, 1.0, 0.35), 2.0)
 	_add_room_light(center + Vector3(0, 2.8, 0), Color(0.25, 1.0, 0.4), 7.0, 12.0)
+	_add_room_light(center + Vector3(-3.2, 1.6, -2.0), Color(0.2, 0.9, 0.45), 2.2, 5.0)
+	_add_room_light(center + Vector3(3.0, 1.5, 2.2), Color(0.15, 0.85, 1.0), 2.0, 4.5)
+	_prop(root, "trashcan.glb", center + Vector3(-4.2, 0, 3.5), 15.0)
+	_prop(root, "box-long.glb", center + Vector3(2.5, 0, 3.8), 90.0, 0.95)
 
 
 func _dress_patio(root: Node3D) -> void:
@@ -468,6 +472,9 @@ func _dress_porta(root: Node3D) -> void:
 	_prop(root, "column.glb", center + Vector3(-4, 0, 3), 0.0)
 	_prop(root, "column.glb", center + Vector3(4, 0, 3), 0.0)
 	_prop(root, "barricade-doorway-a.glb", center + Vector3(-3, 0, -2), 10.0, 1.05)
+	_prop(root, "barricade-doorway-a.glb", center + Vector3(3, 0, -1.5), -12.0, 1.0)
+	_prop(root, "column.glb", center + Vector3(-4, 0, -3.5), 0.0)
+	_prop(root, "column.glb", center + Vector3(4, 0, -3.5), 0.0)
 	_emissive_box(center + Vector3(0, 0.08, 1.0), Vector3(2.0, 0.06, 2.0), Color(0.15, 0.08, 0.1), Color(0.9, 0.25, 0.4), 1.8)
 	_add_room_light(center + Vector3(-2, 2.5, 0), Color(0.25, 0.7, 0.4), 5.0, 10.0)
 	_add_room_light(center + Vector3(2, 2.5, 0), Color(1.0, 0.3, 0.45), 5.5, 10.0)
