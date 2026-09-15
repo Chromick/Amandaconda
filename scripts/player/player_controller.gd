@@ -466,6 +466,11 @@ func _process_move(delta: float) -> void:
 				_stamina_toast_cd = 1.2
 	elif stamina > 15.0:
 		_sprint_empty_toasted = false
+	if sprinting and not _was_sprinting and is_on_floor():
+		for cam in get_tree().get_nodes_in_group("player_camera"):
+			if cam and cam.has_method("punch_fov"):
+				cam.punch_fov(2.2)
+				break
 	_was_sprinting = sprinting
 	var target_speed := float(_cfg.get("run_speed", 8.8) if sprinting else _cfg.get("walk_speed", 5.3))
 	target_speed *= speed_mult
