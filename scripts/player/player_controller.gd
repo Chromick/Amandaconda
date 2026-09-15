@@ -790,7 +790,7 @@ func _tick_roll_ghosts(delta: float) -> void:
 		return
 	if _roll_ghost_timer > 0.0:
 		return
-	_roll_ghost_timer = 0.07
+	_roll_ghost_timer = 0.05
 	_spawn_roll_ghost()
 
 
@@ -807,10 +807,10 @@ func _spawn_roll_ghost() -> void:
 	var mat := StandardMaterial3D.new()
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	mat.albedo_color = Color(0.55, 0.85, 1.0, 0.45)
+	mat.albedo_color = Color(0.55, 0.85, 1.0, 0.5)
 	mat.emission_enabled = true
 	mat.emission = Color(0.4, 0.75, 1.0)
-	mat.emission_energy_multiplier = 1.3
+	mat.emission_energy_multiplier = 1.55
 	ghost.material_override = mat
 	var host := get_tree().current_scene
 	if host == null:
@@ -820,8 +820,8 @@ func _spawn_roll_ghost() -> void:
 	ghost.global_position = global_position + Vector3.UP * 0.05
 	var tw := create_tween()
 	tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	tw.tween_property(mat, "albedo_color:a", 0.0, 0.28)
-	tw.parallel().tween_property(mat, "emission_energy_multiplier", 0.2, 0.28)
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.32)
+	tw.parallel().tween_property(mat, "emission_energy_multiplier", 0.15, 0.32)
 	tw.tween_callback(ghost.queue_free)
 
 
