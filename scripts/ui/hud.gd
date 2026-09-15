@@ -139,7 +139,13 @@ func _update_status_bits() -> void:
 			if str(b).begins_with("MARCADO"):
 				marked = true
 				break
-		hack_label.modulate = Color(0.85, 0.45, 1.0) if marked else Color(0.45, 1.0, 0.55)
+		var pulse := 0.75 + 0.25 * absf(sin(Time.get_ticks_msec() * 0.008))
+		if marked:
+			hack_label.modulate = Color(0.85, 0.45, 1.0, pulse)
+		elif GameState.controls_inverted or GameState.hud_lying:
+			hack_label.modulate = Color(0.45, 1.0, 0.55, pulse)
+		else:
+			hack_label.modulate = Color(0.45, 1.0, 0.55)
 
 
 func _style_for_night() -> void:
