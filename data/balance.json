@@ -29,8 +29,8 @@
     "air_accel": 15.0,
     "air_friction": 4.0,
 
-    "gravity": 22.0,
-    "max_fall_speed": 28.0,
+    "gravity": 23.0,
+    "max_fall_speed": 30.0,
     "jump_velocity": 8.8,
     "jump_cut_multiplier": 0.48,
     "coyote_time": 0.14,
