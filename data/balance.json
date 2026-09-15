@@ -80,12 +80,12 @@
           "carga_maxima": 0.65,
           "acerto": 0.09,
           "recuperacao": 0.32,
-          "dano": 32,
-          "dano_carregado": 56,
-          "vigor": 25,
-          "alcance": 1.9,
+          "dano": 33,
+          "dano_carregado": 58,
+          "vigor": 24,
+          "alcance": 1.95,
           "altura": 1.42,
-          "avanco": 5.0
+          "avanco": 5.2
         }
       },
       "virus": {
@@ -93,12 +93,12 @@
           "preparacao": 0.09,
           "acerto": 0.055,
           "recuperacao": 0.18,
-          "dano": 14,
+          "dano": 15,
           "vigor": 7,
           "avanco": 0,
-          "velocidade": 15.5,
-          "tempo_de_vida": 1.55,
-          "raio": 0.33,
+          "velocidade": 16.0,
+          "tempo_de_vida": 1.6,
+          "raio": 0.35,
           "quique": 0.6
         },
         "ataque_pesado": {
@@ -185,7 +185,7 @@
     "alcance": 1.45,
     "altura": 1.6,
     "renascer_em": 4.2,
-    "bytes": [72, 102]
+    "bytes": [76, 108]
   },
 
   "net": {
