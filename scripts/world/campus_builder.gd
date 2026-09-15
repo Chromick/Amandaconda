@@ -455,6 +455,8 @@ func _dress_servers(root: Node3D) -> void:
 	_add_room_light(center + Vector3(3.0, 1.5, 2.2), Color(0.15, 0.85, 1.0), 2.0, 4.5)
 	_prop(root, "trashcan.glb", center + Vector3(-4.2, 0, 3.5), 15.0)
 	_prop(root, "box-long.glb", center + Vector3(2.5, 0, 3.8), 90.0, 0.95)
+	_prop(root, "pipe-large.glb", center + Vector3(3.8, 1.0, -3.5), 0.0, 0.85)
+	_prop(root, "box-long.glb", center + Vector3(-2.0, 0, 3.2), 45.0, 0.9)
 
 
 func _dress_patio(root: Node3D) -> void:
