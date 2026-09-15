@@ -19,8 +19,8 @@
 
     "max_health": 100,
     "max_stamina": 100,
-    "stamina_regen": 40,
-    "stamina_regen_delay": 0.7,
+    "stamina_regen": 44,
+    "stamina_regen_delay": 0.62,
 
     "walk_speed": 5.3,
     "run_speed": 8.8,
@@ -33,7 +33,7 @@
     "max_fall_speed": 28.0,
     "jump_velocity": 8.5,
     "jump_cut_multiplier": 0.45,
-    "coyote_time": 0.1,
+    "coyote_time": 0.12,
     "jump_buffer": 0.12,
 
     "buffer_de_acao": 0.15,
