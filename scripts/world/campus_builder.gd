@@ -368,9 +368,13 @@ func _dress_entry(root: Node3D) -> void:
 	_prop(root, "pottedPlant.glb", Vector3(-6, 0, 15), 10.0)
 	_prop(root, "pottedPlant.glb", Vector3(6, 0, 15), -10.0)
 	_prop(root, "trashcan.glb", Vector3(5, 0, 21), 0.0)
+	_prop(root, "trashcan.glb", Vector3(-5, 0, 21), 20.0)
 	_prop(root, "loungeSofa.glb", Vector3(-3, 0, 11), 180.0)
 	_prop(root, "loungeSofa.glb", Vector3(3, 0, 11), 180.0)
 	_prop(root, "televisionModern.glb", Vector3(0, 0, 9.5), 0.0)
+	_prop(root, "pottedPlant.glb", Vector3(-3.5, 0, 4), 25.0)
+	_prop(root, "pottedPlant.glb", Vector3(3.5, 0, 4), -25.0)
+	_prop(root, "bench.glb", Vector3(0, 0, -6), 0.0)
 
 
 func _dress_bandejao(root: Node3D) -> void:
