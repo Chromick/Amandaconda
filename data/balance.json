@@ -22,12 +22,12 @@
     "stamina_regen": 120,
     "stamina_regen_delay": 0.1,
 
-    "walk_speed": 7.75,
-    "run_speed": 12.8,
-    "ground_accel": 42.0,
-    "ground_friction": 48.0,
-    "air_accel": 22.5,
-    "air_friction": 7.5,
+    "walk_speed": 7.9,
+    "run_speed": 13.0,
+    "ground_accel": 44.0,
+    "ground_friction": 50.0,
+    "air_accel": 24.0,
+    "air_friction": 7.2,
 
     "gravity": 23.5,
     "max_fall_speed": 32.0,
@@ -70,9 +70,9 @@
           "recuperacao": 0.11,
           "dano": 22,
           "vigor": 7,
-          "alcance": 1.72,
-          "altura": 1.24,
-          "avanco": 3.65,
+          "alcance": 1.78,
+          "altura": 1.28,
+          "avanco": 3.8,
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
