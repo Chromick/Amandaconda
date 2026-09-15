@@ -472,9 +472,13 @@ func _process_move(delta: float) -> void:
 	var accel := float(_cfg.get("ground_accel", 22.0) if is_on_floor() else _cfg.get("air_accel", 14.0))
 	var friction := float(_cfg.get("ground_friction", 28.0) if is_on_floor() else _cfg.get("air_friction", 4.0))
 
-	if sprinting and is_on_floor() and dir.length_squared() > 0.01 and _land_dust_cd <= 0.0:
-		_land_dust_cd = 0.12
-		_spawn_sprint_dust()
+	if is_on_floor() and dir.length_squared() > 0.01 and _land_dust_cd <= 0.0:
+		if sprinting:
+			_land_dust_cd = 0.12
+			_spawn_sprint_dust()
+		elif Vector3(velocity.x, 0.0, velocity.z).length() > 2.5:
+			_land_dust_cd = 0.28
+			_spawn_sprint_dust()
 
 	var horizontal := Vector3(velocity.x, 0.0, velocity.z)
 	if dir.length_squared() > 0.01:
