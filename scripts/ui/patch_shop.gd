@@ -88,7 +88,25 @@ func _refresh(_a: Variant = null) -> void:
 		else:
 			btn.add_theme_color_override("font_color", Color(0.9, 0.95, 0.92))
 		btn.pressed.connect(_buy.bind(pid))
+		btn.mouse_entered.connect(_on_btn_hover.bind(btn))
+		btn.mouse_exited.connect(_on_btn_unhover.bind(btn))
 		list.add_child(btn)
+
+
+func _on_btn_hover(btn: Button) -> void:
+	if btn == null or not is_instance_valid(btn) or btn.disabled:
+		return
+	var tw := create_tween()
+	tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tw.tween_property(btn, "scale", Vector2(1.03, 1.03), 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+
+func _on_btn_unhover(btn: Button) -> void:
+	if btn == null or not is_instance_valid(btn):
+		return
+	var tw := create_tween()
+	tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tw.tween_property(btn, "scale", Vector2.ONE, 0.08)
 
 
 func _buy(pid: String) -> void:
@@ -98,9 +116,15 @@ func _buy(pid: String) -> void:
 			player.refresh_progression()
 		GameState.show_toast("Patch instalado · %s" % _patch_name(pid))
 		if typeof(HitFeel) != TYPE_NIL:
-			HitFeel.shake(0.1)
+			HitFeel.shake(0.12)
+			HitFeel.kick_fov(3.5, 0.12)
 			if player and is_instance_valid(player):
-				HitFeel.spark_at(player.global_position + Vector3.UP * 1.2, Color(0.55, 1.0, 0.7), 0.9)
+				HitFeel.spark_at(player.global_position + Vector3.UP * 1.2, Color(0.55, 1.0, 0.7), 1.05)
+		if panel:
+			var flash := create_tween()
+			flash.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+			flash.tween_property(panel, "modulate", Color(0.75, 1.0, 0.85), 0.06)
+			flash.tween_property(panel, "modulate", Color.WHITE, 0.18)
 		_refresh()
 	else:
 		GameState.show_toast("Não foi possível comprar")
