@@ -49,6 +49,9 @@ func _physics_process(delta: float) -> void:
 	if _mat:
 		_mat.emission_energy_multiplier = 1.2 + sin(_pulse * 5.0) * 0.35
 		_mat.albedo_color.a = 0.4 + sin(_pulse * 3.0) * 0.12
+	if _mesh and not _expiring:
+		var breathe := 1.0 + sin(_pulse * 2.8) * 0.04
+		_mesh.scale = Vector3(breathe, 1.0, breathe)
 	for c in get_children():
 		if c is OmniLight3D:
 			(c as OmniLight3D).light_energy = 1.35 + sin(_pulse * 4.5) * 0.4
