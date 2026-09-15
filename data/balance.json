@@ -39,10 +39,10 @@
     "turn_speed": 20.0,
     "attack_move_mult": 0.28,
     "buffer_de_acao": 0.32,
-    "combo_janela": 1.0,
+    "combo_janela": 1.05,
     "combo_max": 3,
-    "sprint_attack_dash": 16.5,
-    "sprint_stamina_drain": 3.5,
+    "sprint_attack_dash": 17.0,
+    "sprint_stamina_drain": 3.2,
 
     "arma_inicial": "teclado",
     "virus_desbloqueado": true,
@@ -127,10 +127,10 @@
     "max_pitch": 67.0,
     "sensitivity": 0.21,
     "follow_speed": 32.0,
-    "lock_on_distance": 38.0,
-    "lock_on_height_bias": 1.5,
-    "idle_yaw_delay": 0.75,
-    "idle_yaw_speed": 6.0
+    "lock_on_distance": 40.0,
+    "lock_on_height_bias": 1.55,
+    "idle_yaw_delay": 0.7,
+    "idle_yaw_speed": 6.5
   },
 
   "impacto": {
@@ -168,7 +168,7 @@
     "dano": 12,
     "raio": 2.6,
     "renascer_em": 3.2,
-    "bytes": [58, 86]
+    "bytes": [62, 90]
   },
 
   "portara": {
