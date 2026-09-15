@@ -287,6 +287,8 @@ func _chase(delta: float) -> void:
 		_phase_t = float(_cfg.get("preparacao_pesado" if _heavy else "preparacao_leve", 0.4))
 		velocity = Vector3.ZERO
 		AttackTelegraphScript.set_active(_telegraph, true, false)
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.12 if _heavy else 0.07)
 
 
 func _on_hit(body: Node3D) -> void:

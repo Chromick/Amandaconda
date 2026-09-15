@@ -243,6 +243,8 @@ func _chase(delta: float) -> void:
 		_phase_t = float(_cfg.get("preparacao_pesado" if _heavy_next else "preparacao_leve", 0.35))
 		velocity = Vector3.ZERO
 		AttackTelegraphScript.set_active(_telegraph, true, false)
+		if typeof(HitFeel) != TYPE_NIL:
+			HitFeel.shake(0.1 if _heavy_next else 0.06)
 
 
 func _spawn_puddle() -> void:
