@@ -31,10 +31,10 @@
 
     "gravity": 23.5,
     "max_fall_speed": 32.0,
-    "jump_velocity": 10.2,
-    "jump_cut_multiplier": 0.44,
-    "coyote_time": 0.27,
-    "jump_buffer": 0.33,
+    "jump_velocity": 10.3,
+    "jump_cut_multiplier": 0.43,
+    "coyote_time": 0.28,
+    "jump_buffer": 0.34,
 
     "turn_speed": 20.0,
     "attack_move_mult": 0.28,
@@ -93,13 +93,13 @@
           "preparacao": 0.09,
           "acerto": 0.055,
           "recuperacao": 0.18,
-          "dano": 17,
-          "vigor": 6,
+          "dano": 18,
+          "vigor": 5,
           "avanco": 0,
-          "velocidade": 17.0,
-          "tempo_de_vida": 1.7,
-          "raio": 0.38,
-          "quique": 0.65
+          "velocidade": 17.5,
+          "tempo_de_vida": 1.75,
+          "raio": 0.4,
+          "quique": 0.68
         },
         "ataque_pesado": {
           "preparacao": 0.28,
@@ -431,11 +431,11 @@
       "alcance": 1.95
     },
     "marlombolico": {
-      "vida": 370,
+      "vida": 380,
       "nome": "MARLOMBÓLICO",
       "local": "Servidores",
-      "bytes": [240, 340],
-      "velocidade": 4.4,
+      "bytes": [250, 350],
+      "velocidade": 4.5,
       "dano": 18,
       "intervalo": 1.25,
       "preparacao": 0.36,
@@ -446,11 +446,11 @@
       "hack_duration": 5.4
     },
     "amandaconda": {
-      "vida": 560,
+      "vida": 580,
       "nome": "AMANDACONDA",
       "local": "A porta",
-      "bytes": [400, 540],
-      "velocidade": 4.2,
+      "bytes": [420, 560],
+      "velocidade": 4.3,
       "dano_leve": 24,
       "dano_pesado": 42,
       "intervalo": 1.1,
