@@ -1236,28 +1236,34 @@ func _resolve_eco() -> void:
 	_set_mesh_color(_default_color)
 	_clear_eco_telegraph()
 	var dmg := 22.0 * GameState.damage_multiplier()
+	var hit: Dictionary = {}
 	for node in get_tree().get_nodes_in_group("enemy"):
 		if node == null or not is_instance_valid(node):
 			continue
 		if not node.has_method("take_damage"):
 			continue
-		if node.global_position.distance_to(_eco_pos) <= 2.2:
-			var away: Vector3 = node.global_position - _eco_pos
-			away.y = 0.0
-			if away.length_squared() < 0.01:
-				away = facing
-			node.take_damage(dmg, away.normalized() * 4.0, self)
+		if node.global_position.distance_to(_eco_pos) > 2.2:
+			continue
+		var away: Vector3 = node.global_position - _eco_pos
+		away.y = 0.0
+		if away.length_squared() < 0.01:
+			away = facing
+		node.take_damage(dmg, away.normalized() * 4.0, self)
+		hit[node.get_instance_id()] = true
 	for node in get_tree().get_nodes_in_group("boss"):
 		if node == null or not is_instance_valid(node):
 			continue
+		if hit.has(node.get_instance_id()):
+			continue
 		if not node.has_method("take_damage"):
 			continue
-		if node.global_position.distance_to(_eco_pos) <= 2.2:
-			var away_b: Vector3 = node.global_position - _eco_pos
-			away_b.y = 0.0
-			if away_b.length_squared() < 0.01:
-				away_b = facing
-			node.take_damage(dmg, away_b.normalized() * 4.0, self)
+		if node.global_position.distance_to(_eco_pos) > 2.2:
+			continue
+		var away_b: Vector3 = node.global_position - _eco_pos
+		away_b.y = 0.0
+		if away_b.length_squared() < 0.01:
+			away_b = facing
+		node.take_damage(dmg, away_b.normalized() * 4.0, self)
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(_eco_pos + Vector3.UP * 0.6, Color(0.5, 0.9, 1.0), 1.35)
 		HitFeel.punch()
