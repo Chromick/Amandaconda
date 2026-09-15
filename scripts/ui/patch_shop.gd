@@ -23,9 +23,12 @@ func open_menu() -> void:
 	GameState.show_toast("Servidor de backup · escolha um patch")
 	if panel:
 		panel.modulate.a = 0.0
+		panel.scale = Vector2(0.94, 0.94)
 		var tw := create_tween()
 		tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tw.set_parallel(true)
 		tw.tween_property(panel, "modulate:a", 1.0, 0.2)
+		tw.tween_property(panel, "scale", Vector2.ONE, 0.22).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func close_menu() -> void:
