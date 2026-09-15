@@ -180,7 +180,7 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, _source: Node
 		_arena.try_start_fight()
 	health = maxf(0.0, health - amount)
 	health_changed.emit(health, max_health)
-	_flash_timer = 0.12
+	_flash_timer = 0.16
 	_set_color(Color(1.0, 0.25, 0.2))
 	velocity += knockback
 	_spawn_popup(amount)
