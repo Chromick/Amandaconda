@@ -102,18 +102,18 @@
           "quique": 0.7
         },
         "ataque_pesado": {
-          "preparacao": 0.28,
-          "carga_maxima": 0.55,
-          "acerto": 0.08,
-          "recuperacao": 0.4,
-          "dano": 27,
-          "dano_carregado": 54,
-          "vigor": 18,
+          "preparacao": 0.26,
+          "carga_maxima": 0.52,
+          "acerto": 0.075,
+          "recuperacao": 0.36,
+          "dano": 28,
+          "dano_carregado": 56,
+          "vigor": 17,
           "avanco": 0,
-          "velocidade": 14.0,
-          "tempo_de_vida": 2.3,
-          "raio": 0.6,
-          "quique": 0.75
+          "velocidade": 14.5,
+          "tempo_de_vida": 2.4,
+          "raio": 0.62,
+          "quique": 0.78
         }
       }
     }
@@ -134,9 +134,9 @@
   },
 
   "impacto": {
-    "pausa_no_acerto": 0.19,
-    "pausa_ao_matar": 0.58,
-    "empurrao_no_alvo": 8.0,
+    "pausa_no_acerto": 0.2,
+    "pausa_ao_matar": 0.62,
+    "empurrao_no_alvo": 8.4,
     "shake_on_hit": 0.95,
     "shake_amp": 0.82,
     "shake_decay": 3.2
@@ -208,10 +208,10 @@
   },
 
   "cura": {
-    "latas": 13,
-    "cura": 105,
-    "tempo_uso": 0.32,
-    "safezone_regen": 100.0,
+    "latas": 14,
+    "cura": 110,
+    "tempo_uso": 0.3,
+    "safezone_regen": 110.0,
     "safezone_latas": true
   },
 
@@ -389,10 +389,10 @@
       "nome": "LUANEVIL",
       "local": "Bandejão",
       "bytes": [180, 270],
-      "velocidade": 3.75,
+      "velocidade": 3.85,
       "dano_leve": 17,
-      "dano_pesado": 30,
-      "intervalo": 1.6,
+      "dano_pesado": 31,
+      "intervalo": 1.55,
       "preparacao_leve": 0.35,
       "acerto_leve": 0.12,
       "recuperacao_leve": 0.45,
