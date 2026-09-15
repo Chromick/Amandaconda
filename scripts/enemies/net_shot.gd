@@ -8,6 +8,7 @@ var mark_duration: float = 3.5
 var mark_speed: float = 0.72
 var source: Node = null
 var _spin: float = 0.0
+var _trail_cd: float = 0.0
 
 
 func setup(cfg: Dictionary, dir: Vector3, from: Node) -> void:
@@ -45,6 +46,35 @@ func _physics_process(delta: float) -> void:
 		var tip := global_position + velocity.normalized()
 		if absf(velocity.normalized().dot(Vector3.UP)) < 0.98:
 			look_at(tip, Vector3.UP)
+	_trail_cd -= delta
+	if _trail_cd <= 0.0:
+		_trail_cd = 0.045
+		_spawn_trail()
+
+
+func _spawn_trail() -> void:
+	var host := get_tree().current_scene
+	if host == null:
+		return
+	var p := MeshInstance3D.new()
+	var sm := SphereMesh.new()
+	sm.radius = 0.07
+	sm.height = 0.14
+	p.mesh = sm
+	var mat := StandardMaterial3D.new()
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.albedo_color = Color(0.95, 0.35, 0.9, 0.5)
+	mat.emission_enabled = true
+	mat.emission = Color(0.9, 0.25, 0.85)
+	mat.emission_energy_multiplier = 1.5
+	p.material_override = mat
+	host.add_child(p)
+	p.global_position = global_position
+	var tw := create_tween()
+	tw.tween_property(mat, "albedo_color:a", 0.0, 0.2)
+	tw.parallel().tween_property(p, "scale", Vector3.ONE * 0.2, 0.2)
+	tw.tween_callback(p.queue_free)
 
 
 func _on_body(body: Node3D) -> void:
