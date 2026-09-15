@@ -355,8 +355,8 @@ func _update_lock_marker(delta: float) -> void:
 		_lock_marker.visible = true
 		var bob := sin(Time.get_ticks_msec() * 0.006) * 0.12
 		_lock_marker.global_position = lock_target.global_position + Vector3.UP * (2.35 + bob)
-		_lock_marker.rotate_y(delta * 2.8)
-		var pulse := 1.0 + sin(Time.get_ticks_msec() * 0.01) * 0.12
+		_lock_marker.rotate_y(delta * 3.4)
+		var pulse := 1.0 + sin(Time.get_ticks_msec() * 0.012) * 0.15
 		_lock_marker.scale = Vector3(pulse, pulse, pulse)
 		var mat := _lock_marker.material_override as StandardMaterial3D
 		if mat:
@@ -389,12 +389,6 @@ func _tick_timers(delta: float) -> void:
 		_mark_timer -= delta
 		if _mark_timer <= 0.0:
 			_mark_mult = 1.0
-			_refresh_speed_mult()
-			if state == State.MOVE:
-				_set_mesh_color(_default_color)
-			GameState.show_toast("Marca sumiu")
-			if typeof(HitFeel) != TYPE_NIL:
-				HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(0.7, 0.55, 1.0), 0.55)
 			_refresh_speed_mult()
 			if state == State.MOVE:
 				_set_mesh_color(_default_color)
