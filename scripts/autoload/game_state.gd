@@ -72,8 +72,13 @@ func school_label() -> String:
 
 
 func add_bytes(amount: int) -> void:
+	var before := bytes
 	bytes += maxi(amount, 0)
 	bytes_changed.emit(bytes)
+	for milestone in [100, 250, 500, 1000]:
+		if before < milestone and bytes >= milestone:
+			show_toast("%d KB · carteira engordou" % milestone)
+			break
 
 
 func spend_bytes(amount: int) -> bool:
