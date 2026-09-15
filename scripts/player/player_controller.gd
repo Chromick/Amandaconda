@@ -977,6 +977,11 @@ func _process_healing(delta: float) -> void:
 		if hud and hud.has_method("pulse_heal"):
 			hud.pulse_heal()
 		HitFeel.shake(0.18)
+		HitFeel.spark_at(global_position + Vector3.UP * 1.1, Color(0.45, 1.0, 0.55), 1.0)
+		for cam in get_tree().get_nodes_in_group("player_camera"):
+			if cam and cam.has_method("punch_fov"):
+				cam.punch_fov(2.5)
+				break
 
 
 func _on_died() -> void:
