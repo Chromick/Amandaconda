@@ -219,6 +219,8 @@ func _ai(delta: float) -> void:
 	to.y = 0.0
 	var dist := to.length()
 	var spd := float(_cfg.get("velocidade", 3.8)) * move_scale()
+	if _enraged:
+		spd *= 1.2
 	if dist > 0.05:
 		var dir := to.normalized()
 		_face_flat(dir)
