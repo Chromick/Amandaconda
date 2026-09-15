@@ -4,6 +4,7 @@ extends Area3D
 var _player_inside: Node = null
 var _pulse: float = 0.0
 var _ring: MeshInstance3D
+var _ring_inner: MeshInstance3D
 var _light: OmniLight3D
 
 
@@ -38,6 +39,22 @@ func _ensure_ring() -> void:
 	_ring.material_override = mat
 	_ring.position = Vector3(0, 0.08, 0)
 	add_child(_ring)
+	_ring_inner = MeshInstance3D.new()
+	_ring_inner.name = "SafeRingInner"
+	var tor2 := TorusMesh.new()
+	tor2.inner_radius = 1.55
+	tor2.outer_radius = 1.72
+	_ring_inner.mesh = tor2
+	var mat2 := StandardMaterial3D.new()
+	mat2.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat2.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat2.albedo_color = Color(0.55, 1.0, 0.75, 0.16)
+	mat2.emission_enabled = true
+	mat2.emission = Color(0.45, 1.0, 0.7)
+	mat2.emission_energy_multiplier = 1.0
+	_ring_inner.material_override = mat2
+	_ring_inner.position = Vector3(0, 0.12, 0)
+	add_child(_ring_inner)
 
 
 func _on_enter(body: Node3D) -> void:
@@ -73,6 +90,14 @@ func _physics_process(delta: float) -> void:
 		_ring.rotation.y = _pulse * 0.4
 		var s := 1.08 if active else 1.0
 		_ring.scale = _ring.scale.lerp(Vector3(s, 1.0, s), clampf(3.0 * delta, 0.0, 1.0))
+	if _ring_inner and _ring_inner.material_override is StandardMaterial3D:
+		var mat_i := _ring_inner.material_override as StandardMaterial3D
+		var active_i := _player_inside != null and is_instance_valid(_player_inside)
+		mat_i.albedo_color.a = (0.28 if active_i else 0.12) + sin(_pulse * 5.0) * 0.05
+		mat_i.emission_energy_multiplier = (1.5 if active_i else 0.85) + sin(_pulse * 5.5) * 0.2
+		_ring_inner.rotation.y = -_pulse * 0.7
+		var si := 1.12 if active_i else 1.0
+		_ring_inner.scale = _ring_inner.scale.lerp(Vector3(si, 1.0, si), clampf(3.5 * delta, 0.0, 1.0))
 	if _light:
 		var active_l := _player_inside != null and is_instance_valid(_player_inside)
 		var target_e := 1.8 if active_l else 0.55

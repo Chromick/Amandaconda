@@ -6,6 +6,23 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~loop v0.6.8
+
+### Alteração
+- Safezone: anel interno anti-rotativo + pulso ativo.
+- Enemy KO pop/sparks.
+- Versão 0.6.8.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v0.6.7
 
 ### Alteração
