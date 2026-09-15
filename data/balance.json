@@ -22,8 +22,8 @@
     "stamina_regen": 78,
     "stamina_regen_delay": 0.26,
 
-    "walk_speed": 6.35,
-    "run_speed": 10.4,
+    "walk_speed": 6.45,
+    "run_speed": 10.6,
     "ground_accel": 32.0,
     "ground_friction": 38.0,
     "air_accel": 19.5,
@@ -120,13 +120,13 @@
   },
 
   "camera": {
-    "distance": 3.9,
-    "height": 1.9,
+    "distance": 3.8,
+    "height": 1.95,
     "fov": 80.0,
-    "min_pitch": -46.0,
-    "max_pitch": 64.0,
-    "sensitivity": 0.19,
-    "follow_speed": 24.0,
+    "min_pitch": -47.0,
+    "max_pitch": 65.0,
+    "sensitivity": 0.195,
+    "follow_speed": 26.0,
     "lock_on_distance": 32.0,
     "lock_on_height_bias": 1.35,
     "idle_yaw_delay": 0.9,
@@ -204,7 +204,7 @@
     "mark_duration": 4.2,
     "mark_speed_mult": 0.64,
     "renascer_em": 4.5,
-    "bytes": [56, 88]
+    "bytes": [60, 92]
   },
 
   "cura": {
