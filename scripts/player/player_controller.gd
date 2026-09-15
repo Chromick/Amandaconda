@@ -1519,10 +1519,10 @@ func _pulse_weapon(c: Color) -> void:
 	mat.albedo_color = c
 	mat.emission_enabled = true
 	mat.emission = c
-	mat.emission_energy_multiplier = 2.0
-	weapon_visual.scale = Vector3.ONE * 1.15
+	mat.emission_energy_multiplier = 2.4
+	weapon_visual.scale = Vector3.ONE * 1.22
 	var tw := create_tween()
-	tw.tween_property(weapon_visual, "scale", Vector3.ONE, 0.12)
+	tw.tween_property(weapon_visual, "scale", Vector3.ONE, 0.14)
 
 
 func _spawn_weapon_trail() -> void:
