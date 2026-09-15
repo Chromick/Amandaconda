@@ -256,7 +256,7 @@ func _build_interior_hub() -> void:
 	_way_sign(Vector3(-6, 2.2, -14), "← PÁTIO\nBalarrals", Color(0.85, 0.85, 0.95))
 	_way_sign(Vector3(6, 2.2, -14), "SERVIDORES →\nMarlon", Color(0.4, 1.0, 0.55))
 	_way_sign(Vector3(0, 2.4, -24), "↑ A PORTA\nAmandaconda", Color(1.0, 0.35, 0.45))
-	_way_sign(Vector3(0, 2.2, 16), "↓ SAFEZONE\nlatas · T skill", Color(0.45, 1.0, 0.65))
+	_way_sign(Vector3(0, 2.2, 16), "↓ SAFEZONE\n14 latas · T skill", Color(0.45, 1.0, 0.65))
 	_way_sign(Vector3(4.5, 2.0, 20), "PATCHES →\nservidor [E]", Color(0.55, 1.0, 0.75))
 	_way_sign(Vector3(-4.5, 2.0, 18), "T · skill\nna safezone", Color(0.65, 0.95, 1.0))
 	_way_sign(Vector3(-14, 2.0, 6), "← ALA OESTE\nChatana · Portara", Color(0.75, 0.9, 1.0))
