@@ -39,10 +39,10 @@
     "turn_speed": 14.0,
     "attack_move_mult": 0.16,
     "buffer_de_acao": 0.2,
-    "combo_janela": 0.68,
+    "combo_janela": 0.7,
     "combo_max": 3,
-    "sprint_attack_dash": 13.0,
-    "sprint_stamina_drain": 5.5,
+    "sprint_attack_dash": 13.5,
+    "sprint_stamina_drain": 5.0,
 
     "arma_inicial": "teclado",
     "virus_desbloqueado": true,
