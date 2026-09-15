@@ -247,6 +247,7 @@ func _build_interior_hub() -> void:
 	_way_sign(Vector3(-6, 2.2, -14), "← PÁTIO\nBalarrals", Color(0.85, 0.85, 0.95))
 	_way_sign(Vector3(6, 2.2, -14), "SERVIDORES →\nMarlon", Color(0.4, 1.0, 0.55))
 	_way_sign(Vector3(0, 2.4, -24), "↑ A PORTA\nAmandaconda", Color(1.0, 0.35, 0.45))
+	_way_sign(Vector3(0, 2.2, 16), "↓ SAFEZONE\nlatas · T skill", Color(0.45, 1.0, 0.65))
 
 	# Guarda gaps para spawn (via meta no builder)
 	set_meta("gaps_bandejao", gaps_bandejao)
