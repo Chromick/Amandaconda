@@ -626,7 +626,7 @@ func _process_roll(delta: float) -> void:
 func _try_light() -> void:
 	# Combo durante o golpe atual (janela no active/recover)
 	if state == State.ATTACK_LIGHT:
-		var max_c := int(_cfg.get("combo_max", 2))
+		var max_c := int(_cfg.get("combo_max", 3))
 		if _combo_step + 1 < max_c:
 			_queued_combo = true
 		return
@@ -693,7 +693,7 @@ func _process_attack(delta: float) -> void:
 
 	# Buffer de combo no meio do golpe
 	if state == State.ATTACK_LIGHT and Input.is_action_just_pressed("attack_light"):
-		var max_c := int(_cfg.get("combo_max", 2))
+		var max_c := int(_cfg.get("combo_max", 3))
 		if _combo_step + 1 < max_c:
 			_queued_combo = true
 
