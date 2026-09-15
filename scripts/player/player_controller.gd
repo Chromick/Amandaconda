@@ -406,7 +406,7 @@ func _tick_timers(delta: float) -> void:
 			stamina_changed.emit(stamina, max_stamina)
 
 	if is_on_floor():
-		coyote_timer = float(_cfg.get("coyote_time", 0.1))
+		coyote_timer = float(_cfg.get("coyote_time", 0.1)) + GameState.coyote_bonus()
 
 
 func _refresh_speed_mult() -> void:

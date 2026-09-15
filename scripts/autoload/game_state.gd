@@ -175,6 +175,14 @@ func roll_cost_mult() -> float:
 	return maxf(0.4, mult)
 
 
+func coyote_bonus() -> float:
+	var bonus := 0.0
+	for pid in active_patches:
+		var patch := _find_patch(pid)
+		bonus += float(patch.get("coyote_bonus", 0.0))
+	return bonus
+
+
 func refresh_heal_slots() -> void:
 	var cura: Dictionary = Balance.data.get("cura", {})
 	var base := int(cura.get("latas", 3))

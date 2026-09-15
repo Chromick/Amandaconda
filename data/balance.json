@@ -287,6 +287,13 @@
         "custo": 100,
         "texto": "+1 lata max",
         "latas_max": 1
+      },
+      {
+        "id": "coyote_extend",
+        "nome": "coyote_extend",
+        "custo": 90,
+        "texto": "+0.06 coyote",
+        "coyote_bonus": 0.06
       }
     ]
   },
