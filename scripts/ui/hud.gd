@@ -26,6 +26,7 @@ const HINTS: PackedStringArray = [
 	"jump_buffer_plus perdoa timing do pulo · coyote_extend também",
 	"impact_frame +12% dano · macro_combo ainda mais forte",
 	"stamina_siphon +25 vigor · hotfix_vigor ainda ajuda",
+	"vida_extra +20 HP · daemon_safe também soma",
 	"Net marca e freia · role através · Espelho devolve o golpe",
 ]
 

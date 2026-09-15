@@ -323,6 +323,13 @@
         "custo": 105,
         "texto": "+25 vigor max",
         "vigor_max": 25
+      },
+      {
+        "id": "vida_extra",
+        "nome": "vida_extra",
+        "custo": 115,
+        "texto": "+20 vida max",
+        "vida_max": 20
       }
     ]
   },
