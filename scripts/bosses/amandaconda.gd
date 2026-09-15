@@ -143,8 +143,12 @@ func take_damage(amount: float, knockback: Vector3 = Vector3.ZERO, source: Node 
 		if _coil:
 			_coil.scale = Vector3.ONE * 1.35
 		if typeof(HitFeel) != TYPE_NIL:
-			HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.95, 0.25, 0.45), 1.5)
-			HitFeel.kick_fov(6.0, 0.2)
+			HitFeel.spark_at(global_position + Vector3.UP * 1.5, Color(0.95, 0.25, 0.45), 1.6)
+			HitFeel.spark_at(global_position + Vector3.UP * 0.5, Color(1.0, 0.45, 0.55), 1.0)
+			HitFeel.kick_fov(7.5, 0.24)
+		scale = Vector3(1.2, 0.85, 1.2)
+		var tw := create_tween()
+		tw.tween_property(self, "scale", Vector3.ONE, 0.22).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		var hud := get_tree().get_first_node_in_group("hud")
 		if hud and hud.has_method("flash_danger"):
 			hud.flash_danger()
