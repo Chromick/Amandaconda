@@ -65,14 +65,14 @@
     "armas": {
       "teclado": {
         "ataque_leve": {
-          "preparacao": 0.06,
-          "acerto": 0.045,
-          "recuperacao": 0.12,
-          "dano": 21,
+          "preparacao": 0.055,
+          "acerto": 0.042,
+          "recuperacao": 0.11,
+          "dano": 22,
           "vigor": 7,
-          "alcance": 1.7,
-          "altura": 1.22,
-          "avanco": 3.55,
+          "alcance": 1.72,
+          "altura": 1.24,
+          "avanco": 3.65,
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
@@ -172,8 +172,8 @@
   },
 
   "portara": {
-    "vida": 86,
-    "velocidade": 2.45,
+    "vida": 90,
+    "velocidade": 2.5,
     "aggro": 9.8,
     "leash": 16.0,
     "deaggro": 20.0,
@@ -209,9 +209,9 @@
 
   "cura": {
     "latas": 12,
-    "cura": 98,
-    "tempo_uso": 0.34,
-    "safezone_regen": 95.0,
+    "cura": 100,
+    "tempo_uso": 0.32,
+    "safezone_regen": 100.0,
     "safezone_latas": true
   },
 
