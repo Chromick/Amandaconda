@@ -165,10 +165,10 @@
     "preparacao": 0.4,
     "acerto": 0.35,
     "recuperacao": 0.5,
-    "dano": 8,
-    "raio": 2.4,
-    "renascer_em": 3.4,
-    "bytes": [40, 64]
+    "dano": 12,
+    "raio": 2.5,
+    "renascer_em": 3.2,
+    "bytes": [44, 68]
   },
 
   "portara": {
