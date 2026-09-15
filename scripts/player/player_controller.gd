@@ -1574,6 +1574,8 @@ func _spawn_weapon_trail() -> void:
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	var col := Color(1.0, 0.55, 0.25, 0.6) if state == State.ATTACK_HEAVY else Color(1.0, 0.9, 0.45, 0.55)
+	if state == State.ATTACK_LIGHT and _combo_step >= 1:
+		col = Color(1.0, 0.7, 0.3, 0.6).lerp(Color(1.0, 0.45, 0.2, 0.7), clampf(float(_combo_step) / 2.0, 0.0, 1.0))
 	mat.albedo_color = col
 	mat.emission_enabled = true
 	mat.emission = Color(col.r, col.g, col.b)
