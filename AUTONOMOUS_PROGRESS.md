@@ -6,6 +6,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~continuação loop (v0.5.9)
+
+### Alteração
+- v0.5.9: FOV kick stack; Eco burst; heal light; combo finisher flash; gate shrink; invuln fade; school roll ghost; stamina low pulse; menu hover; etc.
+
+### Testes
+- Hub headless EXIT 0 (cada ciclo)
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~continuação loop
 
 ### Alteração

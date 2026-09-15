@@ -1228,10 +1228,18 @@ func _cast_caramelo() -> void:
 	puddle.setup(2.4, 5.5, 0.4)
 	_set_mesh_color(Color(0.85, 0.55, 0.2))
 	HitFeel.spark_at(pos + Vector3(0, 0.4, 0), Color(1.0, 0.7, 0.25))
+	HitFeel.kick_fov(4.5, 0.14)
+	HitFeel.shake(0.1)
 	for cam in get_tree().get_nodes_in_group("player_camera"):
 		if cam and cam.has_method("punch_fov"):
 			cam.punch_fov(4.0)
 	GameState.show_toast("Caramelo!")
+	var tw := create_tween()
+	tw.tween_interval(0.25)
+	tw.tween_callback(func():
+		if state == State.MOVE and _mark_timer <= 0.0:
+			_set_mesh_color(_default_color)
+	)
 
 
 func _cast_eco() -> void:
