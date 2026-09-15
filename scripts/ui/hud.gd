@@ -20,6 +20,8 @@ const HINTS: PackedStringArray = [
 	"Escola (Teclado/Vírus) no menu · patches no servidor de backup [E]",
 	"Safezone restaura latas · chefs ficam nas salas · siga as placas",
 	"Entre na névoa · a porta fecha até o fim · 3 chefes abrem servidores",
+	"KB e pendrives puxam pra perto · turbo_sprint corta custo de corrida",
+	"Net marca e freia · role através · Espelho devolve o golpe",
 ]
 
 var _player: Node = null
