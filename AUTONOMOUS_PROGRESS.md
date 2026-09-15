@@ -6,6 +6,29 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~02:18 BRT
+
+### Alteração
+- **Bug UI**: hints diziam “Q troca arma” / “Shift rola”, mas Q é lock-on e Shift é sprint; roll é Ctrl/C.
+- Hints corrigidos; **MMB** adicionado ao action `lock_on`.
+
+### Arquivos modificados
+- `scripts/ui/hud.gd`
+- `project.godot`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+- MMB/hints em PIE: não testado visualmente
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar juice seguro (pause help, boss reward toast) ou polish terminal
+
+---
+
 ## 2026-09-15 ~02:12 BRT
 
 ### Alteração

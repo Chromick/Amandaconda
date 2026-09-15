@@ -14,9 +14,9 @@ extends Control
 @onready var boss_bar: ProgressBar = get_node_or_null("BossPanel/BossBar")
 
 const HINTS: PackedStringArray = [
-	"WASD move · mouse olha · Shift rola · LMB ataca",
-	"Q troca arma · R bebe lata · F habilidade · T na safe",
-	"MMB trava alvo · role através do golpe",
+	"WASD move · mouse olha · Ctrl/C rola · Shift corre · LMB ataca",
+	"Q ou MMB trava alvo · R bebe lata · F habilidade · T na safe",
+	"Escola (Teclado/Vírus) escolhida no menu · patches no servidor",
 	"Safezone restaura latas · chefs ficam nas salas",
 	"Entre na névoa · a porta fecha até o fim",
 ]
