@@ -125,6 +125,7 @@ func _try_bounce(_body: Node3D) -> void:
 	else:
 		velocity.z = -velocity.z * bounce
 	velocity.y = absf(velocity.y) * 0.2
+	lifetime = maxf(lifetime, 0.35)
 	if typeof(HitFeel) != TYPE_NIL:
 		HitFeel.spark_at(global_position, Color(0.5, 1.0, 0.6), 0.45)
 	if _light:
