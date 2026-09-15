@@ -6,6 +6,27 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~02:28 BRT
+
+### Alteração
+- Pause: dica de controles corretos (Ctrl/C, Shift, Q/MMB, etc.) + painel um pouco mais largo.
+
+### Arquivos modificados
+- `scripts/ui/pause_menu.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+- Overlay Esc em PIE: não testado
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar loop: polimento de combate / feedback de boss reward / revisar TODOs restantes
+
+---
+
 ## 2026-09-15 ~02:25 BRT
 
 ### Alteração

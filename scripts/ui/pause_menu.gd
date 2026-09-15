@@ -1,10 +1,37 @@
 extends CanvasLayer
 ## Pause overlay no hub.
 
+@onready var center: VBoxContainer = $Center
+
 
 func _ready() -> void:
 	visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	if center:
+		center.offset_left = -200.0
+		center.offset_right = 200.0
+		center.offset_top = -110.0
+		center.offset_bottom = 110.0
+	_ensure_controls_hint()
+
+
+func _ensure_controls_hint() -> void:
+	if center == null:
+		return
+	if center.get_node_or_null("ControlsHint") != null:
+		return
+	var hint := Label.new()
+	hint.name = "ControlsHint"
+	hint.text = "Ctrl/C rola · Shift corre · Q/MMB lock · R lata · F skill · Esc fecha"
+	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	hint.add_theme_font_size_override("font_size", 14)
+	hint.add_theme_color_override("font_color", Color(0.75, 0.85, 0.8))
+	# Insert after title if present.
+	var title := center.get_node_or_null("Title")
+	var idx := 1 if title else 0
+	center.add_child(hint)
+	center.move_child(hint, idx)
 
 
 func _unhandled_input(event: InputEvent) -> void:
