@@ -84,6 +84,7 @@ func add_bytes(amount: int) -> void:
 				if player and typeof(HitFeel) != TYPE_NIL:
 					HitFeel.spark_at(player.global_position + Vector3.UP * 1.2, Color(0.95, 0.85, 0.35), 1.0)
 					HitFeel.shake(0.1)
+					HitFeel.kick_fov(3.0, 0.12)
 			, CONNECT_ONE_SHOT)
 			break
 
