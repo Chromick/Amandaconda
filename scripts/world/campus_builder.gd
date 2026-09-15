@@ -248,6 +248,8 @@ func _build_interior_hub() -> void:
 	_street_lamp(Vector3(-8, 0, -8))
 	_street_lamp(Vector3(8, 0, -8))
 	_street_lamp(Vector3(0, 0, -10))
+	_street_lamp(Vector3(-10, 0, -24))
+	_street_lamp(Vector3(10, 0, -24))
 	# Placas de direção (Souls hub)
 	_way_sign(Vector3(-6, 2.2, 2), "← BANDEJÃO\nLuanEvil", Color(1.0, 0.55, 0.25))
 	_way_sign(Vector3(6, 2.2, 2), "LAB →\nRenanligno", Color(0.45, 0.75, 1.0))
