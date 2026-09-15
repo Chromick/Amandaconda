@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 			look_at(tip, Vector3.UP)
 	_trail_cd -= delta
 	if _trail_cd <= 0.0:
-		_trail_cd = 0.012
+		_trail_cd = 0.01
 		_spawn_trail()
 	if _light:
 		_light.light_energy = lerpf(_light.light_energy, 3.6, clampf(6.0 * delta, 0.0, 1.0))

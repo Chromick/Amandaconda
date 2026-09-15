@@ -21,6 +21,21 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 - Continuar até o usuário parar
 
 ---
+## 2026-09-15 ~loop v1.4.2
+
+### Alteração
+- FOV87; jump; Portara; virus trail.
+
+### Testes
+- Hub headless EXIT 0
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Continuar até o usuário parar
+
+---
 ## 2026-09-15 ~loop v1.4.1
 
 ### Alteração

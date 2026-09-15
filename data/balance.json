@@ -31,10 +31,10 @@
 
     "gravity": 23.5,
     "max_fall_speed": 32.0,
-    "jump_velocity": 10.4,
-    "jump_cut_multiplier": 0.42,
-    "coyote_time": 0.29,
-    "jump_buffer": 0.35,
+    "jump_velocity": 10.5,
+    "jump_cut_multiplier": 0.41,
+    "coyote_time": 0.3,
+    "jump_buffer": 0.36,
 
     "turn_speed": 21.0,
     "attack_move_mult": 0.3,
@@ -122,7 +122,7 @@
   "camera": {
     "distance": 3.4,
     "height": 2.15,
-    "fov": 86.0,
+    "fov": 87.0,
     "min_pitch": -49.0,
     "max_pitch": 67.0,
     "sensitivity": 0.21,
@@ -172,8 +172,8 @@
   },
 
   "portara": {
-    "vida": 90,
-    "velocidade": 2.5,
+    "vida": 94,
+    "velocidade": 2.55,
     "aggro": 9.8,
     "leash": 16.0,
     "deaggro": 20.0,
