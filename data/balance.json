@@ -26,8 +26,8 @@
     "run_speed": 10.8,
     "ground_accel": 34.0,
     "ground_friction": 40.0,
-    "air_accel": 19.5,
-    "air_friction": 6.0,
+    "air_accel": 20.5,
+    "air_friction": 6.5,
 
     "gravity": 23.5,
     "max_fall_speed": 32.0,
@@ -76,16 +76,16 @@
           "golpes_no_combo": 3
         },
         "ataque_pesado": {
-          "preparacao": 0.22,
-          "carga_maxima": 0.62,
-          "acerto": 0.085,
-          "recuperacao": 0.3,
-          "dano": 34,
-          "dano_carregado": 60,
-          "vigor": 23,
-          "alcance": 2.0,
-          "altura": 1.45,
-          "avanco": 5.4
+          "preparacao": 0.2,
+          "carga_maxima": 0.6,
+          "acerto": 0.08,
+          "recuperacao": 0.28,
+          "dano": 35,
+          "dano_carregado": 62,
+          "vigor": 22,
+          "alcance": 2.05,
+          "altura": 1.48,
+          "avanco": 5.6
         }
       },
       "virus": {
@@ -120,8 +120,8 @@
   },
 
   "camera": {
-    "distance": 3.8,
-    "height": 1.95,
+    "distance": 3.7,
+    "height": 2.0,
     "fov": 81.0,
     "min_pitch": -48.0,
     "max_pitch": 66.0,
