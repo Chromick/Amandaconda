@@ -108,7 +108,7 @@ func _process(delta: float) -> void:
 		if _vignette:
 			var ratio := clampf(1.0 - (_real_hp / (_real_max * 0.3)), 0.0, 1.0)
 			_vignette.color = Color(0.55, 0.05, 0.08, 1.0)
-			_vignette.color.a = (0.12 + 0.18 * pulse) * (0.5 + 0.5 * ratio)
+			_vignette.color.a = (0.16 + 0.24 * pulse) * (0.55 + 0.45 * ratio)
 	elif _player and is_instance_valid(_player) and _player.has_method("is_marked") and _player.is_marked():
 		if health_bar and _heal_pulse <= 0.0:
 			health_bar.modulate = Color.WHITE
