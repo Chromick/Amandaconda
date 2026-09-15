@@ -126,7 +126,7 @@
     "max_pitch": 55.0,
     "sensitivity": 0.12,
     "follow_speed": 10.0,
-    "lock_on_distance": 18.0,
+    "lock_on_distance": 20.0,
     "lock_on_height_bias": 1.2,
     "idle_yaw_delay": 1.2,
     "idle_yaw_speed": 2.8
