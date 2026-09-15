@@ -93,13 +93,13 @@
           "preparacao": 0.09,
           "acerto": 0.055,
           "recuperacao": 0.18,
-          "dano": 12,
-          "vigor": 9,
+          "dano": 13,
+          "vigor": 8,
           "avanco": 0,
-          "velocidade": 14.5,
-          "tempo_de_vida": 1.45,
-          "raio": 0.31,
-          "quique": 0.55
+          "velocidade": 15.0,
+          "tempo_de_vida": 1.5,
+          "raio": 0.32,
+          "quique": 0.58
         },
         "ataque_pesado": {
           "preparacao": 0.28,
