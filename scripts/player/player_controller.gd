@@ -378,8 +378,11 @@ func _process_move(delta: float) -> void:
 			var max_c := float(_heavy.get("carga_maxima", 0.7))
 			var t := clampf(heavy_held / max_c, 0.0, 1.0)
 			_set_mesh_color(Color(1.0, 0.7 - t * 0.35, 0.35 - t * 0.2))
+			if not _is_ranged():
+				_sync_charge_telegraph(t)
 		else:
 			heavy_charging = false
+			_sync_atk_telegraph(false, false)
 			_try_heavy(heavy_held)
 			return
 
@@ -415,6 +418,8 @@ func _try_roll(dir: Vector3) -> void:
 	if not _require_stamina(cost):
 		return
 	_spend_stamina(cost)
+	heavy_charging = false
+	_sync_atk_telegraph(false, false)
 	_clear_attack_meta()
 	attack_area.monitoring = false
 	state = State.ROLL
@@ -471,6 +476,7 @@ func _try_heavy(held: float) -> void:
 	var cost := float(_heavy.get("vigor", 32))
 	if not _require_stamina(cost):
 		_set_mesh_color(_default_color)
+		_sync_atk_telegraph(false, false)
 		return
 	_spend_stamina(cost)
 	_sprint_attack = false
@@ -643,13 +649,26 @@ func _sync_atk_telegraph(active: bool, flash: bool) -> void:
 	if _atk_telegraph == null or _is_ranged():
 		AttackTelegraphScript.set_active(_atk_telegraph, false)
 		return
-	var cfg := _light if state == State.ATTACK_LIGHT else _heavy
+	var cfg := _heavy if state == State.ATTACK_HEAVY or heavy_charging else _light
 	var alcance := float(cfg.get("alcance", 1.3))
 	var altura := float(cfg.get("altura", 1.1))
 	if _atk_telegraph.mesh is BoxMesh:
 		(_atk_telegraph.mesh as BoxMesh).size = Vector3(0.7, altura, maxf(alcance, 0.3))
 	_atk_telegraph.position = Vector3(0.0, 0.9, 0.0) + facing * (alcance * 0.55)
 	AttackTelegraphScript.set_active(_atk_telegraph, active, flash)
+
+
+func _sync_charge_telegraph(charge_t: float) -> void:
+	## Durante carga do pesado: fantasma cresce e pisca perto do máximo.
+	if _atk_telegraph == null or _is_ranged():
+		return
+	facing = _aim_dir()
+	var alcance := float(_heavy.get("alcance", 1.6)) * lerpf(0.55, 1.0, charge_t)
+	var altura := float(_heavy.get("altura", 1.3))
+	if _atk_telegraph.mesh is BoxMesh:
+		(_atk_telegraph.mesh as BoxMesh).size = Vector3(0.7, altura, maxf(alcance, 0.3))
+	_atk_telegraph.position = Vector3(0.0, 0.9, 0.0) + facing * (alcance * 0.55)
+	AttackTelegraphScript.set_active(_atk_telegraph, true, charge_t >= 0.85)
 
 
 func _update_attack_shape(alcance: float, altura: float) -> void:

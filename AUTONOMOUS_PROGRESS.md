@@ -6,6 +6,30 @@ Toggle: `AUTONOMOUS_MODE.json` (`enabled: true|false`)
 
 ---
 
+## 2026-09-15 ~02:25 BRT
+
+### Alteração
+- Telegraph de **carga do ataque pesado** (cresce com a carga, flash perto do máx.); limpa no roll / vigor insuficiente.
+- Terminal de patches: bob/rotação, glow próximo, toast `[E]`.
+
+### Arquivos modificados
+- `scripts/player/player_controller.gd`
+- `scripts/world/patch_terminal.gd`
+- `AUTONOMOUS_PROGRESS.md`
+
+### Testes
+- Hub headless EXIT 0
+- Charge telegraph / terminal em PIE: não testado
+
+### Problemas encontrados
+- Joãosias AGUARDANDO DECISÃO
+
+### Próxima tarefa
+- Revisar pause overlay com lista de controles corretos
+- Ou juice de morte de boss (KB/bytes no balance se faltar)
+
+---
+
 ## 2026-09-15 ~02:18 BRT
 
 ### Alteração
