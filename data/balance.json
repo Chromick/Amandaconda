@@ -48,12 +48,12 @@
     "virus_desbloqueado": true,
 
     "rolamento": {
-      "duracao": 0.38,
-      "inv_inicio": 0.02,
-      "inv_duracao": 0.4,
-      "vigor": 19,
-      "velocidade": 13.8,
-      "atrito_final": 32.0
+      "duracao": 0.36,
+      "inv_inicio": 0.015,
+      "inv_duracao": 0.42,
+      "vigor": 18,
+      "velocidade": 14.2,
+      "atrito_final": 34.0
     },
 
     "dano_recebido": {
