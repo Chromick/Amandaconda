@@ -25,6 +25,10 @@ func _ready() -> void:
 	scale = Vector3.ONE * _scale_punch
 	if big > 0.55:
 		label.text = str(int(round(amount))) + "!"
+	if big > 0.85:
+		label.text = str(int(round(amount))) + "!!"
+		label.outline_size = 10
+		_scale_punch = 1.85
 
 
 func _process(delta: float) -> void:

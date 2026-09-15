@@ -1463,8 +1463,9 @@ func _toggle_lock_on() -> void:
 	lock_target = _find_lock_target()
 	if lock_target:
 		GameState.show_toast("Lock on")
-		HitFeel.spark_at(lock_target.global_position + Vector3.UP * 1.5, Color(0.55, 0.95, 1.0), 0.55)
-		HitFeel.kick_fov(-3.0, 0.1)
+		HitFeel.spark_at(lock_target.global_position + Vector3.UP * 1.5, Color(0.55, 0.95, 1.0), 0.7)
+		HitFeel.kick_fov(-3.5, 0.12)
+		HitFeel.shake(0.06)
 	else:
 		GameState.show_toast("Sem alvo no alcance")
 		var hud := get_tree().get_first_node_in_group("hud")
